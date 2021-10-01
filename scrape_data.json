@@ -887,7 +887,11 @@
                         "ViewCount":  11200,
                         "LikeCount":  9,
                         "PostCount":  11,
-                        "WasFeatured":  true
+                        "WasFeatured":  true,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ]
                     },
                     {
                         "Name":  "Restructure",
@@ -935,7 +939,13 @@
                         "ViewCount":  1900,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "Outdoors",
+                                          "Small"
+                                      ]
                     },
                     {
                         "Name":  "dm_tinytunnel (city17 flooded underground tunnel)",
@@ -1743,7 +1753,13 @@
                         "ViewCount":  4400,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Medium",
+                                          "Outdoors",
+                                          "NoTripmines"
+                                      ]
                     },
                     {
                         "Name":  "Dm_Miniflatgrass",
@@ -2415,7 +2431,10 @@
                         "ViewCount":  2300,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ]
                     },
                     {
                         "Name":  "RoPlayers_BatttleHouse2",
@@ -2807,7 +2826,14 @@
                         "ViewCount":  1800,
                         "LikeCount":  2,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Medium",
+                                          "Indoors",
+                                          "Meme",
+                                          "NoTripmines"
+                                      ]
                     },
                     {
                         "Name":  "Dm_floating_lands",
@@ -3848,7 +3874,8 @@
                         "ViewCount":  2400,
                         "LikeCount":  2,
                         "PostCount":  10,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5
                     },
                     {
                         "Name":  "dm_killbox_centerx7",
@@ -4032,7 +4059,14 @@
                         "ViewCount":  20000,
                         "LikeCount":  3,
                         "PostCount":  5,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "Outdoors",
+                                          "Meme",
+                                          "Large"
+                                      ]
                     },
                     {
                         "Name":  "dm_magic_ruin",
@@ -4944,7 +4978,10 @@
                         "ViewCount":  2700,
                         "LikeCount":  4,
                         "PostCount":  6,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ]
                     },
                     {
                         "Name":  "dm_temple_v1",
@@ -5000,7 +5037,10 @@
                         "ViewCount":  5900,
                         "LikeCount":  1,
                         "PostCount":  9,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ]
                     },
                     {
                         "Name":  "DM-Risk",
@@ -7084,7 +7124,14 @@
                         "ViewCount":  3000,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Medium",
+                                          "LowGrav",
+                                          "Remake",
+                                          "NoTripmines"
+                                      ],
+                        "RobRating":  3
                     },
                     {
                         "Name":  "dm_killbox_wood",
@@ -8734,7 +8781,13 @@
                         "ViewCount":  1400,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "Small",
+                                          "VanillaStyle"
+                                      ]
                     },
                     {
                         "Name":  "dm_killhouse",
@@ -8767,7 +8820,14 @@
                         "ViewCount":  7500,
                         "LikeCount":  1,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Medium",
+                                          "Indoors",
+                                          "Outdoors",
+                                          "NoTripmines"
+                                      ]
                     },
                     {
                         "Name":  "boxingclever",
@@ -9151,7 +9211,13 @@
                         "ViewCount":  1800,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Outdoors",
+                                          "Meme",
+                                          "Small"
+                                      ]
                     },
                     {
                         "Name":  "dm_sous_sols_b1",
@@ -9159,7 +9225,10 @@
                         "ViewCount":  1600,
                         "LikeCount":  1,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ]
                     },
                     {
                         "Name":  "dm_canals_beta1",
@@ -9487,7 +9556,10 @@
                         "ViewCount":  6800,
                         "LikeCount":  5,
                         "PostCount":  7,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ]
                     },
                     {
                         "Name":  "dm_lostplatform",
@@ -10184,7 +10256,10 @@
                         "ViewCount":  1300,
                         "LikeCount":  2,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ]
                     },
                     {
                         "Name":  "dm_intense2",
@@ -11580,7 +11655,13 @@
                         "ViewCount":  2700,
                         "LikeCount":  5,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "TooBig",
+                                          "Outdoors",
+                                          "Indoors"
+                                      ],
+                        "RobRating":  2
                     },
                     {
                         "Name":  "dm_manila",
@@ -12100,7 +12181,12 @@
                         "ViewCount":  2300,
                         "LikeCount":  4,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "Meme"
+                                      ]
                     },
                     {
                         "Name":  "dm_killbox_hard_looney_toons",
@@ -13004,7 +13090,13 @@
                         "ViewCount":  4000,
                         "LikeCount":  0,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "Large",
+                                          "Meme",
+                                          "Outdoors"
+                                      ]
                     },
                     {
                         "Name":  "dm_brickhouse",
@@ -13132,7 +13224,13 @@
                         "ViewCount":  4900,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "NoTripmines",
+                                          "Outdoors",
+                                          "Small"
+                                      ]
                     },
                     {
                         "Name":  "dm_motel",
