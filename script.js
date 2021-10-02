@@ -59,11 +59,11 @@ var App = {
 
 m.mount(document.body, App);
 
-fetch('/index-static.html').then(x=>x.text()).then(x => {
+fetch('index-static.html').then(x=>x.text()).then(x => {
     _staticHtml = x;
     m.redraw();
 }); 
 
-m.request({method: 'GET',url: '/scrape_data.json'}).then((x) => {
+m.request({method: 'GET',url: 'scrape_data.json'}).then((x) => {
     _scrapeData = x.MapInfo;
 });
