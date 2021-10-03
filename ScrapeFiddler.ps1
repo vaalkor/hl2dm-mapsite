@@ -65,7 +65,7 @@ if($GetRandomMap -or $ListMaps -or $CountMaps){
 
     "============================`n$($filteredMaps | measure | select -ExpandProperty Count) found with properties
      
-NoRating: $NoRating    
+NoRating: $NoRating
 NoDescription: $NoDescription
 NoLabels: $NoLabels
 Labels: $Labels`n============================"
