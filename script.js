@@ -5,6 +5,26 @@ var _labels = {};
 var _sortOrder = -1;
 var _sortBy = undefined;
 
+var $   = (query) => document.querySelector(query);
+var $$  = (query) => document.querySelectorAll(query);
+var saveElemValue   = (query) => window.localStorage.setItem(query, $(query).value);
+var saveElemValues  = (...queries) => queries.forEach(x => saveElemValue(x));
+var getAndSetElemValues = (...keys) => keys.forEach(x => getAndSetElemValue(x))
+
+function getAndSetElemValue(key){
+    let val = window.localStorage.getItem(key);
+    if(val !== null && val !== undefined) $(key).value = val;
+}
+
+function redraw(){
+    let slider = $('#ratingSlider');
+    let minRating = slider.value < 0 ? 'None selected' : slider.value;
+    $('#ratingSliderText').innerText = `Minimum Rating: ${minRating}`
+
+    saveElemValues('#sortBy', '#nameFilter', '#ratingSlider');
+    m.redraw();
+}
+
 function sort(a, b) {
     if (_sortBy == null) return a;
     return (a[_sortBy] || 0) > (b[_sortBy] || 0) ? -1 * _sortOrder : 1 * _sortOrder;
@@ -19,19 +39,12 @@ function mapFilter(map, nameFilter, minRating) {
 
 function filterMaps() {
     _filteredMaps = _scrapeData.slice();
-    _sortOrder = document.querySelector('#sortAscending').checked ? -1 : 1;
-    _sortBy = [...document.querySelectorAll('#sortBy option')].find(x => x.selected).value;
-    let nameFilter = document.querySelector('#nameFilter').value;
-    let minRating = document.querySelector('#ratingSlider').value;
+    _sortOrder = $('#sortAscending').checked ? -1 : 1;
+    _sortBy = $('#sortBy').value;
+    let nameFilter = $('#nameFilter').value;
+    let minRating = $('#ratingSlider').value;
     _filteredMaps = _filteredMaps.filter(x => mapFilter(x, nameFilter, minRating));
     _filteredMaps.sort(sort);
-}
-
-function handleRatingSlider(e) {
-    let slider = document.querySelector('#ratingSlider');
-    let minRating = slider.value < 0 ? 'None selected' : slider.value;
-    document.querySelector('#ratingSliderText').innerText = `Minimum Rating: ${minRating}`
-    m.redraw();
 }
 
 function getLabels(map) {
@@ -40,11 +53,10 @@ function getLabels(map) {
 }
 
 function resetFilter(e) {
-    document.querySelector('#nameFilter').value = '';
-    document.querySelector('#sortBy option').selected = true
-    document.querySelector('#ratingSlider').value = -0.5;
-    handleRatingSlider();
-    m.redraw();
+    $('#nameFilter').value = '';
+    $('#sortBy option').selected = true
+    $('#ratingSlider').value = -0.5;
+    redraw();
 }
 
 function getRandomMap(e) {
@@ -83,16 +95,19 @@ var Table = {
 }
 
 function initialise() {
-    document.querySelector('#ratingSlider').addEventListener("input", handleRatingSlider);
+    $('#ratingSlider').addEventListener("input", redraw);
 
-    ['#sortAscending', '#sortDescending', '#sortBy', '#nameFilter'].forEach(x => document.querySelector(x).addEventListener("input", () => m.redraw()));
+    ['#sortAscending', '#sortDescending', '#sortBy', '#nameFilter'].forEach(x => $(x).addEventListener("input", () => redraw()));
 
-    document.querySelector('#getRandomMapButton').addEventListener("click", getRandomMap);
-    document.querySelector('#resetFilterButton').addEventListener("click", resetFilter);
+    $('#getRandomMapButton').addEventListener("click", getRandomMap);
+    $('#resetFilterButton').addEventListener("click", resetFilter);
 
-    m.mount(document.querySelector('#table'), Table);
+    m.mount($('#table'), Table);
 
     m.request({ method: 'GET', url: 'scrape_data.json' }).then(x => _scrapeData = x.MapInfo);
+
+    getAndSetElemValues('#sortBy', '#nameFilter', '#ratingSlider');
+    redraw();
 }
 
 window.addEventListener('load', initialise);
