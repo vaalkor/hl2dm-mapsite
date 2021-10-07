@@ -29,13 +29,8 @@ thead{
     font-size: 10px;
     font-weight: 500;
     line-height: 18px;
-    border: 1px solid transparent;
+    border: 1px solid blue;
     border-radius: 2em;
-    border-image-source: initial;
-    border-image-slice: initial;
-    border-image-width: initial;
-    border-image-outset: initial;
-    border-image-repeat: initial;
     background-color: blueviolet;
     color: white;
 }

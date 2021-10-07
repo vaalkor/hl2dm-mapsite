@@ -1,9 +1,35 @@
 'use strict';
 var _scrapeData = [];
 var _filteredMaps = [];
-var _labels = {};
+var _foundLabels = {};
 var _sortOrder = -1;
 var _sortBy = undefined;
+var LABEL_COLOURS = {
+   Green: ['#1feb13', '#028012', '#000000'],
+   Yellow: ['#1feb13', '#028012', '#000000'],
+   Red: ['#1feb13', '#028012', '#000000'],
+   Purple: ['#1feb13', '#028012', '#000000'],
+   Blue:  ['#1feb13', '#028012', '#000000']
+}
+var _labelColourMap = {
+    'CausesCrash': LABEL_COLOURS.Red,
+    'NoTripmines': LABEL_COLOURS.Red,
+    'NeverLoads': LABEL_COLOURS.Red,
+    'Incomplete': LABEL_COLOURS.Yellow,
+    'Small': LABEL_COLOURS.Green,
+    'Medium': LABEL_COLOURS.Yellow,
+    'Large': LABEL_COLOURS.Blue,
+    'TooBig': LABEL_COLOURS.Red,
+    'Outdoors': LABEL_COLOURS.Blue,
+    'Indoors': LABEL_COLOURS.Blue,
+    'Meme': LABEL_COLOURS.Purple,
+    'LowGrav': LABEL_COLOURS.Blue,
+    'Remake': LABEL_COLOURS.Blue,
+    'VanillaStyle': LABEL_COLOURS.Blue,
+    'UT': LABEL_COLOURS.Blue,
+    'Quake': LABEL_COLOURS.Blue,
+    'HL1': LABEL_COLOURS.Blue
+}
 
 var $   = (query) => document.querySelector(query);
 var $$  = (query) => document.querySelectorAll(query);
@@ -49,7 +75,7 @@ function filterMaps() {
 
 function getLabels(map) {
     if (map.RobLabels === null || map.RobLabels === undefined || map.RobLabels.length === 0) return [];
-    return map.RobLabels.map(x => m("div", { "class": "map-label" }, m("span", x)));
+    return map.RobLabels.map(x => m("span", { "class": "map-label" }, x));
 }
 
 function resetFilter(e) {
@@ -72,6 +98,12 @@ function makeRow(map) {
         m("td", getLabels(map))
     ]);
 }
+
+// var TagFiltering = {
+//     view: function() {
+//         return m('div', {'class': 'container'}, )
+//     }
+// }
 
 var Table = {
     view: function () {
