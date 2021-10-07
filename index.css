@@ -29,15 +29,44 @@ thead{
     font-size: 10px;
     font-weight: 500;
     line-height: 18px;
-    border: 1px solid blue;
+    border: 1px solid black;
     border-radius: 2em;
-    background-color: blueviolet;
-    color: white;
 }
 
-.truncate {
+.truncate{
     width: 250px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
+}
+
+.label-green{
+    background-color:#57ff4d;
+    color: #000000
+}
+
+.label-yellow{
+    background-color:#ffc415;
+    color: #000000
+}
+
+.label-red{
+    background-color:#c90014;
+    color: white;
+}
+
+.label-black{
+    background-color: black;
+    color: white;
+    border-color: grey;
+}
+
+.label-blue{
+    background-color: #1892fd;
+    color: white;
+}
+
+.label-purple{
+    background-color: #fa63ff;
+    color: white;
+}

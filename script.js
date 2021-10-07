@@ -1,34 +1,21 @@
 'use strict';
+
 var _scrapeData = [];
 var _filteredMaps = [];
 var _foundLabels = {};
 var _sortOrder = -1;
 var _sortBy = undefined;
-var LABEL_COLOURS = {
-   Green: ['#1feb13', '#028012', '#000000'],
-   Yellow: ['#1feb13', '#028012', '#000000'],
-   Red: ['#1feb13', '#028012', '#000000'],
-   Purple: ['#1feb13', '#028012', '#000000'],
-   Blue:  ['#1feb13', '#028012', '#000000']
-}
-var _labelColourMap = {
-    'CausesCrash': LABEL_COLOURS.Red,
-    'NoTripmines': LABEL_COLOURS.Red,
-    'NeverLoads': LABEL_COLOURS.Red,
-    'Incomplete': LABEL_COLOURS.Yellow,
-    'Small': LABEL_COLOURS.Green,
-    'Medium': LABEL_COLOURS.Yellow,
-    'Large': LABEL_COLOURS.Blue,
-    'TooBig': LABEL_COLOURS.Red,
-    'Outdoors': LABEL_COLOURS.Blue,
-    'Indoors': LABEL_COLOURS.Blue,
-    'Meme': LABEL_COLOURS.Purple,
-    'LowGrav': LABEL_COLOURS.Blue,
-    'Remake': LABEL_COLOURS.Blue,
-    'VanillaStyle': LABEL_COLOURS.Blue,
-    'UT': LABEL_COLOURS.Blue,
-    'Quake': LABEL_COLOURS.Blue,
-    'HL1': LABEL_COLOURS.Blue
+var _defaultLabel = 'label-blue';
+var _labelMap = {
+    'NeverLoads': 'label-black',
+    'CausesCrash': 'label-black',
+    'NoTripmines': 'label-yellow',
+    'Incomplete': 'label-yellow',
+    'Small': 'label-green',
+    'Medium': 'label-yellow',
+    'Large': 'label-red',
+    'TooBig': 'label-red',
+    'Meme': 'label-purple'
 }
 
 var $   = (query) => document.querySelector(query);
@@ -75,7 +62,7 @@ function filterMaps() {
 
 function getLabels(map) {
     if (map.RobLabels === null || map.RobLabels === undefined || map.RobLabels.length === 0) return [];
-    return map.RobLabels.map(x => m("span", { "class": "map-label" }, x));
+    return map.RobLabels.map(x => m("span", { "class": `map-label ${(x in _labelMap) ? _labelMap[x] : _defaultLabel}` }, x));
 }
 
 function resetFilter(e) {
