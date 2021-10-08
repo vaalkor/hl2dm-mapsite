@@ -6,7 +6,7 @@ var _foundLabels = {};
 var _sortOrder = -1;
 var _sortBy = undefined;
 var _defaultLabel = 'label-blue';
-var _labelMap = {
+var _labelColourMap = {
     'NeverLoads': 'label-black',
     'CausesCrash': 'label-black',
     'NoTripmines': 'label-yellow',
@@ -17,12 +17,16 @@ var _labelMap = {
     'TooBig': 'label-red',
     'Meme': 'label-purple'
 }
+var _foundLabels = [];
+var _includeLabels = [];
+var _excludeLabels = [];
 
 var $   = (query) => document.querySelector(query);
 var $$  = (query) => document.querySelectorAll(query);
 var saveElemValue   = (query) => window.localStorage.setItem(query, $(query).value);
 var saveElemValues  = (...queries) => queries.forEach(x => saveElemValue(x));
 var getAndSetElemValues = (...keys) => keys.forEach(x => getAndSetElemValue(x))
+var getLabelColour = label => (label in _labelColourMap) ? _labelColourMap[label] : _defaultLabel;
 
 function getAndSetElemValue(key){
     let val = window.localStorage.getItem(key);
@@ -62,13 +66,37 @@ function filterMaps() {
 
 function getLabels(map) {
     if (map.RobLabels === null || map.RobLabels === undefined || map.RobLabels.length === 0) return [];
-    return map.RobLabels.map(x => m("span", { "class": `map-label ${(x in _labelMap) ? _labelMap[x] : _defaultLabel}` }, x));
+    return map.RobLabels.map(x => m("span", { "class": `map-label ${getLabelColour(x)}` }, x));
+}
+
+function includeLabel(label){
+    if(_excludeLabels.includes(label)) _excludeLabels = _excludeLabels.filter(x => x !== label);
+    if(_includeLabels.includes(label)) _includeLabels = _includeLabels.filter(x => x !== label);    
+    else _includeLabels.push(label);
+}
+
+function excludeLabel(label){
+    if(_includeLabels.includes(label)) _includeLabels = _includeLabels.filter(x => x !== label);
+    if(_excludeLabels.includes(label)) _excludeLabels = _excludeLabels.filter(x => x !== label);
+    else _excludeLabels.push(label);   
+}
+
+//Get the list of tag elements for the include/exlude tag filters. Include param determines what the onclick listener does.
+function getLabelFilterList(include) {
+    var getColorClass = (label) => {
+        if(include && _includeLabels.includes(label)) return getLabelColour(label);
+        if(!include && _excludeLabels.includes(label)) return getLabelColour(label);
+        return '';
+    }
+    return _foundLabels.map(x => m("span", { "class": `map-label ${getColorClass(x)}`, onclick: include ? ()=>includeLabel(x) : ()=>excludeLabel(x)}, x) );
 }
 
 function resetFilter(e) {
     $('#nameFilter').value = '';
     $('#sortBy option').selected = true
     $('#ratingSlider').value = -0.5;
+    _includeLabels = [];
+    _excludeLabels = [];
     redraw();
 }
 
@@ -86,11 +114,14 @@ function makeRow(map) {
     ]);
 }
 
-// var TagFiltering = {
-//     view: function() {
-//         return m('div', {'class': 'container'}, )
-//     }
-// }
+var TagFiltering = {
+    view: function() {
+        return [
+            m('div', {'class': 'container'}, m('h5', 'Include Labels', getLabelFilterList(true))),
+            m('div', {'class': 'container'}, m('h5', 'Exclude Labels', getLabelFilterList(false)))
+        ]
+    }
+}
 
 var Table = {
     view: function () {
@@ -113,7 +144,25 @@ var Table = {
     }
 }
 
-function initialise() {
+var DynamicContent = {
+    view: function(){
+        let pieces = [];
+        // pieces.push(m(TagFiltering));
+        pieces.push(m(Table));
+        return pieces;
+    }
+}
+
+function findAllLabels(data){
+    _foundLabels = [];
+    data.forEach(x => {
+        if(!x.RobLabels) return;
+        x.RobLabels.forEach(label => {if(!_foundLabels.includes(label)) _foundLabels.push(label)});
+    });
+    console.log(_foundLabels);
+}
+
+async function initialise() {
     $('#ratingSlider').addEventListener("input", redraw);
 
     ['#sortAscending', '#sortDescending', '#sortBy', '#nameFilter'].forEach(x => $(x).addEventListener("input", () => redraw()));
@@ -121,9 +170,11 @@ function initialise() {
     $('#getRandomMapButton').addEventListener("click", getRandomMap);
     $('#resetFilterButton').addEventListener("click", resetFilter);
 
-    m.mount($('#table'), Table);
+    m.mount($('#dynamic-content'), DynamicContent);
 
-    m.request({ method: 'GET', url: 'scrape_data.json' }).then(x => _scrapeData = x.MapInfo);
+    _scrapeData = (await m.request({ method: 'GET', url: 'scrape_data.json' })).MapInfo;
+
+    findAllLabels(_scrapeData);
 
     getAndSetElemValues('#sortBy', '#nameFilter', '#ratingSlider');
     redraw();

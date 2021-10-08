@@ -25,12 +25,16 @@ thead{
 .map-label{
     display: inline-block;
     padding: 0 7px;
-    margin-right: 1px;
+    margin-right: 1.5px;
     font-size: 10px;
     font-weight: 500;
     line-height: 18px;
     border: 1px solid black;
     border-radius: 2em;
+}
+
+.ib{
+    display: inline-block;
 }
 
 .truncate{
