@@ -25,7 +25,8 @@ var $   = (query) => document.querySelector(query);
 var $$  = (query) => document.querySelectorAll(query);
 var saveElemValue   = (query) => window.localStorage.setItem(query, $(query).value);
 var saveElemValues  = (...queries) => queries.forEach(x => saveElemValue(x));
-var getAndSetElemValues = (...keys) => keys.forEach(x => getAndSetElemValue(x))
+var saveJsonValue = (key, value) => window.localStorage.setItem(key, JSON.stringify(value));
+var getAndSetElemValues = (...keys) => keys.forEach(x => getAndSetElemValue(x));
 var getLabelColour = label => (label in _labelColourMap) ? _labelColourMap[label] : _defaultLabel;
 
 function getAndSetElemValue(key){
@@ -51,17 +52,19 @@ function mapFilter(map, nameFilter, minRating) {
     if (nameFilter && !(map.Name.toLowerCase().includes(nameFilter.toLowerCase()))) return false;
     if (minRating >= 0 && (map.RobRating === undefined || map.RobRating === null)) return false;
     if (minRating >= 0 && map.RobRating < minRating) return false;
+    if (map.RobLabels == null && _includeLabels.length !== 0) return false;
+    if (map.RobLabels && map.RobLabels.reduce((a,b)=> _includeLabels.includes(b) ? a+1: a, 0) !== _includeLabels.length) return false;
+    if (map.RobLabels && map.RobLabels.filter(x => _excludeLabels.includes(x)).length !== 0) return false;
     return true;
 }
 
 function filterMaps() {
-    _filteredMaps = _scrapeData.slice();
     _sortOrder = $('#sortAscending').checked ? -1 : 1;
     _sortBy = $('#sortBy').value;
+    _scrapeData.sort(sort);
     let nameFilter = $('#nameFilter').value;
     let minRating = $('#ratingSlider').value;
-    _filteredMaps = _filteredMaps.filter(x => mapFilter(x, nameFilter, minRating));
-    _filteredMaps.sort(sort);
+    _filteredMaps = _scrapeData.filter(x => mapFilter(x, nameFilter, minRating));
 }
 
 function getLabels(map) {
@@ -71,14 +74,14 @@ function getLabels(map) {
 
 function includeLabel(label){
     if(_excludeLabels.includes(label)) _excludeLabels = _excludeLabels.filter(x => x !== label);
-    if(_includeLabels.includes(label)) _includeLabels = _includeLabels.filter(x => x !== label);    
+    if(_includeLabels.includes(label)) _includeLabels = _includeLabels.filter(x => x !== label);
     else _includeLabels.push(label);
 }
 
 function excludeLabel(label){
     if(_includeLabels.includes(label)) _includeLabels = _includeLabels.filter(x => x !== label);
     if(_excludeLabels.includes(label)) _excludeLabels = _excludeLabels.filter(x => x !== label);
-    else _excludeLabels.push(label);   
+    else _excludeLabels.push(label);
 }
 
 //Get the list of tag elements for the include/exlude tag filters. Include param determines what the onclick listener does.
@@ -88,13 +91,13 @@ function getLabelFilterList(include) {
         if(!include && _excludeLabels.includes(label)) return getLabelColour(label);
         return '';
     }
-    return _foundLabels.map(x => m("span", { "class": `map-label ${getColorClass(x)}`, onclick: include ? ()=>includeLabel(x) : ()=>excludeLabel(x)}, x) );
+    return _foundLabels.map(x => m("span", { "class": `a-self-center map-label ${getColorClass(x)}`, onclick: include ? ()=>includeLabel(x) : ()=>excludeLabel(x)}, x) );
 }
 
-function resetFilter(e) {
+function resetFilter() {
     $('#nameFilter').value = '';
     $('#sortBy option').selected = true
-    $('#ratingSlider').value = -0.5;
+    $('#ratingSlider').value = 0;
     _includeLabels = [];
     _excludeLabels = [];
     redraw();
@@ -117,8 +120,8 @@ function makeRow(map) {
 var TagFiltering = {
     view: function() {
         return [
-            m('div', {'class': 'container'}, m('h5', 'Include Labels', getLabelFilterList(true))),
-            m('div', {'class': 'container'}, m('h5', 'Exclude Labels', getLabelFilterList(false)))
+            m('div', {'class': 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pt-2 pb-2'}, [m('h5', {class: 'mr-2'}, 'Include Labels'), ...getLabelFilterList(true)]),
+            m('div', {'class': 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pb-2'}, [m('h5', {class: 'mr-2'}, 'Exclude Labels'), ...getLabelFilterList(false)])
         ]
     }
 }
@@ -147,7 +150,7 @@ var Table = {
 var DynamicContent = {
     view: function(){
         let pieces = [];
-        // pieces.push(m(TagFiltering));
+        pieces.push(m(TagFiltering));
         pieces.push(m(Table));
         return pieces;
     }
