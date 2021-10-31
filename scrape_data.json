@@ -1497,7 +1497,11 @@
                         "ViewCount":  3800,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "Medium"
+                                      ]
                     },
                     {
                         "Name":  "dm_airraid_v3",
@@ -2794,7 +2798,12 @@
                         "ViewCount":  3500,
                         "LikeCount":  1,
                         "PostCount":  5,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "Medium"
+                                      ]
                     },
                     {
                         "Name":  "dm_biohazard_calmix2",
@@ -3297,7 +3306,12 @@
                         "ViewCount":  3500,
                         "LikeCount":  5,
                         "PostCount":  7,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Outdoors",
+                                          "Medium"
+                                      ]
                     },
                     {
                         "Name":  "dm_buggy_kn_3qFIX2",
@@ -3649,7 +3663,8 @@
                         "ViewCount":  6600,
                         "LikeCount":  3,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2
                     },
                     {
                         "Name":  "dm_brick_instead_mini",
@@ -3737,7 +3752,11 @@
                         "ViewCount":  1400,
                         "LikeCount":  2,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "Medium"
+                                      ]
                     },
                     {
                         "Name":  "DM DMS Runoff",
@@ -5160,7 +5179,11 @@
                         "ViewCount":  2800,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ]
                     },
                     {
                         "Name":  "dm_bk_weedbox_final",
@@ -5312,7 +5335,12 @@
                         "ViewCount":  2000,
                         "LikeCount":  3,
                         "PostCount":  8,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Outdoors",
+                                          "Small"
+                                      ]
                     },
                     {
                         "Name":  "dm_chickencoop_v2",
@@ -5552,7 +5580,10 @@
                         "ViewCount":  4500,
                         "LikeCount":  1,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ]
                     },
                     {
                         "Name":  "dm_tigcrik_r2",
@@ -7100,7 +7131,10 @@
                         "ViewCount":  2600,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "MissingTextures"
+                                      ]
                     },
                     {
                         "Name":  "dm_chambers",
@@ -8883,7 +8917,12 @@
                         "ViewCount":  1500,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Outdoors",
+                                          "Medium"
+                                      ]
                     },
                     {
                         "Name":  "dm_insurgency",
@@ -9904,7 +9943,8 @@
                         "ViewCount":  3200,
                         "LikeCount":  3,
                         "PostCount":  9,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4
                     },
                     {
                         "Name":  "dm_kin",
@@ -10232,7 +10272,13 @@
                         "ViewCount":  1400,
                         "LikeCount":  2,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "Outdoors",
+                                          "VanillaStyle"
+                                      ]
                     },
                     {
                         "Name":  "dm_viocrow",
@@ -12234,7 +12280,11 @@
                         "ViewCount":  5900,
                         "LikeCount":  6,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ]
                     },
                     {
                         "Name":  "dm_downtown",
@@ -12954,7 +13004,12 @@
                         "ViewCount":  30600,
                         "LikeCount":  9,
                         "PostCount":  13,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Outdoors",
+                                          "NoTripmines"
+                                      ]
                     },
                     {
                         "Name":  "dm_groupfour",

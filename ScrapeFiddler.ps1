@@ -6,7 +6,7 @@
 [switch]$GetInfo,
 [string]$Description,
 [Parameter()]
-[ValidateSet('CausesCrash','Outdoors','Indoors', 'NoTripmines', 'TooBig', 'Small', 'Medium', 'Large', 'Meme', 'NeverLoads', 'LowGrav', 'Remake', 'Incomplete', 'VanillaStyle', 'UT', 'Quake', 'HL1')] 
+[ValidateSet('CausesCrash','Outdoors','Indoors', 'NoTripmines', 'TooBig', 'Small', 'Medium', 'Large', 'Meme', 'NeverLoads', 'LowGrav', 'Remake', 'Incomplete', 'VanillaStyle', 'UT', 'Quake', 'HL1', 'MissingTextures')] 
 [string[]]$Labels,
 [int]   $Rating,
 [string]$MapName,
