@@ -888,7 +888,7 @@
                         "LikeCount":  9,
                         "PostCount":  11,
                         "WasFeatured":  true,
-                        "RobRating":  4,
+                        "RobRating":  3.5,
                         "RobLabels":  [
                                           "Indoors"
                                       ]
@@ -3664,7 +3664,7 @@
                         "LikeCount":  3,
                         "PostCount":  4,
                         "WasFeatured":  false,
-                        "RobRating":  2
+                        "RobRating":  2.5
                     },
                     {
                         "Name":  "dm_brick_instead_mini",
@@ -5180,7 +5180,7 @@
                         "LikeCount":  1,
                         "PostCount":  1,
                         "WasFeatured":  false,
-                        "RobRating":  4,
+                        "RobRating":  3.5,
                         "RobLabels":  [
                                           "Indoors"
                                       ]
@@ -5336,7 +5336,7 @@
                         "LikeCount":  3,
                         "PostCount":  8,
                         "WasFeatured":  false,
-                        "RobRating":  4,
+                        "RobRating":  3,
                         "RobLabels":  [
                                           "Outdoors",
                                           "Small"
@@ -8783,7 +8783,7 @@
                         "LikeCount":  0,
                         "PostCount":  0,
                         "WasFeatured":  false,
-                        "RobRating":  2
+                        "RobRating":  1.5
                     },
                     {
                         "Name":  "dm_anbu_stepdown",
@@ -8816,7 +8816,7 @@
                         "LikeCount":  0,
                         "PostCount":  0,
                         "WasFeatured":  false,
-                        "RobRating":  2,
+                        "RobRating":  2.5,
                         "RobLabels":  [
                                           "Indoors",
                                           "Small",
@@ -8846,7 +8846,7 @@
                         "LikeCount":  0,
                         "PostCount":  0,
                         "WasFeatured":  false,
-                        "RobRating":  3
+                        "RobRating":  3.5
                     },
                     {
                         "Name":  "crossfire2",
@@ -9944,7 +9944,7 @@
                         "LikeCount":  3,
                         "PostCount":  9,
                         "WasFeatured":  false,
-                        "RobRating":  4
+                        "RobRating":  3.5
                     },
                     {
                         "Name":  "dm_kin",
@@ -10587,7 +10587,7 @@
                         "LikeCount":  4,
                         "PostCount":  1,
                         "WasFeatured":  false,
-                        "RobRating":  2
+                        "RobRating":  2.5
                     },
                     {
                         "Name":  "dm_drift",
@@ -11707,7 +11707,7 @@
                                           "Outdoors",
                                           "Indoors"
                                       ],
-                        "RobRating":  2
+                        "RobRating":  2.5
                     },
                     {
                         "Name":  "dm_manila",
@@ -12228,7 +12228,7 @@
                         "LikeCount":  4,
                         "PostCount":  3,
                         "WasFeatured":  false,
-                        "RobRating":  4,
+                        "RobRating":  3.5,
                         "RobLabels":  [
                                           "Indoors",
                                           "Meme"
@@ -12281,7 +12281,7 @@
                         "LikeCount":  6,
                         "PostCount":  3,
                         "WasFeatured":  false,
-                        "RobRating":  4,
+                        "RobRating":  3.5,
                         "RobLabels":  [
                                           "Outdoors"
                                       ]
@@ -13005,7 +13005,7 @@
                         "LikeCount":  9,
                         "PostCount":  13,
                         "WasFeatured":  false,
-                        "RobRating":  4,
+                        "RobRating":  3.5,
                         "RobLabels":  [
                                           "Outdoors",
                                           "NoTripmines"
@@ -13146,7 +13146,7 @@
                         "LikeCount":  0,
                         "PostCount":  4,
                         "WasFeatured":  false,
-                        "RobRating":  2,
+                        "RobRating":  2.5,
                         "RobLabels":  [
                                           "Large",
                                           "Meme",

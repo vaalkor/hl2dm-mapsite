@@ -8,7 +8,9 @@
 [Parameter()]
 [ValidateSet('CausesCrash','Outdoors','Indoors', 'NoTripmines', 'TooBig', 'Small', 'Medium', 'Large', 'Meme', 'NeverLoads', 'LowGrav', 'Remake', 'Incomplete', 'VanillaStyle', 'UT', 'Quake', 'HL1', 'MissingTextures')] 
 [string[]]$Labels,
-[int]   $Rating,
+[Parameter()]
+[ValidateSet(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5)] 
+[decimal]$Rating,
 [string]$MapName,
 [string]$MapUrl,
 
