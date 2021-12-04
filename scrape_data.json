@@ -3982,7 +3982,10 @@
                         "ViewCount":  4500,
                         "LikeCount":  3,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ]
                     },
                     {
                         "Name":  "dm_Antartic final 1 (v2.1)",
@@ -4557,7 +4560,13 @@
                         "ViewCount":  6500,
                         "LikeCount":  3,
                         "PostCount":  7,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "UniqueMechanic",
+                                          "NoTripmines"
+                                      ]
                     },
                     {
                         "Name":  "dm_rats",
@@ -4805,7 +4814,13 @@
                         "ViewCount":  6600,
                         "LikeCount":  2,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Meme",
+                                          "Indoors",
+                                          "NoTripmines"
+                                      ],
+                        "RobRating":  2.5
                     },
                     {
                         "Name":  "dm_season",
@@ -5436,7 +5451,13 @@
                         "ViewCount":  1100,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Meme",
+                                          "Outdoors",
+                                          "Indoors"
+                                      ],
+                        "RobRating":  2.5
                     },
                     {
                         "Name":  "DM_Trainyard_Winter_Storm_V3",
@@ -6314,7 +6335,11 @@
                         "ViewCount":  1900,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "RobLabels":  [
+                                          "Meme"
+                                      ]
                     },
                     {
                         "Name":  "dm_bk_deathbox_b9",
@@ -6410,7 +6435,12 @@
                         "ViewCount":  1500,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "MissingTextures"
+                                      ]
                     },
                     {
                         "Name":  "dm_combine_arena_beta2",
@@ -6482,7 +6512,12 @@
                         "ViewCount":  1900,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Outdoors",
+                                          "Small"
+                                      ]
                     },
                     {
                         "Name":  "dm_fmr_box_arena_v2",
@@ -8510,7 +8545,10 @@
                         "ViewCount":  10400,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ]
                     },
                     {
                         "Name":  "dm_vdeth5_v5",
@@ -8930,7 +8968,12 @@
                         "ViewCount":  2100,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "VanillaStyle",
+                                          "UniqueMechanic"
+                                      ]
                     },
                     {
                         "Name":  "dm_infiltrate",
@@ -9042,7 +9085,8 @@
                         "ViewCount":  3600,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3
                     },
                     {
                         "Name":  "dm_raven",
@@ -9467,7 +9511,8 @@
                         "ViewCount":  5900,
                         "LikeCount":  5,
                         "PostCount":  11,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4.5
                     },
                     {
                         "Name":  "dm_down_there",
@@ -10377,7 +10422,8 @@
                         "ViewCount":  1800,
                         "LikeCount":  3,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5
                     },
                     {
                         "Name":  "dm_subculture",
@@ -10537,7 +10583,10 @@
                         "ViewCount":  3000,
                         "LikeCount":  3,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ]
                     },
                     {
                         "Name":  "dm_chaos",
@@ -11179,7 +11228,12 @@
                         "ViewCount":  2100,
                         "LikeCount":  3,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Outdoors",
+                                          "Medium"
+                                      ]
                     },
                     {
                         "Name":  "dm_stalkyard",
@@ -11661,7 +11715,12 @@
                         "ViewCount":  14500,
                         "LikeCount":  26,
                         "PostCount":  18,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4.5,
+                        "RobLabels":  [
+                                          "Meme",
+                                          "Large"
+                                      ]
                     },
                     {
                         "Name":  "dm_first_blood",
@@ -12219,7 +12278,10 @@
                         "ViewCount":  1800,
                         "LikeCount":  4,
                         "PostCount":  5,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ]
                     },
                     {
                         "Name":  "dm_killbox_borg_cube_x",
