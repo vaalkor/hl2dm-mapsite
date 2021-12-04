@@ -1,0 +1,95 @@
+{
+  "Site": "https://www.gamemaps.com/hl2dm/maps",
+  "Query": "copy(JSON.stringify([...document.querySelectorAll('.iteminfo .topbar .title a')].map(x => {return{'link': x.href, 'name': x.innerText}})))",
+  "MapInfo": [
+    { "Link": "https://www.gamemaps.com/details/25985", "Name": "Puzzle v1.5" },
+    {
+      "Link": "https://www.gamemaps.com/details/25804",
+      "Name": "Sponza | Friday 666 Edition"
+    },
+    { "Link": "https://www.gamemaps.com/details/25501", "Name": "dm_mounted" },
+    {
+      "Link": "https://www.gamemaps.com/details/22469",
+      "Name": "DM Basildon Hospital"
+    },
+    {
+      "Link": "https://www.gamemaps.com/details/20957",
+      "Name": "dm_TheHouseCore"
+    },
+    {
+      "Link": "https://www.gamemaps.com/details/17847",
+      "Name": "Chemical Plant Zone"
+    },
+    {
+      "Link": "https://www.gamemaps.com/details/17645",
+      "Name": "Metroid Prime 2: Echoes - Sidehopper Station"
+    },
+    {
+      "Link": "https://www.gamemaps.com/details/17043",
+      "Name": "dm_killbox_portal_bwo_2"
+    },
+    {
+      "Link": "https://www.gamemaps.com/details/15613",
+      "Name": "dm_town_03_day"
+    },
+    {
+      "Link": "https://www.gamemaps.com/details/14928",
+      "Name": "RoPlayers_Killbox_Galary"
+    },
+    { "Link": "https://www.gamemaps.com/details/12861", "Name": "dm_motel" },
+    { "Link": "https://www.gamemaps.com/details/12839", "Name": "dm_avalon" },
+    { "Link": "https://www.gamemaps.com/details/12838", "Name": "dm_abyss" },
+    {
+      "Link": "https://www.gamemaps.com/details/12798",
+      "Name": "dm_boogymans_realm"
+    },
+    {
+      "Link": "https://www.gamemaps.com/details/12804",
+      "Name": "dm_stripclub_v2"
+    },
+    {
+      "Link": "https://www.gamemaps.com/details/12801",
+      "Name": "dm_killbox_2014_bk_rc1"
+    },
+    {
+      "Link": "https://www.gamemaps.com/details/12807",
+      "Name": "dm_peachs_castle"
+    },
+    {
+      "Link": "https://www.gamemaps.com/details/12805",
+      "Name": "dm_sunset_stbm_a1c_final"
+    },
+    {
+      "Link": "https://www.gamemaps.com/details/12806",
+      "Name": "rp_downtown_vv1"
+    },
+    {
+      "Link": "https://www.gamemaps.com/details/12800",
+      "Name": "dm_godsoffice_remake_5a_beta"
+    },
+    {
+      "Link": "https://www.gamemaps.com/details/12802",
+      "Name": "dm_killbox_sanctuary_b3"
+    },
+    {
+      "Link": "https://www.gamemaps.com/details/12803",
+      "Name": "dm_lockdown_r5"
+    },
+    { "Link": "https://www.gamemaps.com/details/12881", "Name": "storage_hq" },
+    { "Link": "https://www.gamemaps.com/details/12862", "Name": "dm_torque" },
+    {
+      "Link": "https://www.gamemaps.com/details/12840",
+      "Name": "dm_district33"
+    },
+    { "Link": "https://www.gamemaps.com/details/12837", "Name": "apc_bunker" },
+    {
+      "Link": "https://www.gamemaps.com/details/12841",
+      "Name": "dm_killbox_final"
+    },
+    {
+      "Link": "https://www.gamemaps.com/details/12863",
+      "Name": "dm_waterhazard"
+    },
+    { "Link": "https://www.gamemaps.com/details/12882", "Name": "piff" }
+  ]
+}
