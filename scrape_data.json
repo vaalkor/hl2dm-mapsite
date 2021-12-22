@@ -847,7 +847,12 @@
                         "ViewCount":  3100,
                         "LikeCount":  3,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1640184663
                     },
                     {
                         "Name":  "dm_killbox_apollyon",
@@ -1169,7 +1174,12 @@
                         "ViewCount":  3800,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1640184663
                     },
                     {
                         "Name":  "dm_alcys_ravenholm",
@@ -1795,7 +1805,11 @@
                         "ViewCount":  2700,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1640184664
                     },
                     {
                         "Name":  "dm_riposte",
@@ -2059,7 +2073,12 @@
                         "ViewCount":  3500,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1640184655,
+                        "RobRating":  2.5
                     },
                     {
                         "Name":  "dm_antichamber_rc1",
@@ -2195,7 +2214,12 @@
                         "ViewCount":  3200,
                         "LikeCount":  3,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1640184664
                     },
                     {
                         "Name":  "RoPlayers_Battle_of_Korridor2",
@@ -3511,7 +3535,14 @@
                         "ViewCount":  3100,
                         "LikeCount":  2,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Outdoors",
+                                          "Quake",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1640184656,
+                        "RobRating":  2.5
                     },
                     {
                         "Name":  "dm_A_lesser_fate",
@@ -3623,7 +3654,9 @@
                         "ViewCount":  2900,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  1640184665
                     },
                     {
                         "Name":  "dm_ob_killbox_tsgk_rc3",
@@ -4065,7 +4098,11 @@
                         "ViewCount":  3600,
                         "LikeCount":  4,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1640184665
                     },
                     {
                         "Name":  "dm_value_final",
@@ -4240,7 +4277,11 @@
                         "ViewCount":  1900,
                         "LikeCount":  1,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1640184663
                     },
                     {
                         "Name":  "dm_KillboxMaze",
@@ -4908,7 +4949,14 @@
                         "ViewCount":  1500,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Outdoors",
+                                          "Meme",
+                                          "Small"
+                                      ],
+                        "InitialRatingTimestamp":  1640184655,
+                        "RobRating":  3
                     },
                     {
                         "Name":  "Overwatch episodic v1",
@@ -5090,7 +5138,12 @@
                         "ViewCount":  1400,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1640184665
                     },
                     {
                         "Name":  "dm_smallbox",
@@ -6997,7 +7050,14 @@
                         "ViewCount":  12500,
                         "LikeCount":  9,
                         "PostCount":  15,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "HL1",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1640184665
                     },
                     {
                         "Name":  "dm_tbr_glasvalley2",
@@ -8161,7 +8221,12 @@
                         "ViewCount":  4200,
                         "LikeCount":  6,
                         "PostCount":  11,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "RobLabels":  [
+                                          "Meme"
+                                      ],
+                        "InitialRatingTimestamp":  1640184663
                     },
                     {
                         "Name":  "dm_moonbase",
@@ -11728,7 +11793,15 @@
                         "ViewCount":  1900,
                         "LikeCount":  6,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Outdoors",
+                                          "Meme",
+                                          "UniqueMechanic",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1640184655,
+                        "RobRating":  2.5
                     },
                     {
                         "Name":  "dm_playground_deluxe",
@@ -12474,7 +12547,12 @@
                         "ViewCount":  7900,
                         "LikeCount":  0,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1640184533,
+                        "RobRating":  4
                     },
                     {
                         "Name":  "dm_killbox_pyramid",
@@ -12882,7 +12960,13 @@
                         "ViewCount":  2200,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Outdoors",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1640184664
                     },
                     {
                         "Name":  "dm_water_closet",
@@ -13443,7 +13527,11 @@
                         "ViewCount":  3500,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1640184664
                     },
                     {
                         "Name":  "dm_superhebbe",

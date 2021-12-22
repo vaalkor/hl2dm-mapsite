@@ -20,10 +20,8 @@
 [switch]$CountMaps,
 [switch]$NoRating,
 [switch]$NoDescription,
-[switch]$NoLabels,
-[switch]$CheckDuplicateNames
+[switch]$NoLabels
 )
-"============================"
 
 $file = Get-Item $ScrapeDataFile
 if(-not $file){
@@ -35,6 +33,15 @@ $json = Get-Content $file | ConvertFrom-Json
 if(-not $json){
     "Cannot parse $ScrapeDataFile as json. Quitting..."
     exit 1
+}
+
+if(-not ($UpdateInfo -or $GetInfo -or $GetRandomMap -or $ListMaps -or $CountMaps)){
+    "No action specified. Qutting..."
+    exit 1
+}
+
+function GetUnixTime(){
+    return [int64](([datetime]::UtcNow)-(get-date "1/1/1970")).TotalSeconds
 }
 
 function GetMapWithName($name){
@@ -120,6 +127,11 @@ if($UpdateInfo){
             else{ $updateInfoMap.RobLabels += ($Labels | ?{-not $updateInfoMap.RobLabels.Contains($_)}) }
         }
     }
+    if(-not $updateInfoMap.InitialRatingTimestamp){
+        echo "No rating!"
+        $updateInfoMap | Add-Member -MemberType NoteProperty -Name 'InitialRatingTimestamp' -Value (GetUnixTime) -Force
+    }
+
     "Updated map info:"
     $updateInfoMap
 
