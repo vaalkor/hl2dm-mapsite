@@ -1038,7 +1038,12 @@
                         "ViewCount":  2700,
                         "LikeCount":  3,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1641072710
                     },
                     {
                         "Name":  "dm_sniper_traps_v4",
@@ -1355,7 +1360,11 @@
                         "ViewCount":  2200,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1641075400
                     },
                     {
                         "Name":  "dm_skihdrhoe",
@@ -2174,7 +2183,9 @@
                         "ViewCount":  10400,
                         "LikeCount":  3,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1641073915
                     },
                     {
                         "Name":  "dm_ruinedprison",
@@ -2243,7 +2254,11 @@
                         "ViewCount":  2100,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1641072195
                     },
                     {
                         "Name":  "Dm_Headshot V1.1",
@@ -2518,7 +2533,12 @@
                         "ViewCount":  5100,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1641076578
                     },
                     {
                         "Name":  "dm_doh_b5",
@@ -2835,7 +2855,12 @@
                         "ViewCount":  4400,
                         "LikeCount":  3,
                         "PostCount":  11,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1641075696
                     },
                     {
                         "Name":  "dm_bwo_undercranes_fixed",
@@ -4149,7 +4174,11 @@
                         "ViewCount":  4500,
                         "LikeCount":  3,
                         "PostCount":  17,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1641072729
                     },
                     {
                         "Name":  "dm_value_v_1",
@@ -4703,7 +4732,14 @@
                         "ViewCount":  1500,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Meme",
+                                          "UniqueMechanic",
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1641073531
                     },
                     {
                         "Name":  "dm_rambos_killbox_big",
@@ -5183,7 +5219,11 @@
                         "ViewCount":  2000,
                         "LikeCount":  0,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1641073937
                     },
                     {
                         "Name":  "dm_rapidcross_final",
@@ -7500,7 +7540,12 @@
                         "ViewCount":  1700,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1641074357
                     },
                     {
                         "Name":  "dm_chell",
@@ -7796,7 +7841,13 @@
                         "ViewCount":  1800,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Meme",
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1641073038
                     },
                     {
                         "Name":  "dm_quadrangle_r2",
@@ -8498,7 +8549,11 @@
                         "ViewCount":  1600,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1641071903
                     },
                     {
                         "Name":  "dm_atlanticorp",
@@ -8996,7 +9051,11 @@
                         "ViewCount":  1500,
                         "LikeCount":  3,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1641074030
                     },
                     {
                         "Name":  "dm_boot_camp",
@@ -10733,7 +10792,12 @@
                         "ViewCount":  2500,
                         "LikeCount":  7,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1641077468,
+                        "RobRating":  4.5
                     },
                     {
                         "Name":  "dm_sandtrap",
@@ -11764,7 +11828,12 @@
                         "ViewCount":  2300,
                         "LikeCount":  8,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1641072142
                     },
                     {
                         "Name":  "dm_lockdown2",
@@ -12183,7 +12252,12 @@
                         "ViewCount":  5200,
                         "LikeCount":  5,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1641074786
                     },
                     {
                         "Name":  "dm_plato_b1",
@@ -12263,7 +12337,11 @@
                         "ViewCount":  3700,
                         "LikeCount":  2,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1641072232
                     },
                     {
                         "Name":  "dm_fallingwater",
@@ -12523,7 +12601,9 @@
                         "ViewCount":  9100,
                         "LikeCount":  1,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "InitialRatingTimestamp":  1641075323,
+                        "RobRating":  2.5
                     },
                     {
                         "Name":  "dm_monopolybeta",
@@ -12688,7 +12768,12 @@
                         "ViewCount":  12500,
                         "LikeCount":  18,
                         "PostCount":  30,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Incomplete",
+                                          "MissingTextures"
+                                      ],
+                        "InitialRatingTimestamp":  1641071883
                     },
                     {
                         "Name":  "dm_cloudcity",
@@ -13126,7 +13211,12 @@
                         "ViewCount":  5800,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1641076206
                     },
                     {
                         "Name":  "dm_vineyard",
