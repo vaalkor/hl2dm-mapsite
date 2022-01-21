@@ -1624,7 +1624,9 @@
                         "ViewCount":  3900,
                         "LikeCount":  1,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1642807646
                     },
                     {
                         "Name":  "dm world trainzzz r3",
@@ -4534,6 +4536,19 @@
                         "ViewCount":  2000,
                         "LikeCount":  0,
                         "PostCount":  1,
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1642805143
+                    },
+                    {
+                        "Name":  "dm_metro",
+                        "Link":  "https://gamebanana.com/mods/62555",
+                        "ViewCount":  3100,
+                        "LikeCount":  4,
+                        "PostCount":  2,
                         "WasFeatured":  false
                     },
                     {
@@ -8104,7 +8119,9 @@
                         "ViewCount":  2700,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  1642806975
                     },
                     {
                         "Name":  "dm_lab_b2",
@@ -8700,7 +8717,9 @@
                         "ViewCount":  1400,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "InitialRatingTimestamp":  1642805818
                     },
                     {
                         "Name":  "dm_vdeth2_v6",
@@ -9791,7 +9810,9 @@
                         "ViewCount":  2000,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  1642806032
                     },
                     {
                         "Name":  "dm_thefactory",
@@ -12055,14 +12076,6 @@
                         "WasFeatured":  false
                     },
                     {
-                        "Name":  "dm_metro",
-                        "Link":  "https://gamebanana.com/mods/62555",
-                        "ViewCount":  3100,
-                        "LikeCount":  4,
-                        "PostCount":  2,
-                        "WasFeatured":  false
-                    },
-                    {
                         "Name":  "dm_cityhell",
                         "Link":  "https://gamebanana.com/mods/61998",
                         "ViewCount":  5300,
@@ -13115,7 +13128,9 @@
                         "ViewCount":  6900,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1642806563
                     },
                     {
                         "Name":  "dm_backbone",
