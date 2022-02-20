@@ -2596,7 +2596,12 @@
                         "ViewCount":  1700,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1645304851,
+                        "RobRating":  2.5
                     },
                     {
                         "Name":  "DM_Gothic_UTclassic",
@@ -2644,7 +2649,12 @@
                         "ViewCount":  2700,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1645304467
                     },
                     {
                         "Name":  "dm_mini_golf_night",
@@ -4026,7 +4036,11 @@
                         "ViewCount":  3300,
                         "LikeCount":  3,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1645303988
                     },
                     {
                         "Name":  "dm_Egyptian_tomb",
@@ -7927,7 +7941,14 @@
                         "ViewCount":  2100,
                         "LikeCount":  2,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "LowGrav",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1645302614,
+                        "RobRating":  2
                     },
                     {
                         "Name":  "dm_arctic_vendetta_war_se_v1",
@@ -8815,7 +8836,12 @@
                         "ViewCount":  3100,
                         "LikeCount":  1,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Remake"
+                                      ],
+                        "InitialRatingTimestamp":  1645303959
                     },
                     {
                         "Name":  "pinball_wizard_v2_final",
