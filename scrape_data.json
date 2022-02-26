@@ -639,7 +639,12 @@
                         "ViewCount":  1400,
                         "LikeCount":  3,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1645913923
                     },
                     {
                         "Name":  "dm_snipe_xyzw7",
@@ -3603,7 +3608,12 @@
                         "ViewCount":  4300,
                         "LikeCount":  2,
                         "PostCount":  7,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1645917410
                     },
                     {
                         "Name":  "dm_gravey",
@@ -3782,7 +3792,9 @@
                         "ViewCount":  3100,
                         "LikeCount":  1,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "InitialRatingTimestamp":  1645915594,
+                        "RobRating":  2
                     },
                     {
                         "Name":  "dm_Outpost_4",
@@ -5541,7 +5553,12 @@
                         "ViewCount":  2000,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1645899217
                     },
                     {
                         "Name":  "dm_xmas_night_v2",
@@ -6313,7 +6330,9 @@
                         "ViewCount":  2200,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4.5,
+                        "InitialRatingTimestamp":  1645915465
                     },
                     {
                         "Name":  "dm_[tsf]_killdome",
@@ -6927,7 +6946,11 @@
                         "ViewCount":  3200,
                         "LikeCount":  0,
                         "PostCount":  8,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Remake"
+                                      ],
+                        "InitialRatingTimestamp":  1645916495
                     },
                     {
                         "Name":  "dm_under",
@@ -7638,7 +7661,9 @@
                         "ViewCount":  1100,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1645916846
                     },
                     {
                         "Name":  "dm_education_b1",
@@ -8190,7 +8215,11 @@
                         "ViewCount":  2100,
                         "LikeCount":  2,
                         "PostCount":  5,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1645898728
                     },
                     {
                         "Name":  "l7_lockdown",
@@ -8395,7 +8424,9 @@
                         "ViewCount":  4800,
                         "LikeCount":  2,
                         "PostCount":  5,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "InitialRatingTimestamp":  1645916280
                     },
                     {
                         "Name":  "dm_sonic_mario_land",
@@ -8714,7 +8745,15 @@
                         "ViewCount":  2000,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Meme",
+                                          "UniqueMechanic",
+                                          "Indoors",
+                                          "Medium"
+                                      ],
+                        "InitialRatingTimestamp":  1645898512
                     },
                     {
                         "Name":  "dm_link",
@@ -8873,7 +8912,11 @@
                         "ViewCount":  3000,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1645898665
                     },
                     {
                         "Name":  "island_fortress_final",
