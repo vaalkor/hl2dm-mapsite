@@ -724,7 +724,11 @@
                         "ViewCount":  970,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1645919311
                     },
                     {
                         "Name":  "dm_deserthome",
@@ -2441,7 +2445,11 @@
                         "ViewCount":  984,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1645919286
                     },
                     {
                         "Name":  "dm_bazookabox",
@@ -3228,7 +3236,9 @@
                         "ViewCount":  8800,
                         "LikeCount":  5,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1645920028
                     },
                     {
                         "Name":  "dm_nano_city_beta03",
@@ -4812,7 +4822,9 @@
                         "ViewCount":  1600,
                         "LikeCount":  0,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1645920699
                     },
                     {
                         "Name":  "dm_slam_paradise",
@@ -9434,7 +9446,9 @@
                         "ViewCount":  3900,
                         "LikeCount":  3,
                         "PostCount":  8,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "InitialRatingTimestamp":  1645921225
                     },
                     {
                         "Name":  "dm_compressed_r1",
@@ -9812,7 +9826,12 @@
                         "ViewCount":  3400,
                         "LikeCount":  5,
                         "PostCount":  7,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1645919260
                     },
                     {
                         "Name":  "dm_stonepark",
@@ -9863,7 +9882,9 @@
                         "ViewCount":  2700,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  1645919609
                     },
                     {
                         "Name":  "dm_22ghmp v1 final beta",
