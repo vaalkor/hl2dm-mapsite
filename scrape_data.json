@@ -929,7 +929,13 @@
                         "ViewCount":  2700,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1645925208,
+                        "RobRating":  3.5
                     },
                     {
                         "Name":  "dm_shortlock",
@@ -1321,7 +1327,12 @@
                         "ViewCount":  3500,
                         "LikeCount":  1,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1645924622
                     },
                     {
                         "Name":  "dm_spacetrip",
@@ -3318,7 +3329,9 @@
                         "ViewCount":  3100,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1645929387
                     },
                     {
                         "Name":  "dm_edgeside",
@@ -5979,7 +5992,11 @@
                         "ViewCount":  1700,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1645923886
                     },
                     {
                         "Name":  "dm_warehouse",
@@ -9480,7 +9497,9 @@
                         "ViewCount":  1800,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "InitialRatingTimestamp":  1645928324,
+                        "RobRating":  3
                     },
                     {
                         "Name":  "dm_corrugated",
@@ -10151,7 +10170,12 @@
                         "ViewCount":  2400,
                         "LikeCount":  1,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "InitialRatingTimestamp":  1645930437,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "UniqueMechanic"
+                                      ]
                     },
                     {
                         "Name":  "dm_marble",
@@ -11545,7 +11569,9 @@
                         "ViewCount":  2600,
                         "LikeCount":  2,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  1645927542
                     },
                     {
                         "Name":  "dm_alamo",
@@ -11625,7 +11651,9 @@
                         "ViewCount":  2200,
                         "LikeCount":  6,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "InitialRatingTimestamp":  1645930039,
+                        "RobRating":  3
                     },
                     {
                         "Name":  "dm_ulterior",
@@ -12027,7 +12055,9 @@
                         "ViewCount":  8500,
                         "LikeCount":  14,
                         "PostCount":  8,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "InitialRatingTimestamp":  1645927190
                     },
                     {
                         "Name":  "dm_overwatch_final",
@@ -12307,7 +12337,9 @@
                         "ViewCount":  1900,
                         "LikeCount":  5,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1645926650
                     },
                     {
                         "Name":  "dm_walmart_ v4",
@@ -13596,7 +13628,9 @@
                         "ViewCount":  4800,
                         "LikeCount":  2,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "InitialRatingTimestamp":  1645930846
                     },
                     {
                         "Name":  "DM_junkyard",
