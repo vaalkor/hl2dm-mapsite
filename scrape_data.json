@@ -760,7 +760,10 @@
                         "ViewCount":  1700,
                         "LikeCount":  6,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646066197
                     },
                     {
                         "Name":  "dm_snipe_bunkergrass2",
@@ -1476,7 +1479,16 @@
                         "ViewCount":  4900,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Remake",
+                                          "Quake",
+                                          "Meme",
+                                          "UniqueMechanic",
+                                          "MissingTextures"
+                                      ],
+                        "InitialRatingTimestamp":  1646061076
                     },
                     {
                         "Name":  "dm_azzle (lasers in center contain rockets)",
@@ -1687,8 +1699,8 @@
                                           "Remake"
                                       ],
                         "InitialRatingTimestamp":  1646054804,
-                        "RobRating":  4.5,
-                        "NumPlayers":  2
+                        "NumPlayers":  2,
+                        "RobRating":  4.5
                     },
                     {
                         "Name":  "dm_overwatch CM remake",
@@ -2278,7 +2290,11 @@
                         "ViewCount":  1700,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1646059976
                     },
                     {
                         "Name":  "RoPlayers_Jumper_Light_v1",
@@ -2651,7 +2667,10 @@
                         "ViewCount":  3400,
                         "LikeCount":  1,
                         "PostCount":  6,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646066716
                     },
                     {
                         "Name":  "dm_mini_golf_v2",
@@ -3490,7 +3509,13 @@
                         "ViewCount":  1800,
                         "LikeCount":  1,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646062667
                     },
                     {
                         "Name":  "dm_snowcapped_r1",
@@ -5702,7 +5727,11 @@
                         "ViewCount":  1600,
                         "LikeCount":  0,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1646055716
                     },
                     {
                         "Name":  "dm_madness_water_pump_v1",
@@ -5937,7 +5966,10 @@
                         "ViewCount":  1700,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646058332
                     },
                     {
                         "Name":  "DM_StN_killbox_beta",
@@ -6566,7 +6598,13 @@
                         "ViewCount":  1600,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1646055681
                     },
                     {
                         "Name":  "dm_powerhouse_nub_v1",
@@ -7675,7 +7713,11 @@
                         "ViewCount":  2300,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1646057874
                     },
                     {
                         "Name":  "gravity_gun_areana_v1",
@@ -7757,7 +7799,12 @@
                         "ViewCount":  8600,
                         "LikeCount":  11,
                         "PostCount":  13,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1646056030
                     },
                     {
                         "Name":  "gargamell_dm",
@@ -9026,7 +9073,10 @@
                         "ViewCount":  1200,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646063660
                     },
                     {
                         "Name":  "dm_belltower",
@@ -9653,7 +9703,10 @@
                         "ViewCount":  2400,
                         "LikeCount":  2,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646059954
                     },
                     {
                         "Name":  "dm_killbox_eye",
@@ -9875,7 +9928,11 @@
                         "ViewCount":  2300,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1646059995
                     },
                     {
                         "Name":  "dm_repeater",
@@ -9883,7 +9940,13 @@
                         "ViewCount":  1700,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ],
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646063570
                     },
                     {
                         "Name":  "dm_combine_siege_beta1",
@@ -12692,7 +12755,10 @@
                         "ViewCount":  8100,
                         "LikeCount":  21,
                         "PostCount":  12,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646064844
                     },
                     {
                         "Name":  "the infected course",
@@ -13381,7 +13447,11 @@
                         "ViewCount":  3600,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1646057847
                     },
                     {
                         "Name":  "Killbox Breakable",
@@ -13410,7 +13480,10 @@
                         "ViewCount":  3500,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4.5,
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646057802
                     },
                     {
                         "Name":  "dm_bridge",
