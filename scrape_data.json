@@ -1037,7 +1037,11 @@
                         "ViewCount":  2800,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1646053280
                     },
                     {
                         "Name":  "dm_city",
@@ -1678,7 +1682,13 @@
                         "ViewCount":  9100,
                         "LikeCount":  3,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Remake"
+                                      ],
+                        "InitialRatingTimestamp":  1646054804,
+                        "RobRating":  4.5,
+                        "NumPlayers":  2
                     },
                     {
                         "Name":  "dm_overwatch CM remake",
@@ -3742,7 +3752,10 @@
                         "ViewCount":  3800,
                         "LikeCount":  2,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646052823
                     },
                     {
                         "Name":  "dm_ob_attack_house_xmas",
@@ -5205,7 +5218,11 @@
                         "ViewCount":  2200,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1646052856
                     },
                     {
                         "Name":  "dm_German_playground",
@@ -10480,7 +10497,10 @@
                         "ViewCount":  2400,
                         "LikeCount":  5,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646051102
                     },
                     {
                         "Name":  "rc_ratz",

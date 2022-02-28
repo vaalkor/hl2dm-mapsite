@@ -13,7 +13,7 @@
 [decimal]$Rating,
 [string]$MapName,
 [string]$MapUrl,
-
+[int]$NumPlayers,
 [switch]$RemoveLabels,
 [switch]$GetRandomMap,
 [switch]$ListMaps,
@@ -127,6 +127,7 @@ if($UpdateInfo){
             else{ $updateInfoMap.RobLabels += ($Labels | ?{-not $updateInfoMap.RobLabels.Contains($_)}) }
         }
     }
+    if($NumPlayers){ $updateInfoMap | Add-Member -MemberType NoteProperty -Name 'NumPlayers' -Value $NumPlayers -Force }
     if(-not $updateInfoMap.InitialRatingTimestamp){
         echo "No rating!"
         $updateInfoMap | Add-Member -MemberType NoteProperty -Name 'InitialRatingTimestamp' -Value (GetUnixTime) -Force
