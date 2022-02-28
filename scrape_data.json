@@ -423,7 +423,14 @@
                         "ViewCount":  626,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "UniqueMechanic",
+                                          "NoTripmines"
+                                      ],
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646085546
                     },
                     {
                         "Name":  "nub_resistance_v1",
@@ -5049,7 +5056,14 @@
                         "ViewCount":  3600,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "NoTripmines"
+                                      ],
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646087117
                     },
                     {
                         "Name":  "dm_pyramid_killbox_v2_b1",
@@ -7289,7 +7303,10 @@
                         "ViewCount":  3400,
                         "LikeCount":  0,
                         "PostCount":  5,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646084790
                     },
                     {
                         "Name":  "junk[dev]city",
@@ -8527,7 +8544,14 @@
                         "ViewCount":  5600,
                         "LikeCount":  4,
                         "PostCount":  6,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Meme",
+                                          "Outdoors"
+                                      ],
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646086077
                     },
                     {
                         "Name":  "dm_cliffside",
