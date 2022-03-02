@@ -786,7 +786,10 @@
                         "ViewCount":  1600,
                         "LikeCount":  0,
                         "PostCount":  5,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646259479
                     },
                     {
                         "Name":  "dm_twelve_alley_LL",
@@ -1438,7 +1441,14 @@
                         "ViewCount":  2700,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "NoTripmines"
+                                      ],
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646258020
                     },
                     {
                         "Name":  "Chemical Plant Zone",
@@ -3309,7 +3319,10 @@
                         "ViewCount":  3600,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646261043
                     },
                     {
                         "Name":  "dm_killbox_lylr_reload2",
@@ -3618,7 +3631,14 @@
                         "ViewCount":  2700,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Outdoors",
+                                          "UniqueMechanic"
+                                      ],
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646257781
                     },
                     {
                         "Name":  "dm_antartic_outpost",
@@ -7387,7 +7407,11 @@
                         "ViewCount":  1600,
                         "LikeCount":  0,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1646259497
                     },
                     {
                         "Name":  "dm_warbox_huge",
@@ -9614,7 +9638,11 @@
                         "ViewCount":  2800,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1646260107
                     },
                     {
                         "Name":  "dm_agoge_b2 + dm_zeus_redux",
@@ -10697,7 +10725,11 @@
                         "ViewCount":  1200,
                         "LikeCount":  2,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1646260569
                     },
                     {
                         "Name":  "dm_laststop",
@@ -11776,7 +11808,10 @@
                         "ViewCount":  2400,
                         "LikeCount":  5,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646259280
                     },
                     {
                         "Name":  "dm_mecano_final",
@@ -11840,7 +11875,11 @@
                         "ViewCount":  3800,
                         "LikeCount":  2,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1646258848
                     },
                     {
                         "Name":  "dm_killbox_extreme_hk",
@@ -12308,7 +12347,11 @@
                         "ViewCount":  5300,
                         "LikeCount":  5,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1646260121
                     },
                     {
                         "Name":  "dm_metalbox_beta1",
@@ -13737,7 +13780,10 @@
                         "ViewCount":  4300,
                         "LikeCount":  0,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "NumPlayers":  2,
+                        "InitialRatingTimestamp":  1646261502
                     },
                     {
                         "Name":  "DM_RESIDENT",
