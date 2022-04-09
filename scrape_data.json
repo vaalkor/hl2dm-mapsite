@@ -1935,7 +1935,12 @@
                         "ViewCount":  4700,
                         "LikeCount":  1,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "Incomplete"
+                                      ],
+                        "InitialRatingTimestamp":  1649540835
                     },
                     {
                         "Name":  "dm_frequency",
@@ -2347,7 +2352,11 @@
                         "ViewCount":  2400,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1649539761
                     },
                     {
                         "Name":  "dm_sniper_xlau_v1",
@@ -2900,7 +2909,9 @@
                         "ViewCount":  3300,
                         "LikeCount":  2,
                         "PostCount":  7,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "InitialRatingTimestamp":  1649536147
                     },
                     {
                         "Name":  "dm_concreteday1",
@@ -3133,7 +3144,9 @@
                         "ViewCount":  4100,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "InitialRatingTimestamp":  1649540657,
+                        "RobRating":  2
                     },
                     {
                         "Name":  "dm_batter_final_v1",
@@ -3404,7 +3417,12 @@
                         "ViewCount":  3600,
                         "LikeCount":  2,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1649540289
                     },
                     {
                         "Name":  "dm_ice_ship",
@@ -3489,7 +3507,9 @@
                         "ViewCount":  2100,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "InitialRatingTimestamp":  1649538033
                     },
                     {
                         "Name":  "dm_facility_beta",
@@ -5992,7 +6012,9 @@
                         "ViewCount":  1700,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1649539652
                     },
                     {
                         "Name":  "dm_deathrock",
@@ -6984,7 +7006,9 @@
                         "ViewCount":  2300,
                         "LikeCount":  0,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  1649541294
                     },
                     {
                         "Name":  "dm_killbox_sawblademod_remixed",
@@ -8599,7 +8623,11 @@
                         "ViewCount":  2200,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1649540673
                     },
                     {
                         "Name":  "dm_hmp",
@@ -9132,7 +9160,13 @@
                         "ViewCount":  1900,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "Meme"
+                                      ],
+                        "InitialRatingTimestamp":  1649537769
                     },
                     {
                         "Name":  "dm_breenhouse",
@@ -10572,7 +10606,11 @@
                         "ViewCount":  1700,
                         "LikeCount":  3,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1649536164
                     },
                     {
                         "Name":  "dm_necessity",
@@ -10917,7 +10955,12 @@
                         "ViewCount":  1200,
                         "LikeCount":  1,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1,
+                        "RobLabels":  [
+                                          "TooBig"
+                                      ],
+                        "InitialRatingTimestamp":  1649535823
                     },
                     {
                         "Name":  "dm_ccelerator_v3",
@@ -13630,7 +13673,12 @@
                         "ViewCount":  2800,
                         "LikeCount":  1,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1649537197
                     },
                     {
                         "Name":  "Dm_shoes",
@@ -13708,7 +13756,12 @@
                         "ViewCount":  2500,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Meme"
+                                      ],
+                        "InitialRatingTimestamp":  1649536959
                     },
                     {
                         "Name":  "dm_lunchbreak",
