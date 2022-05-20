@@ -2217,7 +2217,9 @@
                         "ViewCount":  4000,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1653082595
                     },
                     {
                         "Name":  "Dm_Breakable",
@@ -4294,7 +4296,11 @@
                         "ViewCount":  6500,
                         "LikeCount":  7,
                         "PostCount":  13,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1653079301
                     },
                     {
                         "Name":  "dm_killboxwatercompany_rem1",
@@ -6213,7 +6219,14 @@
                         "ViewCount":  1300,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "Incomplete",
+                                          "NoTripmines",
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1653079969
                     },
                     {
                         "Name":  "dm_riflemania_v1",
@@ -6918,7 +6931,14 @@
                         "ViewCount":  2100,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "NoTripmines",
+                                          "Meme",
+                                          "UniqueMechanic"
+                                      ],
+                        "InitialRatingTimestamp":  1653082256
                     },
                     {
                         "Name":  "DM_DARK_VENDETTA_V1",
@@ -7798,7 +7818,11 @@
                         "ViewCount":  24300,
                         "LikeCount":  30,
                         "PostCount":  40,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1653078306
                     },
                     {
                         "Name":  "pro_killbox",
@@ -7840,7 +7864,13 @@
                         "ViewCount":  2800,
                         "LikeCount":  1,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Meme",
+                                          "NoTripmines",
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1653078721
                     },
                     {
                         "Name":  "dm_mazeworks",
@@ -7917,7 +7947,13 @@
                         "ViewCount":  2100,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1653082786
                     },
                     {
                         "Name":  "academy_magnum",
@@ -8291,7 +8327,13 @@
                         "ViewCount":  846,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1653079541
                     },
                     {
                         "Name":  "dm_outlying_v2",
@@ -8425,7 +8467,14 @@
                         "ViewCount":  1900,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "NoTripmines",
+                                          "Indoors",
+                                          "VanillaStyle"
+                                      ],
+                        "InitialRatingTimestamp":  1653081001
                     },
                     {
                         "Name":  "dm_striker",
@@ -8481,7 +8530,12 @@
                         "ViewCount":  2600,
                         "LikeCount":  4,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1653079277
                     },
                     {
                         "Name":  "dm_doom2_m1",
@@ -9371,7 +9425,9 @@
                         "ViewCount":  1300,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "InitialRatingTimestamp":  1653083693
                     },
                     {
                         "Name":  "dm_gunshot",
@@ -10478,7 +10534,12 @@
                         "ViewCount":  2700,
                         "LikeCount":  1,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1653080587
                     },
                     {
                         "Name":  "lunatic_arena_v2",
@@ -11202,14 +11263,6 @@
                         "ViewCount":  2200,
                         "LikeCount":  3,
                         "PostCount":  6,
-                        "WasFeatured":  false
-                    },
-                    {
-                        "Name":  "dm_infiltrate",
-                        "Link":  "https://gamebanana.com/mods/62334",
-                        "ViewCount":  1900,
-                        "LikeCount":  2,
-                        "PostCount":  1,
                         "WasFeatured":  false
                     },
                     {
@@ -12482,7 +12535,11 @@
                         "ViewCount":  1600,
                         "LikeCount":  3,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1653080366
                     },
                     {
                         "Name":  "dm_boatrush_final",
@@ -12506,7 +12563,11 @@
                         "ViewCount":  2400,
                         "LikeCount":  5,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "MissingTextures"
+                                      ],
+                        "InitialRatingTimestamp":  1653077942
                     },
                     {
                         "Name":  "dm_elevatorfallout_v2",
@@ -12556,7 +12617,12 @@
                         "ViewCount":  2100,
                         "LikeCount":  3,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1653083340
                     },
                     {
                         "Name":  "dm_killbox_reflex_hk",
@@ -13360,7 +13426,9 @@
                         "ViewCount":  3900,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  1653077886
                     },
                     {
                         "Name":  "dm_nightclub_v1",
