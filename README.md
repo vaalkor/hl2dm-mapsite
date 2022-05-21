@@ -5,5 +5,7 @@ This repo contains our ratings for the map collection mostly scraped from [GameB
 
 View the site here: [https://hl2.arbitrarydata.co.uk/](https://hl2.arbitrarydata.co.uk/)
 
+A note on the ratings: Most of these ratings are given playing these maps with only 2 players. So there are some decent maps here that have low ratings just because they don't work very well with 2 players.
+
 ![image](https://i.imgur.com/eJRUOk9.png)
 
