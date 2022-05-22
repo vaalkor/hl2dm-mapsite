@@ -918,7 +918,8 @@
                         "RobRating":  3.5,
                         "RobLabels":  [
                                           "Indoors"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "Restructure",
@@ -978,7 +979,8 @@
                                           "Indoors",
                                           "Outdoors",
                                           "Small"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "dm_tinytunnel (city17 flooded underground tunnel)",
@@ -1573,7 +1575,8 @@
                         "RobRating":  2,
                         "RobLabels":  [
                                           "Medium"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1635721446"
                     },
                     {
                         "Name":  "dm_airraid_v3",
@@ -1843,7 +1846,8 @@
                                           "Medium",
                                           "Outdoors",
                                           "NoTripmines"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "Dm_Miniflatgrass",
@@ -2557,7 +2561,8 @@
                         "WasFeatured":  false,
                         "RobLabels":  [
                                           "CausesCrash"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "RoPlayers_BatttleHouse2",
@@ -2942,7 +2947,8 @@
                         "RobLabels":  [
                                           "Indoors",
                                           "Medium"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1635721446"
                     },
                     {
                         "Name":  "dm_biohazard_calmix2",
@@ -2986,7 +2992,8 @@
                                           "Indoors",
                                           "Meme",
                                           "NoTripmines"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "Dm_floating_lands",
@@ -3469,7 +3476,8 @@
                         "RobLabels":  [
                                           "Outdoors",
                                           "Medium"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1635721446"
                     },
                     {
                         "Name":  "dm_buggy_kn_3qFIX2",
@@ -3854,7 +3862,8 @@
                         "LikeCount":  3,
                         "PostCount":  4,
                         "WasFeatured":  false,
-                        "RobRating":  2.5
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  "1635721446"
                     },
                     {
                         "Name":  "dm_brick_instead_mini",
@@ -3948,7 +3957,8 @@
                         "RobLabels":  [
                                           "Indoors",
                                           "Medium"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1635721446"
                     },
                     {
                         "Name":  "DM DMS Runoff",
@@ -4077,7 +4087,8 @@
                         "LikeCount":  2,
                         "PostCount":  1,
                         "WasFeatured":  false,
-                        "RobRating":  2
+                        "RobRating":  2,
+                        "InitialRatingTimestamp":  "1633120561"
                     },
                     {
                         "Name":  "dm_sloped_v2",
@@ -4086,7 +4097,8 @@
                         "LikeCount":  2,
                         "PostCount":  10,
                         "WasFeatured":  false,
-                        "RobRating":  2.5
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "dm_killbox_centerx7",
@@ -4181,7 +4193,8 @@
                         "WasFeatured":  false,
                         "RobLabels":  [
                                           "NeverLoads"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1638576196"
                     },
                     {
                         "Name":  "dm_Antartic final 1 (v2.1)",
@@ -4288,7 +4301,8 @@
                                           "Outdoors",
                                           "Meme",
                                           "Large"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "dm_magic_ruin",
@@ -4791,7 +4805,8 @@
                                           "Indoors",
                                           "UniqueMechanic",
                                           "NoTripmines"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1638576196"
                     },
                     {
                         "Name":  "dm_rats",
@@ -5054,7 +5069,8 @@
                                           "Indoors",
                                           "NoTripmines"
                                       ],
-                        "RobRating":  2.5
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  "1638576196"
                     },
                     {
                         "Name":  "dm_season",
@@ -5263,7 +5279,8 @@
                         "WasFeatured":  false,
                         "RobLabels":  [
                                           "CausesCrash"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "dm_temple_v1",
@@ -5326,7 +5343,8 @@
                         "WasFeatured":  false,
                         "RobLabels":  [
                                           "CausesCrash"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "DM-Risk",
@@ -5459,7 +5477,8 @@
                         "RobRating":  3.5,
                         "RobLabels":  [
                                           "Indoors"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1635721446"
                     },
                     {
                         "Name":  "dm_bk_weedbox_final",
@@ -5616,7 +5635,8 @@
                         "RobLabels":  [
                                           "Outdoors",
                                           "Small"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1635721446"
                     },
                     {
                         "Name":  "dm_chickencoop_v2",
@@ -5723,7 +5743,8 @@
                                           "Outdoors",
                                           "Indoors"
                                       ],
-                        "RobRating":  2.5
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  "1638576196"
                     },
                     {
                         "Name":  "DM_Trainyard_Winter_Storm_V3",
@@ -5874,7 +5895,8 @@
                         "WasFeatured":  false,
                         "RobLabels":  [
                                           "CausesCrash"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1635721446"
                     },
                     {
                         "Name":  "dm_tigcrik_r2",
@@ -6469,7 +6491,8 @@
                         "WasFeatured":  false,
                         "RobLabels":  [
                                           "CausesCrash"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633120561"
                     },
                     {
                         "Name":  "dm_Poolcastle_v3",
@@ -6627,7 +6650,8 @@
                         "RobRating":  1.5,
                         "RobLabels":  [
                                           "Meme"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1638576196"
                     },
                     {
                         "Name":  "dm_bk_deathbox_b9",
@@ -6734,7 +6758,8 @@
                         "RobLabels":  [
                                           "Indoors",
                                           "MissingTextures"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1638576196"
                     },
                     {
                         "Name":  "dm_combine_arena_beta2",
@@ -6811,7 +6836,8 @@
                         "RobLabels":  [
                                           "Outdoors",
                                           "Small"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1638576196"
                     },
                     {
                         "Name":  "dm_fmr_box_arena_v2",
@@ -7427,7 +7453,8 @@
                         "LikeCount":  0,
                         "PostCount":  0,
                         "WasFeatured":  false,
-                        "RobRating":  2
+                        "RobRating":  2,
+                        "InitialRatingTimestamp":  "1633120561"
                     },
                     {
                         "Name":  "aim_exercises",
@@ -7490,7 +7517,8 @@
                         "WasFeatured":  false,
                         "RobLabels":  [
                                           "MissingTextures"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1635721446"
                     },
                     {
                         "Name":  "dm_chambers",
@@ -7521,7 +7549,8 @@
                                           "Remake",
                                           "NoTripmines"
                                       ],
-                        "RobRating":  3
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "dm_killbox_wood",
@@ -8152,7 +8181,8 @@
                         "LikeCount":  0,
                         "PostCount":  0,
                         "WasFeatured":  false,
-                        "RobRating":  2
+                        "RobRating":  2,
+                        "InitialRatingTimestamp":  "1633120561"
                     },
                     {
                         "Name":  "dm_trace",
@@ -8960,7 +8990,8 @@
                         "WasFeatured":  false,
                         "RobLabels":  [
                                           "CausesCrash"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1638576196"
                     },
                     {
                         "Name":  "dm_vdeth5_v5",
@@ -9261,7 +9292,8 @@
                         "LikeCount":  0,
                         "PostCount":  0,
                         "WasFeatured":  false,
-                        "RobRating":  1.5
+                        "RobRating":  1.5,
+                        "InitialRatingTimestamp":  "1633120561"
                     },
                     {
                         "Name":  "dm_anbu_stepdown",
@@ -9299,7 +9331,8 @@
                                           "Indoors",
                                           "Small",
                                           "VanillaStyle"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "dm_killhouse",
@@ -9324,7 +9357,8 @@
                         "LikeCount":  0,
                         "PostCount":  0,
                         "WasFeatured":  false,
-                        "RobRating":  3.5
+                        "RobRating":  3.5,
+                        "InitialRatingTimestamp":  "1633120561"
                     },
                     {
                         "Name":  "crossfire2",
@@ -9339,7 +9373,8 @@
                                           "Indoors",
                                           "Outdoors",
                                           "NoTripmines"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "boxingclever",
@@ -9404,7 +9439,8 @@
                         "RobLabels":  [
                                           "Outdoors",
                                           "Medium"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1635721446"
                     },
                     {
                         "Name":  "dm_insurgency",
@@ -9417,7 +9453,8 @@
                         "RobLabels":  [
                                           "VanillaStyle",
                                           "UniqueMechanic"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1638576196"
                     },
                     {
                         "Name":  "dm_infiltrate",
@@ -9532,7 +9569,8 @@
                         "LikeCount":  1,
                         "PostCount":  2,
                         "WasFeatured":  false,
-                        "RobRating":  3
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  "1638576196"
                     },
                     {
                         "Name":  "dm_raven",
@@ -9754,7 +9792,8 @@
                                           "Outdoors",
                                           "Meme",
                                           "Small"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "dm_sous_sols_b1",
@@ -9765,7 +9804,8 @@
                         "WasFeatured":  false,
                         "RobLabels":  [
                                           "NeverLoads"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "dm_canals_beta1",
@@ -9969,7 +10009,8 @@
                         "LikeCount":  5,
                         "PostCount":  11,
                         "WasFeatured":  false,
-                        "RobRating":  4.5
+                        "RobRating":  4.5,
+                        "InitialRatingTimestamp":  "1638576196"
                     },
                     {
                         "Name":  "dm_down_there",
@@ -10115,7 +10156,8 @@
                         "WasFeatured":  false,
                         "RobLabels":  [
                                           "NeverLoads"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "dm_lostplatform",
@@ -10168,7 +10210,8 @@
                         "LikeCount":  2,
                         "PostCount":  1,
                         "WasFeatured":  false,
-                        "RobRating":  3
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  "1633120561"
                     },
                     {
                         "Name":  "dm_killbox_hardcore_hk",
@@ -10470,7 +10513,8 @@
                         "LikeCount":  3,
                         "PostCount":  9,
                         "WasFeatured":  false,
-                        "RobRating":  3.5
+                        "RobRating":  3.5,
+                        "InitialRatingTimestamp":  "1635721446"
                     },
                     {
                         "Name":  "dm_kin",
@@ -10816,7 +10860,8 @@
                                           "Indoors",
                                           "Outdoors",
                                           "VanillaStyle"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1635721446"
                     },
                     {
                         "Name":  "dm_viocrow",
@@ -10847,7 +10892,8 @@
                         "WasFeatured":  false,
                         "RobLabels":  [
                                           "NeverLoads"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "dm_intense2",
@@ -10920,7 +10966,8 @@
                         "LikeCount":  3,
                         "PostCount":  1,
                         "WasFeatured":  false,
-                        "RobRating":  1.5
+                        "RobRating":  1.5,
+                        "InitialRatingTimestamp":  "1638576196"
                     },
                     {
                         "Name":  "dm_subculture",
@@ -11088,7 +11135,8 @@
                         "WasFeatured":  false,
                         "RobLabels":  [
                                           "NeverLoads"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1638576196"
                     },
                     {
                         "Name":  "dm_chaos",
@@ -11129,7 +11177,8 @@
                         "LikeCount":  2,
                         "PostCount":  1,
                         "WasFeatured":  false,
-                        "RobRating":  3
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  "1633120561"
                     },
                     {
                         "Name":  "dm_stinkfist",
@@ -11138,7 +11187,8 @@
                         "LikeCount":  4,
                         "PostCount":  1,
                         "WasFeatured":  false,
-                        "RobRating":  2.5
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  "1633120561"
                     },
                     {
                         "Name":  "dm_drift",
@@ -11732,7 +11782,8 @@
                         "RobLabels":  [
                                           "Outdoors",
                                           "Medium"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1638576196"
                     },
                     {
                         "Name":  "dm_stalkyard",
@@ -12008,7 +12059,8 @@
                         "LikeCount":  25,
                         "PostCount":  12,
                         "WasFeatured":  false,
-                        "RobRating":  4
+                        "RobRating":  4,
+                        "InitialRatingTimestamp":  "1633120561"
                     },
                     {
                         "Name":  "dm_altepa",
@@ -12137,7 +12189,8 @@
                         "LikeCount":  1,
                         "PostCount":  0,
                         "WasFeatured":  false,
-                        "RobRating":  1
+                        "RobRating":  1,
+                        "InitialRatingTimestamp":  "1633120561"
                     },
                     {
                         "Name":  "dm_tropic_stunt",
@@ -12235,7 +12288,8 @@
                         "RobLabels":  [
                                           "Meme",
                                           "Large"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1638576196"
                     },
                     {
                         "Name":  "dm_first_blood",
@@ -12289,7 +12343,8 @@
                                           "Outdoors",
                                           "Indoors"
                                       ],
-                        "RobRating":  2.5
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "dm_manila",
@@ -12826,7 +12881,8 @@
                         "WasFeatured":  false,
                         "RobLabels":  [
                                           "CausesCrash"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1638576196"
                     },
                     {
                         "Name":  "dm_killbox_borg_cube_x",
@@ -12839,7 +12895,8 @@
                         "RobLabels":  [
                                           "Indoors",
                                           "Meme"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "dm_killbox_hard_looney_toons",
@@ -12891,7 +12948,8 @@
                         "RobRating":  3.5,
                         "RobLabels":  [
                                           "Outdoors"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1635721446"
                     },
                     {
                         "Name":  "dm_downtown",
@@ -13650,7 +13708,8 @@
                         "RobLabels":  [
                                           "Outdoors",
                                           "NoTripmines"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1635721446"
                     },
                     {
                         "Name":  "dm_groupfour",
@@ -13800,7 +13859,8 @@
                                           "Large",
                                           "Meme",
                                           "Outdoors"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "dm_brickhouse",
@@ -13944,7 +14004,8 @@
                                           "NoTripmines",
                                           "Outdoors",
                                           "Small"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633129825"
                     },
                     {
                         "Name":  "dm_motel",
@@ -14312,7 +14373,8 @@
                         "RobRating":  5,
                         "RobLabels":  [
                                           "Outdoors"
-                                      ]
+                                      ],
+                        "InitialRatingTimestamp":  "1633120561"
                     }
                 ]
 }
