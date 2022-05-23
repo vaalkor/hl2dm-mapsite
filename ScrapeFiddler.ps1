@@ -58,6 +58,21 @@ function GetMapWithURL($url){
     return $filtered
 }
 
+function GenerateGraphData(){
+    $timestamps = $json.MapInfo | ?{$_.InitialRatingTimestamp} | %{$_.InitialRatingTimestamp} | Sort-Object | Get-Unique
+    $timestampCounts = @{}
+    $timestamps | %{$timestampCounts[$_] = 0}
+    $json.MapInfo | ?{$_.InitialRatingTimestamp} | %{$_.InitialRatingTimestamp} | %{$timestampCounts[$_]+=1}
+
+    $total = 0
+    $graphData = @()
+    $timestamps | %{
+        $graphData += ,($_, ($timestampCounts[$_]+$total))
+        $total+=$timestampCounts[$_]
+    }
+    $json | Add-Member -MemberType NoteProperty -Name 'MapRatingGraphData' -Value $graphData -Force
+}
+
 "Total maps in file: $($json.MapInfo | measure | select -ExpandProperty count)"
 
 if($GetRandomMap -or $ListMaps -or $CountMaps){
@@ -135,6 +150,8 @@ if($UpdateInfo){
 
     "Updated map info:"
     $updateInfoMap
+    
+    GenerateGraphData
 
     "Writing updated data to $ScrapeDataFile"
 
