@@ -20,6 +20,8 @@ var _labelColourMap = {
 var _foundLabels = [];
 var _includeLabels = [];
 var _excludeLabels = [];
+var _dayPrettyPrint = {0: 'Sun', 1: 'Mon', 2: 'Tue', 3: 'Wed', 4: 'Thu', 5: 'Fri', 6: 'Sat'}
+var _monthPrettyPrint = {0: 'Jan', 1: 'Feb', 2: 'Mar', 3: 'Apr', 4: 'May', 5: 'Jun', 6: 'Jul', 7: 'Aug', 8: 'Sep', 9: 'Oct', 10: 'Nov', 11: 'Dec'}
 
 var $   = (query) => document.querySelector(query);
 var $$  = (query) => document.querySelectorAll(query);
@@ -110,8 +112,7 @@ function getRandomMap(e) {
 function makeRow(map) {
     return m('tr', [
         m("th", { "scope": "row" }, m("a", { "class": "link-secondary", "href": map.Link }, map.Name)),
-        m("td", map.ViewCount),
-        m("td", map.LikeCount),
+        m("td", formatDate(new Date(map.InitialRatingTimestamp*1000))),
         m("td", map.RobRating == null ? "Unrated" : map.RobRating),
         m("td", getLabels(map))
     ]);
@@ -135,8 +136,7 @@ var Table = {
                 m("thead",
                     m("tr", [
                         m("th", { "scope": "col" }, "Name"),
-                        m("th", { "scope": "col" }, "Views"),
-                        m("th", { "scope": "col" }, "Likes"),
+                        m("th", { "scope": "col" }, "First Rated"),
                         m("th", { "scope": "col" }, "Rating"),
                         m("th", { "scope": "col" }, "Labels")
                     ]
@@ -163,6 +163,11 @@ function findAllLabels(data){
         x.RobLabels.forEach(label => {if(!_foundLabels.includes(label)) _foundLabels.push(label)});
     });
     console.log(_foundLabels);
+}
+
+function formatDate(date)
+{
+    return `${_dayPrettyPrint[date.getDay()]} ${date.getDate()} ${_monthPrettyPrint[date.getMonth()]}, ${date.getYear()-100}`
 }
 
 async function initialise() {
