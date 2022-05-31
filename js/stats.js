@@ -12,11 +12,14 @@ function drawCharts()
 }
 
 function drawRatingProgress() {
-    var data = google.visualization.arrayToDataTable(
-        [["Date", "Total Rated"]].concat(
-            _scrapeData.MapRatingGraphData.map((x) => [new Date(x[0] * 1000), x[1]])
-        )
+    let graphData = 
+    [["Date", "Total Rated"]].concat(
+        _scrapeData.MapRatingGraphData.map((x) => [new Date(x[0] * 1000), x[1]])
     );
+    let lastDataPoint = _scrapeData.MapRatingGraphData[_scrapeData.MapRatingGraphData.length-1];
+    // push a datapoint with the current date to get a flat line at the end.
+    graphData.push([new Date(), lastDataPoint[1]]);
+    var data = google.visualization.arrayToDataTable(graphData);
 
     var options = {
         title: "Map rating progress over time",

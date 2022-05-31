@@ -187,7 +187,7 @@ function formatDate(date)
     return `${_dayPrettyPrint[date.getDay()]} ${date.getDate()} ${_monthPrettyPrint[date.getMonth()]}, ${date.getYear()-100}`
 }
 
-async function initialise() {
+async function initialise(){
     $('#ratingSlider').addEventListener("input", redraw);
 
     ['#sortAscending', '#sortDescending', '#sortBy', '#nameFilter'].forEach(x => $(x).addEventListener("input", () => redraw()));
