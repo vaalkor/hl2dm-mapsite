@@ -1,6 +1,6 @@
 'use strict';
 
-var _scrapeData = [];
+var _scrapeData = {MapInfo: [], MapRatingGraphData: []};
 var _filteredMaps = [];
 var _foundLabels = {};
 var _sortOrder = -1;
@@ -63,10 +63,10 @@ function mapFilter(map, nameFilter, minRating) {
 function filterMaps() {
     _sortOrder = $('#sortAscending').checked ? -1 : 1;
     _sortBy = $('#sortBy').value;
-    _scrapeData.sort(sort);
+    _scrapeData.MapInfo.sort(sort);
     let nameFilter = $('#nameFilter').value;
     let minRating = $('#ratingSlider').value;
-    _filteredMaps = _scrapeData.filter(x => mapFilter(x, nameFilter, minRating));
+    _filteredMaps = _scrapeData.MapInfo.filter(x => mapFilter(x, nameFilter, minRating));
 }
 
 function getLabels(map) {
@@ -147,6 +147,23 @@ var Table = {
     }
 }
 
+function DrawRatingGraph(graphElement)
+{
+    var data = google.visualization.arrayToDataTable(
+        [['Date', 'Total Rated']].concat(_scrapeData.MapRatingGraphData.map(x => [new Date(x[0]*1000), x[1]]))
+    );
+
+    var options = {
+    title: 'Map rating progress over time',
+    curveType: 'function',
+    legend: { position: 'bottom' }
+    };
+
+    var chart = new google.visualization.LineChart(graphElement);
+
+    chart.draw(data, options);
+}
+
 var DynamicContent = {
     view: function(){
         let pieces = [];
@@ -180,9 +197,9 @@ async function initialise() {
 
     m.mount($('#dynamic-content'), DynamicContent);
 
-    _scrapeData = (await m.request({ method: 'GET', url: 'scrape_data.json' })).MapInfo;
+    _scrapeData = (await m.request({ method: 'GET', url: 'scrape_data.json' }));
 
-    findAllLabels(_scrapeData);
+    findAllLabels(_scrapeData.MapInfo);
 
     getAndSetElemValues('#sortBy', '#nameFilter', '#ratingSlider');
     redraw();

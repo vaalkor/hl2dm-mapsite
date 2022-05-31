@@ -41,6 +41,12 @@ thead{
     border-radius: 2em;
 }
 
+.graph{
+    width: 100%;
+    height: 500px;
+}
+
+
 .ib{
     display: inline-block;
 }
