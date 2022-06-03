@@ -2265,7 +2265,13 @@
                         "ViewCount":  5400,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "VanillaStyle"
+                                      ],
+                        "InitialRatingTimestamp":  1654195245
                     },
                     {
                         "Name":  "dm_lone",
@@ -3721,7 +3727,13 @@
                         "ViewCount":  2300,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "Remake",
+                                          "Quake"
+                                      ],
+                        "InitialRatingTimestamp":  1654195326
                     },
                     {
                         "Name":  "Dm_FalloutMotel",
@@ -5569,7 +5581,9 @@
                         "ViewCount":  1400,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  1654212480
                     },
                     {
                         "Name":  "dm_rpg_madness",
@@ -6244,7 +6258,9 @@
                         "ViewCount":  1900,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "InitialRatingTimestamp":  1654212162
                     },
                     {
                         "Name":  "dm_elea_fortress_v2",
@@ -7676,7 +7692,12 @@
                         "ViewCount":  2300,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1654196042
                     },
                     {
                         "Name":  "dmt1_styx",
@@ -8451,7 +8472,9 @@
                         "ViewCount":  1800,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1654205174
                     },
                     {
                         "Name":  "dm_warehouse_night_beta",
@@ -8582,7 +8605,9 @@
                         "ViewCount":  6900,
                         "LikeCount":  12,
                         "PostCount":  22,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  1654201630
                     },
                     {
                         "Name":  "dm_dead_end2",
@@ -9770,7 +9795,12 @@
                         "ViewCount":  3600,
                         "LikeCount":  2,
                         "PostCount":  5,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1654199287
                     },
                     {
                         "Name":  "dm_firstmap",
@@ -11639,7 +11669,9 @@
                         "ViewCount":  1800,
                         "LikeCount":  5,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  1654201154
                     },
                     {
                         "Name":  "dm_bedlam",
@@ -12051,7 +12083,12 @@
                         "ViewCount":  1700,
                         "LikeCount":  3,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1654199719
                     },
                     {
                         "Name":  "dm_p@nics_gangwarfare",
@@ -12815,7 +12852,9 @@
                         "ViewCount":  2600,
                         "LikeCount":  2,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "InitialRatingTimestamp":  1654202770
                     },
                     {
                         "Name":  "dm_apocalyptica",
@@ -13339,7 +13378,12 @@
                         "ViewCount":  2500,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1654198389
                     },
                     {
                         "Name":  "dm_battlecreek_no1",
@@ -13828,7 +13872,11 @@
                         "ViewCount":  6500,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1654199742
                     },
                     {
                         "Name":  "DM_SCIFI",
@@ -14013,7 +14061,12 @@
                         "ViewCount":  2900,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1654198905
                     },
                     {
                         "Name":  "DM_Facility",
@@ -14253,7 +14306,11 @@
                         "ViewCount":  6900,
                         "LikeCount":  0,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1654202810
                     },
                     {
                         "Name":  "dm_gasworksinc_beta1",
@@ -14261,7 +14318,12 @@
                         "ViewCount":  2000,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "InitialRatingTimestamp":  1654203414,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ]
                     },
                     {
                         "Name":  "dm_underpass_b4",
@@ -15046,6 +15108,70 @@
                                [
                                    1653856699,
                                    220
+                               ],
+                               [
+                                   1654195245,
+                                   221
+                               ],
+                               [
+                                   1654195326,
+                                   222
+                               ],
+                               [
+                                   1654196042,
+                                   223
+                               ],
+                               [
+                                   1654198389,
+                                   224
+                               ],
+                               [
+                                   1654198905,
+                                   225
+                               ],
+                               [
+                                   1654199287,
+                                   226
+                               ],
+                               [
+                                   1654199719,
+                                   227
+                               ],
+                               [
+                                   1654199742,
+                                   228
+                               ],
+                               [
+                                   1654201154,
+                                   229
+                               ],
+                               [
+                                   1654201630,
+                                   230
+                               ],
+                               [
+                                   1654202770,
+                                   231
+                               ],
+                               [
+                                   1654202810,
+                                   232
+                               ],
+                               [
+                                   1654203414,
+                                   233
+                               ],
+                               [
+                                   1654205174,
+                                   234
+                               ],
+                               [
+                                   1654212162,
+                                   235
+                               ],
+                               [
+                                   1654212480,
+                                   236
                                ]
                            ]
 }
