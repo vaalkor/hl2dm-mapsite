@@ -759,7 +759,12 @@
                         "ViewCount":  1100,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1654440734
                     },
                     {
                         "Name":  "dmr1_istoria_v1c",
@@ -1808,7 +1813,11 @@
                         "ViewCount":  2600,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1654442662
                     },
                     {
                         "Name":  "dm_minecraft_city",
@@ -3255,7 +3264,12 @@
                         "ViewCount":  3400,
                         "LikeCount":  2,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4.5,
+                        "RobLabels":  [
+                                          "Duel"
+                                      ],
+                        "InitialRatingTimestamp":  1654439249
                     },
                     {
                         "Name":  "Dm_Hangar17",
@@ -4394,7 +4408,11 @@
                         "ViewCount":  3400,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1654437689
                     },
                     {
                         "Name":  "killbox_diablo",
@@ -4906,7 +4924,13 @@
                         "ViewCount":  3300,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "Remake",
+                                          "Quake"
+                                      ],
+                        "InitialRatingTimestamp":  1654439492
                     },
                     {
                         "Name":  "dm_orange_sky",
@@ -5089,7 +5113,9 @@
                         "ViewCount":  1600,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1654444011
                     },
                     {
                         "Name":  "dm_SSorg",
@@ -6306,7 +6332,9 @@
                         "ViewCount":  1500,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "InitialRatingTimestamp":  1654445431
                     },
                     {
                         "Name":  "dm_c17d14",
@@ -8563,7 +8591,12 @@
                         "ViewCount":  2500,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1654442645
                     },
                     {
                         "Name":  "dread",
@@ -8628,7 +8661,12 @@
                         "ViewCount":  4000,
                         "LikeCount":  3,
                         "PostCount":  6,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1654439914
                     },
                     {
                         "Name":  "dm_just_bring_it",
@@ -9007,7 +9045,11 @@
                         "ViewCount":  1800,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1654444046
                     },
                     {
                         "Name":  "dm_glassbox",
@@ -10688,7 +10730,11 @@
                         "ViewCount":  1700,
                         "LikeCount":  2,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1654443085
                     },
                     {
                         "Name":  "dm_defenestrate",
@@ -13478,7 +13524,9 @@
                         "ViewCount":  2400,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "InitialRatingTimestamp":  1654446291
                     },
                     {
                         "Name":  "dm_battlefield",
@@ -14317,7 +14365,9 @@
                         "ViewCount":  5800,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1654445992
                     },
                     {
                         "Name":  "spas12_city14",
@@ -15251,6 +15301,58 @@
                                [
                                    1654433218,
                                    247
+                               ],
+                               [
+                                   1654437689,
+                                   248
+                               ],
+                               [
+                                   1654439249,
+                                   249
+                               ],
+                               [
+                                   1654439492,
+                                   250
+                               ],
+                               [
+                                   1654439914,
+                                   251
+                               ],
+                               [
+                                   1654440734,
+                                   252
+                               ],
+                               [
+                                   1654442645,
+                                   253
+                               ],
+                               [
+                                   1654442662,
+                                   254
+                               ],
+                               [
+                                   1654443085,
+                                   255
+                               ],
+                               [
+                                   1654444011,
+                                   256
+                               ],
+                               [
+                                   1654444046,
+                                   257
+                               ],
+                               [
+                                   1654445431,
+                                   258
+                               ],
+                               [
+                                   1654445992,
+                                   259
+                               ],
+                               [
+                                   1654446291,
+                                   260
                                ]
                            ]
 }
