@@ -41,7 +41,6 @@ function drawRatingProgress() {
 }
 
 function computeGraphData(){
-    debugger;
     let total = 0;
     for (let map of _scrapeData.MapInfo.filter(x => x.InitialRatingTimestamp)){
         total++;
