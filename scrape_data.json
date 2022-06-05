@@ -5894,7 +5894,11 @@
                         "ViewCount":  1000,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1654462340
                     },
                     {
                         "Name":  "dm_killbox_madness_v1",
@@ -6674,7 +6678,13 @@
                         "ViewCount":  2300,
                         "LikeCount":  2,
                         "PostCount":  5,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines",
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1654463243
                     },
                     {
                         "Name":  "dm_[tsf]_war_room_rc3",
@@ -10000,7 +10010,12 @@
                         "ViewCount":  2500,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1654462321
                     },
                     {
                         "Name":  "dm_loneworld_rc3",
@@ -11076,7 +11091,9 @@
                         "ViewCount":  1600,
                         "LikeCount":  3,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  1654464349
                     },
                     {
                         "Name":  "dm_waterwerx_final",
@@ -11110,7 +11127,12 @@
                         "ViewCount":  1300,
                         "LikeCount":  2,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1654463874
                     },
                     {
                         "Name":  "dm_cabin_b1",
@@ -15353,6 +15375,26 @@
                                [
                                    1654446291,
                                    260
+                               ],
+                               [
+                                   1654462321,
+                                   261
+                               ],
+                               [
+                                   1654462340,
+                                   262
+                               ],
+                               [
+                                   1654463243,
+                                   263
+                               ],
+                               [
+                                   1654463874,
+                                   264
+                               ],
+                               [
+                                   1654464349,
+                                   265
                                ]
                            ]
 }
