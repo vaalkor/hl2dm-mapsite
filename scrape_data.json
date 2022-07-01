@@ -3913,7 +3913,14 @@
                         "ViewCount":  2700,
                         "LikeCount":  0,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "Outdoors",
+                                          "NoTripmines",
+                                          "Incomplete"
+                                      ],
+                        "InitialRatingTimestamp":  1656710251
                     },
                     {
                         "Name":  "hl2dm_wintersedge",
@@ -6448,7 +6455,11 @@
                         "ViewCount":  4000,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1656710791
                     },
                     {
                         "Name":  "dm_bellas_room_redecorated",
@@ -9780,7 +9791,13 @@
                         "ViewCount":  62700,
                         "LikeCount":  16,
                         "PostCount":  26,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Remake",
+                                          "HL1"
+                                      ],
+                        "InitialRatingTimestamp":  1656713813
                     },
                     {
                         "Name":  "dm_smashbox_v1",
@@ -10575,7 +10592,12 @@
                         "ViewCount":  3000,
                         "LikeCount":  5,
                         "PostCount":  8,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1656713441
                     },
                     {
                         "Name":  "dm_concept",
@@ -10831,7 +10853,12 @@
                         "ViewCount":  3500,
                         "LikeCount":  8,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1656712809
                     },
                     {
                         "Name":  "dm_killbox_nova_prospekt",
@@ -11546,7 +11573,13 @@
                         "ViewCount":  1100,
                         "LikeCount":  2,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1656709918
                     },
                     {
                         "Name":  "dm_spam01",
@@ -12381,7 +12414,12 @@
                         "ViewCount":  19600,
                         "LikeCount":  23,
                         "PostCount":  13,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1656710773
                     },
                     {
                         "Name":  "dm_mine_enhanced",
@@ -13451,7 +13489,13 @@
                         "ViewCount":  4800,
                         "LikeCount":  2,
                         "PostCount":  8,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1656712137
                     },
                     {
                         "Name":  "bomberfun_rm",
@@ -15410,6 +15454,38 @@
                                [
                                    1654465561,
                                    267
+                               ],
+                               [
+                                   1656709918,
+                                   268
+                               ],
+                               [
+                                   1656710251,
+                                   269
+                               ],
+                               [
+                                   1656710773,
+                                   270
+                               ],
+                               [
+                                   1656710791,
+                                   271
+                               ],
+                               [
+                                   1656712137,
+                                   272
+                               ],
+                               [
+                                   1656712809,
+                                   273
+                               ],
+                               [
+                                   1656713441,
+                                   274
+                               ],
+                               [
+                                   1656713813,
+                                   275
                                ]
                            ]
 }
