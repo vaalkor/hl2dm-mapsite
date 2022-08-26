@@ -1977,7 +1977,9 @@
                         "ViewCount":  3100,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "InitialRatingTimestamp":  1661550473
                     },
                     {
                         "Name":  "dm_cottage_beta3",
@@ -2365,7 +2367,11 @@
                         "ViewCount":  2400,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1661543908
                     },
                     {
                         "Name":  "RoPlayers_Explosion_V2",
@@ -2654,7 +2660,12 @@
                         "ViewCount":  3700,
                         "LikeCount":  4,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1661547887
                     },
                     {
                         "Name":  "dm_pet_vet_map_v1",
@@ -3465,7 +3476,12 @@
                         "ViewCount":  2900,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1661548348
                     },
                     {
                         "Name":  "dm_entrepot",
@@ -4399,7 +4415,11 @@
                         "ViewCount":  2100,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1661549969
                     },
                     {
                         "Name":  "Dm_flambo_2",
@@ -4599,7 +4619,11 @@
                         "ViewCount":  2400,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1661543583
                     },
                     {
                         "Name":  "Dm_Kunosbad_v2",
@@ -6501,7 +6525,12 @@
                         "ViewCount":  1500,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1661546643
                     },
                     {
                         "Name":  "mg_mirror_final",
@@ -6651,7 +6680,12 @@
                         "ViewCount":  1700,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1661548838
                     },
                     {
                         "Name":  "dm_doh_box",
@@ -7245,7 +7279,9 @@
                         "ViewCount":  2500,
                         "LikeCount":  1,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "InitialRatingTimestamp":  1661549912
                     },
                     {
                         "Name":  "cok_lockdown_8",
@@ -7472,7 +7508,9 @@
                         "ViewCount":  2100,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "InitialRatingTimestamp":  1661543860
                     },
                     {
                         "Name":  "dmt1_instigation",
@@ -11643,7 +11681,12 @@
                         "ViewCount":  1300,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1661544142
                     },
                     {
                         "Name":  "dm_fool_day",
@@ -12002,7 +12045,12 @@
                         "ViewCount":  1900,
                         "LikeCount":  5,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1661545237
                     },
                     {
                         "Name":  "dm_hydro_b2",
@@ -12026,7 +12074,12 @@
                         "ViewCount":  1800,
                         "LikeCount":  3,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1661545557
                     },
                     {
                         "Name":  "dm_jbgtown",
@@ -12076,7 +12129,12 @@
                         "ViewCount":  4100,
                         "LikeCount":  6,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "UniqueMechanic"
+                                      ],
+                        "InitialRatingTimestamp":  1661547241
                     },
                     {
                         "Name":  "dm_vertiginous",
@@ -12284,7 +12342,9 @@
                         "ViewCount":  2000,
                         "LikeCount":  4,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "InitialRatingTimestamp":  1661549190,
+                        "RobRating":  3.5
                     },
                     {
                         "Name":  "dm_oldprison",
@@ -15486,6 +15546,66 @@
                                [
                                    1656713813,
                                    275
+                               ],
+                               [
+                                   1661543583,
+                                   276
+                               ],
+                               [
+                                   1661543860,
+                                   277
+                               ],
+                               [
+                                   1661543908,
+                                   278
+                               ],
+                               [
+                                   1661544142,
+                                   279
+                               ],
+                               [
+                                   1661545237,
+                                   280
+                               ],
+                               [
+                                   1661545557,
+                                   281
+                               ],
+                               [
+                                   1661546643,
+                                   282
+                               ],
+                               [
+                                   1661547241,
+                                   283
+                               ],
+                               [
+                                   1661547887,
+                                   284
+                               ],
+                               [
+                                   1661548348,
+                                   285
+                               ],
+                               [
+                                   1661548838,
+                                   286
+                               ],
+                               [
+                                   1661549190,
+                                   287
+                               ],
+                               [
+                                   1661549912,
+                                   288
+                               ],
+                               [
+                                   1661549969,
+                                   289
+                               ],
+                               [
+                                   1661550473,
+                                   290
                                ]
                            ]
 }
