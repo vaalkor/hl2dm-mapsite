@@ -20,7 +20,8 @@
 [switch]$CountMaps,
 [switch]$NoRating,
 [switch]$NoDescription,
-[switch]$NoLabels
+[switch]$NoLabels,
+[switch]$MapNameFromClip
 )
 
 $file = Get-Item $ScrapeDataFile
@@ -39,6 +40,9 @@ if(-not ($UpdateInfo -or $GetInfo -or $GetRandomMap -or $ListMaps -or $CountMaps
     "No action specified. Qutting..."
     exit 1
 }
+
+
+if($MapNameFromClip){ $MapName = Get-Clipboard}
 
 function GetUnixTime(){
     return [int64](([datetime]::UtcNow)-(get-date "1/1/1970")).TotalSeconds
