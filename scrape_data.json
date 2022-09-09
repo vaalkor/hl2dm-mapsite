@@ -3139,7 +3139,9 @@
                         "ViewCount":  3400,
                         "LikeCount":  2,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "InitialRatingTimestamp":  1662761151
                     },
                     {
                         "Name":  "Dm_termino",
@@ -4117,7 +4119,12 @@
                         "ViewCount":  1300,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1662762672
                     },
                     {
                         "Name":  "dm_bk_lambdabox_rc1",
@@ -11156,7 +11163,12 @@
                         "ViewCount":  1700,
                         "LikeCount":  2,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1,
+                        "RobLabels":  [
+                                          "TooBig"
+                                      ],
+                        "InitialRatingTimestamp":  1662762091
                     },
                     {
                         "Name":  "dm_saturated",
@@ -13891,7 +13903,12 @@
                         "ViewCount":  5300,
                         "LikeCount":  2,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1662763366
                     },
                     {
                         "Name":  "dm_bouncer",
@@ -14691,7 +14708,12 @@
                         "ViewCount":  4900,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1,
+                        "RobLabels":  [
+                                          "TooBig"
+                                      ],
+                        "InitialRatingTimestamp":  1662762508
                     },
                     {
                         "Name":  "dm_swamp",
@@ -15710,6 +15732,26 @@
                                [
                                    1662760253,
                                    302
+                               ],
+                               [
+                                   1662761151,
+                                   303
+                               ],
+                               [
+                                   1662762091,
+                                   304
+                               ],
+                               [
+                                   1662762508,
+                                   305
+                               ],
+                               [
+                                   1662762672,
+                                   306
+                               ],
+                               [
+                                   1662763366,
+                                   307
                                ]
                            ]
 }
