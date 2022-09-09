@@ -691,7 +691,11 @@
                         "ViewCount":  839,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1662757509
                     },
                     {
                         "Name":  "dm_spacebunkers_gwp2",
@@ -1041,7 +1045,11 @@
                         "ViewCount":  2800,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1662757537
                     },
                     {
                         "Name":  "DM_Lily_Undertow",
@@ -3676,7 +3684,13 @@
                         "ViewCount":  2900,
                         "LikeCount":  2,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Outdoors",
+                                          "Meme"
+                                      ],
+                        "InitialRatingTimestamp":  1662758872
                     },
                     {
                         "Name":  "Dm_Winter_Meat_2012 (Original non-fix map)",
@@ -6071,7 +6085,13 @@
                         "ViewCount":  1500,
                         "LikeCount":  2,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1662757486
                     },
                     {
                         "Name":  "dm_killbox_kbh2_remixed",
@@ -7418,7 +7438,13 @@
                         "ViewCount":  2600,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "UniqueMechanic",
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1662757885
                     },
                     {
                         "Name":  "dm_[tsf]_killbox_combine",
@@ -10120,7 +10146,12 @@
                         "ViewCount":  2800,
                         "LikeCount":  1,
                         "PostCount":  8,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1662759634
                     },
                     {
                         "Name":  "dm_shark_@rena",
@@ -10669,7 +10700,9 @@
                         "ViewCount":  3300,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "InitialRatingTimestamp":  1662760253
                     },
                     {
                         "Name":  "shipyard",
@@ -11276,7 +11309,15 @@
                         "ViewCount":  1300,
                         "LikeCount":  1,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "Outdoors",
+                                          "UniqueMechanic",
+                                          "NoTripmines",
+                                          "Meme"
+                                      ],
+                        "InitialRatingTimestamp":  1662756911,
+                        "RobRating":  4
                     },
                     {
                         "Name":  "dm_citadel_freeway_v1",
@@ -13643,7 +13684,11 @@
                         "ViewCount":  2000,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1662758895
                     },
                     {
                         "Name":  "crossfire remake",
@@ -14473,7 +14518,11 @@
                         "ViewCount":  3400,
                         "LikeCount":  1,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1662759657
                     },
                     {
                         "Name":  "dm_bathroom",
@@ -15621,6 +15670,46 @@
                                [
                                    1661551106,
                                    292
+                               ],
+                               [
+                                   1662756911,
+                                   293
+                               ],
+                               [
+                                   1662757486,
+                                   294
+                               ],
+                               [
+                                   1662757509,
+                                   295
+                               ],
+                               [
+                                   1662757537,
+                                   296
+                               ],
+                               [
+                                   1662757885,
+                                   297
+                               ],
+                               [
+                                   1662758872,
+                                   298
+                               ],
+                               [
+                                   1662758895,
+                                   299
+                               ],
+                               [
+                                   1662759634,
+                                   300
+                               ],
+                               [
+                                   1662759657,
+                                   301
+                               ],
+                               [
+                                   1662760253,
+                                   302
                                ]
                            ]
 }
