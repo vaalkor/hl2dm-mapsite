@@ -3422,7 +3422,12 @@
                         "ViewCount":  5700,
                         "LikeCount":  1,
                         "PostCount":  6,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1662844078
                     },
                     {
                         "Name":  "dm_homage_ld_beta",
@@ -6284,7 +6289,11 @@
                         "ViewCount":  2400,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1662842688
                     },
                     {
                         "Name":  "dm_factory_v1",
@@ -6312,7 +6321,12 @@
                         "ViewCount":  2900,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1662841432
                     },
                     {
                         "Name":  "dm_sunken A1",
@@ -6829,7 +6843,11 @@
                         "ViewCount":  1200,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1662844103
                     },
                     {
                         "Name":  "XGEN OrangeBoxV3",
@@ -8002,7 +8020,12 @@
                         "ViewCount":  1400,
                         "LikeCount":  0,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1662840836
                     },
                     {
                         "Name":  "dm_duel_beta",
@@ -8898,7 +8921,13 @@
                         "ViewCount":  1800,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1662843186
                     },
                     {
                         "Name":  "dm_hydrodeth_b2",
@@ -8906,7 +8935,12 @@
                         "ViewCount":  4400,
                         "LikeCount":  10,
                         "PostCount":  13,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1662843886
                     },
                     {
                         "Name":  "owi_tunociudad",
@@ -10315,7 +10349,9 @@
                         "ViewCount":  4800,
                         "LikeCount":  7,
                         "PostCount":  14,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "InitialRatingTimestamp":  1662846362
                     },
                     {
                         "Name":  "dm_waterwerx_revised",
@@ -13569,7 +13605,9 @@
                         "ViewCount":  6300,
                         "LikeCount":  3,
                         "PostCount":  7,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "InitialRatingTimestamp":  1662842658
                     },
                     {
                         "Name":  "dm_scepter",
@@ -13697,7 +13735,11 @@
                         "ViewCount":  3200,
                         "LikeCount":  1,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1662842678
                     },
                     {
                         "Name":  "dm_haunted_carnival_v1",
@@ -14080,7 +14122,9 @@
                         "ViewCount":  3300,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1662844924
                     },
                     {
                         "Name":  "dm_c17",
@@ -15842,6 +15886,50 @@
                                [
                                    1662814347,
                                    319
+                               ],
+                               [
+                                   1662840836,
+                                   320
+                               ],
+                               [
+                                   1662841432,
+                                   321
+                               ],
+                               [
+                                   1662842658,
+                                   322
+                               ],
+                               [
+                                   1662842678,
+                                   323
+                               ],
+                               [
+                                   1662842688,
+                                   324
+                               ],
+                               [
+                                   1662843186,
+                                   325
+                               ],
+                               [
+                                   1662843886,
+                                   326
+                               ],
+                               [
+                                   1662844078,
+                                   327
+                               ],
+                               [
+                                   1662844103,
+                                   328
+                               ],
+                               [
+                                   1662844924,
+                                   329
+                               ],
+                               [
+                                   1662846362,
+                                   330
                                ]
                            ]
 }
