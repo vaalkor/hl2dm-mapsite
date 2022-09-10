@@ -675,7 +675,12 @@
                         "ViewCount":  1500,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1662813405
                     },
                     {
                         "Name":  "dm_office_construct",
@@ -854,7 +859,9 @@
                         "ViewCount":  1400,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1,
+                        "InitialRatingTimestamp":  1662812657
                     },
                     {
                         "Name":  "Isles",
@@ -1719,7 +1726,9 @@
                         "ViewCount":  4200,
                         "LikeCount":  2,
                         "PostCount":  6,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1662810018
                     },
                     {
                         "Name":  "de_dust_go for HL2DM",
@@ -2107,7 +2116,13 @@
                         "ViewCount":  4600,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "Outdoors",
+                                          "TooBig"
+                                      ],
+                        "InitialRatingTimestamp":  1662813656
                     },
                     {
                         "Name":  "dm_alcys_factory",
@@ -3625,7 +3640,12 @@
                         "ViewCount":  3400,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "TooBig"
+                                      ],
+                        "InitialRatingTimestamp":  1662812579
                     },
                     {
                         "Name":  "dm_altepa_v2",
@@ -3662,7 +3682,9 @@
                         "ViewCount":  6800,
                         "LikeCount":  3,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  1662814198
                     },
                     {
                         "Name":  "dm_battleyard",
@@ -3739,7 +3761,9 @@
                         "ViewCount":  3000,
                         "LikeCount":  1,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "InitialRatingTimestamp":  1662814347
                     },
                     {
                         "Name":  "dm_labyrinthdomier",
@@ -4756,7 +4780,12 @@
                         "ViewCount":  2200,
                         "LikeCount":  0,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1662812672,
+                        "RobRating":  2
                     },
                     {
                         "Name":  "dm_divine",
@@ -6490,7 +6519,9 @@
                         "ViewCount":  1400,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1,
+                        "InitialRatingTimestamp":  1662812057
                     },
                     {
                         "Name":  "asc_darkmaze_v1",
@@ -8444,7 +8475,11 @@
                         "ViewCount":  6400,
                         "LikeCount":  5,
                         "PostCount":  8,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1662808190
                     },
                     {
                         "Name":  "dm_isle_of_gib",
@@ -13298,7 +13333,9 @@
                         "ViewCount":  4900,
                         "LikeCount":  5,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "InitialRatingTimestamp":  1662812289
                     },
                     {
                         "Name":  "dm_dead_end",
@@ -14261,7 +14298,12 @@
                         "ViewCount":  4200,
                         "LikeCount":  1,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1662808783
                     },
                     {
                         "Name":  "dm_metal",
@@ -15752,6 +15794,54 @@
                                [
                                    1662763366,
                                    307
+                               ],
+                               [
+                                   1662808190,
+                                   308
+                               ],
+                               [
+                                   1662808783,
+                                   309
+                               ],
+                               [
+                                   1662810018,
+                                   310
+                               ],
+                               [
+                                   1662812057,
+                                   311
+                               ],
+                               [
+                                   1662812289,
+                                   312
+                               ],
+                               [
+                                   1662812579,
+                                   313
+                               ],
+                               [
+                                   1662812657,
+                                   314
+                               ],
+                               [
+                                   1662812672,
+                                   315
+                               ],
+                               [
+                                   1662813405,
+                                   316
+                               ],
+                               [
+                                   1662813656,
+                                   317
+                               ],
+                               [
+                                   1662814198,
+                                   318
+                               ],
+                               [
+                                   1662814347,
+                                   319
                                ]
                            ]
 }
