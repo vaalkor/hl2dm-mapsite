@@ -792,7 +792,9 @@
                         "ViewCount":  1700,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "InitialRatingTimestamp":  1663532208
                     },
                     {
                         "Name":  "dm_Poolside",
@@ -2654,7 +2656,12 @@
                         "ViewCount":  1600,
                         "LikeCount":  0,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "RobLabels":  [
+                                          "MissingTextures"
+                                      ],
+                        "InitialRatingTimestamp":  1663532421
                     },
                     {
                         "Name":  "dm_baghdad",
@@ -3313,7 +3320,13 @@
                         "ViewCount":  9200,
                         "LikeCount":  1,
                         "PostCount":  5,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "Outdoors",
+                                          "TooBig"
+                                      ],
+                        "InitialRatingTimestamp":  1663530549
                     },
                     {
                         "Name":  "Nesterkovo 2 (test)",
@@ -4357,7 +4370,11 @@
                         "ViewCount":  7800,
                         "LikeCount":  5,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1663531233
                     },
                     {
                         "Name":  "dm_stad",
@@ -6273,7 +6290,13 @@
                         "ViewCount":  1500,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4.5,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "Small"
+                                      ],
+                        "InitialRatingTimestamp":  1663535764
                     },
                     {
                         "Name":  "dm_offices",
@@ -6946,7 +6969,12 @@
                         "ViewCount":  2400,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1663531213
                     },
                     {
                         "Name":  "dm_bk_overkill_b2x",
@@ -10283,7 +10311,9 @@
                         "ViewCount":  2200,
                         "LikeCount":  1,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  1663536690
                     },
                     {
                         "Name":  "mudfarm",
@@ -12597,7 +12627,12 @@
                         "ViewCount":  10500,
                         "LikeCount":  25,
                         "PostCount":  10,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1663536231
                     },
                     {
                         "Name":  "dm_tropic_enhanced",
@@ -13878,7 +13913,11 @@
                         "ViewCount":  3000,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1663532233
                     },
                     {
                         "Name":  "dm_farpoint",
@@ -14838,7 +14877,11 @@
                         "ViewCount":  4500,
                         "LikeCount":  2,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1663536252
                     },
                     {
                         "Name":  "dm_killsphere_v7",
@@ -15930,6 +15973,46 @@
                                [
                                    1662846362,
                                    330
+                               ],
+                               [
+                                   1663530549,
+                                   331
+                               ],
+                               [
+                                   1663531213,
+                                   332
+                               ],
+                               [
+                                   1663531233,
+                                   333
+                               ],
+                               [
+                                   1663532208,
+                                   334
+                               ],
+                               [
+                                   1663532233,
+                                   335
+                               ],
+                               [
+                                   1663532421,
+                                   336
+                               ],
+                               [
+                                   1663535764,
+                                   337
+                               ],
+                               [
+                                   1663536231,
+                                   338
+                               ],
+                               [
+                                   1663536252,
+                                   339
+                               ],
+                               [
+                                   1663536690,
+                                   340
                                ]
                            ]
 }
