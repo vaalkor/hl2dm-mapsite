@@ -1046,7 +1046,11 @@
                         "ViewCount":  2700,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1665178648
                     },
                     {
                         "Name":  "DM_Lily_Doublecross",
@@ -2940,7 +2944,12 @@
                         "ViewCount":  2600,
                         "LikeCount":  2,
                         "PostCount":  8,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1665176397
                     },
                     {
                         "Name":  "dm_new-cyprus",
@@ -5021,7 +5030,9 @@
                         "ViewCount":  1400,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1,
+                        "InitialRatingTimestamp":  1665176557
                     },
                     {
                         "Name":  "dm_Leadworks_v2",
@@ -5427,7 +5438,12 @@
                         "ViewCount":  1900,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1665173356
                     },
                     {
                         "Name":  "Leadworks",
@@ -6067,7 +6083,12 @@
                         "ViewCount":  1300,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "MissingTextures"
+                                      ],
+                        "InitialRatingTimestamp":  1665173999
                     },
                     {
                         "Name":  "mp_mountaineer",
@@ -6127,7 +6148,13 @@
                         "ViewCount":  1700,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  0.5,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "TooBig"
+                                      ],
+                        "InitialRatingTimestamp":  1665178611
                     },
                     {
                         "Name":  "dm_finca_box_dukemod",
@@ -6213,7 +6240,13 @@
                         "ViewCount":  2700,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1665179433
                     },
                     {
                         "Name":  "dm_vdzsource",
@@ -7143,7 +7176,9 @@
                         "ViewCount":  2300,
                         "LikeCount":  2,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1665175869
                     },
                     {
                         "Name":  "dm_trunkslocked",
@@ -8301,7 +8336,13 @@
                         "ViewCount":  1600,
                         "LikeCount":  1,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1665178458
                     },
                     {
                         "Name":  "dm_unraveling",
@@ -8443,7 +8484,9 @@
                         "ViewCount":  2100,
                         "LikeCount":  2,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1665180126
                     },
                     {
                         "Name":  "dm_sonar",
@@ -8672,7 +8715,12 @@
                         "ViewCount":  2900,
                         "LikeCount":  2,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1665177803
                     },
                     {
                         "Name":  "dm_drill_quad_v1",
@@ -8752,7 +8800,11 @@
                         "ViewCount":  3100,
                         "LikeCount":  0,
                         "PostCount":  13,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "neverloads"
+                                      ],
+                        "InitialRatingTimestamp":  1665174017
                     },
                     {
                         "Name":  "dm_closecombat_final",
@@ -9411,7 +9463,12 @@
                         "ViewCount":  2700,
                         "LikeCount":  2,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1665178937
                     },
                     {
                         "Name":  "dm_border_bust",
@@ -9540,7 +9597,11 @@
                         "ViewCount":  1700,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1665175900
                     },
                     {
                         "Name":  "dm_brier",
@@ -10146,7 +10207,11 @@
                         "ViewCount":  6800,
                         "LikeCount":  10,
                         "PostCount":  15,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1665173383
                     },
                     {
                         "Name":  "dm_moroes",
@@ -12545,7 +12610,9 @@
                         "ViewCount":  4300,
                         "LikeCount":  3,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "InitialRatingTimestamp":  1665176756
                     },
                     {
                         "Name":  "dm_glasstowers_v7",
@@ -12929,7 +12996,12 @@
                         "ViewCount":  1800,
                         "LikeCount":  3,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1665177430
                     },
                     {
                         "Name":  "dm_cityhell",
@@ -14084,7 +14156,9 @@
                         "ViewCount":  6900,
                         "LikeCount":  2,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "InitialRatingTimestamp":  1665175383
                     },
                     {
                         "Name":  "dm_aggressionbay",
@@ -14153,7 +14227,11 @@
                         "ViewCount":  3200,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1665178954
                     },
                     {
                         "Name":  "dm_richs_apt",
@@ -16013,6 +16091,82 @@
                                [
                                    1663536690,
                                    340
+                               ],
+                               [
+                                   1665173356,
+                                   341
+                               ],
+                               [
+                                   1665173383,
+                                   342
+                               ],
+                               [
+                                   1665173999,
+                                   343
+                               ],
+                               [
+                                   1665174017,
+                                   344
+                               ],
+                               [
+                                   1665175383,
+                                   345
+                               ],
+                               [
+                                   1665175869,
+                                   346
+                               ],
+                               [
+                                   1665175900,
+                                   347
+                               ],
+                               [
+                                   1665176397,
+                                   348
+                               ],
+                               [
+                                   1665176557,
+                                   349
+                               ],
+                               [
+                                   1665176756,
+                                   350
+                               ],
+                               [
+                                   1665177430,
+                                   351
+                               ],
+                               [
+                                   1665177803,
+                                   352
+                               ],
+                               [
+                                   1665178458,
+                                   353
+                               ],
+                               [
+                                   1665178611,
+                                   354
+                               ],
+                               [
+                                   1665178648,
+                                   355
+                               ],
+                               [
+                                   1665178937,
+                                   356
+                               ],
+                               [
+                                   1665178954,
+                                   357
+                               ],
+                               [
+                                   1665179433,
+                                   358
+                               ],
+                               [
+                                   1665180126,
+                                   359
                                ]
                            ]
 }
