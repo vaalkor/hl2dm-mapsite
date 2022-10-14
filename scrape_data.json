@@ -1682,7 +1682,11 @@
                         "ViewCount":  2100,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1665784300
                     },
                     {
                         "Name":  "dm_killbox_portal_bwo_2",
@@ -1780,7 +1784,9 @@
                         "ViewCount":  2400,
                         "LikeCount":  0,
                         "PostCount":  5,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "InitialRatingTimestamp":  1665786849,
+                        "RobRating":  1.5
                     },
                     {
                         "Name":  "dm_office_rats_v1",
@@ -3499,7 +3505,9 @@
                         "ViewCount":  4900,
                         "LikeCount":  3,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "InitialRatingTimestamp":  1665784262
                     },
                     {
                         "Name":  "tower_dust_city4",
@@ -4787,7 +4795,9 @@
                         "ViewCount":  1700,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1665784969
                     },
                     {
                         "Name":  "dm_biohazard_tg",
@@ -6254,7 +6264,9 @@
                         "ViewCount":  2600,
                         "LikeCount":  1,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "InitialRatingTimestamp":  1665787801
                     },
                     {
                         "Name":  "Dm_StN_area7_b1",
@@ -7445,7 +7457,9 @@
                         "ViewCount":  2600,
                         "LikeCount":  3,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  1665788276
                     },
                     {
                         "Name":  "killbox crimbo",
@@ -8003,7 +8017,9 @@
                         "ViewCount":  1500,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1665785394
                     },
                     {
                         "Name":  "crosshair",
@@ -8476,7 +8492,13 @@
                         "ViewCount":  1400,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1665781029
                     },
                     {
                         "Name":  "dm_snowfall_beta2",
@@ -8589,7 +8611,11 @@
                         "ViewCount":  4300,
                         "LikeCount":  1,
                         "PostCount":  5,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1665781049
                     },
                     {
                         "Name":  "dm_forrest_vendetta_v1",
@@ -8780,7 +8806,11 @@
                         "ViewCount":  1800,
                         "LikeCount":  2,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1665781064
                     },
                     {
                         "Name":  "l7_hell",
@@ -9233,7 +9263,13 @@
                         "ViewCount":  1500,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1665780547
                     },
                     {
                         "Name":  "pots_new_lockdown",
@@ -12144,7 +12180,12 @@
                         "ViewCount":  3900,
                         "LikeCount":  6,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1665785999
                     },
                     {
                         "Name":  "dm_elysia",
@@ -13826,7 +13867,12 @@
                         "ViewCount":  5400,
                         "LikeCount":  1,
                         "PostCount":  7,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Remake"
+                                      ],
+                        "InitialRatingTimestamp":  1665782997
                     },
                     {
                         "Name":  "dm_toon_town",
@@ -14646,7 +14692,9 @@
                         "ViewCount":  3600,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "InitialRatingTimestamp":  1665788382
                     },
                     {
                         "Name":  "dm_smallfort_b17",
@@ -16167,6 +16215,62 @@
                                [
                                    1665180126,
                                    359
+                               ],
+                               [
+                                   1665780547,
+                                   360
+                               ],
+                               [
+                                   1665781029,
+                                   361
+                               ],
+                               [
+                                   1665781049,
+                                   362
+                               ],
+                               [
+                                   1665781064,
+                                   363
+                               ],
+                               [
+                                   1665782997,
+                                   364
+                               ],
+                               [
+                                   1665784262,
+                                   365
+                               ],
+                               [
+                                   1665784300,
+                                   366
+                               ],
+                               [
+                                   1665784969,
+                                   367
+                               ],
+                               [
+                                   1665785394,
+                                   368
+                               ],
+                               [
+                                   1665785999,
+                                   369
+                               ],
+                               [
+                                   1665786849,
+                                   370
+                               ],
+                               [
+                                   1665787801,
+                                   371
+                               ],
+                               [
+                                   1665788276,
+                                   372
+                               ],
+                               [
+                                   1665788382,
+                                   373
                                ]
                            ]
 }
