@@ -1969,7 +1969,9 @@
                         "ViewCount":  5000,
                         "LikeCount":  0,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  1666389326
                     },
                     {
                         "Name":  "dm_pit",
@@ -2434,7 +2436,12 @@
                         "ViewCount":  3300,
                         "LikeCount":  1,
                         "PostCount":  6,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "InitialRatingTimestamp":  1666391499,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ]
                     },
                     {
                         "Name":  "RoPlayers_Race_nosedive_v7",
@@ -5755,7 +5762,12 @@
                         "ViewCount":  1600,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "InitialRatingTimestamp":  1666389906,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ]
                     },
                     {
                         "Name":  "dm_tigcrik_r2_extended",
@@ -6434,7 +6446,12 @@
                         "ViewCount":  1100,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1,
+                        "RobLabels":  [
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1666388889
                     },
                     {
                         "Name":  "academy_crawler_v5",
@@ -10364,7 +10381,9 @@
                         "ViewCount":  1700,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "InitialRatingTimestamp":  1666390526
                     },
                     {
                         "Name":  "dm_killbox_doa",
@@ -10715,7 +10734,9 @@
                         "ViewCount":  1700,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "InitialRatingTimestamp":  1666392660
                     },
                     {
                         "Name":  "dm_megawatt",
@@ -16271,6 +16292,30 @@
                                [
                                    1665788382,
                                    373
+                               ],
+                               [
+                                   1666388889,
+                                   374
+                               ],
+                               [
+                                   1666389326,
+                                   375
+                               ],
+                               [
+                                   1666389906,
+                                   376
+                               ],
+                               [
+                                   1666390526,
+                                   377
+                               ],
+                               [
+                                   1666391499,
+                                   378
+                               ],
+                               [
+                                   1666392660,
+                                   379
                                ]
                            ]
 }
