@@ -1,6 +1,6 @@
 ﻿param(
 [string]$ScrapeDataFile="scrape_data.json",
-[string]$MapsFolder="G:\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\maps",
+[string]$MapsFolder="E:\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\maps",
 
 [switch]$UpdateInfo,
 [switch]$GetInfo,
