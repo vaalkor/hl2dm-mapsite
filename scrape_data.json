@@ -1231,7 +1231,12 @@
                         "ViewCount":  3400,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1667075667
                     },
                     {
                         "Name":  "dm_alcys_neptune",
@@ -2261,7 +2266,9 @@
                         "ViewCount":  2700,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "InitialRatingTimestamp":  1667078627
                     },
                     {
                         "Name":  "dm_nuclearis_rc1",
@@ -3127,7 +3134,9 @@
                         "ViewCount":  2800,
                         "LikeCount":  2,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1,
+                        "InitialRatingTimestamp":  1667075835
                     },
                     {
                         "Name":  "dm_the_crazy_maze",
@@ -3556,7 +3565,12 @@
                         "ViewCount":  2300,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1667077498
                     },
                     {
                         "Name":  "dm_industry_canals_v2",
@@ -3993,7 +4007,9 @@
                         "ViewCount":  3400,
                         "LikeCount":  2,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1667078306
                     },
                     {
                         "Name":  "DM_killbox_mojang",
@@ -4754,7 +4770,9 @@
                         "ViewCount":  1400,
                         "LikeCount":  0,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "InitialRatingTimestamp":  1667076653
                     },
                     {
                         "Name":  "dm_searstower_v2",
@@ -9862,7 +9880,12 @@
                         "ViewCount":  7700,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1667076471
                     },
                     {
                         "Name":  "dm_nighthawk",
@@ -12153,7 +12176,9 @@
                         "ViewCount":  1600,
                         "LikeCount":  3,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "InitialRatingTimestamp":  1667077119,
+                        "RobRating":  2
                     },
                     {
                         "Name":  "dm_combinefort",
@@ -13139,7 +13164,11 @@
                         "ViewCount":  2200,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1667074519
                     },
                     {
                         "Name":  "dm_foresaken",
@@ -16316,6 +16345,42 @@
                                [
                                    1666392660,
                                    379
+                               ],
+                               [
+                                   1667074519,
+                                   380
+                               ],
+                               [
+                                   1667075667,
+                                   381
+                               ],
+                               [
+                                   1667075835,
+                                   382
+                               ],
+                               [
+                                   1667076471,
+                                   383
+                               ],
+                               [
+                                   1667076653,
+                                   384
+                               ],
+                               [
+                                   1667077119,
+                                   385
+                               ],
+                               [
+                                   1667077498,
+                                   386
+                               ],
+                               [
+                                   1667078306,
+                                   387
+                               ],
+                               [
+                                   1667078627,
+                                   388
                                ]
                            ]
 }
