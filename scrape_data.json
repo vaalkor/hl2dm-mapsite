@@ -883,7 +883,9 @@
                         "ViewCount":  2600,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "InitialRatingTimestamp":  1676755927
                     },
                     {
                         "Name":  "dm_anal",
@@ -5075,7 +5077,12 @@
                         "ViewCount":  4500,
                         "LikeCount":  3,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "VanillaStyle"
+                                      ],
+                        "InitialRatingTimestamp":  1676753887
                     },
                     {
                         "Name":  "Dm_l2jail",
@@ -7778,7 +7785,14 @@
                         "ViewCount":  4300,
                         "LikeCount":  2,
                         "PostCount":  5,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "RobLabels":  [
+                                          "TooBig",
+                                          "Indoors",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1676754745
                     },
                     {
                         "Name":  "dmt1_outpost_11",
@@ -8334,7 +8348,11 @@
                         "ViewCount":  1600,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1676755064
                     },
                     {
                         "Name":  "dm_rockfallprison",
@@ -8519,7 +8537,9 @@
                         "ViewCount":  4400,
                         "LikeCount":  1,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1676754412
                     },
                     {
                         "Name":  "dm_killbox_rmx",
@@ -9809,7 +9829,11 @@
                         "ViewCount":  1200,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1676752118
                     },
                     {
                         "Name":  "dm_abandoned_factory",
@@ -10354,7 +10378,9 @@
                         "ViewCount":  1800,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "InitialRatingTimestamp":  1676755045
                     },
                     {
                         "Name":  "dm_badgerset_day",
@@ -12065,7 +12091,14 @@
                         "ViewCount":  2100,
                         "LikeCount":  3,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "NoTripmines",
+                                          "Small"
+                                      ],
+                        "InitialRatingTimestamp":  1676751740
                     },
                     {
                         "Name":  "dm_dockside_beta",
@@ -12362,7 +12395,12 @@
                         "ViewCount":  4900,
                         "LikeCount":  10,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "RobLabels":  [
+                                          "Outdoors"
+                                      ],
+                        "InitialRatingTimestamp":  1676752082
                     },
                     {
                         "Name":  "dm_outpost",
@@ -12560,7 +12598,13 @@
                         "ViewCount":  4400,
                         "LikeCount":  7,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "Indoors",
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1676755587
                     },
                     {
                         "Name":  "dm_watertowers2006",
@@ -13830,7 +13874,12 @@
                         "ViewCount":  3200,
                         "LikeCount":  1,
                         "PostCount":  4,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "Remake"
+                                      ],
+                        "InitialRatingTimestamp":  1676753379
                     },
                     {
                         "Name":  "dm-cube",
@@ -16525,6 +16574,50 @@
                                [
                                    1672354923,
                                    405
+                               ],
+                               [
+                                   1676751740,
+                                   406
+                               ],
+                               [
+                                   1676752082,
+                                   407
+                               ],
+                               [
+                                   1676752118,
+                                   408
+                               ],
+                               [
+                                   1676753379,
+                                   409
+                               ],
+                               [
+                                   1676753887,
+                                   410
+                               ],
+                               [
+                                   1676754412,
+                                   411
+                               ],
+                               [
+                                   1676754745,
+                                   412
+                               ],
+                               [
+                                   1676755045,
+                                   413
+                               ],
+                               [
+                                   1676755064,
+                                   414
+                               ],
+                               [
+                                   1676755587,
+                                   415
+                               ],
+                               [
+                                   1676755927,
+                                   416
                                ]
                            ]
 }
