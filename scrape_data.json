@@ -1157,7 +1157,9 @@
                         "ViewCount":  1900,
                         "LikeCount":  0,
                         "PostCount":  10,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2,
+                        "InitialRatingTimestamp":  1716835379
                     },
                     {
                         "Name":  "dm_TheGlassMaze",
@@ -2040,7 +2042,9 @@
                         "ViewCount":  8200,
                         "LikeCount":  3,
                         "PostCount":  3,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "InitialRatingTimestamp":  1716841725
                     },
                     {
                         "Name":  "dm_alcys_big_temple",
@@ -2303,7 +2307,12 @@
                         "ViewCount":  3000,
                         "LikeCount":  0,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "UniqueMechanic"
+                                      ],
+                        "InitialRatingTimestamp":  1716842359
                     },
                     {
                         "Name":  "dm_triplebox_2014 + mod",
@@ -3702,7 +3711,12 @@
                         "ViewCount":  1300,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1716837927
                     },
                     {
                         "Name":  "dm_duke",
@@ -3814,7 +3828,9 @@
                         "ViewCount":  4400,
                         "LikeCount":  2,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "InitialRatingTimestamp":  1716846676
                     },
                     {
                         "Name":  "dm_MDAGothdTOURNAMENT_v1",
@@ -3966,7 +3982,12 @@
                         "ViewCount":  2700,
                         "LikeCount":  3,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "Meme"
+                                      ],
+                        "InitialRatingTimestamp":  1716844391
                     },
                     {
                         "Name":  "dm_hiddencells_beta",
@@ -5853,7 +5874,9 @@
                         "ViewCount":  3900,
                         "LikeCount":  1,
                         "PostCount":  2,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "InitialRatingTimestamp":  1716843921,
+                        "RobRating":  4
                     },
                     {
                         "Name":  "dm_changa (small killbox)",
@@ -8260,7 +8283,12 @@
                         "ViewCount":  2200,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Meme"
+                                      ],
+                        "InitialRatingTimestamp":  1716846077
                     },
                     {
                         "Name":  "dm_mansion_beta2",
@@ -9406,7 +9434,12 @@
                         "ViewCount":  1500,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NoTripmines",
+                                          "MissingTextures"
+                                      ],
+                        "InitialRatingTimestamp":  1716839860
                     },
                     {
                         "Name":  "dm_coldruins",
@@ -10128,7 +10161,9 @@
                         "ViewCount":  1800,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "InitialRatingTimestamp":  1716842769
                     },
                     {
                         "Name":  "dm_cloudballz",
@@ -11910,7 +11945,11 @@
                         "ViewCount":  1300,
                         "LikeCount":  4,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1716838755
                     },
                     {
                         "Name":  "dm_fortress",
@@ -12062,7 +12101,9 @@
                         "ViewCount":  1200,
                         "LikeCount":  1,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1.5,
+                        "InitialRatingTimestamp":  1716843989
                     },
                     {
                         "Name":  "dm_overcast",
@@ -12840,7 +12881,12 @@
                         "ViewCount":  1600,
                         "LikeCount":  3,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "InitialRatingTimestamp":  1716840636,
+                        "RobLabels":  [
+                                          "UniqueMechanic"
+                                      ],
+                        "RobRating":  3.5
                     },
                     {
                         "Name":  "dm_killboxpyra_v2",
@@ -14156,7 +14202,14 @@
                         "ViewCount":  3300,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Meme",
+                                          "UniqueMechanic",
+                                          "Small"
+                                      ],
+                        "InitialRatingTimestamp":  1716847308
                     },
                     {
                         "Name":  "house",
@@ -14739,7 +14792,9 @@
                         "ViewCount":  2600,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "InitialRatingTimestamp":  1716838718
                     },
                     {
                         "Name":  "dm_factory",
@@ -16662,6 +16717,66 @@
                                [
                                    1694892946,
                                    421
+                               ],
+                               [
+                                   1716835379,
+                                   422
+                               ],
+                               [
+                                   1716837927,
+                                   423
+                               ],
+                               [
+                                   1716838718,
+                                   424
+                               ],
+                               [
+                                   1716838755,
+                                   425
+                               ],
+                               [
+                                   1716839860,
+                                   426
+                               ],
+                               [
+                                   1716840636,
+                                   427
+                               ],
+                               [
+                                   1716841725,
+                                   428
+                               ],
+                               [
+                                   1716842359,
+                                   429
+                               ],
+                               [
+                                   1716842769,
+                                   430
+                               ],
+                               [
+                                   1716843921,
+                                   431
+                               ],
+                               [
+                                   1716843989,
+                                   432
+                               ],
+                               [
+                                   1716844391,
+                                   433
+                               ],
+                               [
+                                   1716846077,
+                                   434
+                               ],
+                               [
+                                   1716846676,
+                                   435
+                               ],
+                               [
+                                   1716847308,
+                                   436
                                ]
                            ]
 }
