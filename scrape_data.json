@@ -103,7 +103,9 @@
                         "ViewCount":  542,
                         "LikeCount":  0,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  4,
+                        "InitialRatingTimestamp":  1722887430
                     },
                     {
                         "Name":  "dm_5pillars_2021",
@@ -833,7 +835,11 @@
                         "ViewCount":  1100,
                         "LikeCount":  1,
                         "PostCount":  1,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1722885942
                     },
                     {
                         "Name":  "ahl2_MI3_road",
@@ -7410,7 +7416,12 @@
                         "ViewCount":  1300,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1722886399
                     },
                     {
                         "Name":  "dm_lockdown_nub_v1",
@@ -10111,7 +10122,12 @@
                         "ViewCount":  1900,
                         "LikeCount":  0,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1722888044
                     },
                     {
                         "Name":  "dm_olphro",
@@ -10195,7 +10211,12 @@
                         "ViewCount":  2700,
                         "LikeCount":  4,
                         "PostCount":  5,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "TooBig"
+                                      ],
+                        "InitialRatingTimestamp":  1722889110
                     },
                     {
                         "Name":  "dm_cube_deluxe",
@@ -11266,7 +11287,12 @@
                         "ViewCount":  2500,
                         "LikeCount":  3,
                         "PostCount":  6,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1722888589
                     },
                     {
                         "Name":  "dm_storageyard",
@@ -13295,7 +13321,12 @@
                         "ViewCount":  2400,
                         "LikeCount":  3,
                         "PostCount":  0,
-                        "WasFeatured":  false
+                        "WasFeatured":  false,
+                        "RobRating":  1,
+                        "RobLabels":  [
+                                          "TooBig"
+                                      ],
+                        "InitialRatingTimestamp":  1722885912
                     },
                     {
                         "Name":  "dm_snipertowers",
@@ -16777,6 +16808,34 @@
                                [
                                    1716847308,
                                    436
+                               ],
+                               [
+                                   1722885912,
+                                   437
+                               ],
+                               [
+                                   1722885942,
+                                   438
+                               ],
+                               [
+                                   1722886399,
+                                   439
+                               ],
+                               [
+                                   1722887430,
+                                   440
+                               ],
+                               [
+                                   1722888044,
+                                   441
+                               ],
+                               [
+                                   1722888589,
+                                   442
+                               ],
+                               [
+                                   1722889110,
+                                   443
                                ]
                            ]
 }
