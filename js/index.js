@@ -4,10 +4,25 @@ var _sortByProperties = [
     { propertyName: 'RobRating', friendlyName: 'Rating' },
     { propertyName: 'InitialRatingTimestamp', friendlyName: 'First Rated' }
 ];
+var _toastMessages = {
+    currentKey: 0,
+    messages: [],
+    addMessage: function(message, showLengthMilliseconds){
+        const key = this.currentKey;
+        this.messages.push({key: this.currentKey, message: message});
+        setTimeout(() => {
+            console.log(`Removing message with key: ${key} from messages list.`)
+            let idx = this.messages.findIndex(toast => toast.key === key );
+            this.messages.splice(idx, 1);
+            m.redraw();
+        }, showLengthMilliseconds);
+        this.currentKey++;
+    }
+}
+var _filteredMaps = []
 var _storage = {
     sortBy: _sortByProperties[0].propertyName,
     ascending: false,
-    filteredMaps: [],
     nameFilter: '',
     minRating: 0,
     includeLabels: [],
@@ -22,7 +37,6 @@ var _storage = {
         localStorage.setItem('storage', JSON.stringify(this));
     }
 }
-
 var _scrapeData = { MapInfo: [], MapRatingGraphData: [] };
 var _foundLabels = {};
 var _defaultLabel = 'label-blue';
@@ -41,12 +55,6 @@ var _foundLabels = [];
 var _dayPrettyPrint = { 0: 'Sun', 1: 'Mon', 2: 'Tue', 3: 'Wed', 4: 'Thu', 5: 'Fri', 6: 'Sat' }
 var _monthPrettyPrint = { 0: 'Jan', 1: 'Feb', 2: 'Mar', 3: 'Apr', 4: 'May', 5: 'Jun', 6: 'Jul', 7: 'Aug', 8: 'Sep', 9: 'Oct', 10: 'Nov', 11: 'Dec' }
 
-var $ = (query) => document.querySelector(query);
-var $$ = (query) => document.querySelectorAll(query);
-var saveElemValue = (query) => window.localStorage.setItem(query, $(query).value);
-var saveElemValues = (...queries) => queries.forEach(x => saveElemValue(x));
-var saveJsonValue = (key, value) => window.localStorage.setItem(key, JSON.stringify(value));
-var getAndSetElemValues = (...keys) => keys.forEach(x => getAndSetElemValue(x));
 var getLabelColour = label => (label in _labelColourMap) ? _labelColourMap[label] : _defaultLabel;
 
 function getAndSetElemValue(key) {
@@ -76,7 +84,7 @@ function mapFilter(map, nameFilter, minRating) {
 
 function filterMaps() {
     _scrapeData.MapInfo.sort(sort);
-    _storage.filteredMaps = _scrapeData.MapInfo.filter(x => mapFilter(x, _storage.nameFilter, _storage.minRating));
+    _filteredMaps = _scrapeData.MapInfo.filter(x => mapFilter(x, _storage.nameFilter, _storage.minRating));
 }
 
 function getLabels(map) {
@@ -120,8 +128,10 @@ function resetFilter() {
     _storage.save();
 }
 
-function getRandomMap(e) {
-    // alert('bollocks!');
+function getRandomMap() {
+    let map = _filteredMaps[Math.floor(Math.random() * _filteredMaps.length)];
+    navigator.clipboard.writeText(map.Name);
+    _toastMessages.addMessage(`Copied map '${map.Name}' to clipboard`, 2000);
 }
 
 function makeRow(map) {
@@ -211,7 +221,7 @@ var Buttons = {
                 m("button", { class: "btn btn-primary", type: "submit", id: "resetFilterButton", onclick: resetFilter }, "Reset filters")
             ),
             m("div", { class: "ml-2", style: { "display": "inline-block", "margin": "0 4px 0 4px" } },
-                m("button", { class: "btn btn-primary", type: "submit", id: "getRandomMapButton" }, "Get Random")
+                m("button", { class: "btn btn-primary", type: "submit", id: "getRandomMapButton", onclick: getRandomMap }, "Get Random")
             ),
             m("div", { class: "ml-2", style: { "display": "inline-block", "margin": "0 4px 0 4px" } },
                 m("a", { class: "btn btn-info", href: "/stats.html" }, "View statistics")
@@ -237,13 +247,13 @@ var Table = {
             m("table", { class: "table table-striped", id: "fixed-table-header" }, [
                 m("thead",
                     m("tr", [
-                        m("th", { scope: "col" }, name),
+                        m("th", { scope: "col" }, `Name (#${_filteredMaps.length} total)`),
                         m("th", { scope: "col" }, "First Rated"),
                         m("th", { scope: "col" }, "Rating"),
                         m("th", { scope: "col" }, "Labels")
                     ]
                     )),
-                m("tbody", _storage.filteredMaps.map(x => makeRow(x)))
+                m("tbody", _filteredMaps.map(x => makeRow(x)))
             ])
         );
     }
@@ -265,13 +275,61 @@ function DrawRatingGraph(graphElement) {
     chart.draw(data, options);
 }
 
+var ToastComponent = {
+    onbeforeremove: function(vnode) {
+        vnode.dom.classList.add("fade-out");
+        return new Promise(function(resolve) {
+            vnode.dom.addEventListener("animationend", resolve);
+        })
+    },
+    view: function({ attrs }){
+
+        return m("div.fade-in", 
+                    {
+                        "class": 'toast align-items-center show text-white bg-primary',
+                        "role":"alert",
+                        "aria-live":"assertive",
+                        "aria-atomic":"true",
+                        "style": 'pointer-events:all'
+                    }, 
+                    m("div", {"class":"d-flex"},
+                        m("div", {"class":"toast-body"}, attrs.message )
+                    )
+      )
+    }
+}
+
+var ErrorOverlay = {
+    view: function(){
+        return m('div.error-container', { style: 'pointer-events:none' },
+            m('div.errors', _toastMessages.messages.map(x => m(ToastComponent, {key: x.key, message: x.message})))
+        );
+    }
+}
+
+var Header = {
+    view: function() {
+        return m("div", {"class":"container"}, 
+        m("header",
+            m("h2", "Rob's Half Life 2 Map Ratings."),
+            m("p", "An attempt to rate and categorise over 1600 Half Life 2 Deathmatch maps. "),
+            m("p", m("i", "Extremely subjective!"))
+        )
+      );
+    }
+}
+
 var DynamicContent = {
     view: function () {
         return [
-            m(Filtering),
-            m(Buttons),
-            m(TagFiltering),
-            m(Table)
+            m(ErrorOverlay),
+            m('div.container',
+                m(Header),
+                m(Filtering),
+                m(Buttons),
+                m(TagFiltering),
+                m(Table)
+            )
         ];
     }
 }
@@ -292,7 +350,7 @@ function formatDate(date) {
 async function initialise() {
     _storage.loadFromLocalStorage();
 
-    m.mount($('#dynamic-content'), DynamicContent);
+    m.mount(document.querySelector('#dynamic-content'), DynamicContent);
     _scrapeData = (await m.request({ method: 'GET', url: 'scrape_data.json' }));
     findAllLabels(_scrapeData.MapInfo);
 
