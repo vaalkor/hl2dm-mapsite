@@ -1,5 +1,9 @@
 body{
-    background-color: #505395;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 .container {
