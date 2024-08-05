@@ -7342,7 +7342,7 @@
                         "PostCount":  1,
                         "WasFeatured":  false,
                         "RobLabels":  [
-                                          "indoors"
+                                          "Indoors"
                                       ],
                         "InitialRatingTimestamp":  1661551106,
                         "RobRating":  2.5
@@ -8977,7 +8977,7 @@
                         "PostCount":  13,
                         "WasFeatured":  false,
                         "RobLabels":  [
-                                          "neverloads"
+                                          "NeverLoads"
                                       ],
                         "InitialRatingTimestamp":  1665174017
                     },
