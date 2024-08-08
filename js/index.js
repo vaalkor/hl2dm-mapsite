@@ -158,7 +158,7 @@ function resetFilter() {
     _storage.submitterFilter = '';
     _storage.ratingsTableAscending = false;
     _storage.sortBy = _ratingsTableSortByProperties[0].propertyName;
-    _storage.minRating = 0;
+    _storage.minRating = -0.5;
     _storage.includeLabels = [];
     _storage.excludeLabels = [];
     _storage.save();
@@ -337,9 +337,14 @@ var TagFiltering = {
     }
 }
 
+function copyToClipboard(text){
+    navigator.clipboard.writeText(text);
+    _toastMessages.addMessage(`Copied '${text}' to clipboard`, 2000);
+}
+
 function makeMapRatingsRow(map) {
     return m('tr', { key: map.Id }, [ // TODO: figure out why this was breaking when we used Name as the key... That's a bit weird...
-        m("th", { scope: "row" }, m("a", { class: "link-secondary", href: createMapLink(map.Id) }, map.Name)),
+        m("th", { scope: "row" }, m("a", { class: "link-secondary", href: createMapLink(map.Id) }, map.Name), m(CopyToClipboardIcon, {onclick: () => copyToClipboard(map.Name)})),
         m("td", m("a", { class: "link-secondary", href: createSubmitterLink(map.Submitter.Id) }, map.Submitter.Name)),
         m("td", formatDate(map.Added)),
         m("td", formatDate(map.InitialRatingTimestamp)),
@@ -370,7 +375,7 @@ var MapRatingsTable = {
     }
 }
 
-var FilterButton = {
+var FilterIcon = {
     view: function ({ attrs }) {
         return m('svg.config-button', {
             viewBox: "0 0 16 16",
@@ -381,17 +386,28 @@ var FilterButton = {
     }
 }
 
+var CopyToClipboardIcon = {
+    view: function ({ attrs }) {
+        return m('svg.config-button', {
+            viewBox: "0 0 16 16",
+            onclick: attrs.onclick
+        },
+            m('path', {d: "M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" })
+        )
+    }
+}
+
+
 function filterBySubmitter(submitterName){
     resetFilter();
     _storage.submitterFilter = submitterName;
-    _storage.minRating = -0.5;
     _storage.showRatingsTable();
 }
 
 function makeAverageSubmitterRatingTable(playerRating) {
     return m('tr', { key: playerRating.id }, [
         // add a clickable filter button for filtering based on this submitter! Nice one lad...
-        m("th", { scope: "row" }, m("a", { class: "link-secondary", href: createSubmitterLink(playerRating.id) }, playerRating.name), m(FilterButton, {onclick: () => filterBySubmitter(playerRating.name)})),
+        m("th", { scope: "row" }, m("a", { class: "link-secondary", href: createSubmitterLink(playerRating.id) }, playerRating.name), m(FilterIcon, {onclick: () => filterBySubmitter(playerRating.name)})),
         m("td", playerRating.numRatings),
         m("td", playerRating.totalMaps),
         m("td", playerRating.averageRating)
@@ -471,7 +487,7 @@ var Header = {
         return m("div", { "class": "container" },
             m("header",
                 m("h2", "Rob's Half Life 2 Map Ratings."),
-                m("p", "An attempt to rate and categorise over 1600 Half Life 2 Deathmatch maps. "),
+                m("p", `An attempt to rate and categorise ${_scrapeData.MapInfo.length || 'a few'} Half Life 2 Deathmatch maps.`),
                 m("p", m("i", "Extremely subjective!"))
             )
         );
@@ -479,7 +495,7 @@ var Header = {
 }
 
 
-var DynamicContent = {
+var App = {
     view: function () {
         if (_storage.ratingsTableVisible)
             return [
@@ -546,10 +562,24 @@ function getAverageRatingData() {
     _submitters = Object.values(_submitters);
 }
 
+var Routing = {
+    "/": {
+        render: function(){
+            _storage.showRatingsTable();
+            return m(App);
+        }
+    },
+    "/submitters": {
+        render: function(){
+            return m(App);
+        }
+    }
+}
+
 async function initialise() {
     _storage.loadFromLocalStorage();
 
-    m.mount(document.querySelector('#dynamic-content'), DynamicContent);
+    m.mount(document.querySelector('#dynamic-content'), App);
     _scrapeData = (await m.request({ method: 'GET', url: 'scrape_data.json' }));
     findAllLabels(_scrapeData.MapInfo);
     getAverageRatingData();
