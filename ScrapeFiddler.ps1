@@ -21,7 +21,8 @@
 [switch]$NoRating,
 [switch]$NoDescription,
 [switch]$NoLabels,
-[switch]$MapNameFromClip
+[switch]$MapNameFromClip,
+[string]$NewestMapToConsider
 )
 
 $file = Get-Item $ScrapeDataFile
@@ -37,7 +38,7 @@ if(-not $json){
 }
 
 if(-not ($UpdateInfo -or $GetInfo -or $GetRandomMap -or $ListMaps -or $CountMaps)){
-    "No action specified. Qutting..."
+    "No action specified. Qutting..." 
     exit 1
 }
 
@@ -89,6 +90,15 @@ if($GetRandomMap -or $ListMaps -or $CountMaps){
         $filteredMaps  = $filteredMaps | ?{$_.RobLabels -and ($_.RobLabels | ?{$Labels.Contains($_)}).Count -eq $Labels.Count}
     }
 
+    if($NewestMapToConsider){
+        $newestMapFound = $json.MapInfo | ? {$_.Name -eq $NewestMapToConsider}
+        if(-not $newestMapFound){
+            "The `$NewestMapToConsider you provided was not found, so will be ignored..."
+        }else{
+            $filteredMaps = $filteredMaps | ?{$_.Added -le $newestMapFound.Added}
+        }
+    }
+
     if(-not $filteredMaps){ "No maps found!"; exit 1}
 
     "============================`n$($filteredMaps | measure | select -ExpandProperty Count) found with properties
@@ -96,7 +106,8 @@ if($GetRandomMap -or $ListMaps -or $CountMaps){
 NoRating: $NoRating
 NoDescription: $NoDescription
 NoLabels: $NoLabels
-Labels: $Labels`n============================"
+Labels: $Labels
+Newest Map: $NewestMapToConsider`n============================"
 
     if($GetRandomMap){
         $randomMap = $filteredMaps | Get-Random
