@@ -2,7 +2,8 @@
 
 var _sortByProperties = [
     { propertyName: 'RobRating', friendlyName: 'Rating' },
-    { propertyName: 'InitialRatingTimestamp', friendlyName: 'First Rated' }
+    { propertyName: 'InitialRatingTimestamp', friendlyName: 'First Rated' },
+    { propertyName: 'Added', friendlyName: 'First Submitted to Gamebanana' }
 ];
 var _toastMessages = {
     currentKey: 0,
@@ -26,7 +27,7 @@ var _storage = {
     nameFilter: '',
     minRating: 0,
     includeLabels: [],
-    excludeLabels: [],
+    excludeLabels: ['NeverLoads', 'CausesCrash'],
     loadFromLocalStorage: function () {
         const savedData = localStorage.getItem('storage');
         if (savedData) {
@@ -133,11 +134,20 @@ function getRandomMap() {
     navigator.clipboard.writeText(map.Name);
     _toastMessages.addMessage(`Copied map '${map.Name}' to clipboard`, 2000);
 }
+function createMapLink(map){
+    return `https://gamebanana.com/mods/${map.Id}`;
+}
+
+function createSubmitterLink(map){
+    return `https://gamebanana.com/members/${map.Submitter.Id}`;
+}
 
 function makeRow(map) {
     return m('tr', { key: map.Name }, [
-        m("th", { scope: "row" }, m("a", { class: "link-secondary", href: map.Link }, map.Name)),
-        m("td", formatDate(new Date(map.InitialRatingTimestamp * 1000))),
+        m("th", { scope: "row" }, m("a", { class: "link-secondary", href: createMapLink(map) }, map.Name)),
+        m("td", m("a", { class: "link-secondary", href: createSubmitterLink(map) }, map.Submitter.Name)),
+        m("td", formatDate(map.Added)),
+        m("td", formatDate(map.InitialRatingTimestamp)),
         m("td", map.RobRating == null ? "Unrated" : map.RobRating),
         m("td", getLabels(map))
     ]);
@@ -233,8 +243,8 @@ var Buttons = {
 var TagFiltering = {
     view: function () {
         return [
-            m('div', { class: 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pt-2 pb-2' }, [m('h5', { class: 'mr-2' }, 'Include Labels'), ...getLabelFilterList(true)]),
-            m('div', { class: 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pb-2' }, [m('h5', { class: 'mr-2' }, 'Exclude Labels'), ...getLabelFilterList(false)])
+            m('div', { class: 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pt-2 pb-2' }, [m('h5', { class: 'mr-3' }, 'Include Labels'), ...getLabelFilterList(true)]),
+            m('div', { class: 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pb-2' }, [m('h5', { class: 'mr-3' }, 'Exclude Labels'), ...getLabelFilterList(false)])
         ]
     }
 }
@@ -248,6 +258,8 @@ var Table = {
                 m("thead",
                     m("tr", [
                         m("th", { scope: "col" }, `Name (#${_filteredMaps.length} total)`),
+                        m("th", { scope: "col" }, "Submitter"),
+                        m("th", { scope: "col" }, "First Submitted"),
                         m("th", { scope: "col" }, "First Rated"),
                         m("th", { scope: "col" }, "Rating"),
                         m("th", { scope: "col" }, "Labels")
@@ -343,8 +355,10 @@ function findAllLabels(data) {
     console.log(_foundLabels);
 }
 
-function formatDate(date) {
-    return `${_dayPrettyPrint[date.getDay()]} ${date.getDate()} ${_monthPrettyPrint[date.getMonth()]}, ${date.getYear() - 100}`
+function formatDate(unixTimestamp) {
+    if(unixTimestamp == null) return '';
+    let date = new Date(unixTimestamp * 1000);
+    return `${_dayPrettyPrint[date.getDay()]} ${date.getDate()} ${_monthPrettyPrint[date.getMonth()]}, ${(date.getYear() - 100).toString().padStart(2,'0')}`
 }
 
 async function initialise() {
