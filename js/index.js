@@ -1,19 +1,25 @@
 'use strict';
 
-var _sortByProperties = [
+var _ratingsTableSortByProperties = [
     { propertyName: 'RobRating', friendlyName: 'Rating' },
     { propertyName: 'InitialRatingTimestamp', friendlyName: 'First Rated' },
     { propertyName: 'Added', friendlyName: 'First Submitted to Gamebanana' }
 ];
+
+var _submittersTableSortByProperties = [
+    { propertyName: 'averageRating', friendlyName: 'Average Rating' },
+    { propertyName: 'numRatings', friendlyName: '# of maps rated' }
+];
+var _submitters = [];
 var _toastMessages = {
     currentKey: 0,
     messages: [],
-    addMessage: function(message, showLengthMilliseconds){
+    addMessage: function (message, showLengthMilliseconds) {
         const key = this.currentKey;
-        this.messages.push({key: this.currentKey, message: message});
+        this.messages.push({ key: this.currentKey, message: message });
         setTimeout(() => {
             console.log(`Removing message with key: ${key} from messages list.`)
-            let idx = this.messages.findIndex(toast => toast.key === key );
+            let idx = this.messages.findIndex(toast => toast.key === key);
             this.messages.splice(idx, 1);
             m.redraw();
         }, showLengthMilliseconds);
@@ -22,9 +28,14 @@ var _toastMessages = {
 }
 var _filteredMaps = []
 var _storage = {
-    sortBy: _sortByProperties[0].propertyName,
-    ascending: false,
+    ratingsTableVisible: true,
+    submittersTableVisible: false,
+    sortBy: _ratingsTableSortByProperties[0].propertyName,
+    submitterSortBy: _submittersTableSortByProperties[0].propertyName,
+    ratingsTableAscending: false,
+    submittersTableAscending: false,
     nameFilter: '',
+    submitterFilter: '',
     minRating: 0,
     includeLabels: [],
     excludeLabels: ['NeverLoads', 'CausesCrash'],
@@ -36,6 +47,16 @@ var _storage = {
     },
     save: function () {
         localStorage.setItem('storage', JSON.stringify(this));
+    },
+    showRatingsTable: function () {
+        this.ratingsTableVisible = true;
+        this.submittersTableVisible = false;
+        this.save();
+    },
+    showSubmittersTable: function () {
+        this.ratingsTableVisible = false;
+        this.submittersTableVisible = true;
+        this.save();
     }
 }
 var _scrapeData = { MapInfo: [], MapRatingGraphData: [] };
@@ -67,16 +88,24 @@ function redraw() {
     m.redraw();
 }
 
-function sort(a, b) {
+function sortFilteredMaps(a, b) {
     if (_storage.sortBy == null) return a;
-    let sortOrder = _storage.ascending ? -1 : 1;
+    let sortOrder = _storage.ratingsTableAscending ? -1 : 1;
     return (a[_storage.sortBy] || 0) > (b[_storage.sortBy] || 0) ? -1 * sortOrder : 1 * sortOrder;
 }
 
-function mapFilter(map, nameFilter, minRating) {
-    if (nameFilter && !(map.Name.toLowerCase().includes(nameFilter.toLowerCase()))) return false;
-    if (minRating >= 0 && (map.RobRating === undefined || map.RobRating === null)) return false;
-    if (minRating >= 0 && map.RobRating < minRating) return false;
+function sortSubmitters(a, b) {
+    if (_storage.submitterSortBy == null) return a;
+    let sortOrder = _storage.submittersTableAscending ? -1 : 1;
+    return (a[_storage.submitterSortBy] || 0) > (b[_storage.submitterSortBy] || 0) ? -1 * sortOrder : 1 * sortOrder;
+}
+
+function mapFilter(map) {
+    // debugger;
+    if (_storage.nameFilter && !(map.Name.toLowerCase().includes(_storage.nameFilter.toLowerCase()))) return false;
+    if (_storage.submitterFilter && !(map.Submitter.Name.toLowerCase().includes(_storage.submitterFilter.toLowerCase()))) return false;
+    if (_storage.minRating >= 0 && (map.RobRating === undefined || map.RobRating === null)) return false;
+    if (_storage.minRating >= 0 && map.RobRating < _storage.minRating) return false;
     if (map.RobLabels == null && _storage.includeLabels.length !== 0) return false;
     if (map.RobLabels && map.RobLabels.reduce((a, b) => _storage.includeLabels.includes(b) ? a + 1 : a, 0) !== _storage.includeLabels.length) return false;
     if (map.RobLabels && map.RobLabels.filter(x => _storage.excludeLabels.includes(x)).length !== 0) return false;
@@ -84,8 +113,12 @@ function mapFilter(map, nameFilter, minRating) {
 }
 
 function filterMaps() {
-    _scrapeData.MapInfo.sort(sort);
-    _filteredMaps = _scrapeData.MapInfo.filter(x => mapFilter(x, _storage.nameFilter, _storage.minRating));
+    _scrapeData.MapInfo.sort(sortFilteredMaps);
+    _filteredMaps = _scrapeData.MapInfo.filter(x => mapFilter(x));
+}
+
+function filterSubmitters(){
+    _submitters.sort(sortSubmitters);
 }
 
 function getLabels(map) {
@@ -121,8 +154,9 @@ function getLabelFilterList(include) {
 
 function resetFilter() {
     _storage.nameFilter = '';
-    _storage.ascending = false;
-    _storage.sortBy = _sortByProperties[0].propertyName;
+    _storage.submitterFilter = '';
+    _storage.ratingsTableAscending = false;
+    _storage.sortBy = _ratingsTableSortByProperties[0].propertyName;
     _storage.minRating = 0;
     _storage.includeLabels = [];
     _storage.excludeLabels = [];
@@ -134,26 +168,15 @@ function getRandomMap() {
     navigator.clipboard.writeText(map.Name);
     _toastMessages.addMessage(`Copied map '${map.Name}' to clipboard`, 2000);
 }
-function createMapLink(map){
-    return `https://gamebanana.com/mods/${map.Id}`;
+function createMapLink(id) {
+    return `https://gamebanana.com/mods/${id}`;
 }
 
-function createSubmitterLink(map){
-    return `https://gamebanana.com/members/${map.Submitter.Id}`;
+function createSubmitterLink(id) {
+    return `https://gamebanana.com/members/${id}`;
 }
 
-function makeRow(map) {
-    return m('tr', { key: map.Name }, [
-        m("th", { scope: "row" }, m("a", { class: "link-secondary", href: createMapLink(map) }, map.Name)),
-        m("td", m("a", { class: "link-secondary", href: createSubmitterLink(map) }, map.Submitter.Name)),
-        m("td", formatDate(map.Added)),
-        m("td", formatDate(map.InitialRatingTimestamp)),
-        m("td", map.RobRating == null ? "Unrated" : map.RobRating),
-        m("td", getLabels(map))
-    ]);
-}
-
-var Filtering = {
+var MapRatingsFiltering = {
     view: function () {
         return m("div", { style: { "display": "flex", "justify-content": "space-between", "gap": "1rem" } },
             [
@@ -182,15 +205,26 @@ var Filtering = {
                     )
                 ),
                 m("div", { style: { "flex-grow": "1" } },
-                    m("label", { class: "form-label" }, "Sort By"),
+                    m("label", { class: "form-label" }, "Submitter filter"),
+                    m("input", {
+                        class: "form-control",
+                        type: "text",
+                        value: _storage.submitterFilter,
+                        id: "submitterFilter",
+                        oninput: (event) => { _storage.submitterFilter = event.target.value; _storage.save(); }
+                    }
+                    )
+                ),
+                m("div", { style: { "flex-grow": "1" } },
+                    m("label", { class: "form-label", style: "margin-right:.5rem" }, "Sort By"),
                     m("div", { class: "form-check form-check-inline" },
                         m("input", {
                             class: "form-check-input",
                             type: "radio",
                             name: "ascDescRadio",
                             id: "sortAscending",
-                            checked: _storage.ascending,
-                            oninput: (event) => { _storage.ascending = event.target.checked; _storage.save(); }
+                            checked: _storage.ratingsTableAscending,
+                            oninput: (event) => { _storage.ratingsTableAscending = event.target.checked; _storage.save(); }
                         }
                         ),
                         m("label", { class: "form-check-label", for: "sortAscending" }, " Asc ")
@@ -201,8 +235,8 @@ var Filtering = {
                             type: "radio",
                             name: "ascDescRadio",
                             id: "sortDescending",
-                            checked: !_storage.ascending,
-                            oninput: (event) => { _storage.ascending = !event.target.checked; _storage.save(); }
+                            checked: !_storage.ratingsTableAscending,
+                            oninput: (event) => { _storage.ratingsTableAscending = !event.target.checked; _storage.save(); }
                         }
                         ),
                         m("label", { class: "form-check-label", for: "sortDescending" }, " Desc ")
@@ -216,7 +250,54 @@ var Filtering = {
                             value: _storage.sortBy
 
                         },
-                        _sortByProperties.map(x => m("option", { value: x.propertyName }, x.friendlyName))
+                        _ratingsTableSortByProperties.map(x => m("option", { value: x.propertyName }, x.friendlyName))
+                    )
+                )
+            ]
+        );
+    }
+}
+
+var SubmitterAverageRatingsFiltering = {
+    view: function () {
+        return m("div", { style: { "display": "flex", "justify-content": "center", "gap": "1rem" } },
+            [
+                m("div",
+                    m("label", { class: "form-label", style: "margin-right:.5rem" }, "Sort By"),
+                    m("div", { class: "form-check form-check-inline" },
+                        m("input", {
+                            class: "form-check-input",
+                            type: "radio",
+                            name: "ascDescRadio",
+                            id: "sortAscending",
+                            checked: _storage.submittersTableAscending,
+                            oninput: (event) => { _storage.submittersTableAscending = event.target.checked; _storage.save(); }
+                        }
+                        ),
+                        m("label", { class: "form-check-label", for: "sortAscending" }, " Asc ")
+                    ),
+                    m("div", { class: "form-check form-check-inline" },
+                        m("input", {
+                            class: "form-check-input",
+                            type: "radio",
+                            name: "ascDescRadio",
+                            id: "sortDescending",
+                            checked: !_storage.submittersTableAscending,
+                            oninput: (event) => { _storage.submittersTableAscending = !event.target.checked; _storage.save(); }
+                        }
+                        ),
+                        m("label", { class: "form-check-label", for: "sortDescending" }, " Desc ")
+                    ),
+                    m("select",
+                        {
+                            class: "form-select",
+                            id: "sortBy",
+                            "aria-label": "Sort by a property",
+                            oninput: (event) => { _storage.submitterSortBy = event.target.value; _storage.save(); },
+                            value: _storage.submitterSortBy
+
+                        },
+                        _submittersTableSortByProperties.map(x => m("option", { value: x.propertyName }, x.friendlyName))
                     )
                 )
             ]
@@ -226,14 +307,20 @@ var Filtering = {
 
 var Buttons = {
     view: function () {
-        return m("div", { class: "container d-flex mt-2", style: { "justify-content": "center" } },
-            m("div", { style: { "display": "inline-block", "margin": "0 4px 0 4px" } },
+        return m("div", { class: "container d-flex mt-2", style: { "justify-content": "center", "gap": "0.5rem" } },
+            m("div", { style: {} },
+                m("button", { class: "btn btn-primary", type: "submit", id: "resetFilterButton", onclick: () => _storage.showRatingsTable(), disabled: _storage.ratingsTableVisible }, "Show Ratings")
+            ),
+            m("div", { style: { "display": "inline-block"} },
+                m("button", { class: "btn btn-primary", type: "submit", id: "resetFilterButton", onclick: () => _storage.showSubmittersTable(), disabled: _storage.submittersTableVisible }, "Show Submitters")
+            ),
+            _storage.ratingsTableVisible && m("div", { style: { "display": "inline-block"} },
                 m("button", { class: "btn btn-primary", type: "submit", id: "resetFilterButton", onclick: resetFilter }, "Reset filters")
             ),
-            m("div", { class: "ml-2", style: { "display": "inline-block", "margin": "0 4px 0 4px" } },
+            _storage.ratingsTableVisible && m("div", { style: { "display": "inline-block"} },
                 m("button", { class: "btn btn-primary", type: "submit", id: "getRandomMapButton", onclick: getRandomMap }, "Get Random")
             ),
-            m("div", { class: "ml-2", style: { "display": "inline-block", "margin": "0 4px 0 4px" } },
+            m("div", { style: { "display": "inline-block"} },
                 m("a", { class: "btn btn-info", href: "/stats.html" }, "View statistics")
             )
         );
@@ -249,7 +336,18 @@ var TagFiltering = {
     }
 }
 
-var Table = {
+function makeMapRatingsRow(map) {
+    return m('tr', { key: map.Name }, [
+        m("th", { scope: "row" }, m("a", { class: "link-secondary", href: createMapLink(map.Id) }, map.Name)),
+        m("td", m("a", { class: "link-secondary", href: createSubmitterLink(map.Submitter.Id) }, map.Submitter.Name)),
+        m("td", formatDate(map.Added)),
+        m("td", formatDate(map.InitialRatingTimestamp)),
+        m("td", map.RobRating == null ? "Unrated" : map.RobRating),
+        m("td", getLabels(map))
+    ]);
+}
+
+var MapRatingsTable = {
     view: function () {
         filterMaps();
 
@@ -265,7 +363,35 @@ var Table = {
                         m("th", { scope: "col" }, "Labels")
                     ]
                     )),
-                m("tbody", _filteredMaps.map(x => makeRow(x)))
+                m("tbody", _filteredMaps.map(x => makeMapRatingsRow(x)))
+            ])
+        );
+    }
+}
+
+function makeAverageSubmitterRatingTable(playerRating) {
+    return m('tr', { key: playerRating.Name }, [
+        // add a clickable filter button for filtering based on this submitter! Nice one lad...
+        m("th", { scope: "row" }, m("a", { class: "link-secondary", href: createSubmitterLink(playerRating.id) }, playerRating.name)),
+        m("td", playerRating.numRatings),
+        m("td", playerRating.averageRating)
+    ]);
+}
+
+var AverageSubmitterRatingTable = {
+    view: function () {
+        filterSubmitters();
+
+        return m("div", { class: "container" },
+            m("table", { class: "table table-striped", id: "fixed-table-header" }, [
+                m("thead",
+                    m("tr", [
+                        m("th", { scope: "col" }, `Name`),
+                        m("th", { scope: "col" }, "Number of Ratings"),
+                        m("th", { scope: "col" }, "Average Rating")
+                    ]
+                    )),
+                m("tbody", _submitters.map(x => makeAverageSubmitterRatingTable(x)))
             ])
         );
     }
@@ -288,61 +414,73 @@ function DrawRatingGraph(graphElement) {
 }
 
 var ToastComponent = {
-    onbeforeremove: function(vnode) {
+    onbeforeremove: function (vnode) {
         vnode.dom.classList.add("fade-out");
-        return new Promise(function(resolve) {
+        return new Promise(function (resolve) {
             vnode.dom.addEventListener("animationend", resolve);
         })
     },
-    view: function({ attrs }){
+    view: function ({ attrs }) {
 
-        return m("div.fade-in", 
-                    {
-                        "class": 'toast align-items-center show text-white bg-primary',
-                        "role":"alert",
-                        "aria-live":"assertive",
-                        "aria-atomic":"true",
-                        "style": 'pointer-events:all'
-                    }, 
-                    m("div", {"class":"d-flex"},
-                        m("div", {"class":"toast-body"}, attrs.message )
-                    )
-      )
+        return m("div.fade-in",
+            {
+                "class": 'toast align-items-center show text-white bg-primary',
+                "role": "alert",
+                "aria-live": "assertive",
+                "aria-atomic": "true",
+                "style": 'pointer-events:all'
+            },
+            m("div", { "class": "d-flex" },
+                m("div", { "class": "toast-body" }, attrs.message)
+            )
+        )
     }
 }
 
 var ErrorOverlay = {
-    view: function(){
+    view: function () {
         return m('div.error-container', { style: 'pointer-events:none' },
-            m('div.errors', _toastMessages.messages.map(x => m(ToastComponent, {key: x.key, message: x.message})))
+            m('div.errors', _toastMessages.messages.map(x => m(ToastComponent, { key: x.key, message: x.message })))
         );
     }
 }
 
 var Header = {
-    view: function() {
-        return m("div", {"class":"container"}, 
-        m("header",
-            m("h2", "Rob's Half Life 2 Map Ratings."),
-            m("p", "An attempt to rate and categorise over 1600 Half Life 2 Deathmatch maps. "),
-            m("p", m("i", "Extremely subjective!"))
-        )
-      );
+    view: function () {
+        return m("div", { "class": "container" },
+            m("header",
+                m("h2", "Rob's Half Life 2 Map Ratings."),
+                m("p", "An attempt to rate and categorise over 1600 Half Life 2 Deathmatch maps. "),
+                m("p", m("i", "Extremely subjective!"))
+            )
+        );
     }
 }
 
+
 var DynamicContent = {
     view: function () {
-        return [
-            m(ErrorOverlay),
-            m('div.container',
-                m(Header),
-                m(Filtering),
-                m(Buttons),
-                m(TagFiltering),
-                m(Table)
-            )
-        ];
+        if (_storage.ratingsTableVisible)
+            return [
+                m(ErrorOverlay),
+                m('div.container',
+                    m(Header),
+                    m(MapRatingsFiltering),
+                    m(Buttons),
+                    m(TagFiltering),
+                    m(MapRatingsTable)
+                )
+            ];
+        if (_storage.submittersTableVisible)
+            return [
+                m(ErrorOverlay),
+                m('div.container',
+                    m(Header),
+                    m(SubmitterAverageRatingsFiltering),
+                    m(Buttons),
+                    m(AverageSubmitterRatingTable)
+                )
+            ];
     }
 }
 
@@ -356,9 +494,33 @@ function findAllLabels(data) {
 }
 
 function formatDate(unixTimestamp) {
-    if(unixTimestamp == null) return '';
+    if (unixTimestamp == null) return '';
     let date = new Date(unixTimestamp * 1000);
-    return `${_dayPrettyPrint[date.getDay()]} ${date.getDate()} ${_monthPrettyPrint[date.getMonth()]}, ${(date.getYear() - 100).toString().padStart(2,'0')}`
+    return `${_dayPrettyPrint[date.getDay()]} ${date.getDate()} ${_monthPrettyPrint[date.getMonth()]}, ${(date.getYear() - 100).toString().padStart(2, '0')}`
+}
+
+function getAverageRatingData() {
+    for (let map of _scrapeData.MapInfo.filter(x => x.RobRating)) {
+        if (map.Submitter.Name in _submitters) {
+            _submitters[map.Submitter.Name].numRatings += 1;
+            _submitters[map.Submitter.Name].totalRating += map.RobRating;
+        } else {
+            _submitters[map.Submitter.Name] = {
+                name: map.Submitter.Name,
+                id: map.Submitter.Id,
+                numRatings: 1,
+                totalRating: map.RobRating
+            }
+        }
+    }
+    for (let playerRating of Object.values(_submitters)) {
+        playerRating.averageRating = playerRating.totalRating / playerRating.numRatings;
+    }
+
+    _submitters = Object.values(_submitters);
+    _submitters.sort((a, b) => a.averageRating <= b.averageRating ? 1 : -1);
+
+    console.log(_submitters);
 }
 
 async function initialise() {
@@ -367,7 +529,7 @@ async function initialise() {
     m.mount(document.querySelector('#dynamic-content'), DynamicContent);
     _scrapeData = (await m.request({ method: 'GET', url: 'scrape_data.json' }));
     findAllLabels(_scrapeData.MapInfo);
-
+    getAverageRatingData();
     m.redraw();
 }
 
