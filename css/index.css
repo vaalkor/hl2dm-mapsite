@@ -129,3 +129,25 @@ thead{
     gap: 0.5rem;
 }
 
+/* Currently this is just for the filter button on the submitter table... But we can adjust it to be more generic later */
+.config-button {
+    background-color: #d7d9dc;
+    /* padding: 0.375rem 0.75rem; */
+    height: 1.5rem;
+    width: 1.5rem;
+    padding: 0rem;
+    margin-left: 1rem;
+    /* Bootstrap's default padding to match button */
+    border-radius: 0.375rem;
+}
+
+.config-button:hover {
+    background-color: #e2e3e5;
+    border-radius: 5px;
+}
+
+.config-button:active {
+    background-color: #c4c4c4;
+    border-radius: 5px;
+}
+

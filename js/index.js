@@ -8,7 +8,8 @@ var _ratingsTableSortByProperties = [
 
 var _submittersTableSortByProperties = [
     { propertyName: 'averageRating', friendlyName: 'Average Rating' },
-    { propertyName: 'numRatings', friendlyName: '# of maps rated' }
+    { propertyName: 'numRatings', friendlyName: '# of maps rated' },
+    { propertyName: 'totalMaps', friendlyName: '# of maps submitted' }
 ];
 var _submitters = [];
 var _toastMessages = {
@@ -337,7 +338,7 @@ var TagFiltering = {
 }
 
 function makeMapRatingsRow(map) {
-    return m('tr', { key: map.Name }, [
+    return m('tr', { key: map.Id }, [ // TODO: figure out why this was breaking when we used Name as the key... That's a bit weird...
         m("th", { scope: "row" }, m("a", { class: "link-secondary", href: createMapLink(map.Id) }, map.Name)),
         m("td", m("a", { class: "link-secondary", href: createSubmitterLink(map.Submitter.Id) }, map.Submitter.Name)),
         m("td", formatDate(map.Added)),
@@ -369,11 +370,30 @@ var MapRatingsTable = {
     }
 }
 
+var FilterButton = {
+    view: function ({ attrs }) {
+        return m('svg.config-button', {
+            viewBox: "0 0 16 16",
+            onclick: attrs.onclick
+        },
+            m('path', { d: "M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" })
+        )
+    }
+}
+
+function filterBySubmitter(submitterName){
+    resetFilter();
+    _storage.submitterFilter = submitterName;
+    _storage.minRating = -0.5;
+    _storage.showRatingsTable();
+}
+
 function makeAverageSubmitterRatingTable(playerRating) {
-    return m('tr', { key: playerRating.Name }, [
+    return m('tr', { key: playerRating.id }, [
         // add a clickable filter button for filtering based on this submitter! Nice one lad...
-        m("th", { scope: "row" }, m("a", { class: "link-secondary", href: createSubmitterLink(playerRating.id) }, playerRating.name)),
+        m("th", { scope: "row" }, m("a", { class: "link-secondary", href: createSubmitterLink(playerRating.id) }, playerRating.name), m(FilterButton, {onclick: () => filterBySubmitter(playerRating.name)})),
         m("td", playerRating.numRatings),
+        m("td", playerRating.totalMaps),
         m("td", playerRating.averageRating)
     ]);
 }
@@ -386,8 +406,9 @@ var AverageSubmitterRatingTable = {
             m("table", { class: "table table-striped", id: "fixed-table-header" }, [
                 m("thead",
                     m("tr", [
-                        m("th", { scope: "col" }, `Name`),
-                        m("th", { scope: "col" }, "Number of Ratings"),
+                        m("th", { scope: "col" }, `Name `),
+                        m("th", { scope: "col" }, "Maps Rated"),
+                        m("th", { scope: "col" }, "Maps Submitted"),
                         m("th", { scope: "col" }, "Average Rating")
                     ]
                     )),
@@ -490,7 +511,6 @@ function findAllLabels(data) {
         if (!x.RobLabels) return;
         x.RobLabels.forEach(label => { if (!_foundLabels.includes(label)) _foundLabels.push(label) });
     });
-    console.log(_foundLabels);
 }
 
 function formatDate(unixTimestamp) {
@@ -509,18 +529,21 @@ function getAverageRatingData() {
                 name: map.Submitter.Name,
                 id: map.Submitter.Id,
                 numRatings: 1,
-                totalRating: map.RobRating
+                totalRating: map.RobRating,
+                totalMaps: 0 // Add up total number of maps later...
             }
         }
+    }
+
+    for (let map of _scrapeData.MapInfo){
+        if(map.Submitter.Name in _submitters) 
+            _submitters[map.Submitter.Name].totalMaps++;
     }
     for (let playerRating of Object.values(_submitters)) {
         playerRating.averageRating = playerRating.totalRating / playerRating.numRatings;
     }
 
     _submitters = Object.values(_submitters);
-    _submitters.sort((a, b) => a.averageRating <= b.averageRating ? 1 : -1);
-
-    console.log(_submitters);
 }
 
 async function initialise() {
