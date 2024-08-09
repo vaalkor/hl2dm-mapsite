@@ -29963,7 +29963,8 @@
                         "Category":  "Deathmatch",
                         "InitialRatingTimestamp":  "1633120561",
                         "RobLabels":  [
-                                          "Outdoors"
+                                          "Outdoors",
+                                          "NoTripmines"
                                       ],
                         "RobRating":  5
                     }
