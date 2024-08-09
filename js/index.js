@@ -14,7 +14,7 @@ var _ratingsTableSortByProperties = [
 
 var _submittersTableSortByProperties = [
     { propertyName: 'averageRating', friendlyName: 'Average Rating' },
-    { propertyName: 'numRatings', friendlyName: '# of maps rated' },
+    { propertyName: 'totalRatedOrCrashedMaps', friendlyName: '# of maps rated' },
     { propertyName: 'totalMaps', friendlyName: '# of maps submitted' }
 ];
 var _submitters = [];
@@ -164,7 +164,7 @@ function resetFilter() {
     _storage.submitterFilter = '';
     _storage.ratingsTableAscending = false;
     _storage.sortBy = _ratingsTableSortByProperties[0].propertyName;
-    _storage.minRating = -0.5;
+    _storage.minRating = 0;
     _storage.includeLabels = [];
     _storage.excludeLabels = [];
     _storage.save();
@@ -406,17 +406,23 @@ var CopyToClipboardIcon = {
 
 function filterBySubmitter(submitterName){
     resetFilter();
+    _storage.minRating = CONSTANTS.NO_RATING_MIN_RATING_VALUE;
     _storage.submitterFilter = submitterName;
+    _storage.save();
     m.route.set(ROUTES.ratingsTable);
 }
 
 function makeSubmittersTableRow(playerRating) {
+    if(playerRating.name === 'SirCharlesBabbage'){
+        debugger;
+    }
+
     return m('tr', { key: playerRating.id }, [
         // add a clickable filter button for filtering based on this submitter! Nice one lad...
         m("th", { scope: "row" }, m("a", { class: "link-secondary", href: createSubmitterLink(playerRating.id) }, playerRating.name), m(FilterIcon, {onclick: () => filterBySubmitter(playerRating.name)})),
-        m("td", playerRating.numRatings),
+        m("td", playerRating.totalRatedOrCrashedMaps),
         m("td", playerRating.totalMaps),
-        m("td", playerRating.averageRating)
+        m("td", isNaN(playerRating.averageRating) ? 'No rating' : playerRating.averageRating)
     ]);
 }
 
@@ -531,16 +537,20 @@ function formatDate(unixTimestamp) {
 }
 
 function getAverageRatingData() {
-    for (let map of _scrapeData.MapInfo.filter(x => x.RobRating)) {
+    // I want to count how many maps have been rated, or determined that they do not load/crash for each submitter.
+    // But I do not want a crashed map to reduce the average map score, which is why I maintain a 2 different count variables.
+    for (let map of _scrapeData.MapInfo.filter(x => x.RobRating || x.RobLabels)) {
         if (map.Submitter.Name in _submitters) {
-            _submitters[map.Submitter.Name].numRatings += 1;
-            _submitters[map.Submitter.Name].totalRating += map.RobRating;
+            _submitters[map.Submitter.Name].numRatings += map.RobRating != null ? 1 : 0;
+            _submitters[map.Submitter.Name].totalRatedOrCrashedMaps += 1;
+            _submitters[map.Submitter.Name].totalRating += map.RobRating || 0;
         } else {
             _submitters[map.Submitter.Name] = {
                 name: map.Submitter.Name,
                 id: map.Submitter.Id,
-                numRatings: 1,
-                totalRating: map.RobRating,
+                numRatings: map.RobRating != null ? 1 : 0,
+                totalRatedOrCrashedMaps: 1,
+                totalRating: map.RobRating || 0,
                 totalMaps: 0 // Add up total number of maps later...
             }
         }
