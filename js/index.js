@@ -1,5 +1,11 @@
 'use strict';
-
+var CONSTANTS = {
+    NO_RATING_MIN_RATING_VALUE: -0.5
+}
+var ROUTES = {
+    ratingsTable: "/",
+    submittersTable: "/submitters"
+}
 var _ratingsTableSortByProperties = [
     { propertyName: 'RobRating', friendlyName: 'Rating' },
     { propertyName: 'InitialRatingTimestamp', friendlyName: 'First Rated' },
@@ -309,11 +315,11 @@ var SubmitterAverageRatingsFiltering = {
 var Buttons = {
     view: function () {
         return m("div", { class: "container d-flex mt-2", style: { "justify-content": "center", "gap": "0.5rem" } },
-            m("div", { style: {} },
-                m("button", { class: "btn btn-primary", type: "submit", id: "resetFilterButton", onclick: () => _storage.showRatingsTable(), disabled: _storage.ratingsTableVisible }, "Show Ratings")
+            _storage.submittersTableVisible && m("div", { style: {} },
+                m("a", { class: "btn btn-primary", type: "submit", id: "showRatingsButton", href: `/`}, "Show Ratings")
             ),
-            m("div", { style: { "display": "inline-block"} },
-                m("button", { class: "btn btn-primary", type: "submit", id: "resetFilterButton", onclick: () => _storage.showSubmittersTable(), disabled: _storage.submittersTableVisible }, "Show Submitters")
+            _storage.ratingsTableVisible && m("div", { style: { "display": "inline-block"} },
+                m("a", { class: "btn btn-primary", id: "showSubmittersButton", href: `#!${ROUTES.submittersTable}`}, "Show Submitters")
             ),
             _storage.ratingsTableVisible && m("div", { style: { "display": "inline-block"} },
                 m("button", { class: "btn btn-primary", type: "submit", id: "resetFilterButton", onclick: resetFilter }, "Reset filters")
@@ -353,7 +359,7 @@ function makeMapRatingsRow(map) {
     ]);
 }
 
-var MapRatingsTable = {
+var RatingsTable = {
     view: function () {
         filterMaps();
 
@@ -401,10 +407,10 @@ var CopyToClipboardIcon = {
 function filterBySubmitter(submitterName){
     resetFilter();
     _storage.submitterFilter = submitterName;
-    _storage.showRatingsTable();
+    m.route.set(ROUTES.ratingsTable);
 }
 
-function makeAverageSubmitterRatingTable(playerRating) {
+function makeSubmittersTableRow(playerRating) {
     return m('tr', { key: playerRating.id }, [
         // add a clickable filter button for filtering based on this submitter! Nice one lad...
         m("th", { scope: "row" }, m("a", { class: "link-secondary", href: createSubmitterLink(playerRating.id) }, playerRating.name), m(FilterIcon, {onclick: () => filterBySubmitter(playerRating.name)})),
@@ -414,7 +420,7 @@ function makeAverageSubmitterRatingTable(playerRating) {
     ]);
 }
 
-var AverageSubmitterRatingTable = {
+var SubmittersTable = {
     view: function () {
         filterSubmitters();
 
@@ -428,7 +434,7 @@ var AverageSubmitterRatingTable = {
                         m("th", { scope: "col" }, "Average Rating")
                     ]
                     )),
-                m("tbody", _submitters.map(x => makeAverageSubmitterRatingTable(x)))
+                m("tbody", _submitters.map(x => makeSubmittersTableRow(x)))
             ])
         );
     }
@@ -497,27 +503,16 @@ var Header = {
 
 var App = {
     view: function () {
-        if (_storage.ratingsTableVisible)
-            return [
-                m(ErrorOverlay),
-                m('div.container',
-                    m(Header),
-                    m(MapRatingsFiltering),
-                    m(Buttons),
-                    m(TagFiltering),
-                    m(MapRatingsTable)
-                )
-            ];
-        if (_storage.submittersTableVisible)
-            return [
-                m(ErrorOverlay),
-                m('div.container',
-                    m(Header),
-                    m(SubmitterAverageRatingsFiltering),
-                    m(Buttons),
-                    m(AverageSubmitterRatingTable)
-                )
-            ];
+        return [
+            m(ErrorOverlay),
+            m('div.container',
+                m(Header),
+                _storage.ratingsTableVisible ? m(MapRatingsFiltering) : m(SubmitterAverageRatingsFiltering),
+                m(Buttons),
+                _storage.ratingsTableVisible && m(TagFiltering),
+                _storage.ratingsTableVisible ? m(RatingsTable) : m(SubmittersTable)
+            )
+        ]
     }
 }
 
@@ -562,7 +557,7 @@ function getAverageRatingData() {
     _submitters = Object.values(_submitters);
 }
 
-var Routing = {
+var RoutingConfiguration = {
     "/": {
         render: function(){
             _storage.showRatingsTable();
@@ -571,6 +566,7 @@ var Routing = {
     },
     "/submitters": {
         render: function(){
+            _storage.showSubmittersTable();
             return m(App);
         }
     }
@@ -579,7 +575,7 @@ var Routing = {
 async function initialise() {
     _storage.loadFromLocalStorage();
 
-    m.mount(document.querySelector('#dynamic-content'), App);
+    m.route(document.querySelector('#dynamic-content'), "/", RoutingConfiguration);
     _scrapeData = (await m.request({ method: 'GET', url: 'scrape_data.json' }));
     findAllLabels(_scrapeData.MapInfo);
     getAverageRatingData();
