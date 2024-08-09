@@ -4045,7 +4045,11 @@
                                           "Name":  "Jora_",
                                           "Id":  1319723
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobLabels":  [
+                                          "CausesCrash"
+                                      ],
+                        "InitialRatingTimestamp":  1723236713
                     },
                     {
                         "Name":  "Pondside",
@@ -4124,7 +4128,13 @@
                                           "Name":  "[FJC] Apollyon094",
                                           "Id":  1697688
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobRating":  1.5,
+                        "RobLabels":  [
+                                          "NoTripmines",
+                                          "TooBig"
+                                      ],
+                        "InitialRatingTimestamp":  1723240308
                     },
                     {
                         "Name":  "dm_deserthome",
@@ -4431,7 +4441,13 @@
                                           "Name":  "Jora_",
                                           "Id":  1319723
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobLabels":  [
+                                          "NoTripmines",
+                                          "Remake",
+                                          "UT"
+                                      ],
+                        "InitialRatingTimestamp":  1723237537
                     },
                     {
                         "Name":  "dm_TheHouseCore",
@@ -4478,7 +4494,11 @@
                                           "Name":  "Jora_",
                                           "Id":  1319723
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1723236675
                     },
                     {
                         "Name":  "dm_gasworks_interior",
@@ -4629,7 +4649,11 @@
                                           "Name":  "Pseudonym",
                                           "Id":  435692
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1723232443
                     },
                     {
                         "Name":  "dm_nxbt",
@@ -5438,7 +5462,13 @@
                                           "Name":  "Pseudonym",
                                           "Id":  435692
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "NoTripmines",
+                                          "Small"
+                                      ],
+                        "InitialRatingTimestamp":  1723233288
                     },
                     {
                         "Name":  "dm_orbzone (glass cubes give exposing cover)",
@@ -5453,7 +5483,13 @@
                                           "Name":  "Pseudonym",
                                           "Id":  435692
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobLabels":  [
+                                          "Small",
+                                          "Medium"
+                                      ],
+                        "InitialRatingTimestamp":  1723235373,
+                        "RobRating":  3.5
                     },
                     {
                         "Name":  "dm_kyngs_manor (large manor house, courts \u0026 ruins)",
@@ -5543,7 +5579,13 @@
                                           "Name":  "Pseudonym",
                                           "Id":  435692
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobLabels":  [
+                                          "KingOfTheHill",
+                                          "Small"
+                                      ],
+                        "InitialRatingTimestamp":  1723234286,
+                        "RobRating":  3.5
                     },
                     {
                         "Name":  "dm_tal (colourful arena)",
@@ -5877,7 +5919,11 @@
                                           "Name":  "Jora_",
                                           "Id":  1319723
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1723238602
                     },
                     {
                         "Name":  "dm_war.map",
@@ -5944,7 +5990,14 @@
                                           "Name":  "Jora_",
                                           "Id":  1319723
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobLabels":  [
+                                          "NoTripmines",
+                                          "Remake",
+                                          "Quake"
+                                      ],
+                        "InitialRatingTimestamp":  1723238574,
+                        "RobRating":  3
                     },
                     {
                         "Name":  "dm_overwatch CM remake",
@@ -8754,7 +8807,12 @@
                                           "Name":  "Pseudonym",
                                           "Id":  435692
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "Medium"
+                                      ],
+                        "InitialRatingTimestamp":  1723236562
                     },
                     {
                         "Name":  "dm_dorm_v1",
@@ -9823,7 +9881,14 @@
                                           "Name":  "QMD",
                                           "Id":  779693
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobRating":  3.5,
+                        "RobLabels":  [
+                                          "NoTripmines",
+                                          "Medium",
+                                          "Indoors"
+                                      ],
+                        "InitialRatingTimestamp":  1723239903
                     },
                     {
                         "Name":  "dm_the_longest_day_b1",
@@ -11168,7 +11233,11 @@
                                           "Name":  "Pseudonym",
                                           "Id":  435692
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1723236587
                     },
                     {
                         "Name":  "dm_campus",
@@ -14266,7 +14335,11 @@
                                           "Name":  "Mr. Nobody",
                                           "Id":  774550
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobLabels":  [
+                                          "NeverLoads"
+                                      ],
+                        "InitialRatingTimestamp":  1723238679
                     },
                     {
                         "Name":  "dm_glasshouse_v1b22",
@@ -24484,7 +24557,12 @@
                                           "Name":  "._:_ENEMY_:_.",
                                           "Id":  96025
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobRating":  3,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1723241435
                     },
                     {
                         "Name":  "dm_rebar",
@@ -31422,6 +31500,66 @@
                                [
                                    1723154363,
                                    452
+                               ],
+                               [
+                                   1723232443,
+                                   453
+                               ],
+                               [
+                                   1723233288,
+                                   454
+                               ],
+                               [
+                                   1723234286,
+                                   455
+                               ],
+                               [
+                                   1723235373,
+                                   456
+                               ],
+                               [
+                                   1723236562,
+                                   457
+                               ],
+                               [
+                                   1723236587,
+                                   458
+                               ],
+                               [
+                                   1723236675,
+                                   459
+                               ],
+                               [
+                                   1723236713,
+                                   460
+                               ],
+                               [
+                                   1723237537,
+                                   461
+                               ],
+                               [
+                                   1723238574,
+                                   462
+                               ],
+                               [
+                                   1723238602,
+                                   463
+                               ],
+                               [
+                                   1723238679,
+                                   464
+                               ],
+                               [
+                                   1723239903,
+                                   465
+                               ],
+                               [
+                                   1723240308,
+                                   466
+                               ],
+                               [
+                                   1723241435,
+                                   467
                                ]
                            ]
 }
