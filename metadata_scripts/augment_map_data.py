@@ -45,4 +45,4 @@ for mapInfo in mapFile['MapInfo']:
 print('Saving file...')
 
 with open(args.file, 'w') as json_file:
-    json.dump(mapFile, json_file, indent=4)
+    json.dump(mapFile, json_file)

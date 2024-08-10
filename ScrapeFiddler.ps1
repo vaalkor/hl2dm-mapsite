@@ -170,7 +170,7 @@ if($UpdateInfo){
 
     "Writing updated data to $ScrapeDataFile"
 
-    $json | ConvertTo-Json -Depth 5| Set-Content -Path $ScrapeDataFile
+    $json | ConvertTo-Json -Depth 10 -Compress | Set-Content -Path $ScrapeDataFile
 
     exit 0
 }
