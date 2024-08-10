@@ -239,7 +239,9 @@
                                           "Name":  "maxalotl9",
                                           "Id":  2894596
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobRating":  3,
+                        "InitialRatingTimestamp":  1723242306
                     },
                     {
                         "Name":  "dm_xmasquad",
@@ -329,7 +331,9 @@
                                           "Name":  "Infinite_Data",
                                           "Id":  3006233
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobRating":  3.5,
+                        "InitialRatingTimestamp":  1723242349
                     },
                     {
                         "Name":  "Washplace",
@@ -539,7 +543,12 @@
                                           "Name":  "AlcyToronto",
                                           "Id":  1347919
                                       },
-                        "Category":  "Deathmatch"
+                        "Category":  "Deathmatch",
+                        "RobRating":  2.5,
+                        "RobLabels":  [
+                                          "NoTripmines"
+                                      ],
+                        "InitialRatingTimestamp":  1723242321
                     },
                     {
                         "Name":  "dm_tiny",
@@ -31561,6 +31570,18 @@
                                [
                                    1723241435,
                                    467
+                               ],
+                               [
+                                   1723242306,
+                                   468
+                               ],
+                               [
+                                   1723242321,
+                                   469
+                               ],
+                               [
+                                   1723242349,
+                                   470
                                ]
                            ]
 }
