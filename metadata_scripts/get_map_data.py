@@ -48,7 +48,9 @@ while True:
 
     print(f'Retrieved {len(submissions)} maps...')
 
-    time.sleep(10)
+    time.sleep(2)
+
+    break
 
 print(f'Finished retrieving data. {len(submissions)} maps found. Writing JSON file...')
 

@@ -17,7 +17,7 @@ print(f'Number of maps: {count}')
 for mapInfo in mapFile['MapInfo']:
     mapId = mapInfo['Id']
 
-    if 'Category' in mapInfo:
+    if 'Category' in mapInfo and 'Files' in mapInfo:
         continue
 
     response = requests.get(f'https://gamebanana.com/apiv11/Mod/{mapId}/ProfilePage')
@@ -30,11 +30,14 @@ for mapInfo in mapFile['MapInfo']:
     try:
         category = responseJson['_aCategory']['_sName']
         mapInfo['Category'] = category
+        files = list(map(lambda x: {'Name': x['_sFile'], 'Url': x['_sDownloadUrl']}, responseJson['_aFiles']))
+        mapInfo['Files'] = list(map(lambda x: {'Name': x['_sFile'], 'Url': x['_sDownloadUrl']}, responseJson['_aFiles'])) 
     except:
         break
 
     mapName = mapInfo['Name']
     print(f'Retrieved category "{category}" for map "{mapName}"')
+    print(f'Retrieved files "{files}" for map "{mapName}"')
 
     time.sleep(3)
 
@@ -42,4 +45,4 @@ for mapInfo in mapFile['MapInfo']:
 print('Saving file...')
 
 with open(args.file, 'w') as json_file:
-    json.dump(mapFile, json_file)
+    json.dump(mapFile, json_file, indent=4)

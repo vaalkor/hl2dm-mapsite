@@ -43,7 +43,7 @@ if(-not ($UpdateInfo -or $GetInfo -or $GetRandomMap -or $ListMaps -or $CountMaps
 }
 
 
-if($MapNameFromClip){ $MapName = Get-Clipboard}
+if($MapNameFromClip){ $MapName = Get-Clipboard }
 
 function GetUnixTime(){
     return [int64](([datetime]::UtcNow)-(get-date "1/1/1970")).TotalSeconds

@@ -1,3 +1,5 @@
+# This script was used once to transfer my ratings/labels from the old scrape_info.json schema to the new one.
+
 import json
 with open('new_data_master_copy.json', 'r') as read_file:
     new_data = json.load(read_file)
