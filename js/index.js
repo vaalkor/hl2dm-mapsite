@@ -2,6 +2,59 @@
 var CONSTANTS = {
     NO_RATING_MIN_RATING_VALUE: -0.5
 }
+var IGNORE_LABELS = ['UT', 'Quake', 'MissingTextures', 'Incomplete', 'Indoors', 'Outdoors', 'HL1'] // Labels to exclude from the filtering component
+var ALL_WEAPONS = [
+    "357",
+    "alyxgun",
+    "annabelle",
+    "ar2",
+    "assaultrifle",
+    "awp",
+    "brickbat",
+    "bugbait",
+    "crossbow",
+    "crowbar",
+    "deagle",
+    "flashbang",
+    "frag",
+    "gauss",
+    "glock",
+    "grenade",
+    "hegrenade",
+    "HEGrenade",
+    "knife",
+    "m249",
+    "m4a1",
+    "mac10",
+    "p228",
+    "physcannon",
+    "physgun",
+    "pistol",
+    "pistol_45acp",
+    "pistol_50ae",
+    "pistol_9mm",
+    "revolver",
+    "rpg",
+    "sawnoff",
+    "shotgun",
+    "slam",
+    "slamer",
+    "smg1",
+    "smokegrenade",
+    "sniperrifle",
+    "stunstick",
+    "submachinegun",
+    "xm1014"
+];
+var FILTER_WEAPONS = [
+    "357",
+    "ar2",
+    "crossbow",
+    "frag",
+    "rpg",
+    "shotgun",
+    "slam"
+];
 var ROUTES = {
     ratingsTable: "/",
     submittersTable: "/submitters"
@@ -46,6 +99,8 @@ var _storage = {
     minRating: 0,
     includeLabels: [],
     excludeLabels: ['NeverLoads', 'CausesCrash'],
+    includeWeapons: [],
+    excludeWeapons: [],
     loadFromLocalStorage: function () {
         const savedData = localStorage.getItem('storage');
         if (savedData) {
@@ -66,6 +121,7 @@ var _storage = {
         this.save();
     }
 }
+var _modalMapInfo = null; // The map info we have a modal open for.
 var _scrapeData = { MapInfo: [], MapRatingGraphData: [] };
 var _foundLabels = {};
 var _defaultLabel = 'label-blue';
@@ -91,9 +147,9 @@ function getAndSetElemValue(key) {
     if (val !== null && val !== undefined) $(key).value = val;
 }
 
-function redraw() {
-    m.redraw();
-}
+function openModel(map){ _modalMapInfo = map; }
+
+function closeModal(){ _modalMapInfo = null; }
 
 function sortFilteredMaps(a, b) {
     if (_storage.sortBy == null) return a;
@@ -108,20 +164,53 @@ function sortSubmitters(a, b) {
 }
 
 function mapFilter(map) {
-    // debugger;
     if (_storage.nameFilter && !(map.Name.toLowerCase().includes(_storage.nameFilter.toLowerCase()))) return false;
     if (_storage.submitterFilter && !(map.Submitter.Name.toLowerCase().includes(_storage.submitterFilter.toLowerCase()))) return false;
     if (_storage.minRating >= 0 && (map.RobRating === undefined || map.RobRating === null)) return false;
     if (_storage.minRating >= 0 && map.RobRating < _storage.minRating) return false;
     if (map.RobLabels == null && _storage.includeLabels.length !== 0) return false;
-    if (map.RobLabels && map.RobLabels.reduce((a, b) => _storage.includeLabels.includes(b) ? a + 1 : a, 0) !== _storage.includeLabels.length) return false;
-    if (map.RobLabels && map.RobLabels.filter(x => _storage.excludeLabels.includes(x)).length !== 0) return false;
+    if (map.RobLabels){
+
+        if(map.RobLabels.length < _storage.includeLabels.length) 
+            return false;
+
+        for(let label of _storage.includeLabels){
+            if(!(label in map['LabelDict'])) 
+                return false
+        }
+
+        for(let label of map.RobLabels){
+            if(_storage.excludeLabels.includes(label)) return false;
+        }
+    }
+
+    // If we are filtering maps with weapons, and a map has no weapon information extracted, do not show it.
+    if(map.Weapons == null && (_storage.includeWeapons.length > 0 || _storage.excludeWeapons.length > 0)){
+        return false;
+    }
+
+    if (map.Weapons){
+
+        if(map.Weapons.length < _storage.includeWeapons.length)
+            return false;
+
+        for(let weapon of _storage.includeWeapons){
+            if(!(weapon in map['WeaponDict'])) 
+                return false
+        }
+
+        for(let weapon of map.Weapons){
+            if(_storage.excludeWeapons.includes(weapon)) return false;
+        }
+    }
     return true;
 }
 
 function filterMaps() {
+    console.time('filter maps');
     _scrapeData.MapInfo.sort(sortFilteredMaps);
     _filteredMaps = _scrapeData.MapInfo.filter(x => mapFilter(x));
+    console.timeEnd('filter maps');
 }
 
 function filterSubmitters(){
@@ -131,6 +220,22 @@ function filterSubmitters(){
 function getLabels(map) {
     if (map.RobLabels === null || map.RobLabels === undefined || map.RobLabels.length === 0) return [];
     return map.RobLabels.map(x => m("span", { class: `map-label ${getLabelColour(x)}` }, x));
+}
+
+function includeWeapon(weapon) {
+    if (_storage.excludeWeapons.includes(weapon)) _storage.excludeWeapons = _storage.excludeWeapons.filter(x => x !== weapon);
+    if (_storage.includeWeapons.includes(weapon)) _storage.includeWeapons = _storage.includeWeapons.filter(x => x !== weapon);
+    else _storage.includeWeapons.push(weapon);
+
+    _storage.save();
+}
+
+function excludeWeapon(weapon) {
+    if (_storage.includeWeapons.includes(weapon)) _storage.includeWeapons = _storage.includeWeapons.filter(x => x !== weapon);
+    if (_storage.excludeWeapons.includes(weapon)) _storage.excludeWeapons = _storage.excludeWeapons.filter(x => x !== weapon);
+    else _storage.excludeWeapons.push(weapon);
+
+    _storage.save();
 }
 
 function includeLabel(label) {
@@ -167,19 +272,23 @@ function resetFilter() {
     _storage.minRating = 0;
     _storage.includeLabels = [];
     _storage.excludeLabels = [];
+    _storage.includeWeapons = [];
+    _storage.excludeWeapons = [];
+    
     _storage.save();
 }
 
 function getRandomMap() {
     let map = _filteredMaps[Math.floor(Math.random() * _filteredMaps.length)];
     navigator.clipboard.writeText(map.Name);
+    _modalMapInfo = map;
     _toastMessages.addMessage(`Copied map '${map.Name}' to clipboard`, 2000);
 }
-function createMapLink(id) {
+function makeMapLink(id) {
     return `https://gamebanana.com/mods/${id}`;
 }
 
-function createSubmitterLink(id) {
+function makeSubmitterLink(id) {
     return `https://gamebanana.com/members/${id}`;
 }
 
@@ -321,7 +430,7 @@ var Buttons = {
             _storage.ratingsTableVisible && m("div", { style: { "display": "inline-block"} },
                 m("a", { class: "btn btn-primary", id: "showSubmittersButton", href: `#!${ROUTES.submittersTable}`}, "Show Submitters")
             ),
-            _storage.ratingsTableVisible && m("div", { style: { "display": "inline-block"} },
+        _storage.ratingsTableVisible && m("div", { style: { "display": "inline-block"} },
                 m("button", { class: "btn btn-primary", type: "submit", id: "resetFilterButton", onclick: resetFilter }, "Reset filters")
             ),
             _storage.ratingsTableVisible && m("div", { style: { "display": "inline-block"} },
@@ -334,11 +443,26 @@ var Buttons = {
     }
 }
 
+var WeaponFiltering = {
+    view: function () {
+        return [
+            m('div', { class: 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pt-2 pb-2' }, m('h5', 'Include Weapons'), FILTER_WEAPONS.map(x => 
+                m("span", { class: `a-self-center map-label ${_storage.includeWeapons.includes(x) ? "label-blue" :""}`, onclick: () => includeWeapon(x)}, x)
+            )),
+            m('div', { class: 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pb-2' }, [m('h5', 'Exclude Weapons'), , FILTER_WEAPONS.map(x => 
+                m("span", { class: `a-self-center map-label ${_storage.excludeWeapons.includes(x) ? "label-blue" :""}`, onclick: () => excludeWeapon(x)}, x)
+            )])
+        ]
+    }
+}
+
+// , m(CopyToClipboardIcon, {onclick: () => copyToClipboard(map.Name)}) Copy to clipboard icon... Removed from the table rows because it was a bit slow... Nice one...
+
 var TagFiltering = {
     view: function () {
         return [
-            m('div', { class: 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pt-2 pb-2' }, [m('h5', { class: 'mr-3' }, 'Include Labels'), ...getLabelFilterList(true)]),
-            m('div', { class: 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pb-2' }, [m('h5', { class: 'mr-3' }, 'Exclude Labels'), ...getLabelFilterList(false)])
+            m('div', { class: 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pt-2 pb-2' }, m('h5', 'Include Labels'), ...getLabelFilterList(true)),
+            m('div', { class: 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pb-2' }, m('h5', 'Exclude Labels'), ...getLabelFilterList(false))
         ]
     }
 }
@@ -348,15 +472,25 @@ function copyToClipboard(text){
     _toastMessages.addMessage(`Copied '${text}' to clipboard`, 2000);
 }
 
-function makeMapRatingsRow(map) {
-    return m('tr', { key: map.Id }, [ // TODO: figure out why this was breaking when we used Name as the key... That's a bit weird...
-        m("th", { scope: "row" }, m("a", { class: "link-secondary", href: createMapLink(map.Id) }, map.Name), m(CopyToClipboardIcon, {onclick: () => copyToClipboard(map.Name)})),
-        m("td", m("a", { class: "link-secondary", href: createSubmitterLink(map.Submitter.Id) }, map.Submitter.Name)),
+function handleTableClickEvent(event, map){
+    if(window.getSelection().toString().length > 0) return; // Ignore the click if some text was selected.
+    if(event.target.tagName.toLowerCase() == 'a') return; //Allow clicks on links 
+
+    openModel(map);
+}
+
+function makeRatingsTableRow(map) {
+    return m('tr', { 
+                        key: map.Id, 
+                        onclick: (clickEvent) => handleTableClickEvent(clickEvent, map)
+                   }, // TODO: figure out why this was breaking when we used Name as the key... That's a bit weird...
+        m("th", { scope: "row" }, m("a", { class: "link-secondary", target: "_blank", href: makeMapLink(map.Id) }, map.Name)),
+        m("td", m("a", { class: "link-secondary", target: "_blank", href: makeSubmitterLink(map.Submitter.Id) }, map.Submitter.Name)),
         m("td", formatDate(map.Added)),
         m("td", formatDate(map.InitialRatingTimestamp)),
         m("td", map.RobRating == null ? "Unrated" : map.RobRating),
         m("td", getLabels(map))
-    ]);
+    );
 }
 
 var RatingsTable = {
@@ -372,10 +506,10 @@ var RatingsTable = {
                         m("th", { scope: "col" }, "First Submitted"),
                         m("th", { scope: "col" }, "First Rated"),
                         m("th", { scope: "col" }, "Rating"),
-                        m("th", { scope: "col" }, "Labels")
+                    m("th", { scope: "col" }, "Labels")
                     ]
                     )),
-                m("tbody", _filteredMaps.map(x => makeMapRatingsRow(x)))
+                m("tbody", _filteredMaps.map(x => makeRatingsTableRow(x)))
             ])
         );
     }
@@ -392,13 +526,73 @@ var FilterIcon = {
     }
 }
 
+// var FilteIcon = {
+//     view: function ({ attrs }) {
+//         return m('svg.config-button', {
+//             viewBox: "0 0 16 16",
+//             onclick: attrs.onclick
+//         },
+//             m('path', { d: "M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" })
+//         )
+//     }
+// }
+
 var CopyToClipboardIcon = {
     view: function ({ attrs }) {
         return m('svg.config-button', {
             viewBox: "0 0 16 16",
-            onclick: attrs.onclick
+            onclick: () => copyToClipboard(attrs.copyText)
         },
             m('path', {d: "M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" })
+        )
+    }
+}
+
+var MapInfoModal = {
+    view: function() {
+        return m('div.modal-container',
+            {
+                onkeydown: (event) => {
+                    if(event.key == 'Escape') closeModal();
+                },
+                onclick: (event) => {
+                    if(event.target === event.currentTarget)
+                        closeModal();
+                }
+            },
+            m('div.card', 
+                m('div.card-header', 
+                    m('p', {style: 'margin:0;'}, `Map details`),
+                    m("button.btn-close[type=button][aria-label=Close]", { onclick: () => closeModal() })),
+                m('div.card-body',
+                    m('h3', 
+                        m('a', {target: "_blank", href: makeMapLink(_modalMapInfo['Id'])}, _modalMapInfo['Name']),
+                        m(CopyToClipboardIcon, {copyText: _modalMapInfo['Name']})
+                    ),
+                    m('h5', 
+                        'Submitter: ', 
+                        m('a', { target:"_blank", href: makeSubmitterLink(_modalMapInfo['Submitter']['Id'])}, _modalMapInfo['Submitter']['Name']),
+                        m(CopyToClipboardIcon, {copyText: _modalMapInfo['Submitter']['Name']})
+                    ),
+                    'RobLabels' in _modalMapInfo ? [m('h5', 'Labels'), getLabels(_modalMapInfo)] : m('h5', 'No map labels'),
+
+                    _modalMapInfo['BspFiles'] && _modalMapInfo['BspFiles'].length
+                        ?   [
+                                m('h5', 'bsp files'),
+                                m('p', m('ul', _modalMapInfo['BspFiles'].map(x => m('li', x, m(CopyToClipboardIcon, {copyText: x})) )))
+                            ]
+                        :   m('h5', 'No bsp files found for map'),
+
+                    _modalMapInfo['Weapons'] != null
+                        ?   [
+                                m('h5', 'Weapons spawns on map'),
+                                m('p', m('ul', _modalMapInfo['Weapons'].map(x => m('li', x) )))
+                            ]
+                        :   m('h5', 'No weapons found for map'),
+                    'HasTeleport' in _modalMapInfo ? m('h5', 'Map has teleports') : m('h5', 'No teleports'),
+                    'HasPushes' in _modalMapInfo ? m('h5', 'Map has jump pads') : m('h5', 'No jump pads')
+                )
+            )
         )
     }
 }
@@ -413,13 +607,9 @@ function filterBySubmitter(submitterName){
 }
 
 function makeSubmittersTableRow(playerRating) {
-    if(playerRating.name === 'SirCharlesBabbage'){
-        debugger;
-    }
-
     return m('tr', { key: playerRating.id }, [
         // add a clickable filter button for filtering based on this submitter! Nice one lad...
-        m("th", { scope: "row" }, m("a", { class: "link-secondary", href: createSubmitterLink(playerRating.id) }, playerRating.name), m(FilterIcon, {onclick: () => filterBySubmitter(playerRating.name)})),
+        m("th", { scope: "row" }, m("a", { class: "link-secondary", href: makeSubmitterLink(playerRating.id) }, playerRating.name), m(FilterIcon, {onclick: () => filterBySubmitter(playerRating.name)})),
         m("td", playerRating.totalRatedOrCrashedMaps),
         m("td", playerRating.totalMaps),
         m("td", isNaN(playerRating.averageRating) ? 'No rating' : playerRating.averageRating)
@@ -511,11 +701,13 @@ var App = {
     view: function () {
         return [
             m(ErrorOverlay),
+            _modalMapInfo && m(MapInfoModal),
             m('div.container',
                 m(Header),
                 _storage.ratingsTableVisible ? m(MapRatingsFiltering) : m(SubmitterAverageRatingsFiltering),
                 m(Buttons),
                 _storage.ratingsTableVisible && m(TagFiltering),
+                _storage.ratingsTableVisible && m(WeaponFiltering),
                 _storage.ratingsTableVisible ? m(RatingsTable) : m(SubmittersTable)
             )
         ]
@@ -528,6 +720,7 @@ function findAllLabels(data) {
         if (!x.RobLabels) return;
         x.RobLabels.forEach(label => { if (!_foundLabels.includes(label)) _foundLabels.push(label) });
     });
+    _foundLabels = _foundLabels.filter(x => !IGNORE_LABELS.includes(x));
 }
 
 function formatDate(unixTimestamp) {
@@ -582,11 +775,35 @@ var RoutingConfiguration = {
     }
 }
 
+function postProcessData() {
+    for(let map of _scrapeData['MapInfo']){
+        if('Weapons' in map){
+            map['WeaponDict'] = {};
+            for(let weapon of map['Weapons'])
+                map['WeaponDict'][weapon] = 1;
+        }
+        // Remove all NoTripmines labels. This information comes from the bsp_tools analysis now...
+        if('RobLabels' in map){
+            map['RobLabels'] = map['RobLabels'].filter(x => !(x =='NoTripmines'));
+            map['LabelDict'] = {}
+            for(let label of map['RobLabels'])
+                map['LabelDict'][label] = 1;
+        }
+    }
+}
+
 async function initialise() {
     _storage.loadFromLocalStorage();
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            closeModal();
+            m.redraw()
+        }
+    });
 
     m.route(document.querySelector('#dynamic-content'), "/", RoutingConfiguration);
     _scrapeData = (await m.request({ method: 'GET', url: 'scrape_data.json' }));
+    postProcessData();
     findAllLabels(_scrapeData.MapInfo);
     getAverageRatingData();
     m.redraw();
