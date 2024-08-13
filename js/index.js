@@ -57,7 +57,8 @@ var FILTER_WEAPONS = [
 ];
 var ROUTES = {
     ratingsTable: "/",
-    submittersTable: "/submitters"
+    submittersTable: "/submitters",
+    mapDetailsModal: "/mapdetails"
 }
 var _ratingsTableSortByProperties = [
     { propertyName: 'RobRating', friendlyName: 'Rating' },
@@ -147,9 +148,13 @@ function getAndSetElemValue(key) {
     if (val !== null && val !== undefined) $(key).value = val;
 }
 
-function openModel(map){ _modalMapInfo = map; }
+function openModal(map){ 
+    m.route.set(ROUTES.mapDetailsModal, {id: map.Id});
+}
 
-function closeModal(){ _modalMapInfo = null; }
+function closeModal(){ 
+    m.route.set(ROUTES.ratingsTable);
+}
 
 function sortFilteredMaps(a, b) {
     if (_storage.sortBy == null) return a;
@@ -175,8 +180,9 @@ function mapFilter(map) {
             return false;
 
         for(let label of _storage.includeLabels){
-            if(!(label in map['LabelDict'])) 
-                return false
+            if(map.RobLabels.includes(label)){
+                return false;
+            }
         }
 
         for(let label of map.RobLabels){
@@ -188,15 +194,14 @@ function mapFilter(map) {
     if(map.Weapons == null && (_storage.includeWeapons.length > 0 || _storage.excludeWeapons.length > 0)){
         return false;
     }
-
     if (map.Weapons){
 
         if(map.Weapons.length < _storage.includeWeapons.length)
             return false;
 
         for(let weapon of _storage.includeWeapons){
-            if(!(weapon in map['WeaponDict'])) 
-                return false
+            if(!map.Weapons.includes(weapon))
+                return false;
         }
 
         for(let weapon of map.Weapons){
@@ -281,7 +286,9 @@ function resetFilter() {
 function getRandomMap() {
     let map = _filteredMaps[Math.floor(Math.random() * _filteredMaps.length)];
     navigator.clipboard.writeText(map.Name);
-    _modalMapInfo = map;
+    
+    openModal(map);
+
     _toastMessages.addMessage(`Copied map '${map.Name}' to clipboard`, 2000);
 }
 function makeMapLink(id) {
@@ -476,7 +483,7 @@ function handleTableClickEvent(event, map){
     if(window.getSelection().toString().length > 0) return; // Ignore the click if some text was selected.
     if(event.target.tagName.toLowerCase() == 'a') return; //Allow clicks on links 
 
-    openModel(map);
+    openModal(map);
 }
 
 function makeRatingsTableRow(map) {
@@ -763,12 +770,25 @@ function getAverageRatingData() {
 var RoutingConfiguration = {
     "/": {
         render: function(){
+            _modalMapInfo = null; // Make sure the modal is closed.
             _storage.showRatingsTable();
             return m(App);
         }
     },
-    "/submitters": {
+    [ROUTES.mapDetailsModal]: {
+        render: function({ attrs }){
+            debugger;
+            if(attrs.id != null && !isNaN(parseInt(attrs.id))){
+                let id = parseInt(attrs.id);
+                let foundMap = _scrapeData['MapInfo'].find(x => x.Id == id);
+                if(foundMap) _modalMapInfo = foundMap;
+            }
+            return m(App);
+        }
+    },
+    [ROUTES.submittersTable]: {
         render: function(){
+            _modalMapInfo = null; // Make sure the modal is closed.
             _storage.showSubmittersTable();
             return m(App);
         }
@@ -777,17 +797,9 @@ var RoutingConfiguration = {
 
 function postProcessData() {
     for(let map of _scrapeData['MapInfo']){
-        if('Weapons' in map){
-            map['WeaponDict'] = {};
-            for(let weapon of map['Weapons'])
-                map['WeaponDict'][weapon] = 1;
-        }
         // Remove all NoTripmines labels. This information comes from the bsp_tools analysis now...
         if('RobLabels' in map){
             map['RobLabels'] = map['RobLabels'].filter(x => !(x =='NoTripmines'));
-            map['LabelDict'] = {}
-            for(let label of map['RobLabels'])
-                map['LabelDict'][label] = 1;
         }
     }
 }
