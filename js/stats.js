@@ -25,7 +25,7 @@ function drawRatingProgress() {
     let lastDataPoint = _scrapeData.MapRatingGraphData[_scrapeData.MapRatingGraphData.length-1];
     // push a datapoint with the current date to get a flat line at the end.
     graphData.push([new Date(), lastDataPoint[1]]);
-    var data = google.visualization.arrayToDataTable(graphData);
+    var dataTable = google.visualization.arrayToDataTable(graphData);
 
     var options = {
         title: "Map rating progress over time",
@@ -37,7 +37,11 @@ function drawRatingProgress() {
         document.getElementById("rating_progress")
     );
 
-    chart.draw(data, options);
+    chart.draw(dataTable, options);
+
+    window.addEventListener('resize', () => {
+        chart.draw(dataTable, options);
+    });
 }
 
 function computeGraphData(){
@@ -68,4 +72,6 @@ function drawRatingsPerWeekday(){
     let chart = new google.visualization.ColumnChart(document.getElementById('rating_per_weekday'));
 
     chart.draw(dataTable, options);
+
+    window.addEventListener('resize', () => chart.draw(dataTable, options));
 }
