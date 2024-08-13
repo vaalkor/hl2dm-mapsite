@@ -1,6 +1,5 @@
 import json
 from pathlib import Path
-import bsp_tool
 
 def get_map_weapons(filename):
     None

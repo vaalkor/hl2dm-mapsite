@@ -171,6 +171,7 @@ if($UpdateInfo){
     "Writing updated data to $ScrapeDataFile"
 
     $json | ConvertTo-Json -Depth 10 -Compress | Set-Content -Path $ScrapeDataFile
+    python "$PSscriptRoot\metadata_scripts\resave_json.py" --file $ScrapeDataFile
 
     exit 0
 }
