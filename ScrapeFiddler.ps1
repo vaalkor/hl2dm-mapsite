@@ -12,6 +12,7 @@
 [ValidateSet(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5)] 
 [decimal]$Rating,
 [string]$MapName,
+[int]$Id,
 [string]$MapUrl,
 [int]$NumPlayers,
 [switch]$RemoveLabels,
@@ -63,6 +64,12 @@ function GetMapWithURL($url){
     return $filtered
 }
 
+function GetMapWithId($id){
+    $filtered = $json.MapInfo | ?{$_.Id -eq $id}
+    if(-not $filtered){"Cannot find map with ID $id"; exit 1}
+    return $filtered
+}
+
 function GenerateGraphData(){
     $timestamps = $json.MapInfo | ?{$_.InitialRatingTimestamp} | %{$_.InitialRatingTimestamp} | Sort-Object | Get-Unique
     $timestampCounts = @{}
@@ -111,8 +118,16 @@ Newest Map: $NewestMapToConsider`n============================"
 
     if($GetRandomMap){
         $randomMap = $filteredMaps | Get-Random
-        "$($randomMap.Name) copied to clipboard!"
-        if(-not (ls -Recurse $MapsFolder | ?{$_.Name -eq "$($randomMap.Name).bsp"})){
+        "Map Details:"
+        $randomMap | ConvertTo-Json -Depth 10
+
+        $mapName = $randomMap.Name
+        if($randomMap.BspFiles -and $randomMap.BspFiles.Count -eq 1){
+            "Found a single bsp file for map.. The name will be used instead of the map name."
+            $mapName = $randomMap.BspFiles[0] -replace '.bsp', ''
+        }
+        "$mapName copied to clipboard!"
+        if(-not (ls -Recurse $MapsFolder | ?{$_.Name -eq "$($mapName).bsp"})){
             "WARNING! No map with name `"$($randomMap.Name).bsp`" found in maps folder: $MapsFolder"
         }
         $randomMap.Name | Set-Clipboard
@@ -139,9 +154,10 @@ if($GetInfo){
 
 if($UpdateInfo){
     if($MapName -and $MapUrl){"Both MapName and MapUrl provided. Use one or the other..."; exit 1}
-    if(-not $MapName -and -not $MapUrl){"Neither MapName nor MapUrl provided. Use one or the other..."; exit 1}
+    if(-not $MapName -and -not $MapUrl -and -not $Id){"Neither MapName, MapUrl, or Id provided. Use one or the other..."; exit 1}
     if($MapName){$updateInfoMap = GetMapWithName($MapName)}
-    else{$updateInfoMap = GetMapWithURL($MapUrl)}
+    elseif($MapUrl){$updateInfoMap = GetMapWithURL($MapUrl)}
+    elseif($Id){$updateInfoMap = GetMapWithId($Id)}
 
     if($Rating){$updateInfoMap | Add-Member -MemberType NoteProperty -Name 'RobRating' -Value $Rating -Force}
     if($Description){$updateInfoMap | Add-Member -MemberType NoteProperty -Name 'RobDescription' -Value $Description -Force}

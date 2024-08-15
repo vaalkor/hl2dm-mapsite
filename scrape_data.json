@@ -17783,7 +17783,9 @@
         "slam",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1723760960
     },
     {
       "Name": "dm_cd_room_killbox",
@@ -18277,7 +18279,9 @@
         "shotgun",
         "357",
         "crossbow"
-      ]
+      ],
+      "InitialRatingTimestamp": 1723757898,
+      "RobRating": 2
     },
     {
       "Name": "dm_old_canal",
@@ -27303,7 +27307,9 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 1.5,
+      "InitialRatingTimestamp": 1723761452
     },
     {
       "Name": "dm_mines",
@@ -28015,7 +28021,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1723760036
     },
     {
       "Name": "dm_resistance_hurtlocker_v1",
@@ -34799,7 +34807,13 @@
         "shotgun",
         "357",
         "ar2"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Small",
+        "Duel"
+      ],
+      "InitialRatingTimestamp": 1723762687
     },
     {
       "Name": "adv_torus_ver1",
@@ -42328,7 +42342,12 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1723757498
     },
     {
       "Name": "dm_anacro_final",
@@ -45209,7 +45228,9 @@
         "357"
       ],
       "HasPushes": 1,
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 1.5,
+      "InitialRatingTimestamp": 1723758470
     },
     {
       "Name": "dm_woodhouse_rain",
@@ -47944,7 +47965,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1723760702
     },
     {
       "Name": "dm_citadel_episode_one",
@@ -50132,7 +50155,12 @@
       ],
       "Weapons": [],
       "HasPushes": 1,
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 2,
+      "RobLabels": [
+        "UniqueMechanic"
+      ],
+      "InitialRatingTimestamp": 1723761803
     },
     {
       "Name": "dm_vdeth_v3",
@@ -51112,7 +51140,12 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1723763282
     },
     {
       "Name": "dm_badtaste",
@@ -52137,7 +52170,12 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "small"
+      ],
+      "InitialRatingTimestamp": 1723756723
     },
     {
       "Name": "dm_haze",
@@ -52535,7 +52573,11 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1723757151
     },
     {
       "Name": "dm_deadtrack",
@@ -56462,7 +56504,11 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobLabels": [
+        "NeverLoads"
+      ],
+      "InitialRatingTimestamp": 1723758506
     },
     {
       "Name": "dm_mine_entrance",
@@ -57166,7 +57212,11 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobLabels": [
+        "NeverLoads"
+      ],
+      "InitialRatingTimestamp": 1723760982
     },
     {
       "Name": "dm_lostrock",
@@ -60116,7 +60166,12 @@
         "slam",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "Small"
+      ],
+      "InitialRatingTimestamp": 1723757078
     },
     {
       "Name": "dm_wizard_rockets",
@@ -61845,7 +61900,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1723759165
     },
     {
       "Name": "dm_subway",
@@ -62899,7 +62956,9 @@
         "ar2",
         "357"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 4,
+      "InitialRatingTimestamp": 1723765070
     },
     {
       "Name": "dm_waterworld",
@@ -64984,6 +65043,74 @@
     [
       1723291969,
       476
+    ],
+    [
+      1723756723,
+      477
+    ],
+    [
+      1723757078,
+      478
+    ],
+    [
+      1723757151,
+      479
+    ],
+    [
+      1723757498,
+      480
+    ],
+    [
+      1723757898,
+      481
+    ],
+    [
+      1723758470,
+      482
+    ],
+    [
+      1723758506,
+      483
+    ],
+    [
+      1723759165,
+      484
+    ],
+    [
+      1723760036,
+      485
+    ],
+    [
+      1723760702,
+      486
+    ],
+    [
+      1723760960,
+      487
+    ],
+    [
+      1723760982,
+      488
+    ],
+    [
+      1723761452,
+      489
+    ],
+    [
+      1723761803,
+      490
+    ],
+    [
+      1723762687,
+      491
+    ],
+    [
+      1723763282,
+      492
+    ],
+    [
+      1723765070,
+      493
     ]
   ]
 }

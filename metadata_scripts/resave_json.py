@@ -8,4 +8,4 @@ args = parser.parse_args()
 
 file_data = open_json_file(args.file)
 
-write_json_file(args.file, file_data)
+write_json_file(args.file, file_data, indent=2)

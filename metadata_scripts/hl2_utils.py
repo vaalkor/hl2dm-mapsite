@@ -1,16 +1,13 @@
 import json
 from pathlib import Path
 
-def get_map_weapons(filename):
-    None
-
 def open_json_file(filename):
     with open(filename, 'r') as read_file:
         return json.load(read_file)
 
-def write_json_file(filename, data):
+def write_json_file(filename, data, indent=None):
     with open(filename, 'w') as write_file:
-        json.dump(data, write_file, indent=2)
+        json.dump(data, write_file, indent=indent)
 
 def get_directory_throw_no_exists(path):
     new_path = Path(path)
