@@ -26935,7 +26935,12 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobLabels": [
+        "NeverLoads"
+      ],
+      "InitialRatingTimestamp": 1724009411,
+      "RobRating": 1.5
     },
     {
       "Name": "dm_orangebridge",
@@ -28686,7 +28691,9 @@
       "BspFiles": [
         "dm_snowtemple.bsp"
       ],
-      "Weapons": []
+      "Weapons": [],
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1724010204
     },
     {
       "Name": "dm_area53",
@@ -30680,7 +30687,9 @@
         "ar2",
         "357"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1724011316
     },
     {
       "Name": "dm_paintball",
@@ -37362,7 +37371,9 @@
         "ar2",
         "crowbar",
         "crossbow"
-      ]
+      ],
+      "RobRating": 1,
+      "InitialRatingTimestamp": 1724011558
     },
     {
       "Name": "wallmart-legion-reloaded",
@@ -47799,7 +47810,11 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1724009747
     },
     {
       "Name": "dm_empty_town",
@@ -65111,6 +65126,26 @@
     [
       1723765070,
       493
+    ],
+    [
+      1724009411,
+      494
+    ],
+    [
+      1724009747,
+      495
+    ],
+    [
+      1724010204,
+      496
+    ],
+    [
+      1724011316,
+      497
+    ],
+    [
+      1724011558,
+      498
     ]
   ]
 }

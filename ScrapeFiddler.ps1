@@ -130,7 +130,7 @@ Newest Map: $NewestMapToConsider`n============================"
         if(-not (ls -Recurse $MapsFolder | ?{$_.Name -eq "$($mapName).bsp"})){
             "WARNING! No map with name `"$($randomMap.Name).bsp`" found in maps folder: $MapsFolder"
         }
-        $randomMap.Name | Set-Clipboard
+        $mapName | Set-Clipboard
     }
     elseif($ListMaps){$filteredMaps}
 
