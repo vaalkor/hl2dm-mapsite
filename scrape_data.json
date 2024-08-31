@@ -7548,7 +7548,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1725136950
     },
     {
       "Name": "nub_hitmanworld_v1",
@@ -11075,7 +11077,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 4,
+      "InitialRatingTimestamp": 1725139315
     },
     {
       "Name": "dm_sandcastle_b1",
@@ -13413,7 +13417,9 @@
         "ar2",
         "crossbow"
       ],
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1725137267
     },
     {
       "Name": "dm_underground_power",
@@ -18031,7 +18037,9 @@
         "ar2",
         "357"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1725140894
     },
     {
       "Name": "dm_toon_map",
@@ -18918,7 +18926,9 @@
         "crossbow"
       ],
       "HasTeleport": 1,
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1725135562
     },
     {
       "Name": "dm_pitbunker",
@@ -23679,7 +23689,9 @@
         "shotgun",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1725136473
     },
     {
       "Name": "dm_valey_canal",
@@ -47162,7 +47174,9 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1725139681
     },
     {
       "Name": "dm_crash_beta",
@@ -53833,7 +53847,12 @@
         "357"
       ],
       "HasPushes": 1,
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3,
+      "RobLabels": [
+        "UniqueMechanic"
+      ],
+      "InitialRatingTimestamp": 1725141736
     },
     {
       "Name": "dm_spookface",
@@ -57194,7 +57213,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1725138024
     },
     {
       "Name": "wal-mart_v4_he-2.bsp",
@@ -65146,6 +65167,42 @@
     [
       1724011558,
       498
+    ],
+    [
+      1725135562,
+      499
+    ],
+    [
+      1725136473,
+      500
+    ],
+    [
+      1725136950,
+      501
+    ],
+    [
+      1725137267,
+      502
+    ],
+    [
+      1725138024,
+      503
+    ],
+    [
+      1725139315,
+      504
+    ],
+    [
+      1725139681,
+      505
+    ],
+    [
+      1725140894,
+      506
+    ],
+    [
+      1725141736,
+      507
     ]
   ]
 }
