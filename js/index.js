@@ -1,4 +1,5 @@
 'use strict';
+
 var CONSTANTS = {
     NO_RATING_MIN_RATING_VALUE: -0.5
 }
@@ -87,14 +88,13 @@ var _toastMessages = {
         this.currentKey++;
     }
 }
-var _filteredMaps = []
+var _currentMapPage = 1;
+var _filteredMaps = [];
+
+var _ratingsTableFilterTempValues = Object.assign({}, _storage); // Clone the stored values. This will be used to store temp values for the stateful
+
 var _storage = {
-    ratingsTableVisible: true,
-    submittersTableVisible: false,
-    sortBy: _ratingsTableSortByProperties[0].propertyName,
-    submitterSortBy: _submittersTableSortByProperties[0].propertyName,
-    ratingsTableAscending: false,
-    submittersTableAscending: false,
+    // Filter values
     nameFilter: '',
     submitterFilter: '',
     minRating: 0,
@@ -102,14 +102,23 @@ var _storage = {
     excludeLabels: ['NeverLoads', 'CausesCrash'],
     includeWeapons: [],
     excludeWeapons: [],
+    sortBy: _ratingsTableSortByProperties[0].propertyName,
+    ratingsTableAscending: false,
+    // Other values
+    ratingsTableVisible: true,
+    submittersTableVisible: false,
+    submitterSortBy: _submittersTableSortByProperties[0].propertyName,
+    submittersTableAscending: false,
     loadFromLocalStorage: function () {
         const savedData = localStorage.getItem('storage');
         if (savedData) {
             Object.assign(this, JSON.parse(savedData));
+            _ratingsTableFilterTempValues = JSON.parse(savedData); // We clone the values so we can keep our temp filter object up to date. Now we have a 2 step filter application process we need a saved value and a stateful temp value. 
         }
     },
     save: function () {
         localStorage.setItem('storage', JSON.stringify(this));
+        _ratingsTableFilterTempValues = JSON.parse(JSON.stringify(this)); // We clone the values so we can keep our temp filter object up to date. Now we have a 2 step filter application process we need a saved value and a stateful temp value. 
     },
     showRatingsTable: function () {
         this.ratingsTableVisible = true;
@@ -122,6 +131,7 @@ var _storage = {
         this.save();
     }
 }
+
 var _modalMapInfo = null; // The map info we have a modal open for.
 var _scrapeData = { MapInfo: [], MapRatingGraphData: [] };
 var _foundLabels = {};
@@ -148,11 +158,11 @@ function getAndSetElemValue(key) {
     if (val !== null && val !== undefined) $(key).value = val;
 }
 
-function openModal(map){ 
-    m.route.set(ROUTES.mapDetailsModal, {id: map.Id});
+function openModal(map) {
+    m.route.set(ROUTES.mapDetailsModal, { id: map.Id });
 }
 
-function closeModal(){ 
+function closeModal() {
     m.route.set(ROUTES.ratingsTable);
 }
 
@@ -174,51 +184,51 @@ function mapFilter(map) {
     if (_storage.minRating >= 0 && (map.RobRating === undefined || map.RobRating === null)) return false;
     if (_storage.minRating >= 0 && map.RobRating < _storage.minRating) return false;
     if (map.RobLabels == null && _storage.includeLabels.length !== 0) return false;
-    if (map.RobLabels){
+    if (map.RobLabels) {
 
-        if(map.RobLabels.length < _storage.includeLabels.length) 
+        if (map.RobLabels.length < _storage.includeLabels.length)
             return false;
 
-        for(let label of _storage.includeLabels){
-            if(map.RobLabels.includes(label)){
+        for (let label of _storage.includeLabels) {
+            if (map.RobLabels.includes(label)) {
                 return false;
             }
         }
 
-        for(let label of map.RobLabels){
-            if(_storage.excludeLabels.includes(label)) return false;
+        for (let label of map.RobLabels) {
+            if (_storage.excludeLabels.includes(label)) return false;
         }
     }
 
     // If we are filtering maps with weapons, and a map has no weapon information extracted, do not show it.
-    if(map.Weapons == null && (_storage.includeWeapons.length > 0 || _storage.excludeWeapons.length > 0)){
+    if (map.Weapons == null && (_storage.includeWeapons.length > 0 || _storage.excludeWeapons.length > 0)) {
         return false;
     }
-    if (map.Weapons){
+    if (map.Weapons) {
 
-        if(map.Weapons.length < _storage.includeWeapons.length)
+        if (map.Weapons.length < _storage.includeWeapons.length)
             return false;
 
-        for(let weapon of _storage.includeWeapons){
-            if(!map.Weapons.includes(weapon))
+        for (let weapon of _storage.includeWeapons) {
+            if (!map.Weapons.includes(weapon))
                 return false;
         }
 
-        for(let weapon of map.Weapons){
-            if(_storage.excludeWeapons.includes(weapon)) return false;
+        for (let weapon of map.Weapons) {
+            if (_storage.excludeWeapons.includes(weapon)) return false;
         }
     }
     return true;
 }
 
 function filterMaps() {
-    console.time('filter maps');
+    if (_scrapeData.MapInfo.length == 0) return;
+
     _scrapeData.MapInfo.sort(sortFilteredMaps);
     _filteredMaps = _scrapeData.MapInfo.filter(x => mapFilter(x));
-    console.timeEnd('filter maps');
 }
 
-function filterSubmitters(){
+function filterSubmitters() {
     _submitters.sort(sortSubmitters);
 }
 
@@ -228,65 +238,71 @@ function getLabels(map) {
 }
 
 function includeWeapon(weapon) {
-    if (_storage.excludeWeapons.includes(weapon)) _storage.excludeWeapons = _storage.excludeWeapons.filter(x => x !== weapon);
-    if (_storage.includeWeapons.includes(weapon)) _storage.includeWeapons = _storage.includeWeapons.filter(x => x !== weapon);
-    else _storage.includeWeapons.push(weapon);
-
-    _storage.save();
+    if (_ratingsTableFilterTempValues.excludeWeapons.includes(weapon)) _ratingsTableFilterTempValues.excludeWeapons = _ratingsTableFilterTempValues.excludeWeapons.filter(x => x !== weapon);
+    if (_ratingsTableFilterTempValues.includeWeapons.includes(weapon)) _ratingsTableFilterTempValues.includeWeapons = _ratingsTableFilterTempValues.includeWeapons.filter(x => x !== weapon);
+    else _ratingsTableFilterTempValues.includeWeapons.push(weapon);
 }
 
 function excludeWeapon(weapon) {
-    if (_storage.includeWeapons.includes(weapon)) _storage.includeWeapons = _storage.includeWeapons.filter(x => x !== weapon);
-    if (_storage.excludeWeapons.includes(weapon)) _storage.excludeWeapons = _storage.excludeWeapons.filter(x => x !== weapon);
-    else _storage.excludeWeapons.push(weapon);
-
-    _storage.save();
+    if (_ratingsTableFilterTempValues.includeWeapons.includes(weapon)) _ratingsTableFilterTempValues.includeWeapons = _ratingsTableFilterTempValues.includeWeapons.filter(x => x !== weapon);
+    if (_ratingsTableFilterTempValues.excludeWeapons.includes(weapon)) _ratingsTableFilterTempValues.excludeWeapons = _ratingsTableFilterTempValues.excludeWeapons.filter(x => x !== weapon);
+    else _ratingsTableFilterTempValues.excludeWeapons.push(weapon);
 }
 
 function includeLabel(label) {
-    if (_storage.excludeLabels.includes(label)) _storage.excludeLabels = _storage.excludeLabels.filter(x => x !== label);
-    if (_storage.includeLabels.includes(label)) _storage.includeLabels = _storage.includeLabels.filter(x => x !== label);
-    else _storage.includeLabels.push(label);
-
-    _storage.save();
+    if (_ratingsTableFilterTempValues.excludeLabels.includes(label)) _ratingsTableFilterTempValues.excludeLabels = _ratingsTableFilterTempValues.excludeLabels.filter(x => x !== label);
+    if (_ratingsTableFilterTempValues.includeLabels.includes(label)) _ratingsTableFilterTempValues.includeLabels = _ratingsTableFilterTempValues.includeLabels.filter(x => x !== label);
+    else _ratingsTableFilterTempValues.includeLabels.push(label);
 }
 
 function excludeLabel(label) {
-    if (_storage.includeLabels.includes(label)) _storage.includeLabels = _storage.includeLabels.filter(x => x !== label);
-    if (_storage.excludeLabels.includes(label)) _storage.excludeLabels = _storage.excludeLabels.filter(x => x !== label);
-    else _storage.excludeLabels.push(label);
-
-    _storage.save();
+    if (_ratingsTableFilterTempValues.includeLabels.includes(label)) _ratingsTableFilterTempValues.includeLabels = _ratingsTableFilterTempValues.includeLabels.filter(x => x !== label);
+    if (_ratingsTableFilterTempValues.excludeLabels.includes(label)) _ratingsTableFilterTempValues.excludeLabels = _ratingsTableFilterTempValues.excludeLabels.filter(x => x !== label);
+    else _ratingsTableFilterTempValues.excludeLabels.push(label);
 }
 
 //Get the list of tag elements for the include/exlude tag filters. Include param determines what the onclick listener does.
 function getLabelFilterList(include) {
     var getColorClass = (label) => {
-        if (include && _storage.includeLabels.includes(label)) return getLabelColour(label);
-        if (!include && _storage.excludeLabels.includes(label)) return getLabelColour(label);
+        if (include && _ratingsTableFilterTempValues.includeLabels.includes(label)) return getLabelColour(label);
+        if (!include && _ratingsTableFilterTempValues.excludeLabels.includes(label)) return getLabelColour(label);
         return '';
     }
     return _foundLabels.map(x => m("span", { class: `a-self-center map-label ${getColorClass(x)}`, onclick: include ? () => includeLabel(x) : () => excludeLabel(x) }, x));
 }
 
 function resetFilter() {
-    _storage.nameFilter = '';
-    _storage.submitterFilter = '';
-    _storage.ratingsTableAscending = false;
-    _storage.sortBy = _ratingsTableSortByProperties[0].propertyName;
-    _storage.minRating = 0;
-    _storage.includeLabels = [];
-    _storage.excludeLabels = [];
-    _storage.includeWeapons = [];
-    _storage.excludeWeapons = [];
-    
-    _storage.save();
+    let queryParams = {
+        rating: 0,
+        name: "",
+        submitter: "",
+        sort: _ratingsTableSortByProperties[0].propertyName,
+        asc: false
+        // The filtering lists (included/excluded weapons/labels) will be exluded from the string completely because
+        // Mithril doesn't do anything to indicate empty lists in query strings. They just end up undefined in the route that consumes them.
+    }
+    m.route.set(ROUTES.ratingsTable, queryParams);
+}
+
+function applyFilter() {
+    let queryParams = {
+        rating: _ratingsTableFilterTempValues.minRating,
+        name: _ratingsTableFilterTempValues.nameFilter,
+        submitter: _ratingsTableFilterTempValues.submitterFilter,
+        sort: _ratingsTableFilterTempValues.sortBy,
+        asc: _ratingsTableFilterTempValues.ratingsTableAscending,
+        il: _ratingsTableFilterTempValues.includeLabels,
+        el: _ratingsTableFilterTempValues.excludeLabels,
+        iw: _ratingsTableFilterTempValues.includeWeapons,
+        ew: _ratingsTableFilterTempValues.excludeWeapons
+    }
+    m.route.set(ROUTES.ratingsTable, queryParams);
 }
 
 function getRandomMap() {
     let map = _filteredMaps[Math.floor(Math.random() * _filteredMaps.length)];
     navigator.clipboard.writeText(map.Name);
-    
+
     openModal(map);
 
     _toastMessages.addMessage(`Copied map '${map.Name}' to clipboard`, 2000);
@@ -304,16 +320,16 @@ var MapRatingsFiltering = {
         return m("div", { style: { "display": "flex", "justify-content": "space-between", "gap": "1rem" } },
             [
                 m("div", { style: { "flex-grow": "1" } },
-                    m("label", { class: "form-label", id: "ratingSliderText" }, "Minimum Rating: ", _storage.minRating < 0 ? 'None selected' : _storage.minRating),
+                    m("label", { class: "form-label", id: "ratingSliderText" }, "Minimum Rating: ", _ratingsTableFilterTempValues.minRating < 0 ? 'None selected' : _ratingsTableFilterTempValues.minRating),
                     m("input", {
                         class: "form-range",
                         type: "range",
                         min: "-0.5",
                         max: "5",
                         step: "0.5",
-                        value: _storage.minRating,
+                        value: _ratingsTableFilterTempValues.minRating,
                         id: "ratingSlider",
-                        oninput: (event) => { _storage.minRating = event.target.value; _storage.save(); }
+                        oninput: (event) => { _ratingsTableFilterTempValues.minRating = event.target.value }
                     })
                 ),
                 m("div", { style: { "flex-grow": "1" } },
@@ -321,9 +337,9 @@ var MapRatingsFiltering = {
                     m("input", {
                         class: "form-control",
                         type: "text",
-                        value: _storage.nameFilter,
+                        value: _ratingsTableFilterTempValues.nameFilter,
                         id: "nameFilter",
-                        oninput: (event) => { _storage.nameFilter = event.target.value; _storage.save(); }
+                        oninput: (event) => { _ratingsTableFilterTempValues.nameFilter = event.target.value }
                     }
                     )
                 ),
@@ -332,9 +348,9 @@ var MapRatingsFiltering = {
                     m("input", {
                         class: "form-control",
                         type: "text",
-                        value: _storage.submitterFilter,
+                        value: _ratingsTableFilterTempValues.submitterFilter,
                         id: "submitterFilter",
-                        oninput: (event) => { _storage.submitterFilter = event.target.value; _storage.save(); }
+                        oninput: (event) => { _ratingsTableFilterTempValues.submitterFilter = event.target.value }
                     }
                     )
                 ),
@@ -346,8 +362,8 @@ var MapRatingsFiltering = {
                             type: "radio",
                             name: "ascDescRadio",
                             id: "sortAscending",
-                            checked: _storage.ratingsTableAscending,
-                            oninput: (event) => { _storage.ratingsTableAscending = event.target.checked; _storage.save(); }
+                            checked: _ratingsTableFilterTempValues.ratingsTableAscending,
+                            oninput: (event) => { _ratingsTableFilterTempValues.ratingsTableAscending = event.target.checked }
                         }
                         ),
                         m("label", { class: "form-check-label", for: "sortAscending" }, " Asc ")
@@ -358,8 +374,8 @@ var MapRatingsFiltering = {
                             type: "radio",
                             name: "ascDescRadio",
                             id: "sortDescending",
-                            checked: !_storage.ratingsTableAscending,
-                            oninput: (event) => { _storage.ratingsTableAscending = !event.target.checked; _storage.save(); }
+                            checked: !_ratingsTableFilterTempValues.ratingsTableAscending,
+                            oninput: (event) => { _ratingsTableFilterTempValues.ratingsTableAscending = !event.target.checked }
                         }
                         ),
                         m("label", { class: "form-check-label", for: "sortDescending" }, " Desc ")
@@ -369,8 +385,8 @@ var MapRatingsFiltering = {
                             class: "form-select",
                             id: "sortBy",
                             "aria-label": "Sort by a property",
-                            oninput: (event) => { _storage.sortBy = event.target.value; _storage.save(); },
-                            value: _storage.sortBy
+                            oninput: (event) => { _ratingsTableFilterTempValues.sortBy = event.target.value },
+                            value: _ratingsTableFilterTempValues.sortBy
 
                         },
                         _ratingsTableSortByProperties.map(x => m("option", { value: x.propertyName }, x.friendlyName))
@@ -431,21 +447,24 @@ var SubmitterAverageRatingsFiltering = {
 var Buttons = {
     view: function () {
         return m("div", { class: "container d-flex mt-2", style: { "justify-content": "center", "gap": "0.5rem" } },
+            m("div", { style: { "display": "inline-block" } },
+                m("a", { class: "btn btn-info", href: "/stats.html" }, "View statistics")
+            ),
             _storage.submittersTableVisible && m("div", { style: {} },
-                m("a", { class: "btn btn-primary", type: "submit", id: "showRatingsButton", href: `/`}, "Show Ratings")
+                m("a", { class: "btn btn-primary", type: "submit", id: "showRatingsButton", href: `/` }, "Show Ratings")
             ),
-            _storage.ratingsTableVisible && m("div", { style: { "display": "inline-block"} },
-                m("a", { class: "btn btn-primary", id: "showSubmittersButton", href: `#!${ROUTES.submittersTable}`}, "Show Submitters")
+            _storage.ratingsTableVisible && m("div", { style: { "display": "inline-block" } },
+                m("a", { class: "btn btn-primary", id: "showSubmittersButton", href: `#!${ROUTES.submittersTable}` }, "Show Submitters")
             ),
-        _storage.ratingsTableVisible && m("div", { style: { "display": "inline-block"} },
+            _storage.ratingsTableVisible && m("div", { style: { "display": "inline-block" } },
                 m("button", { class: "btn btn-primary", type: "submit", id: "resetFilterButton", onclick: resetFilter }, "Reset filters")
             ),
-            _storage.ratingsTableVisible && m("div", { style: { "display": "inline-block"} },
+            _storage.ratingsTableVisible && m("div", { style: { "display": "inline-block" } },
                 m("button", { class: "btn btn-primary", type: "submit", id: "getRandomMapButton", onclick: getRandomMap }, "Get Random")
             ),
-            m("div", { style: { "display": "inline-block"} },
-                m("a", { class: "btn btn-info", href: "/stats.html" }, "View statistics")
-            )
+            m("div", { style: { "display": "inline-block" } },
+                m("button", { class: "btn btn-success", onclick: applyFilter }, "Apply Filter")
+            ),
         );
     }
 }
@@ -453,11 +472,11 @@ var Buttons = {
 var WeaponFiltering = {
     view: function () {
         return [
-            m('div', { class: 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pt-2 pb-2' }, m('h5', 'Include Weapons'), FILTER_WEAPONS.map(x => 
-                m("span", { class: `a-self-center map-label ${_storage.includeWeapons.includes(x) ? "label-blue" :""}`, onclick: () => includeWeapon(x)}, x)
+            m('div', { class: 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pt-2 pb-2' }, m('h5', 'Include Weapons'), FILTER_WEAPONS.map(x =>
+                m("span", { class: `a-self-center map-label ${_ratingsTableFilterTempValues.includeWeapons.includes(x) ? "label-blue" : ""}`, onclick: () => includeWeapon(x) }, x)
             )),
-            m('div', { class: 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pb-2' }, [m('h5', 'Exclude Weapons'), , FILTER_WEAPONS.map(x => 
-                m("span", { class: `a-self-center map-label ${_storage.excludeWeapons.includes(x) ? "label-blue" :""}`, onclick: () => excludeWeapon(x)}, x)
+            m('div', { class: 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pb-2' }, [m('h5', 'Exclude Weapons'), , FILTER_WEAPONS.map(x =>
+                m("span", { class: `a-self-center map-label ${_ratingsTableFilterTempValues.excludeWeapons.includes(x) ? "label-blue" : ""}`, onclick: () => excludeWeapon(x) }, x)
             )])
         ]
     }
@@ -474,23 +493,23 @@ var TagFiltering = {
     }
 }
 
-function copyToClipboard(text){
+function copyToClipboard(text) {
     navigator.clipboard.writeText(text);
     _toastMessages.addMessage(`Copied '${text}' to clipboard`, 2000);
 }
 
-function handleTableClickEvent(event, map){
-    if(window.getSelection().toString().length > 0) return; // Ignore the click if some text was selected.
-    if(event.target.tagName.toLowerCase() == 'a') return; //Allow clicks on links 
+function handleTableClickEvent(event, map) {
+    if (window.getSelection().toString().length > 0) return; // Ignore the click if some text was selected.
+    if (event.target.tagName.toLowerCase() == 'a') return; //Allow clicks on links 
 
     openModal(map);
 }
 
 function makeRatingsTableRow(map) {
-    return m('tr', { 
-                        key: map.Id, 
-                        onclick: (clickEvent) => handleTableClickEvent(clickEvent, map)
-                   }, // TODO: figure out why this was breaking when we used Name as the key... That's a bit weird...
+    return m('tr', {
+        key: map.Id,
+        onclick: (clickEvent) => handleTableClickEvent(clickEvent, map)
+    }, // TODO: figure out why this was breaking when we used Name as the key... That's a bit weird...
         m("th", { scope: "row" }, m("a", { class: "link-secondary", target: "_blank", href: makeMapLink(map.Id) }, map.Name)),
         m("td", m("a", { class: "link-secondary", target: "_blank", href: makeSubmitterLink(map.Submitter.Id) }, map.Submitter.Name)),
         m("td", formatDate(map.Added)),
@@ -498,6 +517,30 @@ function makeRatingsTableRow(map) {
         m("td", map.RobRating == null ? "Unrated" : map.RobRating),
         m("td", getLabels(map))
     );
+}
+
+// Vnode<{ totalItems: number, pageSize: number, currentPage: number, onPageChanged: (page: number) => void }>
+var PaginationFooter = {
+    view: function ({ attrs }) {
+        let currentStartItem = (attrs.currentPage - 1) * attrs.pageSize + 1;
+        let currentEndItem = Math.min(attrs.currentPage * attrs.pageSize, attrs.totalItems);
+        let endPage = Math.ceil(attrs.totalItems / attrs.pageSize);
+        return m('div.card-footer', { style: 'display: flex; gap:0.5rem;' },
+            m('p', { style: 'margin: 1rem;' }, `Page ${attrs.currentPage} (${currentStartItem} to ${currentEndItem}/${attrs.totalItems})`),
+            m("button.btn.btn-primary", {
+                style: 'flex-grow:1;',
+                onclick: attrs.currentPage > 1 ? () => attrs.onPageChanged(attrs.currentPage - 1) : null,
+                disabled: attrs.currentPage == 1
+            },
+                "Previous"),
+            m("button.btn.btn-primary", {
+                style: 'flex-grow:1;',
+                onclick: attrs.currentPage < endPage ? () => attrs.onPageChanged(attrs.currentPage + 1) : null,
+                disabled: attrs.currentPage === endPage
+            },
+                "Next")
+        )
+    }
 }
 
 var RatingsTable = {
@@ -513,7 +556,7 @@ var RatingsTable = {
                         m("th", { scope: "col" }, "First Submitted"),
                         m("th", { scope: "col" }, "First Rated"),
                         m("th", { scope: "col" }, "Rating"),
-                    m("th", { scope: "col" }, "Labels")
+                        m("th", { scope: "col" }, "Labels")
                     ]
                     )),
                 m("tbody", _filteredMaps.map(x => makeRatingsTableRow(x)))
@@ -533,69 +576,59 @@ var FilterIcon = {
     }
 }
 
-// var FilteIcon = {
-//     view: function ({ attrs }) {
-//         return m('svg.config-button', {
-//             viewBox: "0 0 16 16",
-//             onclick: attrs.onclick
-//         },
-//             m('path', { d: "M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" })
-//         )
-//     }
-// }
-
 var CopyToClipboardIcon = {
     view: function ({ attrs }) {
         return m('svg.config-button', {
             viewBox: "0 0 16 16",
             onclick: () => copyToClipboard(attrs.copyText)
         },
-            m('path', {d: "M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" })
+            m('path', { d: "M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" })
         )
     }
 }
 
 var MapInfoModal = {
-    view: function() {
+    view: function () {
         return m('div.modal-container',
             {
                 onkeydown: (event) => {
-                    if(event.key == 'Escape') closeModal();
+                    if (event.key == 'Escape') closeModal();
                 },
                 onclick: (event) => {
-                    if(event.target === event.currentTarget)
+                    if (event.target === event.currentTarget)
                         closeModal();
                 }
             },
-            m('div.card', 
-                m('div.card-header', 
-                    m('p', {style: 'margin:0;'}, `Map details`),
+            m('div.card',
+                m('div.card-header',
+                    m('p', { style: 'margin:0;' }, `Map details`),
                     m("button.btn-close[type=button][aria-label=Close]", { onclick: () => closeModal() })),
                 m('div.card-body',
-                    m('h3', 
-                        m('a', {target: "_blank", href: makeMapLink(_modalMapInfo['Id'])}, _modalMapInfo['Name']),
-                        m(CopyToClipboardIcon, {copyText: _modalMapInfo['Name']})
+                    m('h3',
+                        m('a', { target: "_blank", href: makeMapLink(_modalMapInfo['Id']) }, _modalMapInfo['Name']),
+                        m(CopyToClipboardIcon, { copyText: _modalMapInfo['Name'] })
                     ),
-                    m('h5', 
-                        'Submitter: ', 
-                        m('a', { target:"_blank", href: makeSubmitterLink(_modalMapInfo['Submitter']['Id'])}, _modalMapInfo['Submitter']['Name']),
-                        m(CopyToClipboardIcon, {copyText: _modalMapInfo['Submitter']['Name']})
+                    m('h5',
+                        'Submitter: ',
+                        m('a', { target: "_blank", href: makeSubmitterLink(_modalMapInfo['Submitter']['Id']) }, _modalMapInfo['Submitter']['Name']),
+                        m(CopyToClipboardIcon, { copyText: _modalMapInfo['Submitter']['Name'] }),
+                        m(FilterIcon, { onclick: () => filterBySubmitter(_modalMapInfo['Submitter']['Name']) })
                     ),
                     'RobLabels' in _modalMapInfo ? [m('h5', 'Labels'), getLabels(_modalMapInfo)] : m('h5', 'No map labels'),
 
                     _modalMapInfo['BspFiles'] && _modalMapInfo['BspFiles'].length
-                        ?   [
-                                m('h5', 'bsp files'),
-                                m('p', m('ul', _modalMapInfo['BspFiles'].map(x => m('li', x, m(CopyToClipboardIcon, {copyText: x})) )))
-                            ]
-                        :   m('h5', 'No bsp files found for map'),
+                        ? [
+                            m('h5', 'bsp files'),
+                            m('p', m('ul', _modalMapInfo['BspFiles'].map(x => m('li', x, m(CopyToClipboardIcon, { copyText: x })))))
+                        ]
+                        : m('h5', 'No bsp files found for map'),
 
                     _modalMapInfo['Weapons'] != null
-                        ?   [
-                                m('h5', 'Weapons spawns on map'),
-                                m('p', m('ul', _modalMapInfo['Weapons'].map(x => m('li', x) )))
-                            ]
-                        :   m('h5', 'No weapons found for map'),
+                        ? [
+                            m('h5', 'Weapons spawns on map'),
+                            m('p', m('ul', _modalMapInfo['Weapons'].map(x => m('li', x))))
+                        ]
+                        : m('h5', 'No weapons found for map'),
                     'HasTeleport' in _modalMapInfo ? m('h5', 'Map has teleports') : m('h5', 'No teleports'),
                     'HasPushes' in _modalMapInfo ? m('h5', 'Map has jump pads') : m('h5', 'No jump pads')
                 )
@@ -605,18 +638,23 @@ var MapInfoModal = {
 }
 
 
-function filterBySubmitter(submitterName){
-    resetFilter();
-    _storage.minRating = CONSTANTS.NO_RATING_MIN_RATING_VALUE;
-    _storage.submitterFilter = submitterName;
-    _storage.save();
-    m.route.set(ROUTES.ratingsTable);
+function filterBySubmitter(submitterName) {
+    let queryParams = {
+        rating: CONSTANTS.NO_RATING_MIN_RATING_VALUE,
+        name: "",
+        submitter: submitterName,
+        il: [],
+        el: [],
+        iw: [],
+        ew: []
+    }
+    m.route.set(ROUTES.ratingsTable, queryParams);
 }
 
 function makeSubmittersTableRow(playerRating) {
     return m('tr', { key: playerRating.id }, [
         // add a clickable filter button for filtering based on this submitter! Nice one lad...
-        m("th", { scope: "row" }, m("a", { class: "link-secondary", href: makeSubmitterLink(playerRating.id) }, playerRating.name), m(FilterIcon, {onclick: () => filterBySubmitter(playerRating.name)})),
+        m("th", { scope: "row" }, m("a", { class: "link-secondary", href: makeSubmitterLink(playerRating.id) }, playerRating.name), m(FilterIcon, { onclick: () => filterBySubmitter(playerRating.name) })),
         m("td", playerRating.totalRatedOrCrashedMaps),
         m("td", playerRating.totalMaps),
         m("td", isNaN(playerRating.averageRating) ? 'No rating' : playerRating.averageRating)
@@ -703,7 +741,6 @@ var Header = {
     }
 }
 
-
 var App = {
     view: function () {
         return [
@@ -756,8 +793,8 @@ function getAverageRatingData() {
         }
     }
 
-    for (let map of _scrapeData.MapInfo){
-        if(map.Submitter.Name in _submitters) 
+    for (let map of _scrapeData.MapInfo) {
+        if (map.Submitter.Name in _submitters)
             _submitters[map.Submitter.Name].totalMaps++;
     }
     for (let playerRating of Object.values(_submitters)) {
@@ -769,25 +806,43 @@ function getAverageRatingData() {
 
 var RoutingConfiguration = {
     "/": {
-        render: function(){
+        onmatch: function (attrs) {
+
+            let parsedMinRating = attrs.rating ? parseFloat(attrs.rating) : NaN;
+            if (!isNaN(parsedMinRating) && [-0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5].includes(parsedMinRating)) {
+                _storage.minRating = parsedMinRating;
+            }
+            _storage.includeLabels = attrs.il || [];
+            _storage.excludeLabels = attrs.el || [];
+            _storage.includeWeapons = attrs.iw || [];
+            _storage.excludeWeapons = attrs.ew || [];
+            if (attrs.name != null) _storage.nameFilter = attrs.name;
+            if (attrs.submitter != null) _storage.submitterFilter = attrs.submitter;
+            if (attrs.sort && _ratingsTableSortByProperties.map(x => x.propertyName).includes(attrs.sort)) _storage.sortBy = attrs.sort;
+            if (attrs.asc != null) _storage.ratingsTableAscending = attrs.asc;
+
+            _storage.save();
+            debugger;
+
             _modalMapInfo = null; // Make sure the modal is closed.
             _storage.showRatingsTable();
-            return m(App);
-        }
+            return App;
+        },
+        render: function (vnode) { return [vnode] }
     },
     [ROUTES.mapDetailsModal]: {
-        render: function({ attrs }){
-            debugger;
-            if(attrs.id != null && !isNaN(parseInt(attrs.id))){
+        render: function ({ attrs }) {
+            if (attrs.id != null && !isNaN(parseInt(attrs.id))) {
                 let id = parseInt(attrs.id);
                 let foundMap = _scrapeData['MapInfo'].find(x => x.Id == id);
-                if(foundMap) _modalMapInfo = foundMap;
+                if (foundMap) _modalMapInfo = foundMap;
             }
             return m(App);
         }
     },
+    // [TODO]: Add some parameters for the filter params for this!
     [ROUTES.submittersTable]: {
-        render: function(){
+        render: function () {
             _modalMapInfo = null; // Make sure the modal is closed.
             _storage.showSubmittersTable();
             return m(App);
@@ -796,16 +851,17 @@ var RoutingConfiguration = {
 }
 
 function postProcessData() {
-    for(let map of _scrapeData['MapInfo']){
+    for (let map of _scrapeData['MapInfo']) {
         // Remove all NoTripmines labels. This information comes from the bsp_tools analysis now...
-        if('RobLabels' in map){
-            map['RobLabels'] = map['RobLabels'].filter(x => !(x =='NoTripmines'));
+        if ('RobLabels' in map) {
+            map['RobLabels'] = map['RobLabels'].filter(x => !(x == 'NoTripmines'));
         }
     }
 }
 
 async function initialise() {
     _storage.loadFromLocalStorage();
+
     document.addEventListener('keydown', function (event) {
         if (event.key === 'Escape') {
             closeModal();
