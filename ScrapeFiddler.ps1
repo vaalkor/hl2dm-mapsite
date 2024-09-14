@@ -23,7 +23,8 @@
 [switch]$NoDescription,
 [switch]$NoLabels,
 [switch]$MapNameFromClip,
-[string]$NewestMapToConsider
+[string]$NewestMapToConsider,
+[string[]]$IgnoreSubstrings
 )
 
 $file = Get-Item $ScrapeDataFile
@@ -106,9 +107,18 @@ if($GetRandomMap -or $ListMaps -or $CountMaps){
         }
     }
 
+    if($IgnoreSubstrings){
+        $filteredMaps = $filteredMaps | ?{
+            foreach($substring in $IgnoreSubstrings){
+                if($_.Name -contains $_){ return $false }
+            }
+            return $true
+        }
+    }
+
     if(-not $filteredMaps){ "No maps found!"; exit 1}
 
-    "============================`n$($filteredMaps | measure | select -ExpandProperty Count) found with properties
+    "============================`n$($filteredMaps | Measure-Object | Select-Object -ExpandProperty Count) found with properties
      
 NoRating: $NoRating
 NoDescription: $NoDescription
