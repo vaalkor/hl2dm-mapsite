@@ -1885,7 +1885,9 @@
         "ar2",
         "357"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1726348685
     },
     {
       "Name": "dm_neo_prebeta",
@@ -6870,7 +6872,9 @@
         "crossbow"
       ],
       "HasPushes": 1,
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 1.5,
+      "InitialRatingTimestamp": 1726349501
     },
     {
       "Name": "dm_sniper",
@@ -40502,7 +40506,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1726346854
     },
     {
       "Name": "dm_portico",
@@ -50323,7 +50329,12 @@
         "crossbow",
         "357",
         "ar2"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "UniqueMechanic"
+      ],
+      "InitialRatingTimestamp": 1726347658
     },
     {
       "Name": "dm_ks_rapid_waters",
@@ -61227,7 +61238,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1726349144
     },
     {
       "Name": "dm_rebel_vrs_combine",
@@ -63201,7 +63214,9 @@
         "crowbar",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1726350019
     },
     {
       "Name": "dm_torque",
@@ -65203,6 +65218,30 @@
     [
       1725141736,
       507
+    ],
+    [
+      1726346854,
+      508
+    ],
+    [
+      1726347658,
+      509
+    ],
+    [
+      1726348685,
+      510
+    ],
+    [
+      1726349144,
+      511
+    ],
+    [
+      1726349501,
+      512
+    ],
+    [
+      1726350019,
+      513
     ]
   ]
 }
