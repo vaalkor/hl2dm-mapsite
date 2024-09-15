@@ -163,8 +163,11 @@ function openModal(map) {
 }
 
 function closeModal() {
-    // [TODO]: This works a bit funny with the new routing stuff. Fix it mate.
-    m.route.set(ROUTES.ratingsTable);
+    if(!_modalMapInfo) return;
+
+    let currentParams = m.route.param();
+    delete currentParams.id; // If we have the model open, the current params will have a map id parameter.
+    m.route.set(ROUTES.ratingsTable, currentParams);
 }
 
 function sortFilteredMaps(a, b) {
