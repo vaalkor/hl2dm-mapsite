@@ -180,9 +180,6 @@ function sortSubmitters(a, b) {
 }
 
 function mapFilter(map) {
-    if(map.Name === 'dm_slam_paradise'){
-        debugger;
-    }
     if (_storage.nameFilter && !(map.Name.toLowerCase().includes(_storage.nameFilter.toLowerCase()))) return false;
     if (_storage.submitterFilter && !(map.Submitter.Name.toLowerCase().includes(_storage.submitterFilter.toLowerCase()))) return false;
     if (_storage.minRating >= 0 && (map.RobRating === undefined || map.RobRating === null)) return false;
@@ -227,12 +224,10 @@ function mapFilter(map) {
 }
 
 function filterMaps() {
-    debugger;
     if (_scrapeData.MapInfo.length == 0) return;
 
     _scrapeData.MapInfo.sort(sortFilteredMaps);
     _filteredMaps = _scrapeData.MapInfo.filter(x => mapFilter(x));
-    // console.log(`Filtered Maps. Length: ${_filteredMaps.length}`);
 }
 
 function filterSubmitters() {
