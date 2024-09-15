@@ -557,13 +557,13 @@ var PaginationFooter = {
             m("button.btn.btn-primary", {
                 style: 'flex-grow:1;',
                 onclick: attrs.currentPage > 1 ? () => attrs.onPageChanged(attrs.currentPage - 1) : null,
-                disabled: attrs.currentPage == 1
+                disabled: attrs.currentPage <= 1
             },
                 "Previous"),
             m("button.btn.btn-primary", {
                 style: 'flex-grow:1;',
                 onclick: attrs.currentPage < endPage ? () => attrs.onPageChanged(attrs.currentPage + 1) : null,
-                disabled: attrs.currentPage === endPage
+                disabled: attrs.currentPage >= endPage
             },
                 "Next")
         )
