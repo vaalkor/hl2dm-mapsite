@@ -163,6 +163,7 @@ function openModal(map) {
 }
 
 function closeModal() {
+    // [TODO]: This works a bit funny with the new routing stuff. Fix it mate.
     m.route.set(ROUTES.ratingsTable);
 }
 
@@ -179,6 +180,9 @@ function sortSubmitters(a, b) {
 }
 
 function mapFilter(map) {
+    if(map.Name === 'dm_slam_paradise'){
+        debugger;
+    }
     if (_storage.nameFilter && !(map.Name.toLowerCase().includes(_storage.nameFilter.toLowerCase()))) return false;
     if (_storage.submitterFilter && !(map.Submitter.Name.toLowerCase().includes(_storage.submitterFilter.toLowerCase()))) return false;
     if (_storage.minRating >= 0 && (map.RobRating === undefined || map.RobRating === null)) return false;
@@ -190,13 +194,13 @@ function mapFilter(map) {
             return false;
 
         for (let label of _storage.includeLabels) {
-            if (map.RobLabels.includes(label)) {
+            if (!map.RobLabels.includes(label)) 
                 return false;
-            }
         }
 
         for (let label of map.RobLabels) {
-            if (_storage.excludeLabels.includes(label)) return false;
+            if (_storage.excludeLabels.includes(label)) 
+                return false;
         }
     }
 
@@ -215,17 +219,20 @@ function mapFilter(map) {
         }
 
         for (let weapon of map.Weapons) {
-            if (_storage.excludeWeapons.includes(weapon)) return false;
+            if (_storage.excludeWeapons.includes(weapon)) 
+                return false;
         }
     }
     return true;
 }
 
 function filterMaps() {
+    debugger;
     if (_scrapeData.MapInfo.length == 0) return;
 
     _scrapeData.MapInfo.sort(sortFilteredMaps);
     _filteredMaps = _scrapeData.MapInfo.filter(x => mapFilter(x));
+    // console.log(`Filtered Maps. Length: ${_filteredMaps.length}`);
 }
 
 function filterSubmitters() {
@@ -317,7 +324,10 @@ function makeSubmitterLink(id) {
 
 var MapRatingsFiltering = {
     view: function () {
-        return m("div", { style: { "display": "flex", "justify-content": "space-between", "gap": "1rem" } },
+        return m("div", { 
+                style: { "display": "flex", "justify-content": "space-between", "gap": "1rem" }, 
+                onkeypress: function (e) { if (e.key === "Enter") applyFilter() } 
+            },
             [
                 m("div", { style: { "flex-grow": "1" } },
                     m("label", { class: "form-label", id: "ratingSliderText" }, "Minimum Rating: ", _ratingsTableFilterTempValues.minRating < 0 ? 'None selected' : _ratingsTableFilterTempValues.minRating),
@@ -822,7 +832,6 @@ var RoutingConfiguration = {
             if (attrs.asc != null) _storage.ratingsTableAscending = attrs.asc;
 
             _storage.save();
-            debugger;
 
             _modalMapInfo = null; // Make sure the modal is closed.
             _storage.showRatingsTable();
