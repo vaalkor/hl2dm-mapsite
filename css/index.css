@@ -185,3 +185,8 @@ tr:hover{
     overflow: auto;
 }
 
+.card-footer {
+    background-color: #f7f7f7 !important;
+    margin-bottom: 1rem;
+}
+

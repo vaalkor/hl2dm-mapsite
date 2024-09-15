@@ -1,7 +1,8 @@
 'use strict';
 
 var CONSTANTS = {
-    NO_RATING_MIN_RATING_VALUE: -0.5
+    NO_RATING_MIN_RATING_VALUE: -0.5,
+    PAGE_SIZE: 50
 }
 var IGNORE_LABELS = ['UT', 'Quake', 'MissingTextures', 'Incomplete', 'Indoors', 'Outdoors', 'HL1', 'NoTripmines'] // Labels to exclude from the filtering component
 var ALL_WEAPONS = [
@@ -89,13 +90,13 @@ var _toastMessages = {
         this.currentKey++;
     }
 }
-var _currentMapPage = 1;
 var _filteredMaps = [];
 
 var _ratingsTableFilterTempValues = Object.assign({}, _storage); // Clone the stored values. This will be used to store temp values for the stateful
 
 var _storage = {
     // Ratings table filter values
+    currentPage: 1,
     nameFilter: '',
     submitterFilter: '',
     minRating: 0,
@@ -163,7 +164,9 @@ function getAndSetElemValue(key) {
 }
 
 function openModal(map) {
-    m.route.set(ROUTES.mapDetailsModal, { id: map.Id });
+    let currentParams = m.route.param();
+    currentParams.id = map.Id;
+    m.route.set(ROUTES.mapDetailsModal, currentParams);
 }
 
 function closeModal() {
@@ -286,7 +289,8 @@ function resetFilter() {
         name: "",
         submitter: "",
         sort: _ratingsTableSortByProperties[0].propertyName,
-        asc: false
+        asc: false,
+        page: 1
         // The filtering lists (included/excluded weapons/labels) will be exluded from the string completely because
         // Mithril doesn't do anything to indicate empty lists in query strings. They just end up undefined in the route that consumes them.
     }
@@ -303,7 +307,8 @@ function applyFilter() {
         il: _ratingsTableFilterTempValues.includeLabels,
         el: _ratingsTableFilterTempValues.excludeLabels,
         iw: _ratingsTableFilterTempValues.includeWeapons,
-        ew: _ratingsTableFilterTempValues.excludeWeapons
+        ew: _ratingsTableFilterTempValues.excludeWeapons,
+        page: 1
     }
     m.route.set(ROUTES.ratingsTable, queryParams);
 }
@@ -531,14 +536,24 @@ function makeRatingsTableRow(map) {
     );
 }
 
+function onPageChanged(newPageNumber) {
+    const currentRoute = m.route.get();
+    const [path, _] = currentRoute.split('?');
+
+    const params = m.route.param();
+    params.page = newPageNumber;
+
+    m.route.set(path, params);
+}
+
 // Vnode<{ totalItems: number, pageSize: number, currentPage: number, onPageChanged: (page: number) => void }>
 var PaginationFooter = {
     view: function ({ attrs }) {
         let currentStartItem = (attrs.currentPage - 1) * attrs.pageSize + 1;
         let currentEndItem = Math.min(attrs.currentPage * attrs.pageSize, attrs.totalItems);
         let endPage = Math.ceil(attrs.totalItems / attrs.pageSize);
-        return m('div.card-footer', { style: 'display: flex; gap:0.5rem;' },
-            m('p', { style: 'margin: 1rem;' }, `Page ${attrs.currentPage} (${currentStartItem} to ${currentEndItem}/${attrs.totalItems})`),
+        return m('div.card-footer', { style: 'display: flex; gap:0.5rem; bottom: 0; position: sticky;' },
+            m('p', `Page ${attrs.currentPage} (${currentStartItem} to ${currentEndItem}/${attrs.totalItems})`),
             m("button.btn.btn-primary", {
                 style: 'flex-grow:1;',
                 onclick: attrs.currentPage > 1 ? () => attrs.onPageChanged(attrs.currentPage - 1) : null,
@@ -571,8 +586,9 @@ var RatingsTable = {
                         m("th", { scope: "col" }, "Labels")
                     ]
                     )),
-                m("tbody", _filteredMaps.map(x => makeRatingsTableRow(x)))
-            ])
+                m("tbody", _filteredMaps.slice((_storage.currentPage - 1) * CONSTANTS.PAGE_SIZE, (_storage.currentPage - 1) * CONSTANTS.PAGE_SIZE + CONSTANTS.PAGE_SIZE).map(x => makeRatingsTableRow(x)))
+            ]),
+            m(PaginationFooter, { onPageChanged: onPageChanged, totalItems: _filteredMaps.length, currentPage: _storage.currentPage, pageSize: CONSTANTS.PAGE_SIZE })
         );
     }
 }
@@ -658,7 +674,8 @@ function filterBySubmitter(submitterName) {
         il: [], // Include labels
         el: [], // Exclude labels
         iw: [], // Include weapons
-        ew: []  // Exclude weapons
+        ew: [], // Exclude weapons,
+        page: 1
     }
     m.route.set(ROUTES.ratingsTable, queryParams);
 }
@@ -812,7 +829,29 @@ function getAverageRatingData() {
         playerRating.averageRating = playerRating.totalRating / playerRating.numRatings;
     }
 
+    // [TODO]: There's something weird going on here with submitters... What is it...
     _submitters = Object.values(_submitters);
+}
+
+function handleCommonRouteParameters(attrs) {
+    let parsedMinRating = attrs.rating ? parseFloat(attrs.rating) : NaN;
+    if (!isNaN(parsedMinRating) && [-0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5].includes(parsedMinRating)) {
+        _storage.minRating = parsedMinRating;
+    }
+    let parsedPageNumber = attrs.page ? parseInt(attrs.page) : NaN;
+    if (!isNaN(parsedPageNumber)) {
+        _storage.currentPage = parsedPageNumber;
+    }
+    _storage.includeLabels = attrs.il || [];
+    _storage.excludeLabels = attrs.el || [];
+    _storage.includeWeapons = attrs.iw || [];
+    _storage.excludeWeapons = attrs.ew || [];
+    if (attrs.name != null) _storage.nameFilter = attrs.name;
+    if (attrs.submitter != null) _storage.submitterFilter = attrs.submitter;
+    if (attrs.sort && _ratingsTableSortByProperties.map(x => x.propertyName).includes(attrs.sort)) _storage.sortBy = attrs.sort;
+    if (attrs.asc != null) _storage.ratingsTableAscending = attrs.asc;
+
+    _storage.save();
 }
 
 var RoutingConfiguration = {
@@ -820,21 +859,7 @@ var RoutingConfiguration = {
         // I use onmatch here because I want to clone the current filter parameters into _ratingsTableFilterTempValues, 
         // because we now have a 2 step filter edit/application process. There needs to be a current value and temp value.
         onmatch: function (attrs) {
-
-            let parsedMinRating = attrs.rating ? parseFloat(attrs.rating) : NaN;
-            if (!isNaN(parsedMinRating) && [-0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5].includes(parsedMinRating)) {
-                _storage.minRating = parsedMinRating;
-            }
-            _storage.includeLabels = attrs.il || [];
-            _storage.excludeLabels = attrs.el || [];
-            _storage.includeWeapons = attrs.iw || [];
-            _storage.excludeWeapons = attrs.ew || [];
-            if (attrs.name != null) _storage.nameFilter = attrs.name;
-            if (attrs.submitter != null) _storage.submitterFilter = attrs.submitter;
-            if (attrs.sort && _ratingsTableSortByProperties.map(x => x.propertyName).includes(attrs.sort)) _storage.sortBy = attrs.sort;
-            if (attrs.asc != null) _storage.ratingsTableAscending = attrs.asc;
-
-            _storage.save();
+            handleCommonRouteParameters(attrs);
 
             _modalMapInfo = null; // Make sure the modal is closed.
             _storage.showRatingsTable();
@@ -844,6 +869,8 @@ var RoutingConfiguration = {
     },
     [ROUTES.mapDetailsModal]: {
         render: function ({ attrs }) {
+            handleCommonRouteParameters(attrs);
+
             if (attrs.id != null && !isNaN(parseInt(attrs.id))) {
                 let id = parseInt(attrs.id);
                 let foundMap = _scrapeData['MapInfo'].find(x => x.Id == id);
@@ -873,7 +900,6 @@ async function initialise() {
 
     m.route(document.querySelector('#dynamic-content'), "/", RoutingConfiguration);
     _scrapeData = (await m.request({ method: 'GET', url: 'scrape_data.json' }));
-    postProcessData();
     findAllLabels(_scrapeData.MapInfo);
     getAverageRatingData();
     m.redraw();
