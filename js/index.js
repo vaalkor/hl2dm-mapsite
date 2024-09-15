@@ -285,12 +285,12 @@ function getLabelFilterList(include) {
 
 function resetFilter() {
     let queryParams = {
+        page: 1,
         rating: 0,
         name: "",
         submitter: "",
         sort: _ratingsTableSortByProperties[0].propertyName,
         asc: false,
-        page: 1
         // The filtering lists (included/excluded weapons/labels) will be exluded from the string completely because
         // Mithril doesn't do anything to indicate empty lists in query strings. They just end up undefined in the route that consumes them.
     }
@@ -299,6 +299,7 @@ function resetFilter() {
 
 function applyFilter() {
     let queryParams = {
+        page: 1,
         rating: _ratingsTableFilterTempValues.minRating,
         name: _ratingsTableFilterTempValues.nameFilter,
         submitter: _ratingsTableFilterTempValues.submitterFilter,
@@ -308,7 +309,6 @@ function applyFilter() {
         el: _ratingsTableFilterTempValues.excludeLabels,
         iw: _ratingsTableFilterTempValues.includeWeapons,
         ew: _ratingsTableFilterTempValues.excludeWeapons,
-        page: 1
     }
     m.route.set(ROUTES.ratingsTable, queryParams);
 }
@@ -668,6 +668,7 @@ var MapInfoModal = {
 
 function filterBySubmitter(submitterName) {
     let queryParams = {
+        page: 1,
         rating: CONSTANTS.NO_RATING_MIN_RATING_VALUE, // Minimum rating
         name: "", // Name substring
         submitter: submitterName, // Submitter subtring
@@ -675,7 +676,6 @@ function filterBySubmitter(submitterName) {
         el: [], // Exclude labels
         iw: [], // Include weapons
         ew: [], // Exclude weapons,
-        page: 1
     }
     m.route.set(ROUTES.ratingsTable, queryParams);
 }
