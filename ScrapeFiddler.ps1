@@ -158,7 +158,7 @@ if($CheckDuplicatesNames){
 
 if($GetInfo){
     if(-not $MapName){"GetInfo set but no MapName provided. Quitting..."; exit 1}
-    GetMapWithName($MapName)    
+    GetMapWithName($MapName) | ConvertTo-Json -Depth 10 
     exit 0
 }
 
