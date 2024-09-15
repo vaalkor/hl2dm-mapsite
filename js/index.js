@@ -3,7 +3,7 @@
 var CONSTANTS = {
     NO_RATING_MIN_RATING_VALUE: -0.5
 }
-var IGNORE_LABELS = ['UT', 'Quake', 'MissingTextures', 'Incomplete', 'Indoors', 'Outdoors', 'HL1'] // Labels to exclude from the filtering component
+var IGNORE_LABELS = ['UT', 'Quake', 'MissingTextures', 'Incomplete', 'Indoors', 'Outdoors', 'HL1', 'NoTripmines'] // Labels to exclude from the filtering component
 var ALL_WEAPONS = [
     "357",
     "alyxgun",
@@ -47,6 +47,7 @@ var ALL_WEAPONS = [
     "submachinegun",
     "xm1014"
 ];
+// These are the standard map weapon entities. I only want to allow filtering based on these. The non standard entities would just clog up the filtering UI.
 var FILTER_WEAPONS = [
     "357",
     "ar2",
@@ -94,7 +95,7 @@ var _filteredMaps = [];
 var _ratingsTableFilterTempValues = Object.assign({}, _storage); // Clone the stored values. This will be used to store temp values for the stateful
 
 var _storage = {
-    // Filter values
+    // Ratings table filter values
     nameFilter: '',
     submitterFilter: '',
     minRating: 0,
@@ -104,11 +105,13 @@ var _storage = {
     excludeWeapons: [],
     sortBy: _ratingsTableSortByProperties[0].propertyName,
     ratingsTableAscending: false,
+    // Submitters table filter properties
+    submitterSortBy: _submittersTableSortByProperties[0].propertyName,
+    submittersTableAscending: false,
     // Other values
     ratingsTableVisible: true,
     submittersTableVisible: false,
-    submitterSortBy: _submittersTableSortByProperties[0].propertyName,
-    submittersTableAscending: false,
+
     loadFromLocalStorage: function () {
         const savedData = localStorage.getItem('storage');
         if (savedData) {
@@ -132,6 +135,7 @@ var _storage = {
     }
 }
 
+// [TODO] get rid of this global variable and clean up the modal code a bit. Now that we have routing it's a little bit tidier in general.
 var _modalMapInfo = null; // The map info we have a modal open for.
 var _scrapeData = { MapInfo: [], MapRatingGraphData: [] };
 var _foundLabels = {};
@@ -163,7 +167,7 @@ function openModal(map) {
 }
 
 function closeModal() {
-    if(!_modalMapInfo) return;
+    if (!_modalMapInfo) return;
 
     let currentParams = m.route.param();
     delete currentParams.id; // If we have the model open, the current params will have a map id parameter.
@@ -194,12 +198,12 @@ function mapFilter(map) {
             return false;
 
         for (let label of _storage.includeLabels) {
-            if (!map.RobLabels.includes(label)) 
+            if (!map.RobLabels.includes(label))
                 return false;
         }
 
         for (let label of map.RobLabels) {
-            if (_storage.excludeLabels.includes(label)) 
+            if (_storage.excludeLabels.includes(label))
                 return false;
         }
     }
@@ -219,7 +223,7 @@ function mapFilter(map) {
         }
 
         for (let weapon of map.Weapons) {
-            if (_storage.excludeWeapons.includes(weapon)) 
+            if (_storage.excludeWeapons.includes(weapon))
                 return false;
         }
     }
@@ -322,10 +326,10 @@ function makeSubmitterLink(id) {
 
 var MapRatingsFiltering = {
     view: function () {
-        return m("div", { 
-                style: { "display": "flex", "justify-content": "space-between", "gap": "1rem" }, 
-                onkeypress: function (e) { if (e.key === "Enter") applyFilter() } 
-            },
+        return m("div", {
+            style: { "display": "flex", "justify-content": "space-between", "gap": "1rem" },
+            onkeypress: function (e) { if (e.key === "Enter") applyFilter() }
+        },
             [
                 m("div", { style: { "flex-grow": "1" } },
                     m("label", { class: "form-label", id: "ratingSliderText" }, "Minimum Rating: ", _ratingsTableFilterTempValues.minRating < 0 ? 'None selected' : _ratingsTableFilterTempValues.minRating),
@@ -648,20 +652,19 @@ var MapInfoModal = {
 
 function filterBySubmitter(submitterName) {
     let queryParams = {
-        rating: CONSTANTS.NO_RATING_MIN_RATING_VALUE,
-        name: "",
-        submitter: submitterName,
-        il: [],
-        el: [],
-        iw: [],
-        ew: []
+        rating: CONSTANTS.NO_RATING_MIN_RATING_VALUE, // Minimum rating
+        name: "", // Name substring
+        submitter: submitterName, // Submitter subtring
+        il: [], // Include labels
+        el: [], // Exclude labels
+        iw: [], // Include weapons
+        ew: []  // Exclude weapons
     }
     m.route.set(ROUTES.ratingsTable, queryParams);
 }
 
 function makeSubmittersTableRow(playerRating) {
     return m('tr', { key: playerRating.id }, [
-        // add a clickable filter button for filtering based on this submitter! Nice one lad...
         m("th", { scope: "row" }, m("a", { class: "link-secondary", href: makeSubmitterLink(playerRating.id) }, playerRating.name), m(FilterIcon, { onclick: () => filterBySubmitter(playerRating.name) })),
         m("td", playerRating.totalRatedOrCrashedMaps),
         m("td", playerRating.totalMaps),
@@ -814,6 +817,8 @@ function getAverageRatingData() {
 
 var RoutingConfiguration = {
     "/": {
+        // I use onmatch here because I want to clone the current filter parameters into _ratingsTableFilterTempValues, 
+        // because we now have a 2 step filter edit/application process. There needs to be a current value and temp value.
         onmatch: function (attrs) {
 
             let parsedMinRating = attrs.rating ? parseFloat(attrs.rating) : NaN;
@@ -847,21 +852,11 @@ var RoutingConfiguration = {
             return m(App);
         }
     },
-    // [TODO]: Add some parameters for the filter params for this!
     [ROUTES.submittersTable]: {
         render: function () {
             _modalMapInfo = null; // Make sure the modal is closed.
             _storage.showSubmittersTable();
             return m(App);
-        }
-    }
-}
-
-function postProcessData() {
-    for (let map of _scrapeData['MapInfo']) {
-        // Remove all NoTripmines labels. This information comes from the bsp_tools analysis now...
-        if ('RobLabels' in map) {
-            map['RobLabels'] = map['RobLabels'].filter(x => !(x == 'NoTripmines'));
         }
     }
 }
