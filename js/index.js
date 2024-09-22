@@ -837,17 +837,21 @@ function handleCommonRouteParameters(attrs) {
     let parsedMinRating = attrs.rating ? parseFloat(attrs.rating) : NaN;
     if (!isNaN(parsedMinRating) && [-0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5].includes(parsedMinRating)) {
         _storage.minRating = parsedMinRating;
+    }else{
+        _storage.minRating = 0;
     }
     let parsedPageNumber = attrs.page ? parseInt(attrs.page) : NaN;
     if (!isNaN(parsedPageNumber)) {
         _storage.currentPage = parsedPageNumber;
+    }else{
+        _storage.currentPage = 1;
     }
     _storage.includeLabels = attrs.il || [];
     _storage.excludeLabels = attrs.el || [];
     _storage.includeWeapons = attrs.iw || [];
     _storage.excludeWeapons = attrs.ew || [];
-    if (attrs.name != null) _storage.nameFilter = attrs.name;
-    if (attrs.submitter != null) _storage.submitterFilter = attrs.submitter;
+    _storage.nameFilter = attrs.name || "";
+    _storage.submitterFilter = attrs.submitter || "";
     if (attrs.sort && _ratingsTableSortByProperties.map(x => x.propertyName).includes(attrs.sort)) _storage.sortBy = attrs.sort;
     if (attrs.asc != null) _storage.ratingsTableAscending = attrs.asc;
 
