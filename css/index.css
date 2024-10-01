@@ -129,6 +129,14 @@ thead{
     gap: 0.5rem;
 }
 
+/* A <h2> element is 50% taller than a <p>. The height and width for the <p> aligned config buttons is 1.5. That's 1 for the height of the text and 0.5 for the rest of the line height. 
+   So we get 2rem from 1.5 + 0.5...
+*/
+h2 .config-button {
+    height: 2rem;
+    width: 2rem;
+}
+
 /* Currently this is just for the filter button on the submitter table... But we can adjust it to be more generic later */
 .config-button {
     background-color: #d7d9dc;
@@ -142,13 +150,14 @@ thead{
 }
 
 .config-button:hover {
-    background-color: #e2e3e5;
+    /* background-color: #e2e3e5; */
+    background-color: #949495;
     border-radius: 5px;
 }
 
 .config-button:active {
     background-color: #c4c4c4;
-    border-radius: 5px;
+    border-radius: 5px; 
 }
 
 .hovered-table-row {
