@@ -9666,7 +9666,9 @@
         "ar2",
         "crossbow",
         "pistol"
-      ]
+      ],
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1729441773
     },
     {
       "Name": "Serious Sam: Desert Temple",
@@ -36661,7 +36663,9 @@
         "crossbow",
         "357",
         "ar2"
-      ]
+      ],
+      "RobRating": 1,
+      "InitialRatingTimestamp": 1729440923
     },
     {
       "Name": "dm_killbox_d0lph2",
@@ -37123,7 +37127,12 @@
         "slam",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 0.5,
+      "RobLabels": [
+        "HL1"
+      ],
+      "InitialRatingTimestamp": 1729442725
     },
     {
       "Name": "dm_killbox_hos",
@@ -38059,7 +38068,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1729443479
     },
     {
       "Name": "dm_shotty_alley",
@@ -38400,7 +38411,13 @@
         "357"
       ],
       "HasTeleport": 1,
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 3,
+      "RobLabels": [
+        "Small",
+        "Duel"
+      ],
+      "InitialRatingTimestamp": 1729442532
     },
     {
       "Name": "dm_snowfall",
@@ -49271,7 +49288,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1729439072
     },
     {
       "Name": "dm_casual",
@@ -53897,7 +53916,12 @@
         "crossbow"
       ],
       "HasPushes": 1,
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Large"
+      ],
+      "InitialRatingTimestamp": 1729440244
     },
     {
       "Name": "dm_sordid",
@@ -62052,7 +62076,12 @@
         "crossbow"
       ],
       "HasPushes": 1,
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 1.5,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1729440572
     },
     {
       "Name": "dm_castle_final",
@@ -65242,6 +65271,38 @@
     [
       1726350019,
       513
+    ],
+    [
+      1729439072,
+      514
+    ],
+    [
+      1729440244,
+      515
+    ],
+    [
+      1729440572,
+      516
+    ],
+    [
+      1729440923,
+      517
+    ],
+    [
+      1729441773,
+      518
+    ],
+    [
+      1729442532,
+      519
+    ],
+    [
+      1729442725,
+      520
+    ],
+    [
+      1729443479,
+      521
     ]
   ]
 }

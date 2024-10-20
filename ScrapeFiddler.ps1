@@ -110,7 +110,7 @@ if($GetRandomMap -or $ListMaps -or $CountMaps){
     if($IgnoreSubstrings){
         $filteredMaps = $filteredMaps | ?{
             foreach($substring in $IgnoreSubstrings){
-                if($_.Name -contains $_){ return $false }
+                if($_.Name.ToLower().Contains($substring.ToLower())){ return $false }
             }
             return $true
         }
