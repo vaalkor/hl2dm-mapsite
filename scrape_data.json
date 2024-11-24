@@ -47077,7 +47077,9 @@
         "ar2",
         "crossbow",
         "pistol"
-      ]
+      ],
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1732411204
     },
     {
       "Name": "dm_palizon_kk_v5",
@@ -65303,6 +65305,10 @@
     [
       1729443479,
       521
+    ],
+    [
+      1732411204,
+      522
     ]
   ]
 }
