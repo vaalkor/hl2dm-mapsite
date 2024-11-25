@@ -72,8 +72,8 @@ function createLabelGraph() {
 
     let averageRatingOptions = {
         title: 'Average Rating per Tag',
-        hAxis: { title: 'Tag' },
-        vAxis: { title: 'Rating' },
+        vAxis: { title: 'Tag' },
+        hAxis: { title: 'Rating' },
         legend: 'none'
     };
 
@@ -84,8 +84,8 @@ function createLabelGraph() {
 
     let labelCountOptions = {
         title: 'Label Counts',
-        hAxis: { title: 'Tag' },
-        vAxis: { title: 'Count' },
+        vAxis: { title: 'Tag' },
+        hAxis: { title: 'Count' },
         legend: 'none'
     };
 
@@ -126,9 +126,7 @@ function plotRatingLinearRegression(){
         .filter(x => x.RobRating);
     data.sort((a,b) => a.InitialRatingTimestamp - b.InitialRatingTimestamp);
     var regressionData = data.map((x, idx) => [idx, x.RobRating])
-    // let result = regression.linear(data.map((x, idx) => [idx, x.RobRating]));
 
-    debugger;
     let graphData = [["Index", "Rating"]].concat(regressionData);
     let dataTable = google.visualization.arrayToDataTable(graphData);
 
