@@ -10,11 +10,88 @@ fetch("scrape_data.json").then((x) => x.json()).then((data) => {
 
 function drawCharts()
 {
+    updateAverageRating();
+
+    createLabelGraph();
+    
     drawRatingProgress();
 
     computeGraphData();
 
     drawRatingsPerWeekday();
+
+    plotRatingLinearRegression();
+}
+
+function updateAverageRating() {
+    let totalRating = 0;
+    let count = 0;
+
+    for (let map of _scrapeData.MapInfo) {
+        if (map.RobRating) {
+            totalRating += map.RobRating;
+            count++;
+        }
+    }
+
+    document.getElementById("average_rating").innerText = `${totalRating / count}`.substring(0,4);
+}
+
+function createLabelGraph() {
+    let tagRatings = {};
+    let tagCounts = {};
+
+    for (let map of _scrapeData.MapInfo) {
+        if (!map.RobLabels)
+            continue;
+
+        for (let tag of map.RobLabels) {
+            if(tag == "NoTripmines") continue;
+
+            if (!(tag in tagRatings)) {
+                tagRatings[tag] = 0;
+                tagCounts[tag] = 0;
+            }
+
+            tagCounts[tag]++;
+
+            if(map.RobRating != null)
+                tagRatings[tag] += map.RobRating;
+        }
+    }
+
+    let averageRatings = Object.keys(tagRatings).map((tag) => [tag, tagRatings[tag] / tagCounts[tag]]);
+    let labelCounts = Object.keys(tagCounts).map((tag) => [tag, tagCounts[tag]]);
+
+    averageRatings.sort((a,b) => b[1] - a[1]);
+    labelCounts.sort((a,b) => b[1] - a[1]);
+
+    var averageRatingDataTable = google.visualization.arrayToDataTable([['Tag', 'AverageRating']].concat(averageRatings));
+    var labelCountDataTable = google.visualization.arrayToDataTable([['Tag', 'Label Count']].concat(labelCounts));
+
+
+    let averageRatingOptions = {
+        title: 'Average Rating per Tag',
+        hAxis: { title: 'Tag' },
+        vAxis: { title: 'Rating' },
+        legend: 'none'
+    };
+
+    let chart = new google.visualization.BarChart(document.getElementById('average_rating_per_label'));
+    chart.draw(averageRatingDataTable, averageRatingOptions);
+
+    window.addEventListener('resize', () => chart.draw(averageRatingDataTable, averageRatingOptions));
+
+    let labelCountOptions = {
+        title: 'Label Counts',
+        hAxis: { title: 'Tag' },
+        vAxis: { title: 'Count' },
+        legend: 'none'
+    };
+
+    chart = new google.visualization.BarChart(document.getElementById('label_counts'));
+    chart.draw(labelCountDataTable, labelCountOptions);
+    window.addEventListener('resize', () => chart.draw(labelCountDataTable, labelCountOptions));
 }
 
 function drawRatingProgress() {
@@ -30,13 +107,39 @@ function drawRatingProgress() {
     var options = {
         title: "Map rating progress over time",
         curveType: "function",
-        legend: { position: "bottom" },
+        legend: { position: "bottom" }
     };
 
     var chart = new google.visualization.LineChart(
         document.getElementById("rating_progress")
     );
 
+    chart.draw(dataTable, options);
+
+    window.addEventListener('resize', () => {
+        chart.draw(dataTable, options);
+    });
+}
+
+function plotRatingLinearRegression(){
+    let data = _scrapeData.MapInfo
+        .filter(x => x.RobRating);
+    data.sort(x => x.InitialRatingTimestamp);
+    var regressionData = data.map((x, idx) => [idx, x.RobRating])
+    // let result = regression.linear(data.map((x, idx) => [idx, x.RobRating]));
+
+    let graphData = [["Index", "Rating"]].concat(regressionData);
+    let dataTable = google.visualization.arrayToDataTable(graphData);
+
+    let options = {
+        title: "Linear Regression of Ratings",
+        hAxis: { title: "Index" },
+        vAxis: { title: "Rating" },
+        legend: "none",
+        trendlines: { 0: {} }    // Draw a trendline for data series 0.
+    };
+
+    let chart = new google.visualization.ScatterChart(document.getElementById("linear_regression"));
     chart.draw(dataTable, options);
 
     window.addEventListener('resize', () => {

@@ -11,6 +11,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+        .rob-graph{
+            width: 100%;
+            min-width: 0px;
+            max-width: 1200px;
+            height: 800px;
+        }
+    </style>
 </head>
 
 <body ontouchstart>
@@ -19,9 +27,17 @@
             <h2>Rob's Half Life 2 Map Ratings.</h2>
             <p>Rating statistics</p>
         </header>
+
+        <div id="rating_progress" class="rob-graph"></div>
+        <div id="rating_per_weekday" class="rob-graph"></div>
+
+        <p style="text-align:center;">As you can see below, there's no change in the distribution of ratings. The linear regression line has a slight downward trend, but it's not significant.</p>
+        <p style="text-align:center;">The average rating given is <span id="average_rating">_</span></p>
+
+        <div id="linear_regression" class="rob-graph"></div>
+        <div id="average_rating_per_label" class="rob-graph"></div>
+        <div id="label_counts" class="rob-graph"></div>
     </div>
-    <div id="rating_progress" style="width: 100%; height: 800px"></div>
-    <div id="rating_per_weekday" style="width: 100%; height: 800px"></div>
     <script src="js/stats.js"></script>
 </body>
 </html>
