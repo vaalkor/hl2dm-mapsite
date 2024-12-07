@@ -4015,7 +4015,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1733606732
     },
     {
       "Name": "dm_biohazard_cal",
@@ -6805,7 +6807,12 @@
         "ar2",
         "357",
         "pistol"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1733609894
     },
     {
       "Name": "dm_beta_remastered",
@@ -40953,7 +40960,12 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "MissingTextures"
+      ],
+      "InitialRatingTimestamp": 1733606249
     },
     {
       "Name": "dm_in_teh_box",
@@ -48518,7 +48530,9 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 1.5,
+      "InitialRatingTimestamp": 1733606983
     },
     {
       "Name": "aim_arena_b6",
@@ -49959,7 +49973,9 @@
         "shotgun",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1733608400
     },
     {
       "Name": "dm_wtc_singe_v8",
@@ -50691,7 +50707,9 @@
         "slam",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1733607851
     },
     {
       "Name": "dm_vitron_f8",
@@ -65309,6 +65327,30 @@
     [
       1732411204,
       522
+    ],
+    [
+      1733606249,
+      523
+    ],
+    [
+      1733606732,
+      524
+    ],
+    [
+      1733606983,
+      525
+    ],
+    [
+      1733607851,
+      526
+    ],
+    [
+      1733608400,
+      527
+    ],
+    [
+      1733609894,
+      528
     ]
   ]
 }
