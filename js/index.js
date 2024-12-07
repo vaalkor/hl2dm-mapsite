@@ -177,9 +177,14 @@ function closeModal() {
     m.route.set(ROUTES.ratingsTable, currentParams);
 }
 
-function sortFilteredMaps(a, b) {
+function sortFilteredMaps(a, b) { 
     if (_storage.sortBy == null) return a;
     let sortOrder = _storage.ratingsTableAscending ? -1 : 1;
+
+    if (a[_storage.sortBy] === b[_storage.sortBy]) {
+        return 0; // Maintain relative order if values are equal
+    }
+
     return (a[_storage.sortBy] || 0) > (b[_storage.sortBy] || 0) ? -1 * sortOrder : 1 * sortOrder;
 }
 
@@ -233,11 +238,11 @@ function mapFilter(map) {
     return true;
 }
 
-function filterMaps() {
+function filterAndSortMaps() {
     if (_scrapeData.MapInfo.length == 0) return;
 
-    _scrapeData.MapInfo.sort(sortFilteredMaps);
     _filteredMaps = _scrapeData.MapInfo.filter(x => mapFilter(x));
+    _filteredMaps.sort(sortFilteredMaps);
 }
 
 function filterSubmitters() {
@@ -572,8 +577,6 @@ var PaginationFooter = {
 
 var RatingsTable = {
     view: function () {
-        filterMaps();
-
         return m("div", { class: "container" },
             m("table", { class: "table table-striped", id: "fixed-table-header" }, [
                 m("thead",
@@ -720,22 +723,6 @@ var SubmittersTable = {
     }
 }
 
-function DrawRatingGraph(graphElement) {
-    var data = google.visualization.arrayToDataTable(
-        [['Date', 'Total Rated']].concat(_scrapeData.MapRatingGraphData.map(x => [new Date(x[0] * 1000), x[1]]))
-    );
-
-    var options = {
-        title: 'Map rating progress over time',
-        curveType: 'function',
-        legend: { position: 'bottom' }
-    };
-
-    var chart = new google.visualization.LineChart(graphElement);
-
-    chart.draw(data, options);
-}
-
 var ToastComponent = {
     onbeforeremove: function (vnode) {
         vnode.dom.classList.add("fade-out");
@@ -772,7 +759,7 @@ var Header = {
     view: function () {
         return m("div", { "class": "container" },
             m("header",
-                m("h2", "Rob's Half Life 2 Map Ratings.", m('a', { href: "https://github.com/vaalkor/hl2dm-mapsite"}, m(GithubIcon))),
+                m("h2", "Rob's Half Life 2 Map Ratings.", m('a', { href: "https://github.com/vaalkor/hl2dm-mapsite" }, m(GithubIcon))),
                 m("p", `An attempt to rate and categorise ${_scrapeData.MapInfo.length || 'a few'} Half Life 2 Deathmatch maps.`),
                 m("p", m("i", "Extremely subjective!"))
             )
@@ -848,13 +835,13 @@ function handleCommonRouteParameters(attrs) {
     let parsedMinRating = attrs.rating ? parseFloat(attrs.rating) : NaN;
     if (!isNaN(parsedMinRating) && [-0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5].includes(parsedMinRating)) {
         _storage.minRating = parsedMinRating;
-    }else{
+    } else {
         _storage.minRating = 0;
     }
     let parsedPageNumber = attrs.page ? parseInt(attrs.page) : NaN;
     if (!isNaN(parsedPageNumber)) {
         _storage.currentPage = parsedPageNumber;
-    }else{
+    } else {
         _storage.currentPage = 1;
     }
     _storage.includeLabels = attrs.il || [];
@@ -878,12 +865,16 @@ var RoutingConfiguration = {
 
             _modalMapInfo = null; // Make sure the modal is closed.
             _storage.showRatingsTable();
+
+            debugger;
+            filterAndSortMaps();
+
             return App;
         },
         render: function (vnode) { return [vnode] }
     },
     [ROUTES.mapDetailsModal]: {
-        render: function ({ attrs }) {
+        onmatch: function (attrs) {
             handleCommonRouteParameters(attrs);
 
             if (attrs.id != null && !isNaN(parseInt(attrs.id))) {
@@ -891,8 +882,11 @@ var RoutingConfiguration = {
                 let foundMap = _scrapeData['MapInfo'].find(x => x.Id == id);
                 if (foundMap) _modalMapInfo = foundMap;
             }
-            return m(App);
-        }
+
+            filterAndSortMaps();
+            return App;
+        },
+        render: function (vnode) { return [vnode] }
     },
     [ROUTES.submittersTable]: {
         render: function () {
@@ -913,8 +907,8 @@ async function initialise() {
         }
     });
 
+    _scrapeData = await (await fetch('scrape_data.json')).json();
     m.route(document.querySelector('#dynamic-content'), "/", RoutingConfiguration);
-    _scrapeData = (await m.request({ method: 'GET', url: 'scrape_data.json' }));
     findAllLabels(_scrapeData.MapInfo);
     getAverageRatingData();
     m.redraw();
