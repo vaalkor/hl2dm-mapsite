@@ -1384,7 +1384,9 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1733670354
     },
     {
       "Name": "dm_albatross",
@@ -1476,7 +1478,9 @@
       ],
       "Weapons": [
         "frag"
-      ]
+      ],
+      "RobRating": 4,
+      "InitialRatingTimestamp": 1733669437
     },
     {
       "Name": "dm_gman_loves_anal",
@@ -5027,7 +5031,13 @@
         "ar2",
         "crowbar",
         "357"
-      ]
+      ],
+      "RobLabels": [
+        "Remake",
+        "VanillaStyle"
+      ],
+      "InitialRatingTimestamp": 1733666876,
+      "RobRating": 4.5
     },
     {
       "Name": "dm_valar_r1",
@@ -18872,7 +18882,9 @@
         "pistol"
       ],
       "HasPushes": 1,
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1733668320
     },
     {
       "Name": "dm_grub",
@@ -27099,7 +27111,12 @@
         "ar2",
         "crossbow",
         "pistol"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1733667622
     },
     {
       "Name": "Dm_Prisonbreak",
@@ -47603,7 +47620,9 @@
         "slam",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1733667275
     },
     {
       "Name": "dm_derelict_beta",
@@ -62925,7 +62944,12 @@
         "slam",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [
+        "toobig"
+      ],
+      "InitialRatingTimestamp": 1733669598
     },
     {
       "Name": "dm_void",
@@ -65351,6 +65375,34 @@
     [
       1733609894,
       528
+    ],
+    [
+      1733666876,
+      529
+    ],
+    [
+      1733667275,
+      530
+    ],
+    [
+      1733667622,
+      531
+    ],
+    [
+      1733668320,
+      532
+    ],
+    [
+      1733669437,
+      533
+    ],
+    [
+      1733669598,
+      534
+    ],
+    [
+      1733670354,
+      535
     ]
   ]
 }
