@@ -21,6 +21,10 @@ function drawCharts()
     drawRatingsPerWeekday();
 
     plotRatingLinearRegression();
+
+    drawRatingsPerMonth();
+    
+    drawRatingsPerWeek();
 }
 
 function updateAverageRating() {
@@ -92,6 +96,42 @@ function createLabelGraph() {
     chart = new google.visualization.BarChart(document.getElementById('label_counts'));
     chart.draw(labelCountDataTable, labelCountOptions);
     window.addEventListener('resize', () => chart.draw(labelCountDataTable, labelCountOptions));
+}
+
+function drawRatingsPerMonth() {
+    let currentDate = new Date();
+    let monthCounts = Array(12).fill(0);
+
+    for (let map of _scrapeData.MapInfo) {
+        if (map.InitialRatingTimestamp) {
+            let ratingDate = new Date(map.InitialRatingTimestamp * 1000);
+            let monthDiff = (currentDate.getFullYear() - ratingDate.getFullYear()) * 12 + (currentDate.getMonth() - ratingDate.getMonth());
+            if (monthDiff < 12) {
+                monthCounts[11 - monthDiff]++;
+            }
+        }
+    }
+
+    let data = [['Month', 'Maps Rated']].concat(
+        monthCounts.map((count, index) => {
+            let date = new Date(currentDate.getFullYear(), currentDate.getMonth() - 11 + index, 1);
+            return [date.toLocaleString('default', { month: 'short' }), count];
+        })
+    );
+
+    let dataTable = new google.visualization.arrayToDataTable(data);
+
+    let options = {
+        title: 'Maps Rated per Month (Last 12 Months)',
+        hAxis: { title: 'Month' },
+        vAxis: { title: 'Maps Rated' },
+        legend: 'none'
+    };
+
+    let chart = new google.visualization.ColumnChart(document.getElementById('rating_per_month'));
+    chart.draw(dataTable, options);
+
+    window.addEventListener('resize', () => chart.draw(dataTable, options));
 }
 
 function drawRatingProgress() {
