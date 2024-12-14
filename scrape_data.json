@@ -10544,7 +10544,9 @@
         "ar2",
         "357"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 1.5,
+      "InitialRatingTimestamp": 1734209408
     },
     {
       "Name": "dm_killbox_neurotoxin",
@@ -10673,7 +10675,9 @@
         "ar2",
         "crossbow"
       ],
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1734214170
     },
     {
       "Name": "dm_alcys_resistance",
@@ -13542,7 +13546,12 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1734211587
     },
     {
       "Name": "RoPlayers_Housebox_v2",
@@ -24488,7 +24497,12 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 1,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1734211242
     },
     {
       "Name": "dm_islandtropic",
@@ -29467,7 +29481,9 @@
         "crowbar",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1734213290
     },
     {
       "Name": "dm_yard",
@@ -35641,7 +35657,9 @@
         "slam",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 1,
+      "InitialRatingTimestamp": 1734207922
     },
     {
       "Name": "dm_farstriker",
@@ -38297,7 +38315,9 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1734210105
     },
     {
       "Name": "dm_sniper_sniper",
@@ -47917,6 +47937,11 @@
         "slam",
         "ar2",
         "crossbow"
+      ],
+      "InitialRatingTimestamp": 1734215311,
+      "RobRating": 3.5,
+      "RobLabels": [
+        "CausesCrash"
       ]
     },
     {
@@ -51585,7 +51610,9 @@
       "BspFiles": [
         "dm_racetrack.bsp"
       ],
-      "Weapons": []
+      "Weapons": [],
+      "RobRating": 1.5,
+      "InitialRatingTimestamp": 1734210596
     },
     {
       "Name": "dm_quad",
@@ -52472,7 +52499,9 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1734211069
     },
     {
       "Name": "dm_beacon",
@@ -56438,7 +56467,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "InitialRatingTimestamp": 1734215985,
+      "RobRating": 3
     },
     {
       "Name": "dm_bunkersiege_final",
@@ -65403,6 +65434,50 @@
     [
       1733670354,
       535
+    ],
+    [
+      1734207922,
+      536
+    ],
+    [
+      1734209408,
+      537
+    ],
+    [
+      1734210105,
+      538
+    ],
+    [
+      1734210596,
+      539
+    ],
+    [
+      1734211069,
+      540
+    ],
+    [
+      1734211242,
+      541
+    ],
+    [
+      1734211587,
+      542
+    ],
+    [
+      1734213290,
+      543
+    ],
+    [
+      1734214170,
+      544
+    ],
+    [
+      1734215311,
+      545
+    ],
+    [
+      1734215985,
+      546
     ]
   ]
 }
