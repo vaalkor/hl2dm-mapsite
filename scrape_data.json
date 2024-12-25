@@ -1451,7 +1451,9 @@
         "crowbar",
         "357",
         "pistol"
-      ]
+      ],
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1735078226
     },
     {
       "Name": "dm_new_alcys_castle",
@@ -7195,7 +7197,9 @@
         "ar2",
         "slam",
         "rpg"
-      ]
+      ],
+      "InitialRatingTimestamp": 1735080112,
+      "RobRating": 3.5
     },
     {
       "Name": "dm_ng_abandonedarena",
@@ -7604,7 +7608,9 @@
         "slam",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 1.5,
+      "InitialRatingTimestamp": 1735079318
     },
     {
       "Name": "nub_module_v2",
@@ -13690,7 +13696,12 @@
         "ar2",
         "357"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 1,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1735074818
     },
     {
       "Name": "RoPlayers_Housebox_v1",
@@ -31220,7 +31231,9 @@
         "357",
         "crossbow",
         "frag"
-      ]
+      ],
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1735078967
     },
     {
       "Name": "dm_killbox_triangular_v6e",
@@ -31866,7 +31879,9 @@
         "357",
         "pistol"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1735138338
     },
     {
       "Name": "dm_fantasytower",
@@ -43642,7 +43657,12 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1735135203,
+      "RobRating": 2.5
     },
     {
       "Name": "2play",
@@ -53296,7 +53316,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 4,
+      "InitialRatingTimestamp": 1735076427
     },
     {
       "Name": "dm_cranefight",
@@ -53704,7 +53726,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 4.5,
+      "InitialRatingTimestamp": 1735136482
     },
     {
       "Name": "dm_sandland",
@@ -55036,7 +55060,12 @@
         "slam",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1735076818
     },
     {
       "Name": "dm_council_tsgk_v2",
@@ -59619,7 +59648,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 4,
+      "InitialRatingTimestamp": 1735137837
     },
     {
       "Name": "dm_cave",
@@ -65478,6 +65509,50 @@
     [
       1734215985,
       546
+    ],
+    [
+      1735074818,
+      547
+    ],
+    [
+      1735076427,
+      548
+    ],
+    [
+      1735076818,
+      549
+    ],
+    [
+      1735078226,
+      550
+    ],
+    [
+      1735078967,
+      551
+    ],
+    [
+      1735079318,
+      552
+    ],
+    [
+      1735080112,
+      553
+    ],
+    [
+      1735135203,
+      554
+    ],
+    [
+      1735136482,
+      555
+    ],
+    [
+      1735137837,
+      556
+    ],
+    [
+      1735138338,
+      557
     ]
   ]
 }
