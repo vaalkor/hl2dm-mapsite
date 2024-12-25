@@ -65,7 +65,9 @@
         "357"
       ],
       "HasTeleport": 1,
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1735141799
     },
     {
       "Name": "barf",
@@ -2270,7 +2272,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1735143381
     },
     {
       "Name": "My very first map.",
@@ -7669,7 +7673,9 @@
         "ar2",
         "rpg"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 1,
+      "InitialRatingTimestamp": 1735141166
     },
     {
       "Name": "nub_joyride_v1",
@@ -27242,7 +27248,9 @@
         "ar2",
         "357"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1735140711
     },
     {
       "Name": "dm_fightarea_remixed",
@@ -31880,8 +31888,8 @@
         "pistol"
       ],
       "HasTeleport": 1,
-      "RobRating": 2,
-      "InitialRatingTimestamp": 1735138338
+      "InitialRatingTimestamp": 1735138338,
+      "RobRating": 2
     },
     {
       "Name": "dm_fantasytower",
@@ -41624,7 +41632,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1735142746
     },
     {
       "Name": "dm_lakeside_b2",
@@ -45932,7 +45942,9 @@
         "crossbow"
       ],
       "HasPushes": 1,
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1735142353
     },
     {
       "Name": "dm-deck16][",
@@ -48228,7 +48240,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1735139906
     },
     {
       "Name": "dm_octagon by swot",
@@ -52826,7 +52840,11 @@
         "ar2",
         "357"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1735143490
     },
     {
       "Name": "dm_fallout",
@@ -57316,7 +57334,11 @@
         "ar2",
         "crowbar",
         "crossbow"
-      ]
+      ],
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1735143431
     },
     {
       "Name": "dm_dgc_skatepark_v2",
@@ -65553,6 +65575,42 @@
     [
       1735138338,
       557
+    ],
+    [
+      1735139906,
+      558
+    ],
+    [
+      1735140711,
+      559
+    ],
+    [
+      1735141166,
+      560
+    ],
+    [
+      1735141799,
+      561
+    ],
+    [
+      1735142353,
+      562
+    ],
+    [
+      1735142746,
+      563
+    ],
+    [
+      1735143381,
+      564
+    ],
+    [
+      1735143431,
+      565
+    ],
+    [
+      1735143490,
+      566
     ]
   ]
 }
