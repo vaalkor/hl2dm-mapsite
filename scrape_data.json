@@ -5441,7 +5441,9 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1735479610
     },
     {
       "Name": "dm_c1rcumv3nt_",
@@ -21227,7 +21229,13 @@
         "crossbow",
         "frag"
       ],
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 2.5,
+      "RobLabels": [
+        "Duel",
+        "Small"
+      ],
+      "InitialRatingTimestamp": 1735478086
     },
     {
       "Name": "dm_dock_bunker",
@@ -22056,7 +22064,12 @@
         "pistol"
       ],
       "HasPushes": 1,
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 2,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1735482738
     },
     {
       "Name": "Dm-Quarter Alpha 1 - 1v1",
@@ -26672,7 +26685,9 @@
         "pistol"
       ],
       "HasTeleport": 1,
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 1.5,
+      "InitialRatingTimestamp": 1735481052
     },
     {
       "Name": "dm_cubemap",
@@ -27793,7 +27808,9 @@
         "357"
       ],
       "HasTeleport": 1,
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 0.5,
+      "InitialRatingTimestamp": 1735480243
     },
     {
       "Name": "dm_killbox_xmas_final",
@@ -33956,7 +33973,9 @@
         "shotgun",
         "357",
         "ar2"
-      ]
+      ],
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1735483076
     },
     {
       "Name": "dm_zavod_yantar",
@@ -39980,7 +39999,13 @@
         "ar2",
         "crossbow"
       ],
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 2,
+      "RobLabels": [
+        "Remake",
+        "Quake"
+      ],
+      "InitialRatingTimestamp": 1735482218
     },
     {
       "Name": "dm_hell_night_final",
@@ -51265,7 +51290,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 1.5,
+      "InitialRatingTimestamp": 1735480101
     },
     {
       "Name": "dm_infiltrate",
@@ -51809,7 +51836,12 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobLabels": [
+        "Large"
+      ],
+      "InitialRatingTimestamp": 1735477389,
+      "RobRating": 3
     },
     {
       "Name": "dm_freeman",
@@ -52632,7 +52664,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1735481690
     },
     {
       "Name": "dm_stack",
@@ -53010,7 +53044,9 @@
         "shotgun",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1735478641
     },
     {
       "Name": "dm_lubbers_island",
@@ -55866,7 +55902,11 @@
         "ar2",
         "crowbar",
         "357"
-      ]
+      ],
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1735483105
     },
     {
       "Name": "dm-firth",
@@ -62367,7 +62407,12 @@
         "shotgun",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1735480819
     },
     {
       "Name": "dm_shockstreet_b2",
@@ -65611,6 +65656,58 @@
     [
       1735143490,
       566
+    ],
+    [
+      1735477389,
+      567
+    ],
+    [
+      1735478086,
+      568
+    ],
+    [
+      1735478641,
+      569
+    ],
+    [
+      1735479610,
+      570
+    ],
+    [
+      1735480101,
+      571
+    ],
+    [
+      1735480243,
+      572
+    ],
+    [
+      1735480819,
+      573
+    ],
+    [
+      1735481052,
+      574
+    ],
+    [
+      1735481690,
+      575
+    ],
+    [
+      1735482218,
+      576
+    ],
+    [
+      1735482738,
+      577
+    ],
+    [
+      1735483076,
+      578
+    ],
+    [
+      1735483105,
+      579
     ]
   ]
 }
