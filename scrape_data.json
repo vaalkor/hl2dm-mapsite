@@ -11396,7 +11396,9 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1735741249
     },
     {
       "Name": "dm_sniperrounds_cm-rc03",
@@ -36456,7 +36458,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1735741532
     },
     {
       "Name": "dmt1_rednecks_revenge_final",
@@ -65708,6 +65712,14 @@
     [
       1735483105,
       579
+    ],
+    [
+      1735741249,
+      580
+    ],
+    [
+      1735741532,
+      581
     ]
   ]
 }
