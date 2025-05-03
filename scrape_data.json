@@ -17257,7 +17257,12 @@
         "crossbow"
       ],
       "HasPushes": 1,
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "InitialRatingTimestamp": 1746309372,
+      "RobLabels": [
+        "UniqueMechanic"
+      ],
+      "RobRating": 1.5
     },
     {
       "Name": "dm_hogs_lego_logo_small",
@@ -20602,7 +20607,12 @@
         "crossbow",
         "slam",
         "ar2"
-      ]
+      ],
+      "RobLabels": [
+        "UniqueMechanic"
+      ],
+      "InitialRatingTimestamp": 1746308907,
+      "RobRating": 3.5
     },
     {
       "Name": "dm_Hippaforalkus",
@@ -35736,7 +35746,9 @@
         "slam",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1746307598
     },
     {
       "Name": "dm_unreal_factory_hd_b1",
@@ -42291,7 +42303,9 @@
         "357"
       ],
       "HasTeleport": 1,
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 1.5,
+      "InitialRatingTimestamp": 1746307329
     },
     {
       "Name": "dm_killsphere_v8",
@@ -52139,7 +52153,11 @@
         "shotgun",
         "ar2",
         "357"
-      ]
+      ],
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1746306898
     },
     {
       "Name": "dm_burn01",
@@ -52202,7 +52220,9 @@
         "shotgun",
         "ar2",
         "357"
-      ]
+      ],
+      "InitialRatingTimestamp": 1746308202,
+      "RobRating": 1.5
     },
     {
       "Name": "dm_apcbunkers",
@@ -54136,7 +54156,9 @@
         "ar2",
         "357"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1746306871
     },
     {
       "Name": "dm_prisonerc",
@@ -65720,6 +65742,34 @@
     [
       1735741532,
       581
+    ],
+    [
+      1746306871,
+      582
+    ],
+    [
+      1746306898,
+      583
+    ],
+    [
+      1746307329,
+      584
+    ],
+    [
+      1746307598,
+      585
+    ],
+    [
+      1746308202,
+      586
+    ],
+    [
+      1746308907,
+      587
+    ],
+    [
+      1746309372,
+      588
     ]
   ]
 }
