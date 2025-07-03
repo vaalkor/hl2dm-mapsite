@@ -4541,7 +4541,9 @@
         "crossbow"
       ],
       "HasPushes": 1,
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 4,
+      "InitialRatingTimestamp": 1751406033
     },
     {
       "Name": "dm_killbox_kbh_2_skm",
@@ -4935,7 +4937,9 @@
       ],
       "Weapons": [],
       "HasPushes": 1,
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1751406985
     },
     {
       "Name": "dm_stalkyard_mrmof_v2",
@@ -8192,7 +8196,9 @@
         "357",
         "shotgun",
         "ar2"
-      ]
+      ],
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1751404367
     },
     {
       "Name": "dm_suffocation",
@@ -48931,7 +48937,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 4,
+      "InitialRatingTimestamp": 1751406601
     },
     {
       "Name": "aim_arena_b4_big",
@@ -57533,7 +57541,11 @@
         "ar2",
         "357"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobLabels": [
+        "Dogshit"
+      ],
+      "InitialRatingTimestamp": 1751404986
     },
     {
       "Name": "dm_tube_v2",
@@ -58973,7 +58985,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 0.5,
+      "InitialRatingTimestamp": 1751404542
     },
     {
       "Name": "dm_dirt _fortress",
@@ -65770,6 +65784,30 @@
     [
       1746309372,
       588
+    ],
+    [
+      1751404367,
+      589
+    ],
+    [
+      1751404542,
+      590
+    ],
+    [
+      1751404986,
+      591
+    ],
+    [
+      1751406033,
+      592
+    ],
+    [
+      1751406601,
+      593
+    ],
+    [
+      1751406985,
+      594
     ]
   ]
 }
