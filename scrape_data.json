@@ -8323,7 +8323,12 @@
         "crowbar",
         "crossbow",
         "pistol"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [
+        "Medium"
+      ],
+      "InitialRatingTimestamp": 1751660522
     },
     {
       "Name": "Dm_BlockPost",
@@ -15070,7 +15075,9 @@
         "ar2",
         "357",
         "pistol"
-      ]
+      ],
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1751660953
     },
     {
       "Name": "dm_sniper_traps_v5",
@@ -27926,7 +27933,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1751662542
     },
     {
       "Name": "dm_bk_ExAnimalis_rc2",
@@ -65808,6 +65817,18 @@
     [
       1751406985,
       594
+    ],
+    [
+      1751660522,
+      595
+    ],
+    [
+      1751660953,
+      596
+    ],
+    [
+      1751662542,
+      597
     ]
   ]
 }
