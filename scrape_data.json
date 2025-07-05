@@ -5814,7 +5814,12 @@
         "crossbow"
       ],
       "HasPushes": 1,
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 2,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1751719124
     },
     {
       "Name": "dm_lighthouse_point",
@@ -14543,7 +14548,12 @@
         "357",
         "ar2"
       ],
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Small"
+      ],
+      "InitialRatingTimestamp": 1751717763
     },
     {
       "Name": "Stardust Slaughterhouse b1 (20 Brush Challenge)",
@@ -50882,7 +50892,12 @@
         "crowbar",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3.5,
+      "RobLabels": [
+        "UniqueMechanic"
+      ],
+      "InitialRatingTimestamp": 1751717395
     },
     {
       "Name": "dm_vulture",
@@ -65829,6 +65844,18 @@
     [
       1751662542,
       597
+    ],
+    [
+      1751717395,
+      598
+    ],
+    [
+      1751717763,
+      599
+    ],
+    [
+      1751719124,
+      600
     ]
   ]
 }
