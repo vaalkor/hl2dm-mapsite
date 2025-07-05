@@ -538,7 +538,9 @@
         "crossbow"
       ],
       "HasTeleport": 1,
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1751756380
     },
     {
       "Name": "dm_koteam_ultimatedust",
@@ -3592,7 +3594,9 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1751757668
     },
     {
       "Name": "dm_milieu_final",
@@ -7006,7 +7010,9 @@
         "shotgun",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 1,
+      "InitialRatingTimestamp": 1751756662
     },
     {
       "Name": "Killbox Triangular",
@@ -7306,7 +7312,9 @@
         "ar2",
         "crossbow"
       ],
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1751752190
     },
     {
       "Name": "dm_elea_wiremagnum",
@@ -10476,7 +10484,9 @@
         "frag",
         "shotgun",
         "ar2"
-      ]
+      ],
+      "RobRating": 1.5,
+      "InitialRatingTimestamp": 1751751427
     },
     {
       "Name": "dm_TheHouse",
@@ -17722,7 +17732,9 @@
         "ar2",
         "357"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "InitialRatingTimestamp": 1751756014,
+      "RobRating": 3
     },
     {
       "Name": "Dm-Quarter Beta 1.2 - Skybox Fix",
@@ -24362,7 +24374,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "InitialRatingTimestamp": 1751752656,
+      "RobRating": 3.5
     },
     {
       "Name": "dm_islandtropic_v2",
@@ -39385,7 +39399,9 @@
         "357",
         "ar2",
         "rpg"
-      ]
+      ],
+      "InitialRatingTimestamp": 1751755268,
+      "RobRating": 3
     },
     {
       "Name": "jp_box_o_funv2",
@@ -47025,7 +47041,9 @@
         "crowbar",
         "crossbow",
         "pistol"
-      ]
+      ],
+      "RobRating": 1.5,
+      "InitialRatingTimestamp": 1751753571
     },
     {
       "Name": "dm_module3_v2",
@@ -47419,7 +47437,12 @@
         "ar2",
         "crossbow"
       ],
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 2.5,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1751757131
     },
     {
       "Name": "dm_archt",
@@ -50929,7 +50952,9 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "InitialRatingTimestamp": 1751754136,
+      "RobRating": 3
     },
     {
       "Name": "dm_tigcrik",
@@ -55242,7 +55267,11 @@
         "slam",
         "ar2",
         "357"
-      ]
+      ],
+      "RobLabels": [
+        "MissingTextures"
+      ],
+      "InitialRatingTimestamp": 1751755339
     },
     {
       "Name": "dm_outerwarehouse",
@@ -63334,7 +63363,12 @@
         "shotgun",
         "ar2",
         "357"
-      ]
+      ],
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1751755603,
+      "RobRating": 2
     },
     {
       "Name": "dm_swamplight_b3",
@@ -65856,6 +65890,58 @@
     [
       1751719124,
       600
+    ],
+    [
+      1751751427,
+      601
+    ],
+    [
+      1751752190,
+      602
+    ],
+    [
+      1751752656,
+      603
+    ],
+    [
+      1751753571,
+      604
+    ],
+    [
+      1751754136,
+      605
+    ],
+    [
+      1751755268,
+      606
+    ],
+    [
+      1751755339,
+      607
+    ],
+    [
+      1751755603,
+      608
+    ],
+    [
+      1751756014,
+      609
+    ],
+    [
+      1751756380,
+      610
+    ],
+    [
+      1751756662,
+      611
+    ],
+    [
+      1751757131,
+      612
+    ],
+    [
+      1751757668,
+      613
     ]
   ]
 }
