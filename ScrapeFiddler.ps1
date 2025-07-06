@@ -6,7 +6,7 @@
 [switch]$GetInfo,
 [string]$Description,
 [Parameter()]
-[ValidateSet('CausesCrash','Duel', 'Outdoors','Indoors', 'NoTripmines', 'TooBig', 'Small', 'Medium', 'Large', 'Meme', 'NeverLoads', 'LowGrav', 'Remake', 'Incomplete', 'VanillaStyle', 'UT', 'Quake', 'HL1', 'MissingTextures', 'UniqueMechanic', 'KingOfTheHill', IgnoreCase=$false)]
+[ValidateSet('CausesCrash','Duel', 'Outdoors','Indoors', 'NoTripmines', 'TooBig', 'Small', 'Medium', 'Large', 'Meme', 'NeverLoads', 'LowGrav', 'Remake', 'Incomplete', 'VanillaStyle', 'UT', 'Quake', 'HL1', 'MissingTextures', 'UniqueMechanic', 'KingOfTheHill', 'Dogshit', 'History', IgnoreCase=$false)]
 [string[]]$Labels,
 [Parameter()]
 [ValidateSet(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5)] 
@@ -185,7 +185,7 @@ if($UpdateInfo){
     }
     if($NumPlayers){ $updateInfoMap | Add-Member -MemberType NoteProperty -Name 'NumPlayers' -Value $NumPlayers -Force }
     if(-not $updateInfoMap.InitialRatingTimestamp){
-        echo "No rating!"
+        Write-Host "No rating!"
         $updateInfoMap | Add-Member -MemberType NoteProperty -Name 'InitialRatingTimestamp' -Value (GetUnixTime) -Force
     }
 
