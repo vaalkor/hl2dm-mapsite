@@ -1132,7 +1132,9 @@
           "Name": "dm_tiny_vmf.zip",
           "Url": "https://gamebanana.com/dl/1057763"
         }
-      ]
+      ],
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1752271484
     },
     {
       "Name": "Panama",
@@ -6401,7 +6403,12 @@
         "ar2",
         "crowbar",
         "crossbow"
-      ]
+      ],
+      "InitialRatingTimestamp": 1752270158,
+      "RobLabels": [
+        "Dogshit"
+      ],
+      "RobRating": 1
     },
     {
       "Name": "CM Snowkill  VI",
@@ -10363,7 +10370,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1752273344
     },
     {
       "Name": "dm_glassfall (vertical gameplay breaking glass)",
@@ -29496,7 +29505,9 @@
         "crowbar",
         "357"
       ],
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1752273946
     },
     {
       "Name": "DM_teleportsandlasers",
@@ -60772,7 +60783,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1752270955
     },
     {
       "Name": "dm_carbon_v2",
@@ -61827,6 +61840,11 @@
         "shotgun",
         "ar2",
         "357"
+      ],
+      "InitialRatingTimestamp": 1752272439,
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Small"
       ]
     },
     {
@@ -62951,7 +62969,11 @@
         "crowbar",
         "357",
         "pistol"
-      ]
+      ],
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1752272489
     },
     {
       "Name": "dm_mayan_sanctuary",
@@ -65948,6 +65970,34 @@
     [
       1751839892,
       614
+    ],
+    [
+      1752270158,
+      615
+    ],
+    [
+      1752270955,
+      616
+    ],
+    [
+      1752271484,
+      617
+    ],
+    [
+      1752272439,
+      618
+    ],
+    [
+      1752272489,
+      619
+    ],
+    [
+      1752273344,
+      620
+    ],
+    [
+      1752273946,
+      621
     ]
   ]
 }
