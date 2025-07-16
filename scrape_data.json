@@ -20582,7 +20582,9 @@
         "ar2",
         "357",
         "pistol"
-      ]
+      ],
+      "RobRating": 1.5,
+      "InitialRatingTimestamp": 1752695969
     },
     {
       "Name": "dm_fort-navajo_b2",
@@ -46075,7 +46077,13 @@
         "crossbow",
         "pistol"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "InitialRatingTimestamp": 1752696766,
+      "RobRating": 2.5,
+      "RobLabels": [
+        "UT",
+        "Remake"
+      ]
     },
     {
       "Name": "dm_tobor",
@@ -59086,7 +59094,9 @@
         "slam",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1752696466
     },
     {
       "Name": "dm_arx_caelum_beta",
@@ -65998,6 +66008,18 @@
     [
       1752273946,
       621
+    ],
+    [
+      1752695969,
+      622
+    ],
+    [
+      1752696466,
+      623
+    ],
+    [
+      1752696766,
+      624
     ]
   ]
 }
