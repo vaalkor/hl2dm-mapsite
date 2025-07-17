@@ -4677,7 +4677,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1752791127
     },
     {
       "Name": "dm_canals_hl_v3",
@@ -7837,7 +7839,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1752789414
     },
     {
       "Name": "MCRTX SteamLab",
@@ -10082,7 +10086,9 @@
         "crowbar",
         "crossbow",
         "pistol"
-      ]
+      ],
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1752788815
     },
     {
       "Name": "dm_lostcoastcity",
@@ -33366,7 +33372,9 @@
         "ar2",
         "357"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 1,
+      "InitialRatingTimestamp": 1752791336
     },
     {
       "Name": "dm_stn_4corners_final",
@@ -39326,7 +39334,9 @@
         "357"
       ],
       "HasPushes": 1,
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1752791742
     },
     {
       "Name": "dm_construction",
@@ -47166,7 +47176,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1752790825
     },
     {
       "Name": "dm_2moreforever",
@@ -57381,7 +57393,9 @@
         "shotgun",
         "slam",
         "357"
-      ]
+      ],
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1752790153
     },
     {
       "Name": "dm_finaldrive",
@@ -66020,6 +66034,34 @@
     [
       1752696766,
       624
+    ],
+    [
+      1752788815,
+      625
+    ],
+    [
+      1752789414,
+      626
+    ],
+    [
+      1752790153,
+      627
+    ],
+    [
+      1752790825,
+      628
+    ],
+    [
+      1752791127,
+      629
+    ],
+    [
+      1752791336,
+      630
+    ],
+    [
+      1752791742,
+      631
     ]
   ]
 }
