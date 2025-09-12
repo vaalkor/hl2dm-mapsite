@@ -3866,7 +3866,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1757712758
     },
     {
       "Name": "dm_fraggingyard",
@@ -22706,7 +22708,9 @@
         "crossbow"
       ],
       "HasTeleport": 1,
-      "HasPushes": 1
+      "HasPushes": 1,
+      "InitialRatingTimestamp": 1757711526,
+      "RobRating": 3
     },
     {
       "Name": "dm_home_new_fixed",
@@ -28120,7 +28124,9 @@
         "crowbar",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1757713271
     },
     {
       "Name": "dm_flats-v21",
@@ -48698,7 +48704,12 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobLabels": [
+        "VanillaStyle"
+      ],
+      "InitialRatingTimestamp": 1757712192,
+      "RobRating": 3
     },
     {
       "Name": "dm_oldmilbase",
@@ -49249,7 +49260,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1757714158
     },
     {
       "Name": "rocky",
@@ -61935,7 +61948,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 1.5,
+      "InitialRatingTimestamp": 1757712292
     },
     {
       "Name": "dm_killbox_blue",
@@ -66062,6 +66077,30 @@
     [
       1752791742,
       631
+    ],
+    [
+      1757711526,
+      632
+    ],
+    [
+      1757712192,
+      633
+    ],
+    [
+      1757712292,
+      634
+    ],
+    [
+      1757712758,
+      635
+    ],
+    [
+      1757713271,
+      636
+    ],
+    [
+      1757714158,
+      637
     ]
   ]
 }
