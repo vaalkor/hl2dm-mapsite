@@ -1022,7 +1022,9 @@
           "Name": "dm_tiny_expanded_r2_vmf.zip",
           "Url": "https://gamebanana.com/dl/1061469"
         }
-      ]
+      ],
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1759608243
     },
     {
       "Name": "dm_tablet",
@@ -5886,7 +5888,9 @@
           "Name": "dm_the_stack_r7bsp.zip",
           "Url": "https://gamebanana.com/dl/749708"
         }
-      ]
+      ],
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1759609230
     },
     {
       "Name": "dm_human_is_not_invited",
@@ -18460,7 +18464,9 @@
         "slam"
       ],
       "HasTeleport": 1,
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1759614189
     },
     {
       "Name": "dm_rebels_2",
@@ -21483,7 +21489,9 @@
         "pistol"
       ],
       "HasTeleport": 1,
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1759609892
     },
     {
       "Name": "dm_bk_unexpected_dev_2",
@@ -23170,7 +23178,9 @@
         "crowbar",
         "357"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1759607905
     },
     {
       "Name": "dm_fazole",
@@ -40670,7 +40680,9 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "InitialRatingTimestamp": 1759608224,
+      "RobRating": 2
     },
     {
       "Name": "dm_kaskada",
@@ -55899,7 +55911,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1759610674
     },
     {
       "Name": "dm-titanic",
@@ -60067,7 +60081,9 @@
         "crowbar",
         "357"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 2.5,
+      "InitialRatingTimestamp": 1759611364
     },
     {
       "Name": "dm_dam",
@@ -66101,6 +66117,38 @@
     [
       1757714158,
       637
+    ],
+    [
+      1759607905,
+      638
+    ],
+    [
+      1759608224,
+      639
+    ],
+    [
+      1759608243,
+      640
+    ],
+    [
+      1759609230,
+      641
+    ],
+    [
+      1759609892,
+      642
+    ],
+    [
+      1759610674,
+      643
+    ],
+    [
+      1759611364,
+      644
+    ],
+    [
+      1759614189,
+      645
     ]
   ]
 }
