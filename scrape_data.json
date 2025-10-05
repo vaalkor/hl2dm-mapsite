@@ -1768,7 +1768,9 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1759689766
     },
     {
       "Name": "dm_suburbs (Half-Life 2: Deathmatch)",
@@ -1967,7 +1969,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1759693347
     },
     {
       "Name": "dm_katsura_ffa",
@@ -8196,7 +8200,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1759692091
     },
     {
       "Name": "dm_minerals",
@@ -28842,7 +28848,9 @@
         "slam",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1759692417
     },
     {
       "Name": "dm_snowtemple",
@@ -31854,7 +31862,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 1,
+      "InitialRatingTimestamp": 1759689932
     },
     {
       "Name": "junkcity_simpliCITY",
@@ -33709,7 +33719,9 @@
         "crossbow"
       ],
       "HasTeleport": 1,
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1759687553
     },
     {
       "Name": "DM_Lost_Archipelago",
@@ -34271,7 +34283,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 1,
+      "InitialRatingTimestamp": 1759690044
     },
     {
       "Name": "dm_killcyclinder_looney_tunes",
@@ -53886,7 +53900,9 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1759691659
     },
     {
       "Name": "dm_studyroom",
@@ -53953,7 +53969,9 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3.5,
+      "InitialRatingTimestamp": 1759688562
     },
     {
       "Name": "dm_vault",
@@ -55844,7 +55862,9 @@
         "shotgun",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1759690273
     },
     {
       "Name": "dm_resistance_extreme",
@@ -60386,7 +60406,11 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1759690312
     },
     {
       "Name": "dm_hardrenaline",
@@ -63410,7 +63434,9 @@
         "shotgun",
         "crossbow",
         "rpg"
-      ]
+      ],
+      "RobRating": 1.5,
+      "InitialRatingTimestamp": 1759688836
     },
     {
       "Name": "dm_depot_b2",
@@ -66149,6 +66175,54 @@
     [
       1759614189,
       645
+    ],
+    [
+      1759687553,
+      646
+    ],
+    [
+      1759688562,
+      647
+    ],
+    [
+      1759688836,
+      648
+    ],
+    [
+      1759689766,
+      649
+    ],
+    [
+      1759689932,
+      650
+    ],
+    [
+      1759690044,
+      651
+    ],
+    [
+      1759690273,
+      652
+    ],
+    [
+      1759690312,
+      653
+    ],
+    [
+      1759691659,
+      654
+    ],
+    [
+      1759692091,
+      655
+    ],
+    [
+      1759692417,
+      656
+    ],
+    [
+      1759693347,
+      657
     ]
   ]
 }
