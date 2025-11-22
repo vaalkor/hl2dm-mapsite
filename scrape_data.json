@@ -44716,9 +44716,9 @@
       "InitialRatingTimestamp": 1656713813,
       "RobLabels": [
         "Remake",
-        "HL1"
+        "HL1",
+        "Large"
       ],
-      "RobRating": 3,
       "Files": [
         {
           "Name": "dm_crossfire_final.rar",
@@ -44739,7 +44739,9 @@
         "357"
       ],
       "HasPushes": 1,
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3.5,
+      "RobComment": "A very nice remake of Crossfire. It's a little too big for 2 or 3 really, but it's very pleasant. Nice lighting."
     },
     {
       "Name": "dm_smashbox_v1",
@@ -44907,7 +44909,10 @@
       "Weapons": [
         "357",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2,
+      "RobComment": "Not very exciting. Very dark was well, which is always annoying. Playable however. The death floor is amusing, at least",
+      "InitialRatingTimestamp": 1763814835
     },
     {
       "Name": "dm_waterworks",
@@ -47089,7 +47094,14 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 4,
+      "RobComment": "Cracking map. Small, fun. Tripmines too.",
+      "RobLabels": [
+        "Small",
+        "Duel"
+      ],
+      "InitialRatingTimestamp": 1763817249
     },
     {
       "Name": "laras_villa.bsp",
@@ -54950,7 +54962,10 @@
         "slam",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 2,
+      "RobComment": "An uninspiring layout. We tried king of the hill in the room in the middle, but that was also boring.",
+      "InitialRatingTimestamp": 1763817943
     },
     {
       "Name": "dead track",
@@ -57231,7 +57246,10 @@
         "slam",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 4,
+      "RobComment": "Really fun map. Nice layout, plenty of tripmines. Good battles.",
+      "InitialRatingTimestamp": 1763816149
     },
     {
       "Name": "dm_industrial_crane_v2a",
@@ -58521,7 +58539,14 @@
         "shotgun",
         "crossbow",
         "357"
-      ]
+      ],
+      "RobRating": 4,
+      "RobComment": "Hilarious map. Physics objects, crossbows, 357s. There's lots of funky angles to get kills and the verticality is great. Small maps have an unfair advantage obviously playing with 2 or 3, but this one is real nice.",
+      "RobLabels": [
+        "Small",
+        "Duel"
+      ],
+      "InitialRatingTimestamp": 1763819827
     },
     {
       "Name": "dm_richland",
@@ -66278,6 +66303,26 @@
     [
       1763771066,
       665
+    ],
+    [
+      1763814835,
+      666
+    ],
+    [
+      1763816149,
+      667
+    ],
+    [
+      1763817249,
+      668
+    ],
+    [
+      1763817943,
+      669
+    ],
+    [
+      1763819827,
+      670
     ]
   ]
 }
