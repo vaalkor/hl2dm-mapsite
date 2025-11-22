@@ -3939,7 +3939,10 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3,
+      "RobComment": "Nice lighting. Fairly simple layout. Pretty solid. Didnt play too long as Im knackered and need to go to bed",
+      "InitialRatingTimestamp": 1763771066
     },
     {
       "Name": "dm_donutbox_tsgk_rc3",
@@ -4280,7 +4283,11 @@
         "pistol"
       ],
       "HasPushes": 1,
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1763766441
     },
     {
       "Name": "pg_stalkx",
@@ -5234,7 +5241,10 @@
         "slam",
         "ar2",
         "357"
-      ]
+      ],
+      "InitialRatingTimestamp": 1763769557,
+      "RobRating": 3,
+      "RobComment": "Very pretty. Nice lighting. Reminds one of Call of duty 5. Ahh. Those were the days eh. Nazi zombines. Banzaaai. It must be noted we got a banger comment from [REDCATED] on this one: \"I used the word prostate, in an open plan office\""
     },
     {
       "Name": "HL2: Deathmatch - dm_underground",
@@ -6688,7 +6698,10 @@
         "dm_1_r1.bsp",
         "dm_3.bsp",
         "dm_4.bsp"
-      ]
+      ],
+      "InitialRatingTimestamp": 1763768714,
+      "RobRating": 0.5,
+      "RobComment": "This map is literally depressing. Playing this map is the first step on the ladder to suicide."
     },
     {
       "Name": "dm_gfys_pw",
@@ -8100,7 +8113,10 @@
         "crowbar",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "InitialRatingTimestamp": 1763769985,
+      "RobRating": 1,
+      "RobComment": "This map is just fucking annoying. Why have ladders if you can't climb them. And half the doors don't work. Shameful display."
     },
     {
       "Name": "dm_combinecourtyard_v1",
@@ -13582,7 +13598,9 @@
         "ar2",
         "crossbow",
         "pistol"
-      ]
+      ],
+      "RobRating": 2,
+      "InitialRatingTimestamp": 1763767023
     },
     {
       "Name": "dm_hrtforts_1",
@@ -44611,7 +44629,9 @@
         "ar2",
         "357"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3,
+      "InitialRatingTimestamp": 1763768003
     },
     {
       "Name": "dm_terrordome_final",
@@ -47541,7 +47561,10 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobComment": "This fuckin guy sounds like an emptying bathtub when he sips his goddamned beer",
+      "InitialRatingTimestamp": 1763770702,
+      "RobRating": 3
     },
     {
       "Name": "dm_killbox_combine_g-13",
@@ -66223,6 +66246,38 @@
     [
       1759693347,
       657
+    ],
+    [
+      1763766441,
+      658
+    ],
+    [
+      1763767023,
+      659
+    ],
+    [
+      1763768003,
+      660
+    ],
+    [
+      1763768714,
+      661
+    ],
+    [
+      1763769557,
+      662
+    ],
+    [
+      1763769985,
+      663
+    ],
+    [
+      1763770702,
+      664
+    ],
+    [
+      1763771066,
+      665
     ]
   ]
 }
