@@ -5403,7 +5403,13 @@
         "ar2",
         "crowbar",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3,
+      "RobComment": "This one is pretty large, but it has a large open space in the middle. With 3 players I think it would be decent. This was a borderline 2.5/3",
+      "RobLabels": [
+        "Large"
+      ],
+      "InitialRatingTimestamp": 1763845850
     },
     {
       "Name": "dm_koteamv8_final",
@@ -7966,7 +7972,14 @@
         "357",
         "pistol"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 1.5,
+      "RobComment": "Good styling, good vibe, but it's too big and the layout is trash.",
+      "RobLabels": [
+        "TooBig",
+        "Large"
+      ],
+      "InitialRatingTimestamp": 1763843027
     },
     {
       "Name": "goldengliders_x4_apa",
@@ -30122,7 +30135,10 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobComment": "Labyrinthine, homogenous. And way too easy to get a rocket launcher.",
+      "InitialRatingTimestamp": 1763844814
     },
     {
       "Name": "dm_aimspot_2009_v2",
@@ -35789,7 +35805,10 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2,
+      "RobComment": "Basically a boring concrete killbox, even it if it doesn't have killbox in the name",
+      "InitialRatingTimestamp": 1763841795
     },
     {
       "Name": "ohange",
@@ -39321,7 +39340,11 @@
         "shotgun",
         "ar2",
         "357"
-      ]
+      ],
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1763844882
     },
     {
       "Name": "atm_area10",
@@ -51544,7 +51567,10 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2,
+      "RobComment": "Bland, uninspiring, just like GreenDays latest album.",
+      "InitialRatingTimestamp": 1763844181
     },
     {
       "Name": "dm_powersurge",
@@ -51828,7 +51854,10 @@
         "shotgun",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 1,
+      "RobComment": "Trash",
+      "InitialRatingTimestamp": 1763845073
     },
     {
       "Name": "dm_racetrack",
@@ -52887,7 +52916,10 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3,
+      "RobComment": "This is basically the same as dm_the_stack. Might be a duplicate submission",
+      "InitialRatingTimestamp": 1763842246
     },
     {
       "Name": "dm_bellas_room_deluxe",
@@ -55869,7 +55901,10 @@
         "ar2",
         "crossbow",
         "pistol"
-      ]
+      ],
+      "RobRating": 1,
+      "RobComment": "Pretty garbage. Too sparse. Uninteresting.",
+      "InitialRatingTimestamp": 1763844389
     },
     {
       "Name": "dm-redroom",
@@ -62100,7 +62135,10 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2,
+      "RobComment": "Bland",
+      "InitialRatingTimestamp": 1763846642
     },
     {
       "Name": "dm_sanctuary_1923",
@@ -62306,7 +62344,11 @@
         "ar2",
         "crossbow"
       ],
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1763844565
     },
     {
       "Name": "dm_clocks",
@@ -63250,7 +63292,13 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobComment": "Cool looking map. But it's too big for 2 players. Might be better with 3",
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1763846313
     },
     {
       "Name": "dm_bounce_final",
@@ -66323,6 +66371,54 @@
     [
       1763819827,
       670
+    ],
+    [
+      1763841795,
+      671
+    ],
+    [
+      1763842246,
+      672
+    ],
+    [
+      1763843027,
+      673
+    ],
+    [
+      1763844181,
+      674
+    ],
+    [
+      1763844389,
+      675
+    ],
+    [
+      1763844565,
+      676
+    ],
+    [
+      1763844814,
+      677
+    ],
+    [
+      1763844882,
+      678
+    ],
+    [
+      1763845073,
+      679
+    ],
+    [
+      1763845850,
+      680
+    ],
+    [
+      1763846313,
+      681
+    ],
+    [
+      1763846642,
+      682
     ]
   ]
 }
