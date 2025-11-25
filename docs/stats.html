@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Rob's Half Life 2 Map Ratings</title>
+    <link rel="Shortcut Icon" type="image/x-icon" href="icon.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+        .rob-graph {
+            width: 100%;
+            min-width: 0px;
+            max-width: 1200px;
+            height: 800px;
+        }
+    </style>
+</head>
+
+<body ontouchstart>
+    <div class="container">
+        <header>
+            <h2>Rob's Half Life 2 Map Ratings.</h2>
+            <p>Rating statistics</p>
+        </header>
+
+        <div id="rating_progress" class="rob-graph"></div>
+        <div id="rating_per_weekday" class="rob-graph"></div>
+
+        <p style="text-align:center;">As you can in the linear regression plot below, over time we have decreased the
+            average rating given to maps. This is probably due to the fact as as we rate more maps, our tastes become
+            more refined and specific. I don't think anyone could deny that we are certainly HL2DM map connoisseurs at
+            this point.</p>
+        <p style="text-align:center;">The all time average rating given is currently <span id="average_rating">_</span>
+        </p>
+
+        <div id="linear_regression" class="rob-graph"></div>
+        <div id="average_rating_per_label" class="rob-graph"></div>
+        <div id="label_counts" class="rob-graph"></div>
+        <div id="rating_per_month" class="rob-graph"></div>
+    </div>
+    <script src="js/stats.js"></script>
+</body>
+
+</html>
