@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 });
 
 async function updateMapInfo(updatedInfo) {
-    const filePath = './site/scrape_data.json'
+    const filePath = './docs/scrape_data.json'
     const raw = await fs.readFile(filePath, 'utf8');
     const data = JSON.parse(raw);
 
