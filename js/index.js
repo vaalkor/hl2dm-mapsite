@@ -65,7 +65,7 @@ var ROUTES = {
 }
 var _ratingsTableSortByProperties = [
     { propertyName: 'RobRating', friendlyName: 'Rating' },
-    { propertyName: 'InitialRatingTimestamp', friendlyName: 'First Rated' },
+    { propertyName: 'InitialRatingTimestamp', friendlyName: 'When rated' },
     { propertyName: 'Added', friendlyName: 'First Submitted to Gamebanana' }
 ];
 
@@ -91,6 +91,7 @@ var _toastMessages = {
     }
 }
 var _filteredMaps = [];
+var _canSubmitEdits = false;
 
 var _ratingsTableFilterTempValues = Object.assign({}, _storage); // Clone the stored values. This will be used to store temp values for the stateful
 
@@ -104,10 +105,10 @@ var _storage = {
     excludeLabels: ['NeverLoads', 'CausesCrash'],
     includeWeapons: [],
     excludeWeapons: [],
-    sortBy: _ratingsTableSortByProperties[0].propertyName,
+    sortBy: _ratingsTableSortByProperties[1].propertyName,
     ratingsTableAscending: false,
     // Submitters table filter properties
-    submitterSortBy: _submittersTableSortByProperties[0].propertyName,
+    submitterSortBy: _submittersTableSortByProperties[1].propertyName,
     submittersTableAscending: false,
     // Other values
     ratingsTableVisible: true,
@@ -177,7 +178,7 @@ function closeModal() {
     m.route.set(ROUTES.ratingsTable, currentParams);
 }
 
-function sortFilteredMaps(a, b) { 
+function sortFilteredMaps(a, b) {
     if (_storage.sortBy == null) return a;
     let sortOrder = _storage.ratingsTableAscending ? -1 : 1;
 
@@ -338,7 +339,7 @@ function makeSubmitterLink(id) {
 var MapRatingsFiltering = {
     view: function () {
         return m("div", {
-            style: { "display": "flex", "justify-content": "space-between", "gap": "1rem" },
+            style: { "display": "flex", "justify-content": "space-between", "gap": "1rem", "flex-wrap": "wrap" },
             onkeypress: function (e) { if (e.key === "Enter") applyFilter() }
         },
             [
@@ -469,7 +470,7 @@ var SubmitterAverageRatingsFiltering = {
 
 var Buttons = {
     view: function () {
-        return m("div", { class: "container d-flex mt-2", style: { "justify-content": "center", "gap": "0.5rem" } },
+        return m("div", { class: "container d-flex mt-2", style: { "justify-content": "center", "gap": "0.5rem", "flex-wrap": "wrap" } },
             m("div", { style: { "display": "inline-block" } },
                 m("a", { class: "btn btn-info", href: "/stats.html" }, "View statistics")
             ),
@@ -530,18 +531,17 @@ function handleTableClickEvent(event, map) {
 
 function makeRatingsTableRow(map) {
     const link = makeMapLink(map.Id);
-    const nameElem = map.RobComment ? 
-    m("th", { scope: "row" }, m('span', 
-        m("a", { class: "link-secondary", href: link }, map.Name),
-        ' 📝'
-    ) ) 
-    : m("th", { scope: "row" }, m("a", { class: "link-secondary", href: link }, map.Name));
+    const extraChildren = [];
+    if(map.Name == "dm_plato_b1") debugger;
+    if(map.RobComment) extraChildren.push(' 📝');
+    if(map.RobVideo) extraChildren.push(' 📽');
+    const nameElement = m("th", { scope: "row" }, m('span', m("a", { class: "link-secondary", href: link }, map.Name), extraChildren) );
 
     return m('tr', {
             key: map.Id,
             onclick: (clickEvent) => handleTableClickEvent(clickEvent, map)
         }, // TODO: figure out why this was breaking when we used Name as the key... That's a bit weird...
-        m("th", { scope: "row" }, nameElem),
+        m("th", { scope: "row" }, nameElement),
         m("td", m("a", { class: "link-secondary", target: "_blank", href: makeSubmitterLink(map.Submitter.Id) }, map.Submitter.Name)),
         m("td", formatDate(map.Added)),
         m("td", formatDate(map.InitialRatingTimestamp)),
@@ -587,19 +587,21 @@ var PaginationFooter = {
 var RatingsTable = {
     view: function () {
         return m("div", { class: "container" },
-            m("table", { class: "table table-striped", id: "fixed-table-header" }, [
-                m("thead",
-                    m("tr", [
-                        m("th", { scope: "col" }, `Name (#${_filteredMaps.length} total)`),
-                        m("th", { scope: "col" }, "Submitter"),
-                        m("th", { scope: "col" }, "First Submitted"),
-                        m("th", { scope: "col" }, "First Rated"),
-                        m("th", { scope: "col" }, "Rating"),
-                        m("th", { scope: "col" }, "Labels")
-                    ]
-                    )),
-                m("tbody", _filteredMaps.slice((_storage.currentPage - 1) * CONSTANTS.PAGE_SIZE, (_storage.currentPage - 1) * CONSTANTS.PAGE_SIZE + CONSTANTS.PAGE_SIZE).map(x => makeRatingsTableRow(x)))
-            ]),
+            m('div', { style: "overflow-x: scroll;" },
+                m("table", { class: "table table-striped table-responsive", id: "fixed-table-header" }, [
+                    m("thead",
+                        m("tr", [
+                            m("th", { scope: "col" }, `Name (#${_filteredMaps.length} total)`),
+                            m("th", { scope: "col" }, "Submitter"),
+                            m("th", { scope: "col" }, "First Submitted"),
+                            m("th", { scope: "col" }, "First Rated"),
+                            m("th", { scope: "col" }, "Rating"),
+                            m("th", { scope: "col" }, "Labels")
+                        ]
+                        )),
+                    m("tbody", _filteredMaps.slice((_storage.currentPage - 1) * CONSTANTS.PAGE_SIZE, (_storage.currentPage - 1) * CONSTANTS.PAGE_SIZE + CONSTANTS.PAGE_SIZE).map(x => makeRatingsTableRow(x)))
+                ]),
+            ),
             m(PaginationFooter, { onPageChanged: onPageChanged, totalItems: _filteredMaps.length, currentPage: _storage.currentPage, pageSize: CONSTANTS.PAGE_SIZE })
         );
     }
@@ -667,10 +669,10 @@ var MapInfoModal = {
                     ),
                     'RobLabels' in _modalMapInfo ? [m('h5', 'Labels'), getLabels(_modalMapInfo)] : m('h5', 'No map labels'),
                     'RobComment' in _modalMapInfo ? 
-                        m('div.comment-box', 
-                            m('h5', 'Comment:'),
-                            m('p', _modalMapInfo.RobComment)
-                        ) : m('h5', 'No comments'),
+                        m('div.comment-box', m('h5', 'Comment:'), m('p', _modalMapInfo.RobComment)) : m('h5', 'No comments'),
+                    _modalMapInfo.RobVideo ? 
+                        m('p', 'Video link: ', m('a', {href: _modalMapInfo.RobVideo, target: "_blank"}, _modalMapInfo.RobVideo))
+                        : null,
 
                     _modalMapInfo['BspFiles'] && _modalMapInfo['BspFiles'].length
                         ? [

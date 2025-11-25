@@ -1,18 +1,21 @@
 body{
     margin: 0;
     padding: 0;
+    /* width: 100vw; */
 }
 
 * {
     box-sizing: border-box;
 }
+
 .dynamic-content{
     margin-right: auto;
     margin-left: auto;
+    width: 100%
 }
 
 .container {
-    width: 100%;
+    /* width: 100%; */
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -199,3 +202,10 @@ tr:hover{
     margin-bottom: 1rem;
 }
 
+.comment-box {
+    max-width: 512px;
+    white-space: pre-wrap;
+}
+.comment-box p {
+    padding-left: 8px;
+}

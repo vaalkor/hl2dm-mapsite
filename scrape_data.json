@@ -47124,7 +47124,8 @@
         "Small",
         "Duel"
       ],
-      "InitialRatingTimestamp": 1763817249
+      "InitialRatingTimestamp": 1763817249,
+      "RobVideo": "https://youtu.be/vNGo_gKh_jo"
     },
     {
       "Name": "laras_villa.bsp",
@@ -57284,7 +57285,8 @@
       ],
       "RobRating": 4,
       "RobComment": "Really fun map. Nice layout, plenty of tripmines. Good battles.",
-      "InitialRatingTimestamp": 1763816149
+      "InitialRatingTimestamp": 1763816149,
+      "RobVideo": "https://youtu.be/uWA805RXcN0"
     },
     {
       "Name": "dm_industrial_crane_v2a",
@@ -58581,7 +58583,8 @@
         "Small",
         "Duel"
       ],
-      "InitialRatingTimestamp": 1763819827
+      "InitialRatingTimestamp": 1763819827,
+      "RobVideo": "https://youtu.be/5pVZOplAdZ4"
     },
     {
       "Name": "dm_richland",

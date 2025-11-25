@@ -25,7 +25,8 @@
 [switch]$MapNameFromClip,
 [string]$NewestMapToConsider,
 [string[]]$IgnoreSubstrings,
-[string]$Comment
+[string]$Comment,
+[string]$VideoLink
 )
 
 $file = Get-Item $ScrapeDataFile
@@ -173,6 +174,7 @@ if($UpdateInfo){
     if($Rating){$updateInfoMap | Add-Member -MemberType NoteProperty -Name 'RobRating' -Value $Rating -Force}
     if($Description){$updateInfoMap | Add-Member -MemberType NoteProperty -Name 'RobDescription' -Value $Description -Force}
     if($Comment){$updateInfoMap | Add-Member -MemberType NoteProperty -Name 'RobComment' -Value $Comment -Force}
+    if($VideoLink){$updateInfoMap | Add-Member -MemberType NoteProperty -Name 'RobVideo' -Value $VideoLink -Force}
     if($Labels){
         if(-not $updateInfoMap.RobLabels){
             if($RemoveLabels){
