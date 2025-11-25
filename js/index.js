@@ -326,6 +326,7 @@ function getRandomMap() {
 
     _toastMessages.addMessage(`Copied map '${map.Name}' to clipboard`, 2000);
 }
+
 function makeMapLink(id) {
     return `https://gamebanana.com/mods/${id}`;
 }
@@ -528,11 +529,19 @@ function handleTableClickEvent(event, map) {
 }
 
 function makeRatingsTableRow(map) {
+    const link = makeMapLink(map.Id);
+    const nameElem = map.RobComment ? 
+    m("th", { scope: "row" }, m('span', 
+        m("a", { class: "link-secondary", href: link }, map.Name),
+        ' 📝'
+    ) ) 
+    : m("th", { scope: "row" }, m("a", { class: "link-secondary", href: link }, map.Name));
+
     return m('tr', {
-        key: map.Id,
-        onclick: (clickEvent) => handleTableClickEvent(clickEvent, map)
-    }, // TODO: figure out why this was breaking when we used Name as the key... That's a bit weird...
-        m("th", { scope: "row" }, m("a", { class: "link-secondary", target: "_blank", href: makeMapLink(map.Id) }, map.Name)),
+            key: map.Id,
+            onclick: (clickEvent) => handleTableClickEvent(clickEvent, map)
+        }, // TODO: figure out why this was breaking when we used Name as the key... That's a bit weird...
+        m("th", { scope: "row" }, nameElem),
         m("td", m("a", { class: "link-secondary", target: "_blank", href: makeSubmitterLink(map.Submitter.Id) }, map.Submitter.Name)),
         m("td", formatDate(map.Added)),
         m("td", formatDate(map.InitialRatingTimestamp)),
@@ -657,6 +666,11 @@ var MapInfoModal = {
                         m(FilterIcon, { onclick: () => filterBySubmitter(_modalMapInfo['Submitter']['Name']) })
                     ),
                     'RobLabels' in _modalMapInfo ? [m('h5', 'Labels'), getLabels(_modalMapInfo)] : m('h5', 'No map labels'),
+                    'RobComment' in _modalMapInfo ? 
+                        m('div.comment-box', 
+                            m('h5', 'Comment:'),
+                            m('p', _modalMapInfo.RobComment)
+                        ) : m('h5', 'No comments'),
 
                     _modalMapInfo['BspFiles'] && _modalMapInfo['BspFiles'].length
                         ? [
