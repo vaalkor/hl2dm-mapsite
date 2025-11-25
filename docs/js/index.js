@@ -758,7 +758,7 @@ var MapInfoModal = function ({ attrs }) {
                 },
                 m('div.card',
                     m('div.card-header',
-                        m('p', { style: 'margin:0;' }, `Map details`, _isEditingMap ? null : m('button.edit-details-button', {onclick: () => _isEditingMap = true}, ' 📝')),
+                        m('p', { style: 'margin:0;' }, `Map details`, (!_canSubmitEdits || _isEditingMap) ? null : m('button.edit-details-button', {onclick: () => _isEditingMap = true}, ' 📝')),
                         m("button.btn-close[type=button][aria-label=Close]", { onclick: () => closeModal() })
                     ),
                     _isEditingMap ? m(EditMapInfo) : m(ViewMapInfo)
