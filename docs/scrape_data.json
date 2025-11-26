@@ -7291,7 +7291,14 @@
         "frag",
         "shotgun",
         "357"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Indoors",
+        "Medium"
+      ],
+      "RobComment": "Decent. Nice lighting. Saws blades are always fun (always).",
+      "InitialRatingTimestamp": 1764193322
     },
     {
       "Name": "dm_ng_trainchaos",
@@ -18088,7 +18095,14 @@
         "ar2",
         "357"
       ],
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 2,
+      "RobLabels": [
+        "Outdoors",
+        "Large"
+      ],
+      "RobComment": "Meh.",
+      "InitialRatingTimestamp": 1764194522
     },
     {
       "Name": "dm_toon_map_full_grav",
@@ -25380,7 +25394,14 @@
         "crossbow",
         "pistol"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 2.5,
+      "RobLabels": [
+        "Rats",
+        "Medium"
+      ],
+      "RobComment": "It's a rats map, which is fun. But it's a big empty and bland. Not terrible but a bit meh.",
+      "InitialRatingTimestamp": 1764194909
     },
     {
       "Name": "dm_press_rc1",
@@ -50394,7 +50415,14 @@
         "crowbar",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 4,
+      "RobLabels": [
+        "Small",
+        "Indoors"
+      ],
+      "RobComment": "Suprisingly fun and chaotic little map. The acid floor adds a bit of spice. It's got teleporters, barrels, lots of plasma rifle secondary fires. Madness. And that's just with 2 players.",
+      "InitialRatingTimestamp": 1764194234
     },
     {
       "Name": "dm_deathwands_v1",
@@ -51376,7 +51404,14 @@
         "crowbar",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Medium",
+        "Outdoors"
+      ],
+      "InitialRatingTimestamp": 1764185270,
+      "RobComment": "Nice map. Solidly made. Not too exciting. I never found the bloody tripmines though. (Others did)"
     },
     {
       "Name": "dm_afterseven",
@@ -59386,7 +59421,14 @@
         "shotgun"
       ],
       "HasTeleport": 1,
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 3,
+      "RobLabels": [
+        "Indoors",
+        "Medium"
+      ],
+      "RobComment": "Decent map. Not particularly exciting. Cool weapon spawns.",
+      "InitialRatingTimestamp": 1764192743
     },
     {
       "Name": "undertow v2",
@@ -60654,7 +60696,15 @@
         "ar2",
         "alyxgun",
         "357"
-      ]
+      ],
+      "RobRating": 0.5,
+      "RobLabels": [
+        "Dogshit",
+        "Outdoors",
+        "Large"
+      ],
+      "RobComment": "Absolute balls.",
+      "InitialRatingTimestamp": 1764193470
     },
     {
       "Name": "dm_longest",
@@ -61883,7 +61933,12 @@
         "shotgun",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": -0.5,
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1764193007
     },
     {
       "Name": "dm_anarchy",
@@ -62950,7 +63005,15 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [
+        "UniqueMechanic",
+        "TooBig",
+        "Outdoors"
+      ],
+      "RobComment": "5 cranes on this map you get into. It's too big for 2 people though. Maybe it would be funny with like 20 players. ",
+      "InitialRatingTimestamp": 1764192972
     },
     {
       "Name": "dm_bloodbase",
