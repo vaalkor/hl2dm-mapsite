@@ -5070,7 +5070,8 @@
         "VanillaStyle"
       ],
       "InitialRatingTimestamp": 1733666876,
-      "RobRating": 4.5
+      "RobRating": 4.5,
+      "RobComment": "This is a good playable version of a piece of Ravenholm, and as such, it's a banger"
     },
     {
       "Name": "dm_valar_r1",
@@ -12828,7 +12829,8 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobComment": "Excellent port of a truly classic map that needs no introductions."
     },
     {
       "Name": "dm_17_longestyard_b5",
@@ -25998,7 +26000,8 @@
       "InitialRatingTimestamp": 1653856699,
       "RobLabels": [
         "Meme",
-        "Indoors"
+        "Indoors",
+        "Small"
       ],
       "RobRating": 5,
       "Files": [
@@ -26013,7 +26016,8 @@
       "Weapons": [
         "crossbow",
         "slam"
-      ]
+      ],
+      "RobComment": "What do want? Tripmines? When do want them? Always. "
     },
     {
       "Name": "dm_inception V2.0",
@@ -51107,7 +51111,9 @@
       "Category": "Deathmatch",
       "InitialRatingTimestamp": 1641077468,
       "RobLabels": [
-        "Outdoors"
+        "Outdoors",
+        "Duel",
+        "VanillaStyle"
       ],
       "RobRating": 4.5,
       "Files": [
@@ -51126,7 +51132,8 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobComment": "One of the most legendary duel maps ever made"
     },
     {
       "Name": "dm_sandtrap",
@@ -63951,7 +63958,9 @@
       "InitialRatingTimestamp": "1633120561",
       "RobLabels": [
         "Outdoors",
-        "NoTripmines"
+        "NoTripmines",
+        "VanillaStyle",
+        "Medium"
       ],
       "RobRating": 5,
       "Files": [
@@ -63971,7 +63980,8 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobComment": "As far as I can recall, this map is where it all began. It's the oldest map submitted to gamebananna, and it's the oldest custom map I can remember playing.\n\nIt's one of the only 5 star rated maps, and it's a banger. The ONLY thing wrong with this map is that there's no tripmines. But I used BspEdit to make a version with tripmines, and the result is what I consider to be a perfect map."
     }
   ],
   "MapRatingGraphData": [

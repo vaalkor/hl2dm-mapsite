@@ -4,7 +4,7 @@ import fs from "fs/promises";
 
 const app = express();
 
-const PUBLIC_DIR = path.join(process.cwd(), "site");
+const PUBLIC_DIR = path.join(process.cwd(), "docs");
 app.use((req, res, next) => {
     res.setHeader('can-submit-updates', 'true');
     next();
