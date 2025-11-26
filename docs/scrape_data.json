@@ -47127,7 +47127,7 @@
         "crossbow"
       ],
       "RobRating": 4,
-      "RobComment": "Cracking map. Small, fun. Tripmines too.",
+      "RobComment": "Cracking map. Small, fun. Tripmines too. This one feels like an unreal tournament map. It has a very strong style, which we approve of immensely.",
       "RobLabels": [
         "Small",
         "Duel"
@@ -54016,7 +54016,10 @@
         "crossbow"
       ],
       "RobRating": 4.5,
-      "InitialRatingTimestamp": 1735136482
+      "InitialRatingTimestamp": 1735136482,
+      "RobLabels": [
+        "Rats"
+      ]
     },
     {
       "Name": "dm_sandland",
@@ -55579,7 +55582,8 @@
       "InitialRatingTimestamp": "1638576196",
       "RobLabels": [
         "Meme",
-        "Large"
+        "Large",
+        "Rats"
       ],
       "RobRating": 4.5,
       "Files": [
@@ -55600,7 +55604,8 @@
         "ar2",
         "357"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobComment": "Perhaps the best \"rats\" style map in existence. A true classic."
     },
     {
       "Name": "dm_first_blood",
