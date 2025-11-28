@@ -4,31 +4,52 @@ google.charts.load("current", { packages: ["corechart", 'bar'] });
 var _scrapeData = { MapInfo: [], MapRatingGraphData: [] };
 var _dayPrettyPrint = { 0: 'Sun', 1: 'Mon', 2: 'Tue', 3: 'Wed', 4: 'Thu', 5: 'Fri', 6: 'Sat' }
 var _ratingsPerWeekday = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 }
+var _averageRatingPerDay = { 0: {count:0,totalRating:0}, 1: {count:0,totalRating:0}, 2: {count:0,totalRating:0}, 3: {count:0,totalRating:0}, 4: {count:0,totalRating:0}, 5: {count:0,totalRating:0}, 6: {count:0,totalRating:0} }
 
-fetch("scrape_data.json").then((x) => x.json()).then((data) => {
+fetch("scrape_data.json")
+.then((x) => x.json())
+.then((data) => {
     _scrapeData = data;
     google.charts.setOnLoadCallback(drawCharts);
 });
 
 var charts = [];
 
+function recalculateMapRatingProgress(){
+    // Recalculate map rating progress data
+    const counts = {};
+    for(let map of _scrapeData.MapInfo){
+        if(!map.InitialRatingTimestamp)
+            continue;
+
+        if(!(map.InitialRatingTimestamp in counts)){
+            counts[map.InitialRatingTimestamp] = {
+                timestamp: map.InitialRatingTimestamp,
+                count: 1
+            }
+        }else{
+            counts[map.InitialRatingTimestamp].count++
+        }
+    }
+    _scrapeData.MapRatingGraphData = Object.values(counts);
+    _scrapeData.MapRatingGraphData.sort((a,b) => a.timestamp <= b.timestamp ? -1 : 1);
+    for(let i=1; i<_scrapeData.MapRatingGraphData.length; i++)
+        _scrapeData.MapRatingGraphData[i].count += _scrapeData.MapRatingGraphData[i-1].count;
+}
+
 function drawCharts() {
-    updateAverageRating();
-
-    createLabelGraph();
-
-    drawRatingProgress();
-
+    recalculateMapRatingProgress();
     computeGraphData();
 
+    updateAverageRating();
+    createLabelGraph();
+    drawRatingProgress();
     drawRatingsPerWeekday();
-
+    drawAverageRatingsPerWeekday();
     plotRatingLinearRegression();
-
     drawRatingsPerMonth();
 
     window.addEventListener('resize', () => {
-        // debugger;
         charts.forEach((chart) => {
             chart.chart.clear();
         });
@@ -80,7 +101,7 @@ function createLabelGraph() {
     }
 
     let averageRatings = Object.keys(tagRatings).map((tag) => [tag, tagRatings[tag] / tagCounts[tag]]);
-let labelCounts = Object.keys(tagCounts).map((tag) => [tag, tagCounts[tag]]);
+    let labelCounts = Object.keys(tagCounts).map((tag) => [tag, tagCounts[tag]]);
 
     averageRatings.sort((a, b) => b[1] - a[1]);
     labelCounts.sort((a, b) => b[1] - a[1]);
@@ -165,7 +186,7 @@ function drawRatingsPerMonth() {
 function drawRatingProgress() {
     let graphData =
         [["Date", "Total Rated"]].concat(
-            _scrapeData.MapRatingGraphData.map((x) => [new Date(x[0] * 1000), x[1]])
+            _scrapeData.MapRatingGraphData.map((x) => [new Date(x.timestamp * 1000), x.count])
         );
     let lastDataPoint = _scrapeData.MapRatingGraphData[_scrapeData.MapRatingGraphData.length - 1];
     // push a datapoint with the current date to get a flat line at the end.
@@ -222,7 +243,15 @@ function computeGraphData() {
     let total = 0;
     for (let map of _scrapeData.MapInfo.filter(x => x.InitialRatingTimestamp)) {
         total++;
-        _ratingsPerWeekday[new Date(map.InitialRatingTimestamp * 1000).getDay()]++
+        const day = new Date(map.InitialRatingTimestamp * 1000).getDay();
+        _ratingsPerWeekday[day]++;
+        if(map.RobRating != null){
+            _averageRatingPerDay[day].count++;
+            _averageRatingPerDay[day].totalRating+=map.RobRating;
+        }
+    }
+    for(var day of Object.keys(_averageRatingPerDay)){
+        _averageRatingPerDay[day] = _averageRatingPerDay[day].totalRating / _averageRatingPerDay[day].count;
     }
     for (const key in _ratingsPerWeekday) {
         _ratingsPerWeekday[key] = _ratingsPerWeekday[key] / total * 100;
@@ -244,6 +273,33 @@ function drawRatingsPerWeekday() {
     };
 
     let chart = new google.visualization.ColumnChart(document.getElementById('rating_per_weekday'));
+
+    chart.draw(dataTable, options);
+
+    charts.push({
+        chart: chart,
+        dataTable,
+        options
+    });
+}
+
+function drawAverageRatingsPerWeekday() {
+
+    debugger;
+    let data = [['Day', 'Average rating', { role: 'annotation' }]]
+        .concat(
+            Object.keys(_ratingsPerWeekday).map(x => [_dayPrettyPrint[x], _averageRatingPerDay[x], `${_averageRatingPerDay[x].toFixed(2)}`])
+        );
+
+    let dataTable = new google.visualization.arrayToDataTable(data);
+
+    let options = {
+        title: 'average rating per day',
+        hAxis: { title: 'Day' },
+        vAxis: { title: 'Average rating' }
+    };
+
+    let chart = new google.visualization.ColumnChart(document.getElementById('average_rating_per_weekday'));
 
     chart.draw(dataTable, options);
 

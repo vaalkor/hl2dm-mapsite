@@ -1,5 +1,39 @@
 'use strict';
 
+[
+    "NoTripmines",
+    "CausesCrash",
+    "Remake",
+    "VanillaStyle",
+    "Large",
+    "TooBig",
+    "Dogshit",
+    "Outdoors",
+    "Indoors",
+    "Medium",
+    "UniqueMechanic",
+    "NeverLoads",
+    "UT",
+    "Small",
+    "Meme",
+    "Quake",
+    "MissingTextures",
+    "KingOfTheHill",
+    "Duel",
+    "Incomplete",
+    "Rats",
+    "HL1",
+    "LowGrav"
+]
+
+export const LABEL_CATEGORIES = [
+    ['Small', 'Medium', 'Large', 'TooBig'],
+    ['KingOfTheHill', 'LowGrav', 'UniqueMechanic', 'Rats', 'Duel'],
+    ['VanillaStyle', 'Indoors','Outdoors'],
+    ['Remake', 'CS', 'HL1', 'HL2', 'UT', 'Quake'],
+    ['Incomplete','MissingTextures', 'CausesCrash', 'NeverLoads', 'Dogshit'],
+]
+
 export const CONSTANTS = {
     NO_RATING_MIN_RATING_VALUE: -0.5,
     PAGE_SIZE: 50

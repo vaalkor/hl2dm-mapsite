@@ -879,6 +879,7 @@ function findAllLabels(data) {
         x.RobLabels.forEach(label => { if (!_allLabels.includes(label)) _allLabels.push(label) });
     });
     _foundLabels = _allLabels.filter(x => !IGNORE_LABELS.includes(x));
+    window.allLabels = _allLabels;
 }
 
 function formatDate(unixTimestamp) {
