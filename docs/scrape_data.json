@@ -943,7 +943,14 @@
         "rpg",
         "ar2",
         "pistol"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [
+        "Dogshit",
+        "Medium"
+      ],
+      "RobComment": "Garbage. Looks disgusting as well. We hightailed it the fuck out of the map sharpish.",
+      "InitialRatingTimestamp": 1764366920
     },
     {
       "Name": "dm_capsule_expanded",
@@ -2441,7 +2448,14 @@
       "Weapons": [
         "crossbow",
         "357"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [
+        "Medium",
+        "Dogshit"
+      ],
+      "RobComment": "Trash.",
+      "InitialRatingTimestamp": 1764367069
     },
     {
       "Name": "dm_ghettoquad",
@@ -4214,7 +4228,15 @@
         "crossbow"
       ],
       "HasTeleport": 1,
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 3,
+      "RobLabels": [
+        "Rats",
+        "TooBig",
+        "Indoors"
+      ],
+      "RobComment": "A little too big. More fun to explore than actually kill eachother.",
+      "InitialRatingTimestamp": 1764369481
     },
     {
       "Name": "te_smoker",
@@ -24430,7 +24452,14 @@
       ],
       "Weapons": [
         "frag"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Medium",
+        "Outdoors"
+      ],
+      "RobComment": "This is a duplicate map",
+      "InitialRatingTimestamp": 1764369634
     },
     {
       "Name": "dm_islandtropic_v3",
@@ -28643,7 +28672,15 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 0.5,
+      "RobLabels": [
+        "Dogshit",
+        "Small",
+        "Incomplete"
+      ],
+      "RobComment": "This map fucking sucks. The lighting is terrible and it looks half finished. As soon as we loaded this map I immediately felt an intense uneasiness in my belly and broke out in a sweat.",
+      "InitialRatingTimestamp": 1764366759
     },
     {
       "Name": "DM_Milisss",
@@ -38852,7 +38889,15 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Outdoors",
+        "Duel",
+        "Small"
+      ],
+      "RobComment": "Simple and decently fun map. Pretty basic. Lighting is a bit fucked.",
+      "InitialRatingTimestamp": 1764366377
     },
     {
       "Name": "dm_titan_r1",
@@ -40333,7 +40378,14 @@
         "ar2",
         "crossbow"
       ],
-      "HasTeleport": 1
+      "HasTeleport": 1,
+      "RobRating": 1.5,
+      "RobLabels": [
+        "TooBig",
+        "Indoors"
+      ],
+      "RobComment": "Very cool looking map but unfortunately too big. Might be good with more players.",
+      "InitialRatingTimestamp": 1764370611
     },
     {
       "Name": "dm_ultimate_lobby",
@@ -52887,7 +52939,14 @@
         "shotgun",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "Outdoors",
+        "VanillaStyle",
+        "Medium"
+      ],
+      "InitialRatingTimestamp": 1764369981
     },
     {
       "Name": "dm_cigsub",
@@ -61631,7 +61690,14 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Medium",
+        "Indoors"
+      ],
+      "RobComment": "Decent map. Not particularly interesting layout but its well made and has a strong theme. ",
+      "InitialRatingTimestamp": 1764370404
     },
     {
       "Name": "dm_steelhouse_v1",
@@ -62756,7 +62822,16 @@
         "ar2",
         "crossbow"
       ],
-      "HasPushes": 1
+      "HasPushes": 1,
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Remake",
+        "HL1",
+        "Indoors",
+        "Medium"
+      ],
+      "RobComment": "Decent map. Half life 1 remake. Solid.",
+      "InitialRatingTimestamp": 1764368437
     },
     {
       "Name": "dm_alcatraz",
@@ -63172,7 +63247,15 @@
         "shotgun",
         "ar2",
         "357"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [
+        "Remake",
+        "HL2",
+        "Medium"
+      ],
+      "RobComment": "This map _looks_ cool. It's a mishmash of different bits of Ravenholm. As a multiplayer map though it fucking sucks. The layout is trash and it has loads of nooks and crannies and deadends. There's no flow at all.",
+      "InitialRatingTimestamp": 1764371116
     },
     {
       "Name": "dm_abyss",
