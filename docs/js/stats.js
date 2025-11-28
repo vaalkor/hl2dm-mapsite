@@ -213,17 +213,17 @@ function drawRatingProgress() {
 }
 
 function plotRatingLinearRegression() {
-    let data = _scrapeData.MapInfo
-        .filter(x => x.RobRating);
-    data.sort((a, b) => a.InitialRatingTimestamp - b.InitialRatingTimestamp);
-    var regressionData = data.map((x, idx) => [idx, x.RobRating])
+    let regressionData = _scrapeData.MapInfo
+        .filter(x => x.RobRating)
+        .sort((a, b) => a.InitialRatingTimestamp - b.InitialRatingTimestamp)
+        .map((x, idx) => [idx, x.RobRating])
 
     let graphData = [["Index", "Rating"]].concat(regressionData);
     let dataTable = google.visualization.arrayToDataTable(graphData);
 
     let options = {
         title: "Linear Regression of Ratings",
-        hAxis: { title: "Index", viewWindowMode: 'maximized' },
+        hAxis: { title: "Maps rated", viewWindowMode: 'maximized' },
         vAxis: { title: "Rating" },
         legend: "none",
         trendlines: { 0: {} }    // Draw a trendline for data series 0.
