@@ -1,6 +1,8 @@
 'use strict';
 
 import {
+    LABEL_COLOUR_MAP,
+    LABEL_CATEGORIES,
     CONSTANTS,
     IGNORE_LABELS,
     FILTER_WEAPONS,
@@ -114,22 +116,11 @@ var _scrapeData = { MapInfo: [], MapRatingGraphData: [] };
 var _allLabels = [];
 var _foundLabels = [];
 var _defaultLabel = 'label-blue';
-var _labelColourMap = {
-    'NeverLoads': 'label-black',
-    'CausesCrash': 'label-black',
-    'NoTripmines': 'label-yellow',
-    'Incomplete': 'label-yellow',
-    'Small': 'label-green',
-    'Medium': 'label-yellow',
-    'Large': 'label-red',
-    'TooBig': 'label-red',
-    'Meme': 'label-purple'
-}
 var _foundLabels = [];
 var _dayPrettyPrint = { 0: 'Sun', 1: 'Mon', 2: 'Tue', 3: 'Wed', 4: 'Thu', 5: 'Fri', 6: 'Sat' }
 var _monthPrettyPrint = { 0: 'Jan', 1: 'Feb', 2: 'Mar', 3: 'Apr', 4: 'May', 5: 'Jun', 6: 'Jul', 7: 'Aug', 8: 'Sep', 9: 'Oct', 10: 'Nov', 11: 'Dec' }
 
-var getLabelColour = label => (label in _labelColourMap) ? _labelColourMap[label] : _defaultLabel;
+var getLabelColour = label => (label in LABEL_COLOUR_MAP) ? LABEL_COLOUR_MAP[label] : _defaultLabel;
 
 function openModal(map) {
     let currentParams = m.route.param();
@@ -639,15 +630,15 @@ var EditMapInfo = {
                 value: _currentEditInfo.rating ?? '',
                 oninput: (event) => _currentEditInfo.rating = parseFloat(event.target.value)
             }),
-            m('label', { for: 'edit-labels' }, 'Labels'),
-            m('div#edit-labels', _allLabels.map(
+            m('p.mb-0', 'Labels'),
+            LABEL_CATEGORIES.map(x => m('div.label-category', x.map(
                 x => m("span", { 
                     class: `map-label ${getColourClass(x)}`,
                     onclick: _currentEditInfo.labels.includes(x) ? 
                         () => _currentEditInfo.labels = _currentEditInfo.labels.filter(label => label != x)
                         : () => _currentEditInfo.labels.push(x)
                 }, x))
-            ),
+            )),
             m('label', { for: 'edit-video-link' }, 'Video'),
             m('input#edit-video-link', {
                 type: 'text',
@@ -879,6 +870,12 @@ function findAllLabels(data) {
         x.RobLabels.forEach(label => { if (!_allLabels.includes(label)) _allLabels.push(label) });
     });
     _foundLabels = _allLabels.filter(x => !IGNORE_LABELS.includes(x));
+    // Add a new category of labels for any labels which aren't already covered in the existing categories
+    const labelsInCategories = LABEL_CATEGORIES.flatMap(x => x);
+    const uncategorisedLabels = _foundLabels.filter(x => !labelsInCategories.includes(x));
+    LABEL_CATEGORIES.push(uncategorisedLabels);
+    debugger;
+
     window.allLabels = _allLabels;
 }
 

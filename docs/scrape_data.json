@@ -44787,7 +44787,8 @@
       "RobLabels": [
         "Remake",
         "HL1",
-        "Large"
+        "Large",
+        "Beautiful"
       ],
       "Files": [
         {
@@ -44810,8 +44811,8 @@
       ],
       "HasPushes": 1,
       "HasTeleport": 1,
-      "RobRating": 3.5,
-      "RobComment": "A very nice remake of Crossfire. It's a little too big for 2 or 3 really, but it's very pleasant. Nice lighting."
+      "RobRating": 4,
+      "RobComment": "A very nice remake of Crossfire. Slightly too big for 2 or 3 really, but it's very pleasant. Nice lighting. This is a really well made map."
     },
     {
       "Name": "dm_smashbox_v1",

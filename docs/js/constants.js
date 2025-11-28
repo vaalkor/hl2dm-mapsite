@@ -26,10 +26,23 @@
     "LowGrav"
 ]
 
+export var LABEL_COLOUR_MAP = {
+    'Dogshit': 'label-black',
+    'NeverLoads': 'label-black',
+    'CausesCrash': 'label-black',
+    'NoTripmines': 'label-yellow',
+    'Incomplete': 'label-yellow',
+    'Small': 'label-green',
+    'Medium': 'label-yellow',
+    'Large': 'label-red',
+    'TooBig': 'label-red',
+    'Meme': 'label-purple'
+}
+
 export const LABEL_CATEGORIES = [
     ['Small', 'Medium', 'Large', 'TooBig'],
-    ['KingOfTheHill', 'LowGrav', 'UniqueMechanic', 'Rats', 'Duel'],
-    ['VanillaStyle', 'Indoors','Outdoors'],
+    ['KingOfTheHill', 'LowGrav', 'UniqueMechanic', 'Rats', 'Duel', 'Meme'],
+    ['VanillaStyle', 'Indoors','Outdoors', 'Beautiful'],
     ['Remake', 'CS', 'HL1', 'HL2', 'UT', 'Quake'],
     ['Incomplete','MissingTextures', 'CausesCrash', 'NeverLoads', 'Dogshit'],
 ]
