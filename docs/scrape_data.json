@@ -294,7 +294,13 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Medium",
+        "Indoors"
+      ],
+      "InitialRatingTimestamp": 1764455280
     },
     {
       "Name": "dm_devtexturehell",
@@ -3791,7 +3797,15 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Medium",
+        "Beautiful",
+        "Remake"
+      ],
+      "RobComment": "A Black mesa source map",
+      "InitialRatingTimestamp": 1764449636
     },
     {
       "Name": "dm_thumper_remake",
@@ -9464,7 +9478,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Medium",
+        "Beautiful"
+      ],
+      "RobComment": "Decent map. Lots of physics objects. It's LAMBENT as fuck as well. That's always good.",
+      "InitialRatingTimestamp": 1764450962
     },
     {
       "Name": "DM_Lily_Tension_Warehouse",
@@ -30019,7 +30040,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Large",
+        "Outdoors"
+      ],
+      "RobComment": "Cracking map. Helps we had a bunch of randoms playing. Nothing SPECIAL, but solid and well made.",
+      "InitialRatingTimestamp": 1764453490
     },
     {
       "Name": "dm_dust_housing_estate4",
@@ -41268,7 +41296,10 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1764455593
     },
     {
       "Name": "dm_undercastle",
@@ -46850,7 +46881,15 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "UniqueMechanic",
+        "Medium",
+        "Outdoors"
+      ],
+      "RobComment": "It has a moving train that kills. Always a vibe. And we got a racist man joining which spiced things up a bit.",
+      "InitialRatingTimestamp": 1764448008
     },
     {
       "Name": "asc_sniperpit_v1",
@@ -52907,7 +52946,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "Beautiful",
+        "Medium"
+      ],
+      "RobComment": "This map has a really unique style, but the layout and gameplay is meh. Was on the fence about 2.5/3 but went for 2.5 as it just doesn't play that great.",
+      "InitialRatingTimestamp": 1764456166
     },
     {
       "Name": "dmt1_alpha12",
@@ -57990,7 +58036,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Medium",
+        "Beautiful"
+      ],
+      "RobComment": "Nice map. Very good styling and lighting. Made me feel like I WAS a construction worker while we were playing it. ",
+      "InitialRatingTimestamp": 1764450221
     },
     {
       "Name": "dm_arctic_vendetta_v3",
@@ -63787,7 +63840,16 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "Remake",
+        "UT",
+        "Large",
+        "Indoors"
+      ],
+      "RobComment": "Well made, but doesn't work too well in HL2 with the slower movement speed.",
+      "InitialRatingTimestamp": 1764456607
     },
     {
       "Name": "garage_51",
@@ -66210,7 +66272,12 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Indoors"
+      ],
+      "InitialRatingTimestamp": 1764454279
     },
     {
       "Name": "dm_cariocas_playground_final",
@@ -70750,7 +70817,13 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Medium"
+      ],
+      "RobComment": "Looks awesome. Plays okay.",
+      "InitialRatingTimestamp": 1764446697
     },
     {
       "Name": "dm_trainyard",
@@ -80693,7 +80766,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Large",
+        "Indoors"
+      ],
+      "RobComment": "Decent. We played with 5 people. Might have been a bit shit with 2. But it was decent when wa played. Styling is a bit monotonous, but the layout is fairly amusing.",
+      "InitialRatingTimestamp": 1764452086
     },
     {
       "Name": "dm_spacestation",
@@ -81834,7 +81914,15 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "Small",
+        "UniqueMechanic",
+        "Outdoors"
+      ],
+      "RobComment": "Initially I thought was trash but it quickly grew on me. it's janky but kinda fun. We witnessed a highly anomalous event during playing this. [REDACTED]'s rocket hit the jump pad, and completely reversed itself and went back and killed him. It appeared to reverse along its original trajectory. It was very spooky and we were quite shaken by the experience. We lit some sage afterwards.",
+      "InitialRatingTimestamp": 1764444818
     },
     {
       "Name": "dm_barrage_thunder",
@@ -86301,7 +86389,15 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [
+        "Medium",
+        "Remake",
+        "Indoors"
+      ],
+      "RobComment": "Very nice map. A halo remake. Simple and effective.",
+      "InitialRatingTimestamp": 1764445629
     },
     {
       "Name": "dm_intel_inside",

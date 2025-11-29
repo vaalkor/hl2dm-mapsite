@@ -481,8 +481,6 @@ var WeaponFiltering = {
     }
 }
 
-// , m(CopyToClipboardIcon, {onclick: () => copyToClipboard(map.Name)}) Copy to clipboard icon... Removed from the table rows because it was a bit slow... Nice one...
-
 var TagFiltering = {
     view: function () {
         return [
@@ -704,7 +702,7 @@ var ViewMapInfo = {
             _modalMapInfo['BspFiles'] && _modalMapInfo['BspFiles'].length
                 ? [
                     m('h5', 'bsp files'),
-                    m('p', m('ul', _modalMapInfo['BspFiles'].map(x => m('li', x, m(CopyToClipboardIcon, { copyText: x })))))
+                    m('p', m('ul', _modalMapInfo['BspFiles'].map(x => m('li', x, m(CopyToClipboardIcon, { copyText: x.replace('.bsp', '') })))))
                 ]
                 : m('h5', 'No bsp files found for map'),
 
