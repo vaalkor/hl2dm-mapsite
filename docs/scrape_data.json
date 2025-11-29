@@ -51055,7 +51055,11 @@
         "slam",
         "ar2",
         "crossbow"
-      ]
+      ],
+      "RobLabels": [
+        "Medium"
+      ],
+      "RobComment": "Very well made"
     },
     {
       "Name": "dm_stinkfist",
