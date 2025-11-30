@@ -722,7 +722,7 @@ var ViewMapInfo = {
                 ]
                 : m('h5', 'No bsp files found for map'),
 
-            _modalMapInfo['Weapons']  = null
+            _modalMapInfo['Weapons'] != null
                 ? [
                     m('h5', 'Weapons spawns on map'),
                     m('p', m('ul', _modalMapInfo['Weapons'].map(x => m('li', x))))
