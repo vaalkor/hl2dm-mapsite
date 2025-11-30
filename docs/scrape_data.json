@@ -163,7 +163,10 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": -0.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1764496656
     },
     {
       "Name": "Free play map",
@@ -8829,7 +8832,18 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 4.5,
+      "RobLabels": [
+        "Medium",
+        "Duel",
+        "Indoors",
+        "Beautiful",
+        "Remake",
+        "Quake"
+      ],
+      "RobComment": "This is an absolutely cracking map. The gameplay is perfect, and you'd expect that with it being a Quake 1 remake. Looks awesome as well. Fucking banging.",
+      "InitialRatingTimestamp": 1764497761
     },
     {
       "Name": "Epicenter",
@@ -16656,7 +16670,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Medium",
+        "Outdoors"
+      ],
+      "RobComment": "Interesting map. Cool vibe. Layout isn't amazing, but it's alright. Also it has a weird name. That's why we picked this one to begin with. ",
+      "InitialRatingTimestamp": 1764497139
     },
     {
       "Name": "dm_ss_dbldecker",
@@ -25868,7 +25889,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Medium",
+        "Outdoors"
+      ],
+      "RobComment": "Good map. There are 3 versions of this map. I suppose we'll give them all the same rating.",
+      "InitialRatingTimestamp": 1764497458
     },
     {
       "Name": "Dm_cs_office_oc_b1",
@@ -74404,7 +74432,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [
+        "Large",
+        "Indoors"
+      ],
+      "RobComment": "Bland, too big. Meh.",
+      "InitialRatingTimestamp": 1764494906
     },
     {
       "Name": "dm_vivanco",
