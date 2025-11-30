@@ -156,7 +156,23 @@ function sortSubmitters(a, b) {
 
 function mapFilter(map) {
     if(_storage.onlyShowUnrated && map.InitialRatingTimestamp != null) return false;
-    if (_storage.nameFilter && !(map.Name.toLowerCase().includes(_storage.nameFilter.toLowerCase()))) return false;
+    if (_storage.nameFilter) {
+        const filters = _storage.nameFilter.split(',').map(x => x.trim());
+        var foundMatch = false;
+        var wasAtLeastOneIncludesFilter = false; // This accounts for if the name filter only has not filters (ie: !killbox)
+        for(let substring of filters){
+            if(substring.startsWith('!')){
+                if(map.Name.includes(substring.slice(1)))
+                    return false;
+            }else{
+                wasAtLeastOneIncludesFilter = true;
+                if(map.Name.includes(substring))
+                    foundMatch = true;
+            }
+        }
+        if(wasAtLeastOneIncludesFilter && !foundMatch) 
+            return false;
+    }
     if (_storage.submitterFilter && !(map.Submitter.Name.toLowerCase().includes(_storage.submitterFilter.toLowerCase()))) return false;
     if (!_storage.onlyShowUnrated && (_storage.minRating >= 0 && (map.RobRating == null))) return false;
     if (!_storage.onlyShowUnrated && (_storage.minRating >= 0 && map.RobRating < _storage.minRating)) return false;
@@ -514,10 +530,10 @@ function makeRatingsTableRow(map) {
         onclick: (clickEvent) => handleTableClickEvent(clickEvent, map)
     }, // TODO: figure out why this was breaking when we used Name as the key... That's a bit weird...
         m("th", { scope: "row" }, nameElement),
+        m("td", map.RobRating == null ? "Unrated" : map.RobRating),
         m("td", m("a", { class: "link-secondary", target: "_blank", href: makeSubmitterLink(map.Submitter.Id) }, map.Submitter.Name)),
         m("td", formatDate(map.Added)),
         m("td", formatDate(map.InitialRatingTimestamp)),
-        m("td", map.RobRating == null ? "Unrated" : map.RobRating),
         m("td", getLabels(map))
     );
 }
@@ -564,10 +580,10 @@ var RatingsTable = {
                     m("thead",
                         m("tr", [
                             m("th", { scope: "col" }, `Name (#${_filteredMaps.length} total)`),
+                            m("th", { scope: "col" }, "Rating"),
                             m("th", { scope: "col" }, "Submitter"),
                             m("th", { scope: "col" }, "First Submitted"),
                             m("th", { scope: "col" }, "First Rated"),
-                            m("th", { scope: "col" }, "Rating"),
                             m("th", { scope: "col" }, "Labels")
                         ]
                         )),
@@ -706,7 +722,7 @@ var ViewMapInfo = {
                 ]
                 : m('h5', 'No bsp files found for map'),
 
-            _modalMapInfo['Weapons'] != null
+            _modalMapInfo['Weapons']  = null
                 ? [
                     m('h5', 'Weapons spawns on map'),
                     m('p', m('ul', _modalMapInfo['Weapons'].map(x => m('li', x))))
@@ -747,7 +763,9 @@ var MapInfoModal = function ({ attrs }) {
                 },
                 m('div.card',
                     m('div.card-header',
-                        m('p', { style: 'margin:0;' }, `Map details`, (!_canSubmitEdits || _isEditingMap) ? null : m('button.edit-details-button', {onclick: () => _isEditingMap = true}, ' 📝')),
+                        m('p', { style: 'margin:0;' }, `Map details`,
+                            m('button.edit-details-button', {onclick: getRandomMap}, ' 🔀')
+                            , (!_canSubmitEdits || _isEditingMap) ? null : m('button.edit-details-button', {onclick: () => _isEditingMap = true}, ' 📝')),
                         m("button.btn-close[type=button][aria-label=Close]", { onclick: () => closeModal() })
                     ),
                     _isEditingMap ? m(EditMapInfo) : m(ViewMapInfo)
