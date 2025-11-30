@@ -157,16 +157,17 @@ function sortSubmitters(a, b) {
 function mapFilter(map) {
     if(_storage.onlyShowUnrated && map.InitialRatingTimestamp != null) return false;
     if (_storage.nameFilter) {
-        const filters = _storage.nameFilter.split(',').map(x => x.trim());
+        const lowerCaseName = map.Name.toLowerCase()
+        const filters = _storage.nameFilter.split(',').map(x => x.toLowerCase().trim());
         var foundMatch = false;
         var wasAtLeastOneIncludesFilter = false; // This accounts for if the name filter only has not filters (ie: !killbox)
         for(let substring of filters){
             if(substring.startsWith('!')){
-                if(map.Name.includes(substring.slice(1)))
+                if(lowerCaseName.includes(substring.slice(1)))
                     return false;
             }else{
                 wasAtLeastOneIncludesFilter = true;
-                if(map.Name.includes(substring))
+                if(lowerCaseName.includes(substring))
                     foundMatch = true;
             }
         }
@@ -934,6 +935,7 @@ function getAverageRatingData() {
 }
 
 function handleCommonRouteParameters(attrs) {
+    _isEditingMap = false;
     let parsedMinRating = attrs.rating ? parseFloat(attrs.rating) : NaN;
     if (!isNaN(parsedMinRating) && [-0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5].includes(parsedMinRating)) {
         _storage.minRating = parsedMinRating;
