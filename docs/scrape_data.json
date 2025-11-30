@@ -10941,7 +10941,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [
+        "Remake",
+        "Medium"
+      ],
+      "RobComment": "I didn't think this would be that good but it's actually really fun. Also gets unique mechanic because it implements the tornado that rips the cathedral apart! Impressive effort.",
+      "InitialRatingTimestamp": 1764500362
     },
     {
       "Name": "dm_saturday_b2",
@@ -17897,7 +17904,15 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [
+        "Medium",
+        "Indoors",
+        "Beautiful"
+      ],
+      "InitialRatingTimestamp": 1764502559,
+      "RobComment": "Niiiice."
     },
     {
       "Name": "dm_upandover",
@@ -35474,7 +35489,16 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "Medium",
+        "Meme",
+        "Indoors",
+        "UniqueMechanic"
+      ],
+      "RobComment": "Silly map with just crowbars. ",
+      "InitialRatingTimestamp": 1764502473
     },
     {
       "Name": "dm_flambo",
@@ -48200,7 +48224,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Medium",
+        "Indoors"
+      ],
+      "RobComment": "Decent. Nicely made. Nothing stands out though.",
+      "InitialRatingTimestamp": 1764504852
     },
     {
       "Name": "dm_box_o_doom",
@@ -53417,7 +53448,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Medium",
+        "Beautiful"
+      ],
+      "RobComment": "Very cool styling. Gameplay feels a little flat though. ",
+      "InitialRatingTimestamp": 1764502044
     },
     {
       "Name": "dm_azzle",
@@ -56406,7 +56444,11 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [],
+      "RobComment": "Meh",
+      "InitialRatingTimestamp": 1764500949
     },
     {
       "Name": "dm_fmr_357_mix2",
