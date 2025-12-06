@@ -2338,7 +2338,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Medium",
+        "UniqueMechanic"
+      ],
+      "RobComment": "Very unique style on this. It also has functional video screens you can use to see where people are on the map which is very cool.",
+      "InitialRatingTimestamp": 1765049169
     },
     {
       "Name": "Nexus Building",
@@ -4808,7 +4815,15 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Large",
+        "Outdoors",
+        "Indoors"
+      ],
+      "RobComment": "Classic",
+      "InitialRatingTimestamp": 1765050061
     },
     {
       "Name": "dm_forgotten_sanctuary",
@@ -7751,7 +7766,16 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Medium",
+        "Remake",
+        "HL1",
+        "Indoors"
+      ],
+      "RobComment": "Good remake of a classic hl1 map, and an excellent one for placing tripmines.",
+      "InitialRatingTimestamp": 1765047946
     },
     {
       "Name": "dm_town_03_day",
@@ -16630,7 +16654,18 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "Large",
+        "Outdoors",
+        "Indoors",
+        "VanillaStyle",
+        "Remake",
+        "HL2"
+      ],
+      "RobComment": "The first HL2 (kind of). Doesn't play very well.",
+      "InitialRatingTimestamp": 1765048582
     },
     {
       "Name": "Economic Cavity (DeathMatch)",
@@ -54719,7 +54754,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "Medium",
+        "Indoors"
+      ],
+      "RobComment": "meh",
+      "InitialRatingTimestamp": 1765048298
     },
     {
       "Name": "dmt1_medieval",
@@ -54940,7 +54982,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 0.5,
+      "RobLabels": [
+        "Small",
+        "Dogshit"
+      ],
+      "RobComment": "Garbage. We immediately threw up after loading this map and immediately fled for greener pastures.",
+      "InitialRatingTimestamp": 1765049247
     },
     {
       "Name": "Canals HD: Release",
@@ -61401,7 +61450,15 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "Remake",
+        "UT",
+        "Large"
+      ],
+      "RobComment": "A good effort but it feels too big and the middle section is a bit rough",
+      "InitialRatingTimestamp": 1765046457
     },
     {
       "Name": "dm_birlack-mall_v1",
@@ -75273,7 +75330,15 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Small",
+        "Duel",
+        "Indoors"
+      ],
+      "InitialRatingTimestamp": 1765044895,
+      "RobComment": "Nice and simple. Fun duel map. The sloped area in the bottom is good for crossbow rebounds."
     },
     {
       "Name": "dm_city",
@@ -77190,7 +77255,13 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [
+        "Medium"
+      ],
+      "RobComment": "meh",
+      "InitialRatingTimestamp": 1765050168
     },
     {
       "Name": "dm_blockfort",
