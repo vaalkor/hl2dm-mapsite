@@ -685,7 +685,6 @@ var EditMapInfo = {
                     _modalMapInfo = _scrapeData.MapInfo.find(x => x.Id === _currentEditInfo.id);
                     _isEditingMap = false;
                     filterAndSortMaps();
-                    resetEditInfo();
                     m.redraw();
                 }
             }, 'Update info')
@@ -736,7 +735,7 @@ var ViewMapInfo = {
     }
 }
 
-function resetEditInfo(){
+function enableEditMode(){
     _currentEditInfo = {
         id: _modalMapInfo.Id,
         rating: _modalMapInfo.RobRating == null ? -0.5 : _modalMapInfo.RobRating,
@@ -745,10 +744,10 @@ function resetEditInfo(){
         labels: []
     }
     if(_modalMapInfo && _modalMapInfo.RobLabels) _currentEditInfo.labels = [..._modalMapInfo.RobLabels];
+    _isEditingMap = true;
 }
 
 var MapInfoModal = function ({ attrs }) {
-    resetEditInfo();
 
     return {
         view: function () {
@@ -766,7 +765,7 @@ var MapInfoModal = function ({ attrs }) {
                     m('div.card-header',
                         m('p', { style: 'margin:0;' }, `Map details`,
                             m('button.edit-details-button', {onclick: getRandomMap}, ' 🔀')
-                            , (!_canSubmitEdits || _isEditingMap) ? null : m('button.edit-details-button', {onclick: () => _isEditingMap = true}, ' 📝')),
+                            , (!_canSubmitEdits || _isEditingMap) ? null : m('button.edit-details-button', {onclick: enableEditMode}, ' 📝')),
                         m("button.btn-close[type=button][aria-label=Close]", { onclick: () => closeModal() })
                     ),
                     _isEditingMap ? m(EditMapInfo) : m(ViewMapInfo)
