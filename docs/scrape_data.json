@@ -5676,7 +5676,8 @@
             }
           ]
         }
-      ]
+      ],
+      "Authors": []
     },
     {
       "Name": "dm_killbox_bunker_b",
@@ -8464,7 +8465,8 @@
             }
           ]
         }
-      ]
+      ],
+      "Authors": []
     },
     {
       "Name": "dm_tigcrik_v2?",
@@ -8993,6 +8995,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Brunt"
       ]
     },
     {
@@ -9080,6 +9085,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "BoogyMan",
+        "Sera"
       ]
     },
     {
@@ -9330,6 +9339,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Grim",
+        "Brain"
       ]
     },
     {
@@ -9450,6 +9463,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "ryker",
+        "Valve"
       ]
     },
     {
@@ -9527,6 +9544,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "SALO POWER",
+        "Cyvo"
       ]
     },
     {
@@ -9612,6 +9633,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Crowbar collective"
       ]
     },
     {
@@ -9708,7 +9732,8 @@
             }
           ]
         }
-      ]
+      ],
+      "Authors": []
     },
     {
       "Name": "dm_human_is_not_invited",
@@ -9766,6 +9791,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "SALO POWER"
       ]
     },
     {
@@ -9964,6 +9992,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Crowbar collective",
+        "SALO POWER"
       ]
     },
     {
@@ -10235,6 +10267,11 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "[TSF] Lord Davros",
+        "[TSF] The Master",
+        "Sadist_tsgk"
       ]
     },
     {
@@ -10294,6 +10331,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Redbr34"
       ]
     },
     {
@@ -10538,6 +10578,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Kyle \"kybl\" Blackmon"
       ]
     },
     {
@@ -10592,6 +10635,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "CubaLibreNL",
+        "T4LLY-0"
       ]
     },
     {
@@ -10653,6 +10700,11 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "T4LLY-0",
+        "T4LLY-0",
+        "CubaLibre"
       ]
     },
     {
@@ -10999,6 +11051,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "[EYE] Valar"
       ]
     },
     {
@@ -11207,6 +11262,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "iCE (ColdEndeavour)"
       ]
     },
     {
@@ -11318,6 +11376,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "mrspectate"
       ]
     },
     {
@@ -11468,6 +11529,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "valva",
+        "haymaker"
       ]
     },
     {
@@ -11575,7 +11640,10 @@
         "Medium"
       ],
       "RobComment": "I didn't think this would be that good but it's actually really fun. Also gets unique mechanic because it implements the tornado that rips the cathedral apart! Impressive effort.",
-      "InitialRatingTimestamp": 1764500362
+      "InitialRatingTimestamp": 1764500362,
+      "Authors": [
+        "haymaker"
+      ]
     },
     {
       "Name": "dm_saturday_b2",
@@ -11625,6 +11693,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "haymaker"
       ]
     },
     {
@@ -11730,6 +11801,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "wh0_Aga1n"
       ]
     },
     {
@@ -12265,6 +12339,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "xalphahunter"
       ]
     },
     {
@@ -12563,6 +12640,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Ghost1502600"
       ]
     },
     {
@@ -12829,6 +12909,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Valve",
+        "JzC"
       ]
     },
     {
@@ -12900,6 +12984,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Valve",
+        "JzC"
       ]
     },
     {
@@ -12974,6 +13062,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "JzC"
       ]
     },
     {
@@ -13038,6 +13129,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Gear"
       ]
     },
     {
@@ -13547,6 +13641,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Lunacy"
       ]
     },
     {
@@ -13901,6 +13998,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Scorp"
       ]
     },
     {
@@ -14069,6 +14169,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "haymaker"
       ]
     },
     {
@@ -14242,6 +14345,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "xalphahunter"
       ]
     },
     {
@@ -14316,6 +14422,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "tron2000"
       ]
     },
     {
@@ -14466,6 +14575,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Lunacy",
+        "Sir Charles Babbage"
       ]
     },
     {
@@ -14629,6 +14742,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "DocRock",
+        "[FJC] Apollyon094"
       ]
     },
     {
@@ -14731,6 +14848,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Whickhan",
+        "Valve"
       ]
     },
     {
@@ -14790,6 +14911,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "[FJC] Apollyon094"
       ]
     },
     {
@@ -15011,6 +15135,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Hum4m_K"
       ]
     },
     {
@@ -15073,6 +15200,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Whickhan"
       ]
     },
     {
@@ -15130,6 +15260,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "~Smith~",
+        "~Smith~"
       ]
     },
     {
@@ -15507,6 +15641,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Mayor Callaghan"
       ]
     },
     {
@@ -15618,6 +15755,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Apollyon093 (pilldickle)",
+        "pilldickle"
       ]
     },
     {
@@ -15832,6 +15973,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Jora"
       ]
     },
     {
@@ -16370,6 +16514,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "jarros",
+        "Corporal_Shephard"
       ]
     },
     {
@@ -16650,6 +16798,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "AlcyToronto",
+        "AlcyToronto"
       ]
     },
     {
@@ -17235,6 +17387,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "haymaker",
+        "valva"
       ]
     },
     {
@@ -17340,6 +17496,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "AlcyToronto",
+        "Valve"
       ]
     },
     {
@@ -17402,6 +17562,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "AlcyToronto",
+        "Ryan Tuna Trahey"
       ]
     },
     {
@@ -17516,7 +17680,11 @@
         "HL2"
       ],
       "RobComment": "The first HL2 (kind of). Doesn't play very well.",
-      "InitialRatingTimestamp": 1765048582
+      "InitialRatingTimestamp": 1765048582,
+      "Authors": [
+        "Peredice",
+        "Valve"
+      ]
     },
     {
       "Name": "Economic Cavity (DeathMatch)",
@@ -17731,6 +17899,10 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "LFLD",
+        "Sting"
       ]
     },
     {
@@ -17909,6 +18081,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "gtamike_TSGK"
       ]
     },
     {
@@ -18066,6 +18241,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Ghost1397314"
       ]
     },
     {
@@ -18114,6 +18292,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "[MB]haymaker"
       ]
     },
     {
@@ -18370,6 +18551,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "Alienmario"
       ]
     },
     {
@@ -18423,6 +18607,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "cubalibrenl"
       ]
     },
     {
@@ -18475,6 +18662,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "t4lly0"
       ]
     },
     {
@@ -18528,6 +18718,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "cubalibrenl"
       ]
     },
     {
@@ -18586,6 +18779,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "T4LLY0"
       ]
     },
     {
@@ -18742,6 +18938,9 @@
             }
           ]
         }
+      ],
+      "Authors": [
+        "AlcyToronto"
       ]
     },
     {
@@ -18835,7 +19034,11 @@
         "Beautiful"
       ],
       "InitialRatingTimestamp": 1764502559,
-      "RobComment": "Niiiice."
+      "RobComment": "Niiiice.",
+      "Authors": [
+        "Drift.",
+        "Preacher"
+      ]
     },
     {
       "Name": "dm_upandover",

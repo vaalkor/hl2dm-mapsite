@@ -29,7 +29,7 @@ foreach($map in $mapInfo.MapInfo){
 }
 
 # Ask user to set authors for maps with multiple authors
-foreach($map in ($mapInfo.MapInfo | Where-Object { -not $_.Authors })){
+foreach($map in ($mapInfo.MapInfo | Where-Object { $_.Authors -eq $null })){
     $skip = $false
     Write-Host "Select the author(s) for map: $($map.Name)"
     Write-Host "Specify the authors by index (comma-separated if multiple):"
@@ -53,7 +53,6 @@ foreach($map in ($mapInfo.MapInfo | Where-Object { -not $_.Authors })){
             break
         }
         if ($selectedIndices -eq "-") {
-            $skip = $true
             break
         }
         $valid = $selectedIndices -match '^(\d+)(,\d+)*$' 
@@ -70,7 +69,11 @@ foreach($map in ($mapInfo.MapInfo | Where-Object { -not $_.Authors })){
         Write-Host "Skipping map: $($map.Name)" -ForegroundColor Yellow
         continue
     }
-    $selectedAuthors = $selectedIndices -split "," | ForEach-Object { $individualCredits[$_-1] }
+    if($selectedIndices -eq "-"){
+        $selectedAuthors = @()
+    }else{
+        $selectedAuthors = $selectedIndices -split "," | ForEach-Object { $individualCredits[$_-1] }
+    }
     Write-Host "new selected authors: $selectedAuthors"
     $map | Add-Member -MemberType NoteProperty -Name Authors -Value @($selectedAuthors) -Force
 }
