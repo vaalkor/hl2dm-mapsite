@@ -20182,7 +20182,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Medium",
+        "Indoors"
+      ],
+      "RobComment": "This is a very visually interesting map. It's really unique. It doesn't play that well but I appreciate the effort.",
+      "InitialRatingTimestamp": 1765120726
     },
     {
       "Name": "dm_ob_iceworld_fun_remake (HD and HDR Lighting)",
@@ -21634,7 +21641,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Medium",
+        "Outdoors"
+      ],
+      "RobComment": "Pleasant map. The toilets are fun.",
+      "InitialRatingTimestamp": 1765116712
     },
     {
       "Name": "dm_lego_city_v3",
@@ -56273,7 +56287,16 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Indoors",
+        "Beautiful",
+        "UniqueMechanic",
+        "Medium"
+      ],
+      "RobComment": "Very nicely made map with a cool theme. Has some cool tunnels you get projected through as well.",
+      "InitialRatingTimestamp": 1765117400
     },
     {
       "Name": "dm_killbox_alex_v1",
@@ -62548,7 +62571,15 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Medium",
+        "Indoors",
+        "VanillaStyle"
+      ],
+      "RobComment": "Solid. Nothing special.",
+      "InitialRatingTimestamp": 1765114057
     },
     {
       "Name": "dm_7hour",
@@ -63880,7 +63911,12 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": -0.5,
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1765114078
     },
     {
       "Name": "area17",
@@ -84928,7 +84964,16 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [
+        "Meme",
+        "UniqueMechanic",
+        "Small",
+        "Outdoors"
+      ],
+      "RobComment": "This is a truly hilarious map. Simple idea but well executed. Also the lack of gravity gun makes it much better.",
+      "InitialRatingTimestamp": 1765114941
     },
     {
       "Name": "dm_vapour_v2",
