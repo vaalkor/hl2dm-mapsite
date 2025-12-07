@@ -64814,7 +64814,13 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Large"
+      ],
+      "RobComment": "Decent",
+      "InitialRatingTimestamp": 1765064713
     },
     {
       "Name": "dm_colosseum",
@@ -84184,7 +84190,13 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Small"
+      ],
+      "RobComment": "eiiigh it's alright nothing special though",
+      "InitialRatingTimestamp": 1765066220
     },
     {
       "Name": "dm_ravenholmcenter",
@@ -89993,10 +90005,15 @@
         "ar2",
         "crossbow"
       ],
-      "RobRating": 2.5,
-      "RobComment": "Cool looking map. But it's too big for 2 players. Might be better with 3",
+      "RobRating": 4,
+      "RobComment": "Cool looking map. But it's too big for 2 players. Might be better with 3..... sdlfksgklsdfg",
       "RobLabels": [
-        "TooBig"
+        "TooBig",
+        "Medium",
+        "KingOfTheHill",
+        "UniqueMechanic",
+        "HL1",
+        "UT"
       ],
       "InitialRatingTimestamp": 1763846313,
       "Credits": [
