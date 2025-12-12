@@ -33142,7 +33142,15 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Medium",
+        "Outdoors",
+        "Remake"
+      ],
+      "RobComment": "Awesome remake of an AVP2 map that I instantly recognised upon loading. Good stuff. Could do with some tripmines for the SLAM crack addicts among us though.",
+      "InitialRatingTimestamp": 1765575950
     },
     {
       "Name": "dm_the_longest_day_b2",
@@ -33446,7 +33454,10 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1765578189
     },
     {
       "Name": "dm_bdaycake",
@@ -44208,7 +44219,16 @@
       ],
       "Authors": [
         "monarch"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Indoors",
+        "Outdoors",
+        "Large",
+        "UniqueMechanic"
+      ],
+      "RobComment": "Pretty cool but the layout is not amaaazing.",
+      "InitialRatingTimestamp": 1765574363
     },
     {
       "Name": "dm_snipe_2",
@@ -56947,7 +56967,13 @@
       ],
       "Authors": [
         "Nick Kappel aka Phase II"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "Indoors",
+        "Small"
+      ],
+      "InitialRatingTimestamp": 1765574849
     },
     {
       "Name": "dm_killbox_obelisk",
@@ -64043,7 +64069,16 @@
       ],
       "Authors": [
         "caballero259"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [
+        "UniqueMechanic",
+        "TooBig",
+        "Outdoors",
+        "Indoors"
+      ],
+      "RobComment": "Cool map but doens't work with 2 people. ",
+      "InitialRatingTimestamp": 1765577748
     },
     {
       "Name": "rox_bunker_war_b1",
@@ -75751,7 +75786,13 @@
       ],
       "Authors": [
         "Belgarion"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Indoors"
+      ],
+      "RobComment": "Cool style. ",
+      "InitialRatingTimestamp": 1765577462
     },
     {
       "Name": "dm_storage_facility",
@@ -78402,7 +78443,13 @@
       ],
       "Authors": [
         "BeNjI[uK*]"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "Small"
+      ],
+      "RobComment": "ehhhhhh",
+      "InitialRatingTimestamp": 1765576478
     },
     {
       "Name": "dm_vireal",
@@ -83582,7 +83629,15 @@
       ],
       "Authors": [
         "Sadist"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "VanillaStyle",
+        "Outdoors",
+        "Indoors"
+      ],
+      "RobComment": "Very cool vanill style looking map. Layout is not good 2 players. A bit bland.",
+      "InitialRatingTimestamp": 1765575372
     },
     {
       "Name": "dm_mogliano17",
