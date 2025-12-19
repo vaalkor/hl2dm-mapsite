@@ -60300,7 +60300,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "UniqueMechanic",
+        "Small"
+      ],
+      "RobComment": "Amusing killbox style map. ",
+      "InitialRatingTimestamp": 1766178530
     },
     {
       "Name": "dm_larkhill_detention_cntr_v1",
@@ -66439,7 +66446,13 @@
       ],
       "Authors": [
         "aggr0voice"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Medium"
+      ],
+      "InitialRatingTimestamp": 1766177521,
+      "RobComment": "Funky map. Creepy vibes. Fun to explore."
     },
     {
       "Name": "dm_buggy_kn",
@@ -67589,7 +67602,14 @@
       ],
       "Authors": [
         "mrmof"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "UniqueMechanic",
+        "Medium"
+      ],
+      "RobComment": "Janky as fuck. I appreciate the creativity though. Doesn't work great for a small player count.",
+      "InitialRatingTimestamp": 1766177495
     },
     {
       "Name": "dm_darkmatter",
@@ -75022,7 +75042,14 @@
       ],
       "Authors": [
         "Kasperg_JM"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [
+        "Medium",
+        "Indoors"
+      ],
+      "RobComment": "Niiice map",
+      "InitialRatingTimestamp": 1766176961
     },
     {
       "Name": "dm_powerstation",
