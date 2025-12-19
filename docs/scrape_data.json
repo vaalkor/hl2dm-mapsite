@@ -37824,7 +37824,13 @@
       ],
       "Authors": [
         "onailag"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Medium"
+      ],
+      "RobComment": "Strange map. It's very packed in, very dense. Chaotic. Pretty fun though.",
+      "InitialRatingTimestamp": 1766104093
     },
     {
       "Name": "dm_mexicana & _norpg (dusty streets & rooftops)",
@@ -81550,7 +81556,12 @@
       ],
       "Authors": [
         "WeeNboy"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Small"
+      ],
+      "InitialRatingTimestamp": 1766103646
     },
     {
       "Name": "dm_tower_arena",
