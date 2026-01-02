@@ -1228,7 +1228,11 @@
       ],
       "Authors": [
         "Richard Zdim Carlson"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "RobComment": "Looks kind of interesting but it play a biiiiit eiiiiiiiigh",
+      "InitialRatingTimestamp": 1767397318
     },
     {
       "Name": "DM_Lukovich",
@@ -28872,7 +28876,15 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Medium",
+        "Meme",
+        "UniqueMechanic"
+      ],
+      "RobComment": "The map is alright for 2 players. The real star of the show though is the flying bird that has a camera attached to it. You can see the camera feed on a screen. That's a solid meme right there. You can shoot the bird as well.",
+      "InitialRatingTimestamp": 1767397926
     },
     {
       "Name": "sm_g_g_logo",
@@ -54099,7 +54111,11 @@
       ],
       "Authors": [
         "Panther"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "RobComment": "Not as shit as the name suggests. It had a certain charm to it. Not mahoosively great with 2 player though, but not horrific.",
+      "InitialRatingTimestamp": 1767394890
     },
     {
       "Name": "te_sniper_3",
@@ -58804,7 +58820,14 @@
       ],
       "Authors": [
         "Rushz0rz"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [
+        "Outdoors",
+        "Medium"
+      ],
+      "RobComment": "Simple but very good. We love a bit of verticality don't we.",
+      "InitialRatingTimestamp": 1767396986
     },
     {
       "Name": "dm_bridge_warfare_final",
@@ -80739,7 +80762,14 @@
       ],
       "Authors": [
         "Xion"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "Medium",
+        "Outdoors"
+      ],
+      "RobComment": "The ship is kinda fun but in general this is a bit bland",
+      "InitialRatingTimestamp": 1767394457
     },
     {
       "Name": "dm_oldvalley",
@@ -81385,7 +81415,11 @@
       ],
       "Authors": [
         "Talos and Kiatusdm"
-      ]
+      ],
+      "RobRating": 0.5,
+      "RobLabels": [],
+      "RobComment": "Garbage",
+      "InitialRatingTimestamp": 1767394525
     },
     {
       "Name": "dm_lost_isle",
