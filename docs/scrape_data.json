@@ -1717,7 +1717,10 @@
       ],
       "Authors": [
         "Pirates, Vikings, and Knights 2"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1768086643
     },
     {
       "Name": "dm_triangles",
@@ -3448,7 +3451,10 @@
       ],
       "Authors": [
         "Dmitron"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1768086272
     },
     {
       "Name": "dm_labcore",
@@ -18558,7 +18564,14 @@
       ],
       "Authors": [
         "Alienmario"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [
+        "UniqueMechanic",
+        "Meme"
+      ],
+      "RobComment": "Aesthetically interesting. 2001 scifi vibes. Plays terribly though, and that's mostly what we care about.",
+      "InitialRatingTimestamp": 1768083784
     },
     {
       "Name": "dm_cm_snowkill_rc5d",
@@ -34423,7 +34436,14 @@
       ],
       "Authors": [
         "Ð¸ote"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Duel",
+        "Meme"
+      ],
+      "RobComment": "lol",
+      "InitialRatingTimestamp": 1768086101
     },
     {
       "Name": "dm_night_v3",
@@ -58479,7 +58499,10 @@
       ],
       "Authors": [
         "suportkiller"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1768086897
     },
     {
       "Name": "dm_cthulhu",
@@ -66611,7 +66634,13 @@
       ],
       "Authors": [
         "eraserx"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Medium"
+      ],
+      "RobComment": "Decent map, crashed twice though. Not sure if that was the map, or my game being a bender.",
+      "InitialRatingTimestamp": 1768083527
     },
     {
       "Name": "dm_backyard",
@@ -80280,7 +80309,14 @@
       ],
       "Authors": [
         "~NoMaD~"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Medium",
+        "Rats"
+      ],
+      "RobComment": "Funny map",
+      "InitialRatingTimestamp": 1768085102
     },
     {
       "Name": "dm_cliffed",
