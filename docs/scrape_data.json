@@ -11706,7 +11706,13 @@
       ],
       "Authors": [
         "haymaker"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Meme"
+      ],
+      "RobComment": "Cute map. Some amusing features, like a cat chasing a dog around the garden. Also comically large weapons. Nice.",
+      "InitialRatingTimestamp": 1768123985
     },
     {
       "Name": "Killbox KBH",
@@ -52688,7 +52694,10 @@
       ],
       "Authors": [
         "Dinomaker"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1768125719
     },
     {
       "Name": "dm_dataloop_v2",
@@ -69265,7 +69274,14 @@
       ],
       "Authors": [
         "heyo"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Beautiful",
+        "VanillaStyle"
+      ],
+      "RobComment": "They weren't messing around with the title of this one. More corrugated metal then you can shake a stick at.",
+      "InitialRatingTimestamp": 1768124405
     },
     {
       "Name": "Gadgets9d",
@@ -93846,7 +93862,11 @@
       ],
       "Authors": [
         "crow"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "RobComment": "Alright map. It has a fun choke point but other than that its fairly bland.",
+      "InitialRatingTimestamp": 1768124952
     },
     {
       "Name": "dm_mine",
@@ -94242,7 +94262,13 @@
       ],
       "Authors": [
         "Hench"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "RobComment": "Cool vibes on this map. Fun to explore but it's too big for 2 players.",
+      "InitialRatingTimestamp": 1768126004
     },
     {
       "Name": "dm_roaches2",
