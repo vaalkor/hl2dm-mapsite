@@ -597,7 +597,13 @@
       ],
       "Authors": [
         "Viperbird"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "RobComment": "Very nice looking map but a bit too big for 2 players.",
+      "InitialRatingTimestamp": 1768152982
     },
     {
       "Name": "dm_postoffice_socal",
@@ -4305,7 +4311,14 @@
       ],
       "Authors": [
         "anonimowy_2503"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "HL2",
+        "Remake"
+      ],
+      "RobComment": "Dr Kleiners lab. Good vibes, but too small and boring.",
+      "InitialRatingTimestamp": 1768151465
     },
     {
       "Name": "dm_trainstation_02",
@@ -4948,7 +4961,14 @@
       ],
       "Authors": [
         "AngelFallen"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "HL2",
+        "Remake"
+      ],
+      "InitialRatingTimestamp": 1768151932,
+      "RobComment": ""
     },
     {
       "Name": "dm_xpecm",
@@ -6237,7 +6257,12 @@
       ],
       "Authors": [
         "[EYE] Valar"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Medium"
+      ],
+      "InitialRatingTimestamp": 1770412746
     },
     {
       "Name": "DM_BAGEL",
@@ -33345,7 +33370,10 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1770415037
     },
     {
       "Name": "Wekani Waterpark b1",
@@ -39522,7 +39550,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Meme",
+        "Outdoors"
+      ],
+      "RobComment": "One of the weirdest maps we've ever played.",
+      "InitialRatingTimestamp": 1770416145
     },
     {
       "Name": "Dm Play Different",
@@ -58703,7 +58738,10 @@
       ],
       "Authors": [
         "Gunbeard"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1770413285
     },
     {
       "Name": "dm_killyard",
@@ -61095,7 +61133,13 @@
       ],
       "Authors": [
         "Brad &quot;Redclaw&quot; Tempchin"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "RobComment": "Too big. Also this is the most depressing map we've ever played.",
+      "InitialRatingTimestamp": 1768152404
     },
     {
       "Name": "dm helipad b1",
@@ -70700,7 +70744,10 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1770414693
     },
     {
       "Name": "dm_moil_final",
@@ -73415,7 +73462,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "TooBig",
+        "Beautiful"
+      ],
+      "RobComment": "Aesthetically brilliant. Plays a bit meh with 2 people though.",
+      "InitialRatingTimestamp": 1768151309
     },
     {
       "Name": "dm_dgc_finca",
@@ -89391,7 +89445,10 @@
       ],
       "Authors": [
         "Sadist"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1770414340
     },
     {
       "Name": "dm_biohazard",
@@ -90686,7 +90743,15 @@
       ],
       "Authors": [
         "IZaNaGI"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "Medium",
+        "Outdoors",
+        "Beautiful"
+      ],
+      "RobComment": "Cool looking map. Cyberpunk vibes. Kinda boring to play though.",
+      "InitialRatingTimestamp": 1770411846
     },
     {
       "Name": "dm_lore_beta",
