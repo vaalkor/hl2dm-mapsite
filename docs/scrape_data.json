@@ -20065,7 +20065,14 @@
       ],
       "Authors": [
         "Confectionatrix"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Indoors",
+        "Meme"
+      ],
+      "RobComment": "Tripmines galore! ",
+      "InitialRatingTimestamp": 1777673097
     },
     {
       "Name": "dm_egypt_story",
@@ -26210,7 +26217,10 @@
       ],
       "Authors": [
         "RP_Rufus"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1777673679
     },
     {
       "Name": "RoPlayers_Teleport_Rooms",
@@ -39556,7 +39566,7 @@
         "Meme",
         "Outdoors"
       ],
-      "RobComment": "One of the weirdest maps we've ever played.",
+      "RobComment": "One of the weirdest maps we've ever played",
       "InitialRatingTimestamp": 1770416145
     },
     {
@@ -42424,7 +42434,11 @@
       ],
       "Authors": [
         "covain3"
-      ]
+      ],
+      "RobRating": 0.5,
+      "RobLabels": [],
+      "RobComment": "Sucks more ass than an industrial grade ass sucking machine",
+      "InitialRatingTimestamp": 1777673530
     },
     {
       "Name": "dm_qzdm1_orange",
@@ -43636,7 +43650,10 @@
       ],
       "Authors": [
         "Badman"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1777676648
     },
     {
       "Name": "dm_snipe_combine",
@@ -57877,7 +57894,11 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "RobComment": "Killbox with ice",
+      "InitialRatingTimestamp": 1777674332
     },
     {
       "Name": "dm_killroofz_combine",
@@ -67040,7 +67061,11 @@
       ],
       "Authors": [
         "toedlichstill"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [],
+      "RobComment": "it's fucked",
+      "InitialRatingTimestamp": 1777673268
     },
     {
       "Name": "dm_magnum",
@@ -69852,7 +69877,10 @@
       ],
       "Authors": [
         "-=cvrl=- carioca"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1777677713
     },
     {
       "Name": "dm_hiatus",
@@ -75313,7 +75341,10 @@
       ],
       "Authors": [
         "SparkyX"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1777676110
     },
     {
       "Name": "dm_killbox_lego_hk",
@@ -75499,7 +75530,14 @@
       ],
       "Authors": [
         "Blinn"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Small",
+        "Indoors"
+      ],
+      "RobComment": "Silly map. Get to the top and get the rocket launcher and go crazy",
+      "InitialRatingTimestamp": 1777674930
     },
     {
       "Name": "dm_ultracore",
@@ -77144,7 +77182,10 @@
       ],
       "Authors": [
         "~!Unknown!~"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1777675416
     },
     {
       "Name": "dm_pacmania",
