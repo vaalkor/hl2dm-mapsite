@@ -18173,7 +18173,10 @@
       ],
       "Authors": [
         "Gruppy"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1777757560
     },
     {
       "Name": "dm_devarium",
@@ -28232,7 +28235,10 @@
       ],
       "Authors": [
         "tron2000"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1777758784
     },
     {
       "Name": "dm_dm3_v3 (Including V1/V2)",
@@ -36419,7 +36425,13 @@
       ],
       "Authors": [
         "tron2000"
-      ]
+      ],
+      "RobRating": -0.5,
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "RobComment": "",
+      "InitialRatingTimestamp": 1777760789
     },
     {
       "Name": "dm_global",
@@ -37075,7 +37087,13 @@
       ],
       "Authors": [
         "Algorythm"
-      ]
+      ],
+      "RobRating": 0.5,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "RobComment": "too big. layout trash. meh.",
+      "InitialRatingTimestamp": 1777759277
     },
     {
       "Name": "dm_shooting_range1",
@@ -45032,7 +45050,10 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1777757211
     },
     {
       "Name": "dm_endroadTD",
@@ -50365,7 +50386,10 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1777756775
     },
     {
       "Name": "dm_Poolkrystal_v2",
@@ -50934,7 +50958,13 @@
       ],
       "Authors": [
         "[DOH] Mick"
-      ]
+      ],
+      "RobRating": 0.5,
+      "RobLabels": [
+        "Large"
+      ],
+      "RobComment": "Meh too large and plain",
+      "InitialRatingTimestamp": 1777758858
     },
     {
       "Name": "dm_breakers_b8",
@@ -65983,7 +66013,11 @@
       ],
       "Authors": [
         "da_pen_boy"
-      ]
+      ],
+      "RobRating": 0,
+      "RobLabels": [],
+      "RobComment": "Fucking garbage ",
+      "InitialRatingTimestamp": 1777759311
     },
     {
       "Name": "tne_cube_v2",
@@ -74305,7 +74339,13 @@
       ],
       "Authors": [
         "crazydew"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [
+        "Remake"
+      ],
+      "RobComment": "Yeah it's a halo map but it sucks ass",
+      "InitialRatingTimestamp": 1777757836
     },
     {
       "Name": "dm_thumper",
@@ -88124,7 +88164,14 @@
       ],
       "Authors": [
         "c0m4ndo45"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "Meme",
+        "UniqueMechanic"
+      ],
+      "RobComment": "It's a racecourse. Pretty janky. ",
+      "InitialRatingTimestamp": 1777759671
     },
     {
       "Name": "dm_monopolyfull",
