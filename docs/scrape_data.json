@@ -58431,7 +58431,13 @@
       ],
       "Authors": [
         "Freak"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Remake"
+      ],
+      "RobComment": "Portal 1 style map",
+      "InitialRatingTimestamp": 1777841260
     },
     {
       "Name": "dm_netmare_2008",
@@ -94020,7 +94026,10 @@
       ],
       "Authors": [
         "Kamil Konecko"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1777840665
     },
     {
       "Name": "dm_sullen",
