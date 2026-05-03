@@ -23159,7 +23159,12 @@
       ],
       "Authors": [
         "Lunacy "
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1777834998
     },
     {
       "Name": "Mountain Village",
@@ -33905,7 +33910,10 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1777840391
     },
     {
       "Name": "dm_bigseltsam",
@@ -37429,7 +37437,11 @@
       ],
       "Authors": [
         "Thiago Klafke"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [],
+      "RobComment": "Awesome map",
+      "InitialRatingTimestamp": 1777838301
     },
     {
       "Name": "dm_goldrush_caverns",
@@ -38131,7 +38143,13 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Meme"
+      ],
+      "RobComment": "Very small but a meme",
+      "InitialRatingTimestamp": 1777836955
     },
     {
       "Name": "dm_chiron",
@@ -45741,7 +45759,11 @@
       ],
       "Authors": [
         "MelonHeadMonStar"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [],
+      "RobComment": "Jank as fuck. You can spawn hundreds of weapons and tank the framerate though, which is kind of funny",
+      "InitialRatingTimestamp": 1777837223
     },
     {
       "Name": "dm_proarena",
@@ -46862,7 +46884,10 @@
       ],
       "Authors": [
         "Junkcitycrew"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1777839989
     },
     {
       "Name": "DM_Basement",
@@ -61374,7 +61399,10 @@
       ],
       "Authors": [
         "Sadist_TSGK"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1777838597
     },
     {
       "Name": "dm_rain_boxed",
@@ -65072,7 +65100,12 @@
       ],
       "Authors": [
         "unknown"
-      ]
+      ],
+      "RobRating": -0.5,
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1777838780
     },
     {
       "Name": "dm_mousekitchen",
@@ -73475,7 +73508,10 @@
       ],
       "Authors": [
         "[grom]bartjek"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1777839444
     },
     {
       "Name": "dm_roman_sanctuary.bsp",
@@ -83592,7 +83628,10 @@
       ],
       "Authors": [
         "kr00m"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1777838769
     },
     {
       "Name": "dmz_maze",
@@ -87208,7 +87247,14 @@
       ],
       "Authors": [
         "[GrOM]Bartjek"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "Meme",
+        "UniqueMechanic"
+      ],
+      "RobComment": "Only energy balls on this map. No weapon spawns. Fun for a while but the novelty wore off relatively quick",
+      "InitialRatingTimestamp": 1777835909
     },
     {
       "Name": "dm_barrage",
@@ -93575,7 +93621,13 @@
       ],
       "Authors": [
         "Electric Warrior & Capt Hornet"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "RobComment": "Good styling. Bit too big and bland. This is a borderline 3. If I'd nothing to eat today probs would be a 2.5",
+      "InitialRatingTimestamp": 1777835663
     },
     {
       "Name": "dm_playground",
