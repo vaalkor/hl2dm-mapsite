@@ -3562,7 +3562,10 @@
       ],
       "Authors": [
         "haymaker"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1778276826
     },
     {
       "Name": "Runoff with Secrets Opened",
@@ -5077,7 +5080,10 @@
       ],
       "Authors": [
         "ryker"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1778277789
     },
     {
       "Name": "dm_resident_r1",
@@ -16123,7 +16129,10 @@
       ],
       "Authors": [
         "Confectionatrix"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1778275829
     },
     {
       "Name": "dm_draino_v2",
@@ -23647,7 +23656,10 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1778274601
     },
     {
       "Name": "dm_goldenhair",
@@ -38046,7 +38058,10 @@
       ],
       "Authors": [
         "nettoyeur"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1778278702
     },
     {
       "Name": "DM-Permanent",
@@ -38665,7 +38680,12 @@
       ],
       "Authors": [
         "James Rich"
-      ]
+      ],
+      "RobRating": 0.5,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1778276026
     },
     {
       "Name": "dm_dukes_garden_beta2",
@@ -54009,7 +54029,10 @@
       ],
       "Authors": [
         "flanker"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1778277392
     },
     {
       "Name": "dm_ep2_cave",
@@ -70944,7 +70967,12 @@
       ],
       "Authors": [
         "lejean"
-      ]
+      ],
+      "RobRating": -0.5,
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1778275852
     },
     {
       "Name": "dm_overturn",
@@ -75226,7 +75254,10 @@
       ],
       "Authors": [
         "Raidenator"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1778273544
     },
     {
       "Name": "dm_suspended",
@@ -80062,7 +80093,13 @@
       ],
       "Authors": [
         "Danger"
-      ]
+      ],
+      "RobRating": 0.5,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "RobComment": "Big, bland.",
+      "InitialRatingTimestamp": 1778273242
     },
     {
       "Name": "dm_projects",
@@ -80754,7 +80791,13 @@
       ],
       "Authors": [
         "ShaDoW"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [
+        "VanillaStyle"
+      ],
+      "RobComment": "Solid",
+      "InitialRatingTimestamp": 1778273102
     },
     {
       "Name": "dm_nuclear_alert_final",
@@ -81744,7 +81787,13 @@
       ],
       "Authors": [
         "[GU] Oblivion"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "RobComment": "No suitable for 2 players\n",
+      "InitialRatingTimestamp": 1778277625
     },
     {
       "Name": "dm_air_hockey_table",
@@ -82149,7 +82198,10 @@
       ],
       "Authors": [
         "ginsengavenger"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1778274040
     },
     {
       "Name": "dm_snowblind",
@@ -95397,7 +95449,10 @@
       ],
       "Authors": [
         "unknown."
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1778275202
     },
     {
       "Name": "dm_killbox_final",
