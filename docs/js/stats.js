@@ -49,17 +49,14 @@ function drawCharts() {
     plotRatingLinearRegression();
     drawRatingsPerMonth();
 
+    let resizeTimeout;
     window.addEventListener('resize', () => {
-        charts.forEach((chart) => {
-            chart.chart.clear();
-        });
-        document.querySelectorAll('.rob-graph').forEach(element => {
-            let newWidth = element.clientWidth;
-            element.style.height = `${newWidth}px`;
-        });
-        charts.forEach((chart) => {
-            chart.chart.draw(chart.dataTable, chart.options);
-        });
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            charts.forEach((chart) => {
+                chart.chart.draw(chart.dataTable, chart.options);
+            });
+        }, 100);
     });
 }
 
@@ -114,7 +111,8 @@ function createLabelGraph() {
         title: 'Average Rating per Tag',
         vAxis: { title: 'Tag' },
         hAxis: { title: 'Rating' },
-        legend: 'none'
+        legend: 'none',
+        chartArea: { width: '85%', height: '75%' }
     };
 
     let chart = new google.visualization.BarChart(document.getElementById('average_rating_per_label'));
@@ -130,7 +128,8 @@ function createLabelGraph() {
         title: 'Label Counts',
         vAxis: { title: 'Tag' },
         hAxis: { title: 'Count' },
-        legend: 'none'
+        legend: 'none',
+        chartArea: { width: '85%', height: '75%' }
     };
 
     chart = new google.visualization.BarChart(document.getElementById('label_counts'));
@@ -170,7 +169,8 @@ function drawRatingsPerMonth() {
         title: 'Maps Rated per Month (Last 12 Months)',
         hAxis: { title: 'Month' },
         vAxis: { title: 'Maps Rated' },
-        legend: 'none'
+        legend: 'none',
+        chartArea: { width: '85%', height: '75%' }
     };
 
     let chart = new google.visualization.ColumnChart(document.getElementById('rating_per_month'));
@@ -196,7 +196,8 @@ function drawRatingProgress() {
     var options = {
         title: "Map rating progress over time",
         curveType: "function",
-        legend: { position: "bottom" }
+        legend: { position: "bottom" },
+        chartArea: { width: '85%', height: '75%' }
     };
 
     var chart = new google.visualization.LineChart(
@@ -226,7 +227,8 @@ function plotRatingLinearRegression() {
         hAxis: { title: "Maps rated", viewWindowMode: 'maximized' },
         vAxis: { title: "Rating" },
         legend: "none",
-        trendlines: { 0: {} }    // Draw a trendline for data series 0.
+        trendlines: { 0: {} },    // Draw a trendline for data series 0.
+        chartArea: { width: '85%', height: '75%' }
     };
 
     let chart = new google.visualization.ScatterChart(document.getElementById("linear_regression"));
@@ -269,7 +271,9 @@ function drawRatingsPerWeekday() {
     let options = {
         title: '% of ratings given per day',
         hAxis: { title: 'Day' },
-        vAxis: { title: '% Rated' }
+        vAxis: { title: '% Rated' },
+        legend: 'none',
+        chartArea: { width: '85%', height: '75%' }
     };
 
     let chart = new google.visualization.ColumnChart(document.getElementById('rating_per_weekday'));
@@ -296,7 +300,9 @@ function drawAverageRatingsPerWeekday() {
     let options = {
         title: 'average rating per day',
         hAxis: { title: 'Day' },
-        vAxis: { title: 'Average rating' }
+        vAxis: { title: 'Average rating' },
+        legend: 'none',
+        chartArea: { width: '85%', height: '75%' }
     };
 
     let chart = new google.visualization.ColumnChart(document.getElementById('average_rating_per_weekday'));
