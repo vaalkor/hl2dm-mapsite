@@ -171,6 +171,23 @@ tr:hover{
     background-color: #bfbfbf;
 }
 
+.sort-header-button {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    padding: 0;
+    text-align: left;
+}
+
+.sort-header-button:hover,
+.sort-header-button.active {
+    text-decoration: underline;
+}
+
 .modal-container
 {
     width: 100vw;

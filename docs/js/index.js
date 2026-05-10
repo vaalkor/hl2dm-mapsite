@@ -28,15 +28,19 @@ var CheckboxComponent = {
 }
 
 var _ratingsTableSortByProperties = [
-    { propertyName: 'RobRating', friendlyName: 'Rating' },
-    { propertyName: 'InitialRatingTimestamp', friendlyName: 'When rated' },
-    { propertyName: 'Added', friendlyName: 'First Submitted to Gamebanana' }
+    { propertyName: 'Name', friendlyName: 'Name', defaultAscending: true },
+    { propertyName: 'RobRating', friendlyName: 'Rating', defaultAscending: false },
+    { propertyName: 'Submitter.Name', friendlyName: 'Submitter', defaultAscending: true },
+    { propertyName: 'Added', friendlyName: 'Submitted', defaultAscending: false },
+    { propertyName: 'InitialRatingTimestamp', friendlyName: 'Rated', defaultAscending: false }
 ];
 
 var _submittersTableSortByProperties = [
-    { propertyName: 'averageRating', friendlyName: 'Average Rating' },
-    { propertyName: 'totalRatedOrCrashedMaps', friendlyName: '# of maps rated' },
-    { propertyName: 'totalMaps', friendlyName: '# of maps submitted' }
+    { propertyName: 'name', friendlyName: 'Name', defaultAscending: true },
+    { propertyName: 'totalRatedOrCrashedMaps', friendlyName: 'Maps Rated', defaultAscending: false },
+    { propertyName: 'totalMaps', friendlyName: 'Maps Submitted', defaultAscending: false },
+    { propertyName: 'averageRating', friendlyName: 'Average Rating', defaultAscending: false },
+    { propertyName: 'ratings.length', friendlyName: 'Rating Distribution', defaultAscending: false }
 ];
 var _submitters = [];
 var _toastMessages = {
@@ -59,8 +63,6 @@ var _canSubmitEdits = false;
 var _isEditingMap = false;
 var _showShortcutsHelp = false;
 
-var _ratingsTableFilterTempValues = Object.assign({}, _storage); // Clone the stored values. This will be used to store temp values for the stateful
-
 var _storage = {
     // Ratings table filter values
     currentPage: 1,
@@ -72,10 +74,10 @@ var _storage = {
     excludeLabels: ['NeverLoads', 'CausesCrash'],
     includeWeapons: [],
     excludeWeapons: [],
-    sortBy: _ratingsTableSortByProperties[1].propertyName,
+    sortBy: null,
     ratingsTableAscending: false,
     // Submitters table filter properties
-    submitterSortBy: _submittersTableSortByProperties[1].propertyName,
+    submitterSortBy: null,
     submittersTableAscending: false,
     // Other values
     ratingsTableVisible: true,
@@ -84,12 +86,22 @@ var _storage = {
     loadFromLocalStorage: function () {
         const savedData = localStorage.getItem('storage');
         if (savedData) {
-            Object.assign(this, JSON.parse(savedData));
-            _ratingsTableFilterTempValues = JSON.parse(savedData); // We clone the values so we can keep our temp filter object up to date. Now we have a 2 step filter application process we need a saved value and a stateful temp value. 
+            const loadedData = JSON.parse(savedData);
+            delete loadedData.sortBy;
+            delete loadedData.ratingsTableAscending;
+            delete loadedData.submitterSortBy;
+            delete loadedData.submittersTableAscending;
+            Object.assign(this, loadedData);
+            _ratingsTableFilterTempValues = JSON.parse(JSON.stringify(this)); // We clone the values so we can keep our temp filter object up to date. Now we have a 2 step filter application process we need a saved value and a stateful temp value. 
         }
     },
     save: function () {
-        localStorage.setItem('storage', JSON.stringify(this));
+        const storedData = Object.assign({}, this);
+        delete storedData.sortBy;
+        delete storedData.ratingsTableAscending;
+        delete storedData.submitterSortBy;
+        delete storedData.submittersTableAscending;
+        localStorage.setItem('storage', JSON.stringify(storedData));
         _ratingsTableFilterTempValues = JSON.parse(JSON.stringify(this)); // We clone the values so we can keep our temp filter object up to date. Now we have a 2 step filter application process we need a saved value and a stateful temp value. 
     },
     showRatingsTable: function () {
@@ -103,6 +115,8 @@ var _storage = {
         this.save();
     }
 }
+
+var _ratingsTableFilterTempValues = Object.assign({}, _storage); // Clone the stored values. This will be used to store temp values for the stateful
 
 // [TODO] get rid of this global variable and clean up the modal code a bit. Now that we have routing it's a little bit tidier in general.
 var _modalMapInfo = null; // The map info we have a modal open for.
@@ -138,21 +152,34 @@ function closeModal() {
     m.route.set(ROUTES.ratingsTable, currentParams);
 }
 
-function sortFilteredMaps(a, b) {
-    if (_storage.sortBy == null) return a;
-    let sortOrder = _storage.ratingsTableAscending ? -1 : 1;
+function getSortValue(item, propertyName) {
+    return propertyName.split('.').reduce((value, propertyPart) => value == null ? undefined : value[propertyPart], item);
+}
 
-    if (a[_storage.sortBy] === b[_storage.sortBy]) {
-        return 0; // Maintain relative order if values are equal
+function compareSortValues(a, b) {
+    if (a == null && b == null) return 0;
+    if (a == null) return -1;
+    if (b == null) return 1;
+
+    if (typeof a === 'string' || typeof b === 'string') {
+        return String(a).localeCompare(String(b), undefined, { sensitivity: 'base', numeric: true });
     }
 
-    return (a[_storage.sortBy] || 0) > (b[_storage.sortBy] || 0) ? -1 * sortOrder : 1 * sortOrder;
+    if (a === b) return 0;
+    return a > b ? 1 : -1;
+}
+
+function sortFilteredMaps(a, b) {
+    if (_storage.sortBy == null) return a;
+    let sortOrder = _storage.ratingsTableAscending ? 1 : -1;
+
+    return compareSortValues(getSortValue(a, _storage.sortBy), getSortValue(b, _storage.sortBy)) * sortOrder;
 }
 
 function sortSubmitters(a, b) {
     if (_storage.submitterSortBy == null) return a;
-    let sortOrder = _storage.submittersTableAscending ? -1 : 1;
-    return (a[_storage.submitterSortBy] || 0) > (b[_storage.submitterSortBy] || 0) ? -1 * sortOrder : 1 * sortOrder;
+    let sortOrder = _storage.submittersTableAscending ? 1 : -1;
+    return compareSortValues(getSortValue(a, _storage.submitterSortBy), getSortValue(b, _storage.submitterSortBy)) * sortOrder;
 }
 
 function mapFilter(map) {
@@ -222,11 +249,11 @@ function filterAndSortMaps() {
 
     _filteredMaps = _scrapeData.MapInfo.filter(x => mapFilter(x));
     window.filteredMaps = _filteredMaps;
-    _filteredMaps.sort(sortFilteredMaps);
+    if (_storage.sortBy != null) _filteredMaps.sort(sortFilteredMaps);
 }
 
 function filterSubmitters() {
-    _submitters.sort(sortSubmitters);
+    if (_storage.submitterSortBy != null) _submitters.sort(sortSubmitters);
 }
 
 function getLabels(map) {
@@ -274,8 +301,6 @@ function resetFilter() {
         rating: 0,
         name: "",
         submitter: "",
-        sort: _ratingsTableSortByProperties[0].propertyName,
-        asc: false,
         // The filtering lists (included/excluded weapons/labels) will be exluded from the string completely because
         // Mithril doesn't do anything to indicate empty lists in query strings. They just end up undefined in the route that consumes them.
     }
@@ -288,13 +313,15 @@ function applyFilter() {
         rating: _ratingsTableFilterTempValues.minRating,
         name: _ratingsTableFilterTempValues.nameFilter,
         submitter: _ratingsTableFilterTempValues.submitterFilter,
-        sort: _ratingsTableFilterTempValues.sortBy,
-        asc: _ratingsTableFilterTempValues.ratingsTableAscending,
         il: _ratingsTableFilterTempValues.includeLabels,
         el: _ratingsTableFilterTempValues.excludeLabels,
         iw: _ratingsTableFilterTempValues.includeWeapons,
         ew: _ratingsTableFilterTempValues.excludeWeapons,
         unrated: _storage.onlyShowUnrated
+    }
+    if (_storage.sortBy != null) {
+        queryParams.sort = _storage.sortBy;
+        queryParams.asc = _storage.ratingsTableAscending;
     }
     m.route.set(ROUTES.ratingsTable, queryParams);
 }
@@ -316,6 +343,17 @@ function makeSubmitterLink(id) {
     return `https://gamebanana.com/members/${id}`;
 }
 
+function parseRouteBoolean(value, fallback) {
+    if (value === true || value === 'true') return true;
+    if (value === false || value === 'false') return false;
+    return fallback;
+}
+
+function makeSubmittersRoute() {
+    if (_storage.submitterSortBy == null) return `#!${ROUTES.submittersTable}`;
+    return `#!${ROUTES.submittersTable}?sort=${_storage.submitterSortBy}&asc=${_storage.submittersTableAscending}`;
+}
+
 var MapRatingsFiltering = {
     view: function () {
         var minRatingText = "Minimum Rating: " + (_ratingsTableFilterTempValues.minRating < 0 ? 'None' : _ratingsTableFilterTempValues.minRating);
@@ -325,7 +363,7 @@ var MapRatingsFiltering = {
             onkeypress: function (e) { if (e.key === "Enter") applyFilter() }
         },
             [
-                m("div", { class: "col-12 col-sm-6 col-lg-3" },
+                m("div", { class: "col-12 col-md-4" },
                     m("label", { class: "form-label", id: "ratingSliderText" }, minRatingText),
                     m("input", {
                         class: "form-range",
@@ -339,7 +377,7 @@ var MapRatingsFiltering = {
                         oninput: (event) => { _ratingsTableFilterTempValues.minRating = event.target.value }
                     })
                 ),
-                m("div", { class: "col-12 col-sm-6 col-lg-3" },
+                m("div", { class: "col-12 col-md-4" },
                     m("label", { class: "form-label", style: "display: inline-flex; align-items: center; gap: 5px;" }, [
                         "Name filter",
                         m("span", { class: "rob-tooltip-wrapper", style: "display: inline-flex; align-items: center; cursor: help;" }, [
@@ -362,7 +400,7 @@ var MapRatingsFiltering = {
                     }
                     )
                 ),
-                m("div", { class: "col-12 col-sm-6 col-lg-3" },
+                m("div", { class: "col-12 col-md-4" },
                     m("label", { class: "form-label" }, "Submitter filter"),
                     m("input", {
                         class: "form-control",
@@ -372,46 +410,6 @@ var MapRatingsFiltering = {
                         oninput: (event) => { _ratingsTableFilterTempValues.submitterFilter = event.target.value }
                     }
                     )
-                ),
-                m("div", { class: "col-12 col-sm-6 col-lg-3" },
-                    m("div", { class: "d-flex align-items-center mb-1" },
-                        m("label", { class: "form-label mb-0", style: "margin-right:.5rem" }, "Sort By"),
-                        m("div", { class: "form-check form-check-inline mb-0" },
-                            m("input", {
-                                class: "form-check-input",
-                                type: "radio",
-                                name: "ascDescRadio",
-                                id: "sortAscending",
-                                checked: _ratingsTableFilterTempValues.ratingsTableAscending,
-                                oninput: (event) => { _ratingsTableFilterTempValues.ratingsTableAscending = event.target.checked }
-                            }
-                            ),
-                            m("label", { class: "form-check-label", for: "sortAscending" }, " Asc ")
-                        ),
-                        m("div", { class: "form-check form-check-inline mb-0" },
-                            m("input", {
-                                class: "form-check-input",
-                                type: "radio",
-                                name: "ascDescRadio",
-                                id: "sortDescending",
-                                checked: !_ratingsTableFilterTempValues.ratingsTableAscending,
-                                oninput: (event) => { _ratingsTableFilterTempValues.ratingsTableAscending = !event.target.checked }
-                            }
-                            ),
-                            m("label", { class: "form-check-label", for: "sortDescending" }, " Desc ")
-                        )
-                    ),
-                    m("select",
-                        {
-                            class: "form-select mt-1",
-                            id: "sortBy",
-                            "aria-label": "Sort by a property",
-                            oninput: (event) => { _ratingsTableFilterTempValues.sortBy = event.target.value },
-                            value: _ratingsTableFilterTempValues.sortBy
-
-                        },
-                        _ratingsTableSortByProperties.map(x => m("option", { value: x.propertyName }, x.friendlyName))
-                    )
                 )
             ]
         );
@@ -420,48 +418,7 @@ var MapRatingsFiltering = {
 
 var SubmitterAverageRatingsFiltering = {
     view: function () {
-        return m("div", { style: { "display": "flex", "justify-content": "center", "gap": "1rem" } },
-            [
-                m("div",
-                    m("label", { class: "form-label", style: "margin-right:.5rem" }, "Sort By"),
-                    m("div", { class: "form-check form-check-inline" },
-                        m("input", {
-                            class: "form-check-input",
-                            type: "radio",
-                            name: "ascDescRadio",
-                            id: "sortAscending",
-                            checked: _storage.submittersTableAscending,
-                            oninput: (event) => { _storage.submittersTableAscending = event.target.checked; _storage.save(); }
-                        }
-                        ),
-                        m("label", { class: "form-check-label", for: "sortAscending" }, " Asc ")
-                    ),
-                    m("div", { class: "form-check form-check-inline" },
-                        m("input", {
-                            class: "form-check-input",
-                            type: "radio",
-                            name: "ascDescRadio",
-                            id: "sortDescending",
-                            checked: !_storage.submittersTableAscending,
-                            oninput: (event) => { _storage.submittersTableAscending = !event.target.checked; _storage.save(); }
-                        }
-                        ),
-                        m("label", { class: "form-check-label", for: "sortDescending" }, " Desc ")
-                    ),
-                    m("select",
-                        {
-                            class: "form-select",
-                            id: "sortBy",
-                            "aria-label": "Sort by a property",
-                            oninput: (event) => { _storage.submitterSortBy = event.target.value; _storage.save(); },
-                            value: _storage.submitterSortBy
-
-                        },
-                        _submittersTableSortByProperties.map(x => m("option", { value: x.propertyName }, x.friendlyName))
-                    )
-                )
-            ]
-        );
+        return null;
     }
 }
 
@@ -485,7 +442,11 @@ var Buttons = {
                 m("a", { class: "btn btn-primary", type: "submit", id: "showRatingsButton", href: `/` }, "Show Ratings")
             ),
             _storage.ratingsTableVisible && m("div", { style: { "display": "inline-block" } },
-                m("a", { class: "btn btn-primary", id: "showSubmittersButton", href: `#!${ROUTES.submittersTable}` }, "Show Submitters")
+                m("a", {
+                    class: "btn btn-primary",
+                    id: "showSubmittersButton",
+                    href: makeSubmittersRoute()
+                }, "Show Submitters")
             ),
             _storage.ratingsTableVisible && m("div", { style: { "display": "inline-block" } },
                 m("button", { class: "btn btn-primary", type: "submit", id: "resetFilterButton", onclick: resetFilter }, "Reset filters")
@@ -566,6 +527,68 @@ function onPageChanged(newPageNumber) {
     m.route.set(path, params);
 }
 
+function getSortConfig(sortProperties, propertyName) {
+    return sortProperties.find(x => x.propertyName === propertyName);
+}
+
+function getNextSortDirection(currentSortBy, currentAscending, sortConfig) {
+    if (currentSortBy === sortConfig.propertyName) {
+        return !currentAscending;
+    }
+    return sortConfig.defaultAscending;
+}
+
+function setRatingsSort(propertyName) {
+    const sortConfig = getSortConfig(_ratingsTableSortByProperties, propertyName);
+    if (!sortConfig) return;
+
+    const currentParams = m.route.param();
+    const isReplacingExistingSort = currentParams.sort != null;
+    currentParams.page = 1;
+    currentParams.sort = propertyName;
+    currentParams.asc = getNextSortDirection(_storage.sortBy, _storage.ratingsTableAscending, sortConfig);
+    m.route.set(ROUTES.ratingsTable, currentParams, { replace: isReplacingExistingSort });
+}
+
+function setSubmittersSort(propertyName) {
+    const sortConfig = getSortConfig(_submittersTableSortByProperties, propertyName);
+    if (!sortConfig) return;
+    const isReplacingExistingSort = m.route.param().sort != null;
+
+    m.route.set(ROUTES.submittersTable, {
+        sort: propertyName,
+        asc: getNextSortDirection(_storage.submitterSortBy, _storage.submittersTableAscending, sortConfig)
+    }, { replace: isReplacingExistingSort });
+}
+
+function makeSortableHeader(label, propertyName, currentSortBy, currentAscending, onSort) {
+    const isCurrentSort = currentSortBy === propertyName;
+    
+    let sortIndicator = null;
+    if (isCurrentSort) {
+        sortIndicator = m("svg", {
+            xmlns: "http://www.w3.org/2000/svg",
+            width: "12", height: "12", fill: "currentColor",
+            class: currentAscending ? "bi bi-caret-up-fill" : "bi bi-caret-down-fill",
+            viewBox: "0 0 16 16",
+            style: "position: absolute; right: -14px; top: 50%; transform: translateY(-50%);"
+        }, currentAscending 
+            ? m("path", { d: "m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" })
+            : m("path", { d: "M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" })
+        );
+    }
+
+    return m("th", { scope: "col" },
+        m("button", {
+            class: `sort-header-button ${isCurrentSort ? 'active' : ''}`,
+            type: "button",
+            onclick: () => onSort(propertyName),
+            "aria-sort": isCurrentSort ? (currentAscending ? "ascending" : "descending") : "none",
+            style: "position: relative; display: inline-flex; align-items: center; border: none; background: transparent; padding: 0; font-weight: inherit; color: inherit; white-space: nowrap;"
+        }, [label, sortIndicator])
+    );
+}
+
 // Vnode<{ totalItems: number, pageSize: number, currentPage: number, onPageChanged: (page: number) => void }>
 var PaginationFooter = {
     view: function ({ attrs }) {
@@ -597,11 +620,11 @@ var RatingsTable = {
                 m("table", { class: "table table-striped table-responsive", id: "fixed-table-header" }, [
                     m("thead",
                         m("tr", [
-                            m("th", { scope: "col" }, `Name (#${_filteredMaps.length} total)`),
-                            m("th", { scope: "col" }, "Rating"),
-                            m("th", { scope: "col" }, "Submitter"),
-                            m("th", { scope: "col" }, "First Submitted"),
-                            m("th", { scope: "col" }, "First Rated"),
+                            makeSortableHeader(`Name (#${_filteredMaps.length} total)`, "Name", _storage.sortBy, _storage.ratingsTableAscending, setRatingsSort),
+                            makeSortableHeader("Rating", "RobRating", _storage.sortBy, _storage.ratingsTableAscending, setRatingsSort),
+                            makeSortableHeader("Submitter", "Submitter.Name", _storage.sortBy, _storage.ratingsTableAscending, setRatingsSort),
+                            makeSortableHeader("Submitted", "Added", _storage.sortBy, _storage.ratingsTableAscending, setRatingsSort),
+                            makeSortableHeader("Rated", "InitialRatingTimestamp", _storage.sortBy, _storage.ratingsTableAscending, setRatingsSort),
                             m("th", { scope: "col" }, "Labels")
                         ]
                         )),
@@ -882,11 +905,11 @@ var SubmittersTable = {
             m("table", { class: "table table-striped", id: "fixed-table-header" }, [
                 m("thead",
                     m("tr", [
-                        m("th", { scope: "col" }, `Name `),
-                        m("th", { scope: "col" }, "Maps Rated"),
-                        m("th", { scope: "col" }, "Maps Submitted"),
-                        m("th", { scope: "col" }, "Average Rating"),
-                        m("th", { scope: "col" }, "Rating Distribution")
+                        makeSortableHeader("Name", "name", _storage.submitterSortBy, _storage.submittersTableAscending, setSubmittersSort),
+                        makeSortableHeader("Maps Rated", "totalRatedOrCrashedMaps", _storage.submitterSortBy, _storage.submittersTableAscending, setSubmittersSort),
+                        makeSortableHeader("Maps Submitted", "totalMaps", _storage.submitterSortBy, _storage.submittersTableAscending, setSubmittersSort),
+                        makeSortableHeader("Average Rating", "averageRating", _storage.submitterSortBy, _storage.submittersTableAscending, setSubmittersSort),
+                        makeSortableHeader("Rating Distribution", "ratings.length", _storage.submitterSortBy, _storage.submittersTableAscending, setSubmittersSort)
                     ]
                     )),
                 m("tbody", _submitters.map(x => makeSubmittersTableRow(x)))
@@ -1079,8 +1102,26 @@ function handleCommonRouteParameters(attrs) {
     _storage.nameFilter = attrs.name || "";
     _storage.submitterFilter = attrs.submitter || "";
     _storage.onlyShowUnrated = attrs.unrated;
-    if (attrs.sort && _ratingsTableSortByProperties.map(x => x.propertyName).includes(attrs.sort)) _storage.sortBy = attrs.sort;
-    if (attrs.asc != null) _storage.ratingsTableAscending = attrs.asc;
+    if (attrs.sort && _ratingsTableSortByProperties.map(x => x.propertyName).includes(attrs.sort)) {
+        _storage.sortBy = attrs.sort;
+        _storage.ratingsTableAscending = parseRouteBoolean(attrs.asc, false);
+    } else {
+        _storage.sortBy = null;
+        _storage.ratingsTableAscending = false;
+    }
+
+    _storage.save();
+}
+
+function handleSubmitterRouteParameters(attrs) {
+    _isEditingMap = false;
+    if (attrs.sort && _submittersTableSortByProperties.map(x => x.propertyName).includes(attrs.sort)) {
+        _storage.submitterSortBy = attrs.sort;
+        _storage.submittersTableAscending = parseRouteBoolean(attrs.asc, false);
+    } else {
+        _storage.submitterSortBy = null;
+        _storage.submittersTableAscending = false;
+    }
 
     _storage.save();
 }
@@ -1117,11 +1158,13 @@ var RoutingConfiguration = {
         render: function (vnode) { return [vnode] }
     },
     [ROUTES.submittersTable]: {
-        render: function () {
+        onmatch: function (attrs) {
+            handleSubmitterRouteParameters(attrs);
             _modalMapInfo = null; // Make sure the modal is closed.
             _storage.showSubmittersTable();
-            return m(App);
-        }
+            return App;
+        },
+        render: function (vnode) { return [vnode] }
     }
 }
 
