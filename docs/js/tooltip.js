@@ -17,7 +17,7 @@ function initTooltips() {
     
     elements.forEach(el => {
         // Skip if already wrapped
-        if (el.parentElement && el.parentElement.classList.contains('mud-tooltip-wrapper')) {
+        if (el.parentElement && el.parentElement.classList.contains('rob-tooltip-wrapper')) {
             return;
         }
 
@@ -27,7 +27,7 @@ function initTooltips() {
         
         // Create wrapper
         const wrapper = document.createElement('div');
-        wrapper.className = 'mud-tooltip-wrapper';
+        wrapper.className = 'rob-tooltip-wrapper';
         
         // Wrap the element
         el.parentNode.insertBefore(wrapper, el);
@@ -35,14 +35,14 @@ function initTooltips() {
         
         // Create tooltip container
         const container = document.createElement('div');
-        container.className = `mud-tooltip-container mud-tooltip-${placement}`;
+        container.className = `rob-tooltip-container rob-tooltip-${placement}`;
         if (arrow) {
-            container.classList.add('mud-tooltip-arrow');
+            container.classList.add('rob-tooltip-arrow');
         }
         
         // Create inner text element
         const inner = document.createElement('div');
-        inner.className = 'mud-tooltip';
+        inner.className = 'rob-tooltip';
         inner.innerText = text;
         
         container.appendChild(inner);
