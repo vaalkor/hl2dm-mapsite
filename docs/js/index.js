@@ -468,7 +468,7 @@ var SubmitterAverageRatingsFiltering = {
 var Buttons = {
     view: function () {
         return m("div", { class: "container d-flex mt-2", style: { "justify-content": "center", "gap": "0.5rem", "flex-wrap": "wrap" } },
-            m(CheckboxComponent, {
+            !_storage.submittersTableVisible && m(CheckboxComponent, {
                 labelText: 'Only unrated',
                 id: 'show-unrated-checkbox',
                 isChecked: _storage.onlyShowUnrated,
