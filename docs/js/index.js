@@ -320,11 +320,11 @@ var MapRatingsFiltering = {
         var minRatingText = "Minimum Rating: " + (_ratingsTableFilterTempValues.minRating < 0 ? 'None' : _ratingsTableFilterTempValues.minRating);
         if(_storage.onlyShowUnrated) minRatingText = "Only showing unrated";
         return m("div", {
-            style: { "display": "flex", "justify-content": "space-between", "gap": "1rem", "flex-wrap": "wrap" },
+            class: "row g-3 mb-3",
             onkeypress: function (e) { if (e.key === "Enter") applyFilter() }
         },
             [
-                m("div", { style: { "flex-grow": "1" } },
+                m("div", { class: "col-12 col-sm-6 col-lg-3" },
                     m("label", { class: "form-label", id: "ratingSliderText" }, minRatingText),
                     m("input", {
                         class: "form-range",
@@ -338,7 +338,7 @@ var MapRatingsFiltering = {
                         oninput: (event) => { _ratingsTableFilterTempValues.minRating = event.target.value }
                     })
                 ),
-                m("div", { style: { "flex-grow": "1" } },
+                m("div", { class: "col-12 col-sm-6 col-lg-3" },
                     m("label", { class: "form-label" }, "Name filter"),
                     m("input", {
                         class: "form-control",
@@ -349,7 +349,7 @@ var MapRatingsFiltering = {
                     }
                     )
                 ),
-                m("div", { style: { "flex-grow": "1" } },
+                m("div", { class: "col-12 col-sm-6 col-lg-3" },
                     m("label", { class: "form-label" }, "Submitter filter"),
                     m("input", {
                         class: "form-control",
@@ -360,35 +360,37 @@ var MapRatingsFiltering = {
                     }
                     )
                 ),
-                m("div", { style: { "flex-grow": "1" } },
-                    m("label", { class: "form-label", style: "margin-right:.5rem" }, "Sort By"),
-                    m("div", { class: "form-check form-check-inline" },
-                        m("input", {
-                            class: "form-check-input",
-                            type: "radio",
-                            name: "ascDescRadio",
-                            id: "sortAscending",
-                            checked: _ratingsTableFilterTempValues.ratingsTableAscending,
-                            oninput: (event) => { _ratingsTableFilterTempValues.ratingsTableAscending = event.target.checked }
-                        }
+                m("div", { class: "col-12 col-sm-6 col-lg-3" },
+                    m("div", { class: "d-flex align-items-center mb-1" },
+                        m("label", { class: "form-label mb-0", style: "margin-right:.5rem" }, "Sort By"),
+                        m("div", { class: "form-check form-check-inline mb-0" },
+                            m("input", {
+                                class: "form-check-input",
+                                type: "radio",
+                                name: "ascDescRadio",
+                                id: "sortAscending",
+                                checked: _ratingsTableFilterTempValues.ratingsTableAscending,
+                                oninput: (event) => { _ratingsTableFilterTempValues.ratingsTableAscending = event.target.checked }
+                            }
+                            ),
+                            m("label", { class: "form-check-label", for: "sortAscending" }, " Asc ")
                         ),
-                        m("label", { class: "form-check-label", for: "sortAscending" }, " Asc ")
-                    ),
-                    m("div", { class: "form-check form-check-inline" },
-                        m("input", {
-                            class: "form-check-input",
-                            type: "radio",
-                            name: "ascDescRadio",
-                            id: "sortDescending",
-                            checked: !_ratingsTableFilterTempValues.ratingsTableAscending,
-                            oninput: (event) => { _ratingsTableFilterTempValues.ratingsTableAscending = !event.target.checked }
-                        }
-                        ),
-                        m("label", { class: "form-check-label", for: "sortDescending" }, " Desc ")
+                        m("div", { class: "form-check form-check-inline mb-0" },
+                            m("input", {
+                                class: "form-check-input",
+                                type: "radio",
+                                name: "ascDescRadio",
+                                id: "sortDescending",
+                                checked: !_ratingsTableFilterTempValues.ratingsTableAscending,
+                                oninput: (event) => { _ratingsTableFilterTempValues.ratingsTableAscending = !event.target.checked }
+                            }
+                            ),
+                            m("label", { class: "form-check-label", for: "sortDescending" }, " Desc ")
+                        )
                     ),
                     m("select",
                         {
-                            class: "form-select",
+                            class: "form-select mt-1",
                             id: "sortBy",
                             "aria-label": "Sort by a property",
                             oninput: (event) => { _ratingsTableFilterTempValues.sortBy = event.target.value },
