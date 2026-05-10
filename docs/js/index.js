@@ -1434,7 +1434,7 @@ async function initialise() {
         if (_modalMapInfo) return;
 
         // f — Apply current filter
-        if (event.key === 'f') {
+        if (event.key === 'f' && _storage.ratingsTableVisible) {
             applyFilter();
             return;
         }
