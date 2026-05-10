@@ -57,6 +57,7 @@ var _toastMessages = {
 var _filteredMaps = [];
 var _canSubmitEdits = false;
 var _isEditingMap = false;
+var _showShortcutsHelp = false;
 
 var _ratingsTableFilterTempValues = Object.assign({}, _storage); // Clone the stored values. This will be used to store temp values for the stateful
 
@@ -876,10 +877,56 @@ var Header = {
     }
 }
 
+var _shortcutsList = [
+    { key: '/', description: 'Focus name filter' },
+    { key: 'Esc', description: 'Close modal / blur input' },
+    { key: 'R', description: 'Random map' },
+    { key: 'C', description: 'Copy bsp name to clipboard (in modal)' },
+    { key: 'E', description: 'Edit map details (in modal)' },
+    { key: 'F', description: 'Apply current filter' },
+    { key: '←', description: 'Previous page / previous map in modal' },
+    { key: '→', description: 'Next page / next map in modal' },
+    { key: '?', description: 'Toggle this help' }
+];
+
+var ShortcutsHelpOverlay = {
+    view: function () {
+        if (!_showShortcutsHelp) return null;
+        return m('div.modal-container', {
+            style: 'z-index: 3500;',
+            onclick: (e) => {
+                if (e.target === e.currentTarget) {
+                    _showShortcutsHelp = false;
+                }
+            }
+        },
+            m('div.card', { style: 'min-width: 320px; max-width: 420px;' },
+                m('div.card-header',
+                    m('p', { style: 'margin:0; font-weight: bold;' }, '⌨️ Keyboard Shortcuts'),
+                    m('button.btn-close[type=button][aria-label=Close]', { onclick: () => _showShortcutsHelp = false })
+                ),
+                m('div.card-body', { style: 'padding: 1rem;' },
+                    m('table.table.table-sm', { style: 'margin-bottom: 0;' },
+                        m('tbody', _shortcutsList.map(s =>
+                            m('tr', { key: s.key },
+                                m('td', { style: 'width: 60px;' },
+                                    m('kbd', { style: 'background: #e9ecef; color: #333; padding: 2px 8px; border-radius: 4px; border: 1px solid #ccc; font-family: monospace; font-size: 13px;' }, s.key)
+                                ),
+                                m('td', s.description)
+                            )
+                        ))
+                    )
+                )
+            )
+        );
+    }
+}
+
 var App = {
     view: function () {
         return [
             m(ErrorOverlay),
+            _showShortcutsHelp && m(ShortcutsHelpOverlay),
             _modalMapInfo && m(MapInfoModal),
             m('div.container',
                 m(Header),
@@ -1018,9 +1065,107 @@ async function initialise() {
     _storage.loadFromLocalStorage();
 
     document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape' && !_isEditingMap) {
-            closeModal();
-            m.redraw()
+        const tag = document.activeElement?.tagName?.toLowerCase();
+        const isTyping = tag === 'input' || tag === 'textarea' || tag === 'select';
+
+        // Escape always works (closes modal or blurs active input)
+        if (event.key === 'Escape') {
+            if (isTyping) {
+                document.activeElement.blur();
+                return;
+            }
+            if (_showShortcutsHelp) {
+                _showShortcutsHelp = false;
+                m.redraw();
+                return;
+            }
+            if (!_isEditingMap) {
+                closeModal();
+                m.redraw();
+            }
+            return;
+        }
+
+        // All other shortcuts are suppressed when typing
+        if (isTyping) return;
+
+        // / — Focus the name filter
+        if (event.key === '/') {
+            event.preventDefault();
+            let nameFilterInput = document.getElementById('nameFilter');
+            if (nameFilterInput) nameFilterInput.focus();
+            return;
+        }
+
+        // ? — Toggle keyboard shortcuts help
+        if (event.key === '?') {
+            event.preventDefault();
+            _showShortcutsHelp = !_showShortcutsHelp;
+            m.redraw();
+            return;
+        }
+
+        // r — Random map (works with or without modal)
+        if (event.key === 'r' && _storage.ratingsTableVisible && _filteredMaps.length > 0) {
+            getRandomMap();
+            m.redraw();
+            return;
+        }
+
+        // c — Copy bsp file name (or map name) when modal is open
+        if (event.key === 'c' && _modalMapInfo) {
+            let name = _modalMapInfo.BspFiles && _modalMapInfo.BspFiles.length
+                ? _modalMapInfo.BspFiles[0].replace('.bsp', '')
+                : _modalMapInfo.Name;
+            copyToClipboard(name);
+            m.redraw();
+            return;
+        }
+
+        // e — Open edit mode in modal
+        if (event.key === 'e' && _modalMapInfo && _canSubmitEdits && !_isEditingMap) {
+            enableEditMode();
+            m.redraw();
+            return;
+        }
+
+        // ArrowLeft / ArrowRight — navigate maps in modal, or paginate when no modal
+        if (event.key === 'ArrowLeft' && _storage.ratingsTableVisible) {
+            if (_modalMapInfo) {
+                let idx = _filteredMaps.findIndex(x => x.Id === _modalMapInfo.Id);
+                if (idx > 0) {
+                    openModal(_filteredMaps[idx - 1]);
+                    m.redraw();
+                }
+            } else if (_storage.currentPage > 1) {
+                onPageChanged(_storage.currentPage - 1);
+            }
+            return;
+        }
+
+        if (event.key === 'ArrowRight' && _storage.ratingsTableVisible) {
+            if (_modalMapInfo) {
+                let idx = _filteredMaps.findIndex(x => x.Id === _modalMapInfo.Id);
+                if (idx >= 0 && idx < _filteredMaps.length - 1) {
+                    openModal(_filteredMaps[idx + 1]);
+                    m.redraw();
+                }
+            } else {
+                let endPage = Math.ceil(_filteredMaps.length / CONSTANTS.PAGE_SIZE);
+                if (_storage.currentPage < endPage) {
+                    onPageChanged(_storage.currentPage + 1);
+                }
+            }
+            return;
+        }
+
+        // The rest only apply when no modal is open
+        if (_modalMapInfo) return;
+
+        // f — Apply current filter
+        if (event.key === 'f') {
+            applyFilter();
+            return;
         }
     });
 
