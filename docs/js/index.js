@@ -546,7 +546,9 @@ function makeRatingsTableRow(map) {
         onclick: (clickEvent) => handleTableClickEvent(clickEvent, map)
     }, // TODO: figure out why this was breaking when we used Name as the key... That's a bit weird...
         m("th", { scope: "row" }, nameElement),
-        m("td", map.RobRating == null ? "Unrated" : map.RobRating),
+        m("td", map.RobRating == null
+            ? (map.RobLabels && (map.RobLabels.includes('CausesCrash') || map.RobLabels.includes('NeverLoads')) ? 'N/A' : 'Unrated')
+            : map.RobRating),
         m("td", m("a", { class: "link-secondary", target: "_blank", href: makeSubmitterLink(map.Submitter.Id) }, map.Submitter.Name)),
         m("td", formatDate(map.Added)),
         m("td", formatDate(map.InitialRatingTimestamp)),
@@ -804,12 +806,71 @@ function filterBySubmitter(submitterName) {
     m.route.set(ROUTES.ratingsTable, queryParams);
 }
 
+var _sparklineColors = {
+    1: '#dc3545',
+    2: '#ea8531',
+    3: '#f0ad27',
+    4: '#55cd00',
+    5: '#198754'
+};
+
+var RatingSparkline = {
+    view: function ({ attrs }) {
+        let ratings = attrs.ratings;
+        if (!ratings || ratings.length === 0) return m('td', '-');
+
+        // Build 5 buckets: 1 (0-1), 2 (1.5-2), 3 (2.5-3), 4 (3.5-4), 5 (4.5-5)
+        let buckets = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+        for (let r of ratings) buckets[Math.max(1, Math.ceil(r))]++;
+        let maxCount = Math.max(...Object.values(buckets));
+
+        let barWidth = 8;
+        let chartHeight = 22;
+        let gap = 2;
+        let totalWidth = 5 * (barWidth + gap);
+
+        let bars = Object.entries(buckets).map(([rating, count], i) => {
+            let barHeight = maxCount > 0 ? (count / maxCount) * chartHeight : 0;
+            return m('rect', {
+                x: i * (barWidth + gap),
+                y: chartHeight - barHeight,
+                width: barWidth,
+                height: Math.max(barHeight, 0.5),
+                fill: count > 0 ? _sparklineColors[parseFloat(rating)] : '#e9ecef',
+                rx: 1
+            });
+        });
+
+        // Tick marks at the bottom of each bucket
+        let ticks = [];
+        for (let i = 0; i <= 5; i++) {
+            ticks.push(m('line', {
+                x1: i * (barWidth + gap),
+                y1: chartHeight,
+                x2: i * (barWidth + gap),
+                y2: chartHeight + 3,
+                stroke: '#666',
+                'stroke-width': 1
+            }));
+        }
+
+        return m('td',
+            m('svg', {
+                width: totalWidth,
+                height: chartHeight + 4,
+                style: 'vertical-align: middle;'
+            }, [...bars, ...ticks])
+        );
+    }
+}
+
 function makeSubmittersTableRow(playerRating) {
     return m('tr', { key: playerRating.id }, [
         m("th", { scope: "row" }, m("a", { class: "link-secondary", href: makeSubmitterLink(playerRating.id) }, playerRating.name), m(FilterIcon, { onclick: () => filterBySubmitter(playerRating.name) })),
         m("td", playerRating.totalRatedOrCrashedMaps),
         m("td", playerRating.totalMaps),
-        m("td", isNaN(playerRating.averageRating) ? 'No rating' : playerRating.averageRating)
+        m("td", isNaN(playerRating.averageRating) ? 'No rating' : playerRating.averageRating.toFixed(2)),
+        m(RatingSparkline, { ratings: playerRating.ratings })
     ]);
 }
 
@@ -824,7 +885,8 @@ var SubmittersTable = {
                         m("th", { scope: "col" }, `Name `),
                         m("th", { scope: "col" }, "Maps Rated"),
                         m("th", { scope: "col" }, "Maps Submitted"),
-                        m("th", { scope: "col" }, "Average Rating")
+                        m("th", { scope: "col" }, "Average Rating"),
+                        m("th", { scope: "col" }, "Rating Distribution")
                     ]
                     )),
                 m("tbody", _submitters.map(x => makeSubmittersTableRow(x)))
@@ -970,6 +1032,7 @@ function getAverageRatingData() {
             _submitters[map.Submitter.Name].numRatings += map.RobRating != null ? 1 : 0;
             _submitters[map.Submitter.Name].totalRatedOrCrashedMaps += 1;
             _submitters[map.Submitter.Name].totalRating += map.RobRating || 0;
+            if (map.RobRating != null) _submitters[map.Submitter.Name].ratings.push(map.RobRating);
         } else {
             _submitters[map.Submitter.Name] = {
                 name: map.Submitter.Name,
@@ -977,7 +1040,8 @@ function getAverageRatingData() {
                 numRatings: map.RobRating != null ? 1 : 0,
                 totalRatedOrCrashedMaps: 1,
                 totalRating: map.RobRating || 0,
-                totalMaps: 0 // Add up total number of maps later...
+                totalMaps: 0, // Add up total number of maps later...
+                ratings: map.RobRating != null ? [map.RobRating] : []
             }
         }
     }
