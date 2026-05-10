@@ -1,6 +1,6 @@
 'use strict';
 
-google.charts.load("current", { packages: ["corechart", 'bar'] });
+google.charts.load("current", { packages: ["corechart", 'bar', 'calendar'] });
 var _scrapeData = { MapInfo: [], MapRatingGraphData: [] };
 var _dayPrettyPrint = { 0: 'Sun', 1: 'Mon', 2: 'Tue', 3: 'Wed', 4: 'Thu', 5: 'Fri', 6: 'Sat' }
 var _ratingsPerWeekday = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 }
@@ -49,12 +49,21 @@ function drawCharts() {
     plotRatingLinearRegression();
     drawRatingsPerMonth();
 
+    drawWeaponPopularity();
+    drawRatingDistribution();
+    drawRatingsPerYear();
+    drawRatingCalendar();
+
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
             charts.forEach((chart) => {
-                chart.chart.draw(chart.dataTable, chart.options);
+                if (chart.onResize) {
+                    chart.onResize(chart);
+                } else {
+                    chart.chart.draw(chart.dataTable, chart.options);
+                }
             });
         }, 100);
     });
@@ -108,14 +117,13 @@ function createLabelGraph() {
 
 
     let averageRatingOptions = {
-        title: 'Average Rating per Tag',
         vAxis: { title: 'Tag' },
         hAxis: { title: 'Rating' },
         legend: 'none',
-        chartArea: { width: '85%', height: '75%' }
+        chartArea: { left: 160, right: 30, top: 50, bottom: 50 }
     };
 
-    let chart = new google.visualization.BarChart(document.getElementById('average_rating_per_label'));
+    let chart = new google.visualization.BarChart(document.getElementById('average_rating_per_label_chart'));
     chart.draw(averageRatingDataTable, averageRatingOptions);
 
     charts.push({
@@ -125,14 +133,13 @@ function createLabelGraph() {
     });
 
     let labelCountOptions = {
-        title: 'Label Counts',
         vAxis: { title: 'Tag' },
         hAxis: { title: 'Count' },
         legend: 'none',
-        chartArea: { width: '85%', height: '75%' }
+        chartArea: { left: 160, right: 30, top: 50, bottom: 50 }
     };
 
-    chart = new google.visualization.BarChart(document.getElementById('label_counts'));
+    chart = new google.visualization.BarChart(document.getElementById('label_counts_chart'));
     chart.draw(labelCountDataTable, labelCountOptions);
 
     charts.push({
@@ -166,14 +173,13 @@ function drawRatingsPerMonth() {
     let dataTable = new google.visualization.arrayToDataTable(data);
 
     let options = {
-        title: 'Maps Rated per Month (Last 12 Months)',
         hAxis: { title: 'Month' },
         vAxis: { title: 'Maps Rated' },
         legend: 'none',
         chartArea: { width: '85%', height: '75%' }
     };
 
-    let chart = new google.visualization.ColumnChart(document.getElementById('rating_per_month'));
+    let chart = new google.visualization.ColumnChart(document.getElementById('rating_per_month_chart'));
     chart.draw(dataTable, options);
 
     charts.push({
@@ -194,14 +200,13 @@ function drawRatingProgress() {
     var dataTable = google.visualization.arrayToDataTable(graphData);
 
     var options = {
-        title: "Map rating progress over time",
         curveType: "function",
         legend: { position: "bottom" },
         chartArea: { width: '85%', height: '75%' }
     };
 
     var chart = new google.visualization.LineChart(
-        document.getElementById("rating_progress")
+        document.getElementById("rating_progress_chart")
     );
 
     chart.draw(dataTable, options);
@@ -223,7 +228,6 @@ function plotRatingLinearRegression() {
     let dataTable = google.visualization.arrayToDataTable(graphData);
 
     let options = {
-        title: "Linear Regression of Ratings",
         hAxis: { title: "Maps rated", viewWindowMode: 'maximized' },
         vAxis: { title: "Rating" },
         legend: "none",
@@ -231,7 +235,7 @@ function plotRatingLinearRegression() {
         chartArea: { width: '85%', height: '75%' }
     };
 
-    let chart = new google.visualization.ScatterChart(document.getElementById("linear_regression"));
+    let chart = new google.visualization.ScatterChart(document.getElementById("linear_regression_chart"));
     chart.draw(dataTable, options);
 
     charts.push({
@@ -269,14 +273,13 @@ function drawRatingsPerWeekday() {
     let dataTable = new google.visualization.arrayToDataTable(data);
 
     let options = {
-        title: '% of ratings given per day',
         hAxis: { title: 'Day' },
         vAxis: { title: '% Rated' },
         legend: 'none',
         chartArea: { width: '85%', height: '75%' }
     };
 
-    let chart = new google.visualization.ColumnChart(document.getElementById('rating_per_weekday'));
+    let chart = new google.visualization.ColumnChart(document.getElementById('rating_per_weekday_chart'));
 
     chart.draw(dataTable, options);
 
@@ -298,14 +301,13 @@ function drawAverageRatingsPerWeekday() {
     let dataTable = new google.visualization.arrayToDataTable(data);
 
     let options = {
-        title: 'average rating per day',
         hAxis: { title: 'Day' },
         vAxis: { title: 'Average rating' },
         legend: 'none',
         chartArea: { width: '85%', height: '75%' }
     };
 
-    let chart = new google.visualization.ColumnChart(document.getElementById('average_rating_per_weekday'));
+    let chart = new google.visualization.ColumnChart(document.getElementById('average_rating_per_weekday_chart'));
 
     chart.draw(dataTable, options);
 
@@ -315,3 +317,138 @@ function drawAverageRatingsPerWeekday() {
         options
     });
 }
+
+function drawWeaponPopularity() {
+    let weaponCounts = {};
+
+    for (let map of _scrapeData.MapInfo) {
+        if (!map.Weapons) continue;
+        for (let w of map.Weapons) {
+            if (!(w in weaponCounts)) {
+                weaponCounts[w] = 0;
+            }
+            weaponCounts[w]++;
+        }
+    }
+
+    let popData = [['Weapon', 'Count']];
+    let sortedPop = Object.keys(weaponCounts)
+        .filter(w => weaponCounts[w] >= 20)
+        .sort((a,b) => weaponCounts[a] - weaponCounts[b]);
+    for (let w of sortedPop) popData.push([w, weaponCounts[w]]);
+
+    let popTable = google.visualization.arrayToDataTable(popData);
+    let popOptions = { legend: 'none', chartArea: { width: '85%', height: '75%' } };
+    let popChart = new google.visualization.ColumnChart(document.getElementById('weapon_popularity_chart'));
+    popChart.draw(popTable, popOptions);
+    charts.push({ chart: popChart, dataTable: popTable, options: popOptions });
+}
+
+function drawRatingDistribution() {
+    let data = [["Map", "Rating"]];
+    for (let map of _scrapeData.MapInfo) {
+        if (map.RobRating != null) {
+            data.push([map.Name, map.RobRating]);
+        }
+    }
+
+    let table = google.visualization.arrayToDataTable(data);
+    let options = {
+        legend: { position: 'none' },
+        histogram: { bucketSize: 0.5 },
+        hAxis: { title: "Rating" },
+        vAxis: { title: "Number of Maps" },
+        chartArea: { width: '85%', height: '75%' }
+    };
+
+    let chart = new google.visualization.Histogram(document.getElementById('rating_distribution_chart'));
+    chart.draw(table, options);
+    charts.push({ chart: chart, dataTable: table, options: options });
+}
+
+function drawRatingsPerYear() {
+    let yearCounts = {};
+
+    for (let map of _scrapeData.MapInfo.filter(x => x.InitialRatingTimestamp)) {
+        let year = new Date(map.InitialRatingTimestamp * 1000).getFullYear();
+        if (!yearCounts[year]) {
+            yearCounts[year] = 0;
+        }
+        yearCounts[year]++;
+    }
+
+    let data = [['Year', 'Maps Rated']];
+    let sortedYears = Object.keys(yearCounts).sort((a,b) => parseInt(a) - parseInt(b));
+    for (let y of sortedYears) {
+        data.push([y, yearCounts[y]]);
+    }
+
+    let table = google.visualization.arrayToDataTable(data);
+    let options = {
+        legend: 'none',
+        chartArea: { width: '85%', height: '75%' },
+        hAxis: { title: 'Year' },
+        vAxis: { title: 'Maps Rated' }
+    };
+
+    let chart = new google.visualization.ColumnChart(document.getElementById('ratings_per_year_chart'));
+    chart.draw(table, options);
+    charts.push({ chart: chart, dataTable: table, options: options });
+}
+
+function drawRatingCalendar() {
+    let dayCounts = {};
+
+    for (let map of _scrapeData.MapInfo.filter(x => x.InitialRatingTimestamp)) {
+        let d = new Date(map.InitialRatingTimestamp * 1000);
+        // Normalize to midnight to group by day
+        let dateKey = new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
+        
+        if (!dayCounts[dateKey]) {
+            dayCounts[dateKey] = 0;
+        }
+        dayCounts[dateKey]++;
+    }
+
+    let data = new google.visualization.DataTable();
+    data.addColumn({ type: 'date', id: 'Date' });
+    data.addColumn({ type: 'number', id: 'Maps Rated' });
+
+    for (let dateKey in dayCounts) {
+        data.addRow([new Date(parseInt(dateKey)), dayCounts[dateKey]]);
+    }
+
+    // Google Calendar charts stack years vertically. Calculate approximate height needed.
+    let years = new Set();
+    for (let dateKey in dayCounts) {
+        years.add(new Date(parseInt(dateKey)).getFullYear());
+    }
+    let numYears = years.size || 1;
+    let chartHeight = numYears * 170; 
+
+    let options = {
+        height: chartHeight,
+        width: 1050,
+        calendar: {
+            cellSize: 16,
+            cellColor: { stroke: '#e0e0e0', strokeOpacity: 0.5, strokeWidth: 1 },
+            focusedCellColor: { stroke: '#d3362d', strokeOpacity: 1, strokeWidth: 1 },
+            monthOutlineColor: { stroke: '#981b48', strokeOpacity: 0.8, strokeWidth: 2 },
+            unusedMonthOutlineColor: { stroke: '#bc5679', strokeOpacity: 0.8, strokeWidth: 1 },
+            underMonthSpace: 16,
+        },
+        colorAxis: {
+            colors: ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127']
+        }
+    };
+
+    let chartObj = {
+        chart: new google.visualization.Calendar(document.getElementById('rating_calendar_chart')),
+        dataTable: data,
+        options: options
+    };
+    
+    chartObj.chart.draw(chartObj.dataTable, chartObj.options);
+    charts.push(chartObj);
+}
+

@@ -240,3 +240,14 @@ tr:hover{
     background-color: slategray;
     color: white;
 }
+
+.anchor-link {
+    font-weight: bold;
+    padding: 0 0.3em;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.anchor-link:hover {
+    background-color: #d7d9dc;
+}

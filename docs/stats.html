@@ -29,21 +29,69 @@
             <p>Rating statistics</p>
         </header>
 
-        <div id="rating_progress" class="rob-graph"></div>
-        <div id="rating_per_weekday" class="rob-graph"></div>
-        <div id="average_rating_per_weekday" class="rob-graph"></div>
+        <section id="rating_progress" class="mb-5">
+            <h3 class="text-center">Map Rating Progress Over Time <a href="#rating_progress" class="text-muted text-decoration-none fs-5 anchor-link">#</a></h3>
+            <div id="rating_progress_chart" class="rob-graph"></div>
+        </section>
+
+        <section id="rating_per_weekday" class="mb-5">
+            <h3 class="text-center">% of Ratings Given per Day <a href="#rating_per_weekday" class="text-muted text-decoration-none fs-5 anchor-link">#</a></h3>
+            <div id="rating_per_weekday_chart" class="rob-graph"></div>
+        </section>
+
+        <section id="average_rating_per_weekday" class="mb-5">
+            <h3 class="text-center">Average Rating per Day <a href="#average_rating_per_weekday" class="text-muted text-decoration-none fs-5 anchor-link">#</a></h3>
+            <div id="average_rating_per_weekday_chart" class="rob-graph"></div>
+        </section>
 
         <p style="text-align:center;">As you can in the linear regression plot below, over time we have decreased the
             average rating given to maps. This is probably due to the fact as as we rate more maps, our tastes become
             more refined and specific. I don't think anyone could deny that we are certainly HL2DM map connoisseurs at
             this point.</p>
-        <p style="text-align:center;">The all time average rating given is currently <span id="average_rating">_</span>
-        </p>
+        <p style="text-align:center;">The all time average rating given is currently <span id="average_rating">_</span></p>
 
-        <div id="linear_regression" class="rob-graph"></div>
-        <div id="average_rating_per_label" class="rob-graph"></div>
-        <div id="label_counts" class="rob-graph"></div>
-        <div id="rating_per_month" class="rob-graph"></div>
+        <section id="linear_regression" class="mb-5">
+            <h3 class="text-center">Linear Regression of Ratings <a href="#linear_regression" class="text-muted text-decoration-none fs-5 anchor-link">#</a></h3>
+            <div id="linear_regression_chart" class="rob-graph"></div>
+        </section>
+
+        <section id="average_rating_per_label" class="mb-5">
+            <h3 class="text-center">Average Rating per Tag <a href="#average_rating_per_label" class="text-muted text-decoration-none fs-5 anchor-link">#</a></h3>
+            <div id="average_rating_per_label_chart" class="rob-graph"></div>
+        </section>
+
+        <section id="label_counts" class="mb-5">
+            <h3 class="text-center">Label Counts <a href="#label_counts" class="text-muted text-decoration-none fs-5 anchor-link">#</a></h3>
+            <div id="label_counts_chart" class="rob-graph"></div>
+        </section>
+
+        <section id="rating_per_month" class="mb-5">
+            <h3 class="text-center">Maps Rated per Month (Last 12 Months) <a href="#rating_per_month" class="text-muted text-decoration-none fs-5 anchor-link">#</a></h3>
+            <div id="rating_per_month_chart" class="rob-graph"></div>
+        </section>
+        
+        <!-- New Visualisations -->
+        <section id="ratings_per_year" class="mb-5">
+            <h3 class="text-center">Maps Rated per Year <a href="#ratings_per_year" class="text-muted text-decoration-none fs-5 anchor-link">#</a></h3>
+            <div id="ratings_per_year_chart" class="rob-graph"></div>
+        </section>
+
+        <section id="rating_calendar" class="mb-5">
+            <h3 class="text-center">Maps Rated per Day (Activity Calendar) <a href="#rating_calendar" class="text-muted text-decoration-none fs-5 anchor-link">#</a></h3>
+            <div class="w-100 text-center" style="overflow-x: auto; overflow-y: hidden;">
+                <div id="rating_calendar_chart" style="display: inline-block; min-width: 1050px;"></div>
+            </div>
+        </section>
+
+        <section id="weapon_popularity" class="mb-5">
+            <h3 class="text-center">Number of Maps Containing Each Weapon <a href="#weapon_popularity" class="text-muted text-decoration-none fs-5 anchor-link">#</a></h3>
+            <div id="weapon_popularity_chart" class="rob-graph"></div>
+        </section>
+
+        <section id="rating_distribution" class="mb-5">
+            <h3 class="text-center">Rating Distribution <a href="#rating_distribution" class="text-muted text-decoration-none fs-5 anchor-link">#</a></h3>
+            <div id="rating_distribution_chart" class="rob-graph"></div>
+        </section>
     </div>
     <script src="js/stats.js"></script>
 </body>
