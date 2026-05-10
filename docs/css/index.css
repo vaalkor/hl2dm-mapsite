@@ -258,6 +258,119 @@ tr:hover{
     color: white;
 }
 
+.tag-box {
+    position: relative;
+}
+
+.tag-box-control {
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    color: #212529;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    min-height: 38px;
+    padding: 0.375rem 0.75rem;
+    text-align: left;
+    width: 100%;
+}
+
+.tag-box-control:hover,
+.tag-box-control:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    outline: 0;
+}
+
+.tag-box-placeholder {
+    color: #6c757d;
+}
+
+.tag-box-pill {
+    border-radius: 999px;
+    display: inline-flex;
+    font-size: 9px;
+    font-weight: 600;
+    line-height: 18px;
+    padding: 0 7px;
+}
+
+.tag-box-pill.include {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.tag-box-pill.exclude {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.tag-box-popover {
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    left: 0;
+    max-height: 420px;
+    overflow: auto;
+    padding: 0.75rem;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.25rem);
+    z-index: 2000;
+}
+
+.tag-box-popover-header {
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.tag-box-category {
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0.6rem 0 0.2rem;
+}
+
+.tag-box-category:first-of-type {
+    border-top: 0;
+    padding-top: 0;
+}
+
+.tag-box-option {
+    background-color: #f8f9fa;
+    border: 1px solid black;
+    border-radius: 999px;
+    color: #212529;
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 18px;
+    padding: 0 7px;
+}
+
+.tag-box-option.include {
+    background-color: #198754;
+    border-color: #198754;
+    color: #fff;
+}
+
+.tag-box-option.exclude {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+}
+
+.tag-box-empty {
+    color: #6c757d;
+    margin: 0;
+    text-align: center;
+}
+
 .anchor-link {
     font-weight: bold;
     padding: 0 0.3em;

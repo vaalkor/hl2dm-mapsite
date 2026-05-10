@@ -285,14 +285,35 @@ function excludeLabel(label) {
     else _ratingsTableFilterTempValues.excludeLabels.push(label);
 }
 
-//Get the list of tag elements for the include/exlude tag filters. Include param determines what the onclick listener does.
-function getLabelFilterList(include) {
-    var getColorClass = (label) => {
-        if (include && _ratingsTableFilterTempValues.includeLabels.includes(label)) return getLabelColour(label);
-        if (!include && _ratingsTableFilterTempValues.excludeLabels.includes(label)) return getLabelColour(label);
-        return '';
+function cycleLabelFilter(label) {
+    if (_ratingsTableFilterTempValues.includeLabels.includes(label)) {
+        _ratingsTableFilterTempValues.includeLabels = _ratingsTableFilterTempValues.includeLabels.filter(x => x !== label);
+        _ratingsTableFilterTempValues.excludeLabels.push(label);
+        return;
     }
-    return _foundLabels.map(x => m("span", { class: `a-self-center map-label ${getColorClass(x)}`, onclick: include ? () => includeLabel(x) : () => excludeLabel(x) }, x));
+
+    if (_ratingsTableFilterTempValues.excludeLabels.includes(label)) {
+        _ratingsTableFilterTempValues.excludeLabels = _ratingsTableFilterTempValues.excludeLabels.filter(x => x !== label);
+        return;
+    }
+
+    _ratingsTableFilterTempValues.includeLabels.push(label);
+}
+
+function clearLabelFilter(label) {
+    _ratingsTableFilterTempValues.includeLabels = _ratingsTableFilterTempValues.includeLabels.filter(x => x !== label);
+    _ratingsTableFilterTempValues.excludeLabels = _ratingsTableFilterTempValues.excludeLabels.filter(x => x !== label);
+}
+
+function restoreLabelFilters(snapshot) {
+    _ratingsTableFilterTempValues.includeLabels = [...snapshot.includeLabels];
+    _ratingsTableFilterTempValues.excludeLabels = [...snapshot.excludeLabels];
+}
+
+function getLabelFilterState(label) {
+    if (_ratingsTableFilterTempValues.includeLabels.includes(label)) return 'include';
+    if (_ratingsTableFilterTempValues.excludeLabels.includes(label)) return 'exclude';
+    return 'neutral';
 }
 
 function resetFilter() {
@@ -354,6 +375,144 @@ function makeSubmittersRoute() {
     return `#!${ROUTES.submittersTable}?sort=${_storage.submitterSortBy}&asc=${_storage.submittersTableAscending}`;
 }
 
+var TagBox = {
+    oninit: function (vnode) {
+        vnode.state.isOpen = false;
+        vnode.state.searchText = '';
+        vnode.state.snapshot = null;
+        vnode.state.closeAndApply = () => {
+            vnode.state.isOpen = false;
+            vnode.state.snapshot = null;
+            vnode.attrs.onClose();
+            m.redraw();
+        };
+        vnode.state.handleDocumentClick = (event) => {
+            if (!vnode.state.isOpen || vnode.dom.contains(event.target)) return;
+            vnode.state.closeAndApply();
+        };
+    },
+    oncreate: function (vnode) {
+        document.addEventListener('click', vnode.state.handleDocumentClick);
+    },
+    onremove: function (vnode) {
+        document.removeEventListener('click', vnode.state.handleDocumentClick);
+        if (vnode.state.isOpen) vnode.state.closeAndApply();
+    },
+    onbeforeupdate: function (vnode) {
+        vnode.state.closeAndApply = () => {
+            vnode.state.isOpen = false;
+            vnode.state.snapshot = null;
+            vnode.attrs.onClose();
+            m.redraw();
+        };
+    },
+    view: function (vnode) {
+        const includedLabels = vnode.attrs.includeLabels;
+        const excludedLabels = vnode.attrs.excludeLabels;
+        const selectedLabels = [
+            ...includedLabels.map(label => ({ label, state: 'include' })),
+            ...excludedLabels.map(label => ({ label, state: 'exclude' }))
+        ];
+        const searchText = vnode.state.searchText.toLowerCase().trim();
+        const labelCategories = vnode.attrs.labelCategories
+            .map(category => searchText ? category.filter(label => label.toLowerCase().includes(searchText)) : category)
+            .filter(category => category.length > 0);
+
+        const open = () => {
+            vnode.state.snapshot = {
+                includeLabels: [...vnode.attrs.includeLabels],
+                excludeLabels: [...vnode.attrs.excludeLabels]
+            };
+            vnode.state.isOpen = true;
+        };
+
+        const cancel = () => {
+            if (vnode.state.snapshot) {
+                restoreLabelFilters(vnode.state.snapshot);
+            }
+            vnode.state.isOpen = false;
+            vnode.state.snapshot = null;
+        };
+
+        return m('div.tag-box', {
+            onclick: (event) => event.stopPropagation(),
+            onkeydown: (event) => {
+                if (!vnode.state.isOpen) return;
+                if (event.key === 'Escape') {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    cancel();
+                }
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    vnode.state.closeAndApply();
+                }
+            }
+        }, [
+            m("label", { class: "form-label", for: "labelFilterBox", style: "display: inline-flex; align-items: center; gap: 5px;" }, [
+                "Label filters",
+                m("span", { class: "rob-tooltip-wrapper", style: "display: inline-flex; align-items: center; cursor: help;" }, [
+                    m("img", {
+                        src: "images/info-circle.svg",
+                        width: "14", height: "14",
+                        alt: "Info"
+                    }),
+                    m("div", { class: "rob-tooltip-container rob-tooltip-bottom rob-tooltip-arrow" },
+                        m("div", { class: "rob-tooltip" }, "Click tags to cycle include, exclude, off. Enter or close applies; Esc cancels.")
+                    )
+                ])
+            ]),
+            m('button#labelFilterBox.tag-box-control', {
+                type: 'button',
+                onclick: () => vnode.state.isOpen ? vnode.state.closeAndApply() : open()
+            }, selectedLabels.length === 0
+                ? m('span.tag-box-placeholder', 'Filter by labels...')
+                : selectedLabels.map(({ label, state }) =>
+                    m('span', {
+                        class: `tag-box-pill ${state}`,
+                        onclick: (event) => {
+                            event.stopPropagation();
+                            clearLabelFilter(label);
+                            vnode.state.closeAndApply();
+                        }
+                    }, `${state === 'include' ? '+' : '-'} ${label}`)
+                )
+            ),
+            vnode.state.isOpen && m('div.tag-box-popover', [
+                m('div.tag-box-popover-header', [
+                    m('input.form-control.form-control-sm', {
+                        type: 'search',
+                        placeholder: 'Search labels',
+                        value: vnode.state.searchText,
+                        oninput: (event) => vnode.state.searchText = event.target.value
+                    }),
+                    m('button.btn-close[type=button][aria-label=Close]', {
+                        onclick: vnode.state.closeAndApply
+                    })
+                ]),
+                labelCategories.length === 0
+                    ? m('p.tag-box-empty', 'No labels found')
+                    : labelCategories.map((category, index) =>
+                        m('div.tag-box-category', { key: index },
+                            category.map(label => {
+                                const state = getLabelFilterState(label);
+                                return m('button', {
+                                    type: 'button',
+                                    class: `tag-box-option ${state}`,
+                                    onclick: () => cycleLabelFilter(label)
+                                }, [
+                                    state === 'include' ? '+ ' : state === 'exclude' ? '- ' : '',
+                                    label
+                                ]);
+                            })
+                        )
+                    )
+            ])
+        ]);
+    }
+}
+
 var MapRatingsFiltering = {
     view: function () {
         var minRatingText = "Minimum Rating: " + (_ratingsTableFilterTempValues.minRating < 0 ? 'None' : _ratingsTableFilterTempValues.minRating);
@@ -363,7 +522,7 @@ var MapRatingsFiltering = {
             onkeypress: function (e) { if (e.key === "Enter") applyFilter() }
         },
             [
-                m("div", { class: "col-12 col-md-4" },
+                m("div", { class: "col-12 col-md-6 col-xl-3" },
                     m("label", { class: "form-label", id: "ratingSliderText" }, minRatingText),
                     m("input", {
                         class: "form-range",
@@ -377,7 +536,7 @@ var MapRatingsFiltering = {
                         oninput: (event) => { _ratingsTableFilterTempValues.minRating = event.target.value }
                     })
                 ),
-                m("div", { class: "col-12 col-md-4" },
+                m("div", { class: "col-12 col-md-6 col-xl-3" },
                     m("label", { class: "form-label", style: "display: inline-flex; align-items: center; gap: 5px;" }, [
                         "Name filter",
                         m("span", { class: "rob-tooltip-wrapper", style: "display: inline-flex; align-items: center; cursor: help;" }, [
@@ -400,7 +559,7 @@ var MapRatingsFiltering = {
                     }
                     )
                 ),
-                m("div", { class: "col-12 col-md-4" },
+                m("div", { class: "col-12 col-md-6 col-xl-3" },
                     m("label", { class: "form-label" }, "Submitter filter"),
                     m("input", {
                         class: "form-control",
@@ -410,6 +569,14 @@ var MapRatingsFiltering = {
                         oninput: (event) => { _ratingsTableFilterTempValues.submitterFilter = event.target.value }
                     }
                     )
+                ),
+                m("div", { class: "col-12 col-md-6 col-xl-3" },
+                    m(TagBox, {
+                        labelCategories: LABEL_CATEGORIES,
+                        includeLabels: _ratingsTableFilterTempValues.includeLabels,
+                        excludeLabels: _ratingsTableFilterTempValues.excludeLabels,
+                        onClose: applyFilter
+                    })
                 )
             ]
         );
@@ -424,7 +591,7 @@ var SubmitterAverageRatingsFiltering = {
 
 var Buttons = {
     view: function () {
-        return m("div", { class: "container d-flex mt-2", style: { "justify-content": "center", "gap": "0.5rem", "flex-wrap": "wrap" } },
+        return m("div", { class: "container d-flex mt-2 mb-3", style: { "justify-content": "center", "gap": "0.5rem", "flex-wrap": "wrap" } },
             !_storage.submittersTableVisible && m(CheckboxComponent, {
                 labelText: 'Only unrated',
                 id: 'show-unrated-checkbox',
@@ -476,10 +643,7 @@ var WeaponFiltering = {
 
 var TagFiltering = {
     view: function () {
-        return [
-            m('div', { class: 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pt-2 pb-2' }, m('h5', 'Include Labels'), ...getLabelFilterList(true)),
-            m('div', { class: 'container d-flex justify-content-around flex-wrap b-bottom mb-2 pb-2' }, m('h5', 'Exclude Labels'), ...getLabelFilterList(false))
-        ]
+        return null;
     }
 }
 
@@ -1017,7 +1181,6 @@ var App = {
                 m(Header),
                 _storage.ratingsTableVisible ? m(MapRatingsFiltering) : m(SubmitterAverageRatingsFiltering),
                 m(Buttons),
-                _storage.ratingsTableVisible && m(TagFiltering),
                 // _storage.ratingsTableVisible && m(WeaponFiltering),
                 _storage.ratingsTableVisible ? m(RatingsTable) : m(SubmittersTable)
             )
@@ -1174,6 +1337,7 @@ async function initialise() {
     document.addEventListener('keydown', function (event) {
         const tag = document.activeElement?.tagName?.toLowerCase();
         const isTyping = tag === 'input' || tag === 'textarea' || tag === 'select';
+        const hasModifierKey = event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
 
         // Escape always works (closes modal or blurs active input)
         if (event.key === 'Escape') {
@@ -1237,7 +1401,7 @@ async function initialise() {
         }
 
         // ArrowLeft / ArrowRight — navigate maps in modal, or paginate when no modal
-        if (event.key === 'ArrowLeft' && _storage.ratingsTableVisible) {
+        if (event.key === 'ArrowLeft' && _storage.ratingsTableVisible && !hasModifierKey) {
             if (_modalMapInfo) {
                 let idx = _filteredMaps.findIndex(x => x.Id === _modalMapInfo.Id);
                 if (idx > 0) {
@@ -1250,7 +1414,7 @@ async function initialise() {
             return;
         }
 
-        if (event.key === 'ArrowRight' && _storage.ratingsTableVisible) {
+        if (event.key === 'ArrowRight' && _storage.ratingsTableVisible && !hasModifierKey) {
             if (_modalMapInfo) {
                 let idx = _filteredMaps.findIndex(x => x.Id === _modalMapInfo.Id);
                 if (idx >= 0 && idx < _filteredMaps.length - 1) {
