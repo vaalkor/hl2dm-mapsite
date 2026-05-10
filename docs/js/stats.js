@@ -291,8 +291,6 @@ function drawRatingsPerWeekday() {
 }
 
 function drawAverageRatingsPerWeekday() {
-
-    debugger;
     let data = [['Day', 'Average rating', { role: 'annotation' }]]
         .concat(
             Object.keys(_ratingsPerWeekday).map(x => [_dayPrettyPrint[x], _averageRatingPerDay[x], `${_averageRatingPerDay[x].toFixed(2)}`])

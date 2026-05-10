@@ -864,7 +864,6 @@ var EditMapInfo = {
                 placeholder: 'Youtube link',
                 value: _currentEditInfo.videoLink ?? '',
                 oninput: (event) => {
-                    debugger;
                     _currentEditInfo.videoLink = event.target.value;
                 }
             }),
@@ -1199,8 +1198,7 @@ function findAllLabels(data) {
     const labelsInCategories = LABEL_CATEGORIES.flatMap(x => x);
     const uncategorisedLabels = _foundLabels.filter(x => !labelsInCategories.includes(x));
     LABEL_CATEGORIES.push(uncategorisedLabels);
-    debugger;
-
+    
     window.allLabels = _allLabels;
 }
 
