@@ -479,3 +479,7 @@ FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# LLM related shite
+# Temp folder for AI to store stuff
+agent-temp/
