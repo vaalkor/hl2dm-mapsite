@@ -339,7 +339,19 @@ var MapRatingsFiltering = {
                     })
                 ),
                 m("div", { class: "col-12 col-sm-6 col-lg-3" },
-                    m("label", { class: "form-label" }, "Name filter"),
+                    m("label", { class: "form-label", style: "display: inline-flex; align-items: center; gap: 5px;" }, [
+                        "Name filter",
+                        m("span", { class: "mud-tooltip-wrapper", style: "display: inline-flex; align-items: center; cursor: help;" }, [
+                            m("img", {
+                                src: "images/info-circle.svg",
+                                width: "14", height: "14",
+                                alt: "Info"
+                            }),
+                            m("div", { class: "mud-tooltip-container mud-tooltip-bottom mud-tooltip-arrow" },
+                                m("div", { class: "mud-tooltip" }, "Supports comma separated filters. Prepend ! to exclude a substring.")
+                            )
+                        ])
+                    ]),
                     m("input", {
                         class: "form-control",
                         type: "text",

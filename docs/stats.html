@@ -8,9 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/tooltip.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="js/tooltip.js"></script>
     <style>
         .rob-graph {
             width: 100%;
@@ -30,7 +32,7 @@
         </header>
 
         <section id="rating_progress" class="mb-5">
-            <h3 class="text-center">Map Rating Progress Over Time <a href="#rating_progress" class="text-muted text-decoration-none fs-5 anchor-link">#</a></h3>
+            <h3 class="text-center"><span data-tooltip="Tracks the all-time average map rating as new maps were reviewed." data-tooltip-placement="top" data-tooltip-arrow>Map Rating Progress Over Time</span> <a href="#rating_progress" class="text-muted text-decoration-none fs-5 anchor-link">#</a></h3>
             <div id="rating_progress_chart" class="rob-graph"></div>
         </section>
 
