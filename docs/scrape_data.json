@@ -4220,7 +4220,11 @@
       ],
       "Authors": [
         "T4LLY-0"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "RobComment": "Really not bad for a first map I have to say",
+      "InitialRatingTimestamp": 1779480913
     },
     {
       "Name": "dm_angular",
@@ -9508,7 +9512,11 @@
       "Authors": [
         "ryker",
         "Valve"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [],
+      "RobComment": "MEH!!!!!",
+      "InitialRatingTimestamp": 1779480104
     },
     {
       "Name": "dm_biolab_decontamination",
@@ -32291,7 +32299,11 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "RobComment": "MEH",
+      "InitialRatingTimestamp": 1779479829
     },
     {
       "Name": "dm_basements_final_crossbow_v7",
@@ -61637,7 +61649,13 @@
       ],
       "Authors": [
         "MRflanker"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "RobComment": "Bad layout. ",
+      "InitialRatingTimestamp": 1779479505
     },
     {
       "Name": "dm_coretube_b1",
@@ -76355,7 +76373,11 @@
       ],
       "Authors": [
         "frissi"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [],
+      "RobComment": "Fun!",
+      "InitialRatingTimestamp": 1779482234
     },
     {
       "Name": "dm_tinside",
@@ -88641,7 +88663,13 @@
       ],
       "Authors": [
         "Raidenator"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "Meme",
+        "Small"
+      ],
+      "InitialRatingTimestamp": 1779480276
     },
     {
       "Name": "modularity",
