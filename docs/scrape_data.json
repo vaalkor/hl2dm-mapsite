@@ -27542,7 +27542,13 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "Remake",
+        "CS"
+      ],
+      "InitialRatingTimestamp": 1780163438
     },
     {
       "Name": "dm_2",
@@ -29562,7 +29568,10 @@
       ],
       "Authors": [
         "Reyou"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1780164869
     },
     {
       "Name": "Dm_floating_lands",
@@ -58905,7 +58914,11 @@
       ],
       "Authors": [
         "[fpsb] agressor"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "RobComment": "funny. simple. shit lighting",
+      "InitialRatingTimestamp": 1780164466
     },
     {
       "Name": "dm_hellhole_b143a",
@@ -71670,7 +71683,11 @@
       ],
       "Authors": [
         "munk3y_ad4m"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "RobComment": "Decent, but it's really dark so it's a bit annoying to play after a while",
+      "InitialRatingTimestamp": 1780163998
     },
     {
       "Name": "dm_weaver",
