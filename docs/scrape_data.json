@@ -34487,7 +34487,10 @@
       ],
       "Authors": [
         "tron2000"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781384399
     },
     {
       "Name": "dm_gravarena",
@@ -36372,7 +36375,10 @@
       ],
       "Authors": [
         "Oxudos"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781384116
     },
     {
       "Name": "dm_global (less airboat)",
@@ -60007,7 +60013,10 @@
       ],
       "Authors": [
         "aaron_da_killa"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781386824
     },
     {
       "Name": "dm_complex",
@@ -66939,7 +66948,10 @@
       ],
       "Authors": [
         "frankwhite"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781384909
     },
     {
       "Name": "dm_alleys3",
@@ -68545,7 +68557,11 @@
       ],
       "Authors": [
         "neo2400"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [],
+      "RobComment": "tooo big and boring for 2 players",
+      "InitialRatingTimestamp": 1781387227
     },
     {
       "Name": "the_dam_2",
@@ -73450,7 +73466,10 @@
       ],
       "Authors": [
         "[s-uk] reapz"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781385468
     },
     {
       "Name": "dm_epigram",
@@ -79509,7 +79528,14 @@
       ],
       "Authors": [
         "unknown"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "UT",
+        "Remake"
+      ],
+      "RobComment": "cool map, obviously it's a classic. Too big though for 2 players",
+      "InitialRatingTimestamp": 1781385677
     },
     {
       "Name": "dm_cyclix",
