@@ -7330,7 +7330,10 @@
       ],
       "Authors": [
         "Sera"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781643591
     },
     {
       "Name": "dm_sektor17_pc",
@@ -14969,7 +14972,12 @@
       ],
       "Authors": [
         "[FJC] Apollyon094"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "UniqueMechanic"
+      ],
+      "InitialRatingTimestamp": 1781642671
     },
     {
       "Name": "dm_Poolside",
@@ -32211,7 +32219,13 @@
       ],
       "Authors": [
         "Unknown"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "VanillaStyle"
+      ],
+      "RobComment": "Well done, good style.. But it's rather dull. ",
+      "InitialRatingTimestamp": 1781641093
     },
     {
       "Name": "dm_facility_2004",
@@ -77637,7 +77651,14 @@
       ],
       "Authors": [
         "~!Unknown!~"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "Small",
+        "Duel"
+      ],
+      "RobComment": "Errrrr it's ooookaaaay",
+      "InitialRatingTimestamp": 1781641409
     },
     {
       "Name": "dm_thepit",
@@ -85724,7 +85745,11 @@
       ],
       "Authors": [
         "Bullet Magnet"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [],
+      "RobComment": "errrrrrrrrrrrrrrrrghhhhhhh",
+      "InitialRatingTimestamp": 1781641720
     },
     {
       "Name": "dm_section8",
