@@ -825,7 +825,11 @@
       ],
       "Authors": [
         "SethsterAnimates"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "RobComment": "A bit uninspiring. The abundance of boxes is quite amusing though I'll give it that.",
+      "InitialRatingTimestamp": 1781900067
     },
     {
       "Name": "dm_langshian",
@@ -7989,7 +7993,12 @@
       ],
       "Authors": [
         "[EYE] Valar"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Beautiful"
+      ],
+      "InitialRatingTimestamp": 1781902992
     },
     {
       "Name": "dm_whoreisland_b1",
@@ -22175,7 +22184,10 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781904369
     },
     {
       "Name": "pd_temple",
@@ -27081,7 +27093,10 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781907572
     },
     {
       "Name": "dm_minigolf_xmas_night",
@@ -49644,7 +49659,11 @@
       ],
       "Authors": [
         "Elec0"
-      ]
+      ],
+      "RobRating": 0.5,
+      "RobLabels": [],
+      "RobComment": "CBA with this shit",
+      "InitialRatingTimestamp": 1781905718
     },
     {
       "Name": "dm_villa_b3",
@@ -52715,7 +52734,10 @@
       ],
       "Authors": [
         "GuyX"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781901860
     },
     {
       "Name": "dm_missjulie_good_night",
@@ -55720,7 +55742,10 @@
       ],
       "Authors": [
         "Panther"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781904684
     },
     {
       "Name": "dm_datacore",
@@ -56332,7 +56357,10 @@
       ],
       "Authors": [
         "Pseudonym"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781906332
     },
     {
       "Name": "dmt1_decimation",
@@ -64020,7 +64048,12 @@
       ],
       "Authors": [
         "[sa.fr]_mr vercetti"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "VanillaStyle"
+      ],
+      "InitialRatingTimestamp": 1781900498
     },
     {
       "Name": "dm_pr0sp3k7_physicsarena",
@@ -64247,7 +64280,10 @@
       ],
       "Authors": [
         "kryptonic*"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781901155
     },
     {
       "Name": "dm_killrox",
@@ -76373,7 +76409,12 @@
       ],
       "Authors": [
         "juim"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1781906573
     },
     {
       "Name": "dm_deluxe_v1",
@@ -79258,7 +79299,13 @@
       ],
       "Authors": [
         "JAL"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Small"
+      ],
+      "RobComment": "Surprisingly fun for how small it is.",
+      "InitialRatingTimestamp": 1781902387
     },
     {
       "Name": "dm_gasworks",
@@ -82793,7 +82840,10 @@
       ],
       "Authors": [
         "Uknown"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781904169
     },
     {
       "Name": "dm_aos_kk_ratsmap_v1",
@@ -85012,7 +85062,11 @@
       ],
       "Authors": [
         "F. Kalkman"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [],
+      "RobComment": "Not really a proper map. Looks cool though.",
+      "InitialRatingTimestamp": 1781903281
     },
     {
       "Name": "dm-freeway to c17",
@@ -91179,7 +91233,10 @@
       ],
       "Authors": [
         "STRUDY"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781905667
     },
     {
       "Name": "dm_spire",
@@ -95447,7 +95504,10 @@
       ],
       "Authors": [
         "Zyndrome"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781906926
     },
     {
       "Name": "dm_np_refinery",
