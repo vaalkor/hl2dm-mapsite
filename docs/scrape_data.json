@@ -20201,7 +20201,15 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 4.5,
+      "RobLabels": [
+        "Small",
+        "Beautiful",
+        "Duel"
+      ],
+      "RobComment": "Fucking classic",
+      "InitialRatingTimestamp": 1781992536
     },
     {
       "Name": "dm_kingofheavenV01_5",
@@ -36659,7 +36667,10 @@
       ],
       "Authors": [
         "Oskar Jansson"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781993575
     },
     {
       "Name": "dm_np_max_securyty",
@@ -44871,7 +44882,10 @@
       ],
       "Authors": [
         "Sir Charles Babbage"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781994279
     },
     {
       "Name": "dm_house",
@@ -57792,7 +57806,10 @@
       ],
       "Authors": [
         "Jonathan Coppetti"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1781993797
     },
     {
       "Name": "dmt1_basic_final",
