@@ -889,7 +889,13 @@
       "Authors": [
         "Dmx6",
         "EZ-one"
-      ]
+      ],
+      "RobRating": 4.5,
+      "RobLabels": [
+        "Beautiful"
+      ],
+      "RobComment": "Awesome map. One of the best looking maps we've ever seen. Also it has an Onsen 🍆🍆💦💦",
+      "InitialRatingTimestamp": 1782042936
     },
     {
       "Name": "imens",
@@ -2945,7 +2951,13 @@
       ],
       "Authors": [
         "Look at secret room"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Rats",
+        "Meme"
+      ],
+      "InitialRatingTimestamp": 1782045041
     },
     {
       "Name": "dm_glitch",
@@ -25399,7 +25411,14 @@
       ],
       "Authors": [
         "Peter Brev"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "Medium",
+        "VanillaStyle"
+      ],
+      "RobComment": "Bit too big. ",
+      "InitialRatingTimestamp": 1782044602
     },
     {
       "Name": "RoPlayers_Race_Water_Ice_v5",
@@ -72204,7 +72223,14 @@
       ],
       "Authors": [
         "rokusho39"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [
+        "Small",
+        "Duel"
+      ],
+      "RobComment": "Awesome little map",
+      "InitialRatingTimestamp": 1782044078
     },
     {
       "Name": "dm_agoge_b1",
@@ -73285,7 +73311,11 @@
       ],
       "Authors": [
         "xitis"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "RobComment": "A very very cool looking map, but the layout is boring and it's quite dark.",
+      "InitialRatingTimestamp": 1782044405
     },
     {
       "Name": "dm_gasworksinc",
@@ -91348,7 +91378,11 @@
       ],
       "Authors": [
         "Snoozer282"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "RobComment": "MEH!",
+      "InitialRatingTimestamp": 1782041382
     },
     {
       "Name": "dm_gluefactory_final",
@@ -96446,7 +96480,13 @@
       ],
       "Authors": [
         "?"
-      ]
+      ],
+      "RobRating": -0.5,
+      "RobLabels": [
+        "Incomplete"
+      ],
+      "RobComment": "This map seems to have the wrong map file associated with it in Game Banana. Not sure what went wrong there.",
+      "InitialRatingTimestamp": 1782043070
     },
     {
       "Name": "dm_island17",
