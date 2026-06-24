@@ -8807,7 +8807,13 @@
       ],
       "Authors": [
         "Unknown"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "UniqueMechanic"
+      ],
+      "RobComment": "Very interesting map. It has a pillar of water that goes right through the middle",
+      "InitialRatingTimestamp": 1782336888
     },
     {
       "Name": "dm_spookface1L_OB",
@@ -9158,7 +9164,10 @@
       "Authors": [
         "BoogyMan",
         "Sera"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782337842
     },
     {
       "Name": "dm_bloom_b4",
@@ -37588,7 +37597,11 @@
       ],
       "Authors": [
         "JohnDoe5828"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [],
+      "RobComment": "Vile map. There was something rather unsettling and disgusting about it.",
+      "InitialRatingTimestamp": 1782337087
     },
     {
       "Name": "dm_crowbar_octagon",
@@ -42529,7 +42542,10 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782334424
     },
     {
       "Name": "dm_verticalheigt_semiorange",
@@ -52720,7 +52736,10 @@
       ],
       "Authors": [
         "Gabriel Sabino Castro"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782333400
     },
     {
       "Name": "dm_ketchup_factory",
@@ -65802,7 +65821,10 @@
       ],
       "Authors": [
         "randomspoon"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782333942
     },
     {
       "Name": "dm_darkcity",
@@ -77694,7 +77716,10 @@
       ],
       "Authors": [
         "~!Unknown!~"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782334878
     },
     {
       "Name": "dm_1on1_arborea",
@@ -85640,7 +85665,10 @@
       ],
       "Authors": [
         "Psycho"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782336121
     },
     {
       "Name": "dm_cityhell",
