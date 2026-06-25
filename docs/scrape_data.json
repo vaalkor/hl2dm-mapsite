@@ -11892,7 +11892,14 @@
       ],
       "Authors": [
         "wh0_Aga1n"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "Remake",
+        "HL2"
+      ],
+      "RobComment": "It's overwatch with snow. Kinda cool vibe but a bit eiiiiiiiigh to play really",
+      "InitialRatingTimestamp": 1782415847
     },
     {
       "Name": "nub_supertrainzz",
@@ -15108,7 +15115,11 @@
       ],
       "Authors": [
         "LuciaLambda"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [],
+      "RobComment": "This map does not spark joy",
+      "InitialRatingTimestamp": 1782417522
     },
     {
       "Name": "dm_killbox_synth_ll",
@@ -16229,7 +16240,13 @@
       ],
       "Authors": [
         "Confectionatrix"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Small",
+        "Duel"
+      ],
+      "InitialRatingTimestamp": 1782416470
     },
     {
       "Name": "Asylum",
@@ -17711,7 +17728,15 @@
       ],
       "Authors": [
         "AlcyToronto"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "HL2",
+        "Remake",
+        "VanillaStyle"
+      ],
+      "RobComment": "Ravenholm. Nice.",
+      "InitialRatingTimestamp": 1782418116
     },
     {
       "Name": "dm_trainstation",
@@ -27700,7 +27725,14 @@
       ],
       "Authors": [
         "[DrunkenDragon] Blackwolf"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Small",
+        "Duel"
+      ],
+      "RobComment": "Really fun simple little map",
+      "InitialRatingTimestamp": 1782415579
     },
     {
       "Name": "dm_bwo_refuge",
@@ -40889,7 +40921,11 @@
       ],
       "Authors": [
         "Mariodude146 aka Me"
-      ]
+      ],
+      "RobRating": 0.5,
+      "RobLabels": [],
+      "RobComment": "Ridiculous",
+      "InitialRatingTimestamp": 1782416507
     },
     {
       "Name": "Dm_chainreaction",
@@ -53259,7 +53295,10 @@
       ],
       "Authors": [
         "Trunks"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782416932
     },
     {
       "Name": "Deathmatch Radioactive",
@@ -71370,7 +71409,10 @@
       ],
       "Authors": [
         "jacfu"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782418619
     },
     {
       "Name": "dm_default_factory_settings_v1",
@@ -71512,7 +71554,10 @@
       ],
       "Authors": [
         "[ff]elite.lordnitro"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782417138
     },
     {
       "Name": "dm_breakfree",
@@ -81395,7 +81440,14 @@
       ],
       "Authors": [
         "Matt Clark"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Beautiful",
+        "VanillaStyle"
+      ],
+      "RobComment": "Awesome looking vanilla style map. little big too big for 2. Probs good with 3+ though",
+      "InitialRatingTimestamp": 1782417432
     },
     {
       "Name": "dm_slammer",
