@@ -6663,7 +6663,10 @@
       ],
       "Authors": [
         "Unknown"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782510914
     },
     {
       "Name": "dm_drift_revised",
@@ -15634,7 +15637,11 @@
       ],
       "Authors": [
         "Ghost1679340"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [],
+      "RobComment": "Dross",
+      "InitialRatingTimestamp": 1782509730
     },
     {
       "Name": "gg_killbox_gravity_gun_icy (Updated)",
@@ -30836,7 +30843,12 @@
       ],
       "Authors": [
         "fixed"
-      ]
+      ],
+      "RobRating": -0.5,
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1782510025
     },
     {
       "Name": "dm_bathrom_ultimate1",
@@ -40405,7 +40417,12 @@
       ],
       "Authors": [
         "Bob long"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "UniqueMechanic"
+      ],
+      "InitialRatingTimestamp": 1782508660
     },
     {
       "Name": "Dm_canals_works_final",
@@ -40882,7 +40899,10 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782508064
     },
     {
       "Name": "Round",
@@ -56990,7 +57010,10 @@
       ],
       "Authors": [
         "Mr. Spectate"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782507575
     },
     {
       "Name": "dm_underwater",
@@ -85384,7 +85407,15 @@
       ],
       "Authors": [
         "Campaignjunkie"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "Beautiful",
+        "VanillaStyle",
+        "TooBig"
+      ],
+      "RobComment": "Very cool looking map. Lot of work gone into it. Way too big for 3 players though.",
+      "InitialRatingTimestamp": 1782510250
     },
     {
       "Name": "dm-inevitable conflict",
@@ -88194,7 +88225,14 @@
       ],
       "Authors": [
         "NykO18"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "VanillaStyle",
+        "Beautiful"
+      ],
+      "RobComment": "Very nice looking vanilla style map. Layout is a biiit lacking but the styling is really stunning here.",
+      "InitialRatingTimestamp": 1782509644
     },
     {
       "Name": "dm_autoroute",
@@ -93237,7 +93275,10 @@
       ],
       "Authors": [
         "Au-heppa"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782511798
     },
     {
       "Name": "dm_anacrogrid_2005",
