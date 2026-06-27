@@ -7761,7 +7761,10 @@
       ],
       "Authors": [
         "Unknown"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782559184
     },
     {
       "Name": "dm_egypte_final",
@@ -10127,7 +10130,11 @@
       ],
       "Authors": [
         "ryker"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [],
+      "RobComment": "MEH",
+      "InitialRatingTimestamp": 1782557481
     },
     {
       "Name": "dm_industrialsunset",
@@ -13435,7 +13442,11 @@
       ],
       "Authors": [
         "Nyantendo"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [],
+      "RobComment": "This map is so bland and boring it caused me to break out in a rash and shit myself",
+      "InitialRatingTimestamp": 1782558750
     },
     {
       "Name": "dm_pit_reloaded",
@@ -62082,7 +62093,10 @@
       ],
       "Authors": [
         "halfer"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782558409
     },
     {
       "Name": "dm_deathbox_v1",
@@ -81414,7 +81428,15 @@
       ],
       "Authors": [
         "G$"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [
+        "VanillaStyle",
+        "Beautiful",
+        "UniqueMechanic"
+      ],
+      "RobComment": "Awesome combine style map. Very atmospheric. Funny teleporter and an airlock you can blast people of.",
+      "InitialRatingTimestamp": 1782557258
     },
     {
       "Name": "dm_pitstop",
@@ -90470,7 +90492,11 @@
       ],
       "Authors": [
         "Xenon"
-      ]
+      ],
+      "RobRating": 5,
+      "RobLabels": [],
+      "RobComment": "fucking cuh-LASSIC map",
+      "InitialRatingTimestamp": 1782558676
     },
     {
       "Name": "boatrush",
