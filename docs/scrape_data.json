@@ -8423,7 +8423,10 @@
       ],
       "Authors": [
         "Unknown"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782643791
     },
     {
       "Name": "dm_wtc_911_kat_fix",
@@ -9265,7 +9268,10 @@
       ],
       "Authors": [
         "Unknown"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782641164
     },
     {
       "Name": "dm_adams_b29",
@@ -12846,7 +12852,10 @@
       ],
       "Authors": [
         "Original author unknown"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782645755
     },
     {
       "Name": "nub_snowblind_v1",
@@ -34839,7 +34848,14 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [
+        "Beautiful",
+        "Outdoors"
+      ],
+      "RobComment": "A weird rating for this one. It's not a very good multiplayer map but it's one of the most visually impressive we've ever seen so we want' help giving it a good rating.",
+      "InitialRatingTimestamp": 1782640606
     },
     {
       "Name": "dm_godsoffice_remake2",
@@ -38364,7 +38380,13 @@
       ],
       "Authors": [
         "Firebird079"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [
+        "Small",
+        "Meme"
+      ],
+      "InitialRatingTimestamp": 1782642153
     },
     {
       "Name": "usg_stargate_jaanus_complex",
@@ -54652,7 +54674,11 @@
       ],
       "Authors": [
         "JiuShiZu"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "RobComment": "Cool map but it feels like a singleplayer map",
+      "InitialRatingTimestamp": 1782645314
     },
     {
       "Name": "dm_biohazard_mod_remixed",
@@ -74101,7 +74127,10 @@
       ],
       "Authors": [
         "citric"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1782644801
     },
     {
       "Name": "dm_montana",
@@ -74241,7 +74270,13 @@
       ],
       "Authors": [
         "LORD_M"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Beautiful"
+      ],
+      "RobComment": "Basically a whole spaceship to explore. Very awesome. Not super playable for 2 people, but worth walking around",
+      "InitialRatingTimestamp": 1782644311
     },
     {
       "Name": "dm_combine_overun",
