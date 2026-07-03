@@ -1395,7 +1395,13 @@
       ],
       "Authors": [
         "feedays"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [
+        "UniqueMechanic"
+      ],
+      "RobComment": "Funky walls",
+      "InitialRatingTimestamp": 1783112361
     },
     {
       "Name": "dm_petroleum",
@@ -11246,7 +11252,10 @@
       ],
       "Authors": [
         "Explosive_clone_cube"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1783113302
     },
     {
       "Name": "dm_warehouse_docks",
@@ -22799,7 +22808,10 @@
       ],
       "Authors": [
         "AlcyToronto"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1783111401
     },
     {
       "Name": "dm_snipette-cm-deluxe_rc01.bsp",
@@ -36264,7 +36276,10 @@
       ],
       "Authors": [
         "Gen_Sanders"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1783113674
     },
     {
       "Name": "dm_silo",
@@ -36364,7 +36379,11 @@
       ],
       "Authors": [
         "Gen_Sanders"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "RobComment": "it's got a fucking stargate!",
+      "InitialRatingTimestamp": 1783109474
     },
     {
       "Name": "dm_desert-town",
@@ -82994,7 +83013,12 @@
       ],
       "Authors": [
         "Uknown"
-      ]
+      ],
+      "RobRating": -0.5,
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1783108855
     },
     {
       "Name": "dm_adams",
@@ -86794,7 +86818,10 @@
       ],
       "Authors": [
         "youaremea1"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1783108840
     },
     {
       "Name": "dm_decoy_b2",
@@ -95933,7 +95960,10 @@
       ],
       "Authors": [
         "twinmatrix101"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1783109869
     },
     {
       "Name": "dm_carousel",
