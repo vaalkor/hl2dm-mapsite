@@ -1505,7 +1505,10 @@
       ],
       "Authors": [
         "ShinyJunimo"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1783546869
     },
     {
       "Name": "dm_bunkered",
@@ -10485,7 +10488,12 @@
       ],
       "Authors": [
         "GameHopper"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "VanillaStyle"
+      ],
+      "InitialRatingTimestamp": 1783456604
     },
     {
       "Name": "Dm_Ricochet_space",
@@ -15400,7 +15408,11 @@
       "Authors": [
         "~Smith~",
         "~Smith~"
-      ]
+      ],
+      "RobRating": 0.5,
+      "RobLabels": [],
+      "RobComment": "Absolute horrendous garbage",
+      "InitialRatingTimestamp": 1783455336
     },
     {
       "Name": "dm_snipe_bunkergrass2",
@@ -33617,7 +33629,13 @@
       ],
       "Authors": [
         "Doctor Nuriel"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "RobComment": "Way too big. It does not suit the movement of this game.",
+      "InitialRatingTimestamp": 1783455549
     },
     {
       "Name": "dm_sniper_club_final3 fix",
@@ -70052,7 +70070,13 @@
       ],
       "Authors": [
         "moroes"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [
+        "Beautiful"
+      ],
+      "RobComment": "Crazy looking map. Loads of custom assets. Looks like a different game.",
+      "InitialRatingTimestamp": 1783547358
     },
     {
       "Name": "dm_badgerset_night",
@@ -78610,7 +78634,10 @@
       ],
       "Authors": [
         "iZihbO"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1783546486
     },
     {
       "Name": "dm_shithole",
@@ -87267,7 +87294,12 @@
       ],
       "Authors": [
         "lolobubu"
-      ]
+      ],
+      "RobRating": -0.5,
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1783545889
     },
     {
       "Name": "dm_runoff_extreme_darkness",
@@ -91292,7 +91324,10 @@
       ],
       "Authors": [
         "Clarky"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1783457356
     },
     {
       "Name": "dm_neon",
@@ -93554,7 +93589,11 @@
       ],
       "Authors": [
         "whiteLegion"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [],
+      "RobComment": "Big and bland",
+      "InitialRatingTimestamp": 1783545876
     },
     {
       "Name": "dm_barney_gulch",
