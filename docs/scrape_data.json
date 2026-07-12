@@ -7864,7 +7864,10 @@
       ],
       "Authors": [
         "Unknown"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1783852315
     },
     {
       "Name": "dm_feudal",
@@ -58184,7 +58187,10 @@
       ],
       "Authors": [
         "Sakura=)"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1783853138
     },
     {
       "Name": "dm_snowbox",
@@ -60006,7 +60012,13 @@
       ],
       "Authors": [
         "Brad &quot;Redclaw&quot; Tempchin"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1783853612,
+      "RobComment": "Narnia mate. Bit too big though."
     },
     {
       "Name": "dm_sniper_garden_snow",
@@ -80415,7 +80427,10 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1783851866
     },
     {
       "Name": "dm_trainstation",
@@ -88747,7 +88762,12 @@
       ],
       "Authors": [
         "Raidenator"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [
+        "Meme"
+      ],
+      "InitialRatingTimestamp": 1783853853
     },
     {
       "Name": "dm_killbox_impact_magnum_final",
