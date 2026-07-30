@@ -68185,7 +68185,11 @@
       ],
       "Authors": [
         "mark &#039;oz&#039;austin"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "RobComment": "Nice looking map, very good. Bit too big for two players. Would probably be okay with 3 though",
+      "InitialRatingTimestamp": 1785446997
     },
     {
       "Name": "dm_cowgate",
@@ -77501,7 +77505,10 @@
       ],
       "Authors": [
         "[ff]assn.lordnitro"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1785449329
     },
     {
       "Name": "dm_poppen",
@@ -80626,7 +80633,10 @@
       ],
       "Authors": [
         "poseyjmac"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1785448503
     },
     {
       "Name": "dm_harbour",
