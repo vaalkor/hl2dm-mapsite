@@ -63264,7 +63264,10 @@
       ],
       "Authors": [
         "MRflanker"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1785530655
     },
     {
       "Name": "fy_blood_oldrain_v2",
@@ -78400,7 +78403,10 @@
       ],
       "Authors": [
         "iZihbO"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1785533214
     },
     {
       "Name": "dm_hebbe_castle",
@@ -85594,7 +85600,10 @@
       ],
       "Authors": [
         "Chris Blundell"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1785531175
     },
     {
       "Name": "dm-arrival",
