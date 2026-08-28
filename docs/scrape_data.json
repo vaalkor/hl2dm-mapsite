@@ -2914,7 +2914,10 @@
         "Mayor Callaghan",
         "Viperbird",
         "SALO POWER"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1787958682
     },
     {
       "Name": "[rats] Flushed",
@@ -41545,7 +41548,11 @@
       ],
       "Authors": [
         "ip3wnual0t"
-      ]
+      ],
+      "RobRating": 0.5,
+      "RobLabels": [],
+      "RobComment": "Fuck off",
+      "InitialRatingTimestamp": 1787956260
     },
     {
       "Name": "dm_biohazard_next_gen",
@@ -68238,7 +68245,12 @@
       ],
       "Authors": [
         "jamie &#039;skeebz&#039; manson"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "VanillaStyle"
+      ],
+      "InitialRatingTimestamp": 1787960269
     },
     {
       "Name": "dm_corrode",
@@ -79419,7 +79431,10 @@
       ],
       "Authors": [
         "Unknown"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1787956455
     },
     {
       "Name": "dm_park",
@@ -85447,7 +85462,10 @@
       ],
       "Authors": [
         "Waine"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1787956098
     },
     {
       "Name": "dm-edge of town",
@@ -87853,7 +87871,12 @@
       ],
       "Authors": [
         "kennelly"
-      ]
+      ],
+      "RobRating": -0.5,
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1787956152
     },
     {
       "Name": "dm_ancients",
@@ -87900,7 +87923,10 @@
       ],
       "Authors": [
         "doodle"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1787956981
     },
     {
       "Name": "dm_killbox_altfire_hk",
@@ -91066,7 +91092,10 @@
       ],
       "Authors": [
         "moroes"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1787957857
     },
     {
       "Name": "dm_snipe_reborn_v2",
