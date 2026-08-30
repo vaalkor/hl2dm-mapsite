@@ -92,7 +92,7 @@ var _storage = {
             delete loadedData.submitterSortBy;
             delete loadedData.submittersTableAscending;
             Object.assign(this, loadedData);
-            _ratingsTableFilterTempValues = JSON.parse(JSON.stringify(this)); // We clone the values so we can keep our temp filter object up to date. Now we have a 2 step filter application process we need a saved value and a stateful temp value. 
+            _ratingsTableFilterTempValues = JSON.parse(JSON.stringify(this)); // Keep editable controls in sync with restored state.
         }
     },
     save: function () {
@@ -102,7 +102,7 @@ var _storage = {
         delete storedData.submitterSortBy;
         delete storedData.submittersTableAscending;
         localStorage.setItem('storage', JSON.stringify(storedData));
-        _ratingsTableFilterTempValues = JSON.parse(JSON.stringify(this)); // We clone the values so we can keep our temp filter object up to date. Now we have a 2 step filter application process we need a saved value and a stateful temp value. 
+        _ratingsTableFilterTempValues = JSON.parse(JSON.stringify(this)); // Keep editable controls in sync with route-backed state.
     },
     showRatingsTable: function () {
         this.ratingsTableVisible = true;
@@ -116,7 +116,7 @@ var _storage = {
     }
 }
 
-var _ratingsTableFilterTempValues = Object.assign({}, _storage); // Clone the stored values. This will be used to store temp values for the stateful
+var _ratingsTableFilterTempValues = Object.assign({}, _storage); // Editable filter values, synchronized to the route after each change.
 
 // [TODO] get rid of this global variable and clean up the modal code a bit. Now that we have routing it's a little bit tidier in general.
 var _modalMapInfo = null; // The map info we have a modal open for.
@@ -265,24 +265,14 @@ function includeWeapon(weapon) {
     if (_ratingsTableFilterTempValues.excludeWeapons.includes(weapon)) _ratingsTableFilterTempValues.excludeWeapons = _ratingsTableFilterTempValues.excludeWeapons.filter(x => x !== weapon);
     if (_ratingsTableFilterTempValues.includeWeapons.includes(weapon)) _ratingsTableFilterTempValues.includeWeapons = _ratingsTableFilterTempValues.includeWeapons.filter(x => x !== weapon);
     else _ratingsTableFilterTempValues.includeWeapons.push(weapon);
+    updateFilterRoute();
 }
 
 function excludeWeapon(weapon) {
     if (_ratingsTableFilterTempValues.includeWeapons.includes(weapon)) _ratingsTableFilterTempValues.includeWeapons = _ratingsTableFilterTempValues.includeWeapons.filter(x => x !== weapon);
     if (_ratingsTableFilterTempValues.excludeWeapons.includes(weapon)) _ratingsTableFilterTempValues.excludeWeapons = _ratingsTableFilterTempValues.excludeWeapons.filter(x => x !== weapon);
     else _ratingsTableFilterTempValues.excludeWeapons.push(weapon);
-}
-
-function includeLabel(label) {
-    if (_ratingsTableFilterTempValues.excludeLabels.includes(label)) _ratingsTableFilterTempValues.excludeLabels = _ratingsTableFilterTempValues.excludeLabels.filter(x => x !== label);
-    if (_ratingsTableFilterTempValues.includeLabels.includes(label)) _ratingsTableFilterTempValues.includeLabels = _ratingsTableFilterTempValues.includeLabels.filter(x => x !== label);
-    else _ratingsTableFilterTempValues.includeLabels.push(label);
-}
-
-function excludeLabel(label) {
-    if (_ratingsTableFilterTempValues.includeLabels.includes(label)) _ratingsTableFilterTempValues.includeLabels = _ratingsTableFilterTempValues.includeLabels.filter(x => x !== label);
-    if (_ratingsTableFilterTempValues.excludeLabels.includes(label)) _ratingsTableFilterTempValues.excludeLabels = _ratingsTableFilterTempValues.excludeLabels.filter(x => x !== label);
-    else _ratingsTableFilterTempValues.excludeLabels.push(label);
+    updateFilterRoute();
 }
 
 function cycleLabelFilter(label) {
@@ -305,11 +295,6 @@ function clearLabelFilter(label) {
     _ratingsTableFilterTempValues.excludeLabels = _ratingsTableFilterTempValues.excludeLabels.filter(x => x !== label);
 }
 
-function restoreLabelFilters(snapshot) {
-    _ratingsTableFilterTempValues.includeLabels = [...snapshot.includeLabels];
-    _ratingsTableFilterTempValues.excludeLabels = [...snapshot.excludeLabels];
-}
-
 function getLabelFilterState(label) {
     if (_ratingsTableFilterTempValues.includeLabels.includes(label)) return 'include';
     if (_ratingsTableFilterTempValues.excludeLabels.includes(label)) return 'exclude';
@@ -325,10 +310,10 @@ function resetFilter() {
         // The filtering lists (included/excluded weapons/labels) will be exluded from the string completely because
         // Mithril doesn't do anything to indicate empty lists in query strings. They just end up undefined in the route that consumes them.
     }
-    m.route.set(ROUTES.ratingsTable, queryParams);
+    m.route.set(ROUTES.ratingsTable, queryParams, { replace: true });
 }
 
-function applyFilter() {
+function updateFilterRoute() {
     let queryParams = {
         page: 1,
         rating: _ratingsTableFilterTempValues.minRating,
@@ -344,7 +329,7 @@ function applyFilter() {
         queryParams.sort = _storage.sortBy;
         queryParams.asc = _storage.ratingsTableAscending;
     }
-    m.route.set(ROUTES.ratingsTable, queryParams);
+    m.route.set(ROUTES.ratingsTable, queryParams, { replace: true });
 }
 
 function getRandomMap() {
@@ -379,16 +364,13 @@ var TagBox = {
     oninit: function (vnode) {
         vnode.state.isOpen = false;
         vnode.state.searchText = '';
-        vnode.state.snapshot = null;
-        vnode.state.closeAndApply = () => {
+        vnode.state.close = () => {
             vnode.state.isOpen = false;
-            vnode.state.snapshot = null;
-            vnode.attrs.onClose();
             m.redraw();
         };
         vnode.state.handleDocumentClick = (event) => {
             if (!vnode.state.isOpen || vnode.dom.contains(event.target)) return;
-            vnode.state.closeAndApply();
+            vnode.state.close();
         };
     },
     oncreate: function (vnode) {
@@ -396,13 +378,11 @@ var TagBox = {
     },
     onremove: function (vnode) {
         document.removeEventListener('click', vnode.state.handleDocumentClick);
-        if (vnode.state.isOpen) vnode.state.closeAndApply();
+        if (vnode.state.isOpen) vnode.state.close();
     },
     onbeforeupdate: function (vnode) {
-        vnode.state.closeAndApply = () => {
+        vnode.state.close = () => {
             vnode.state.isOpen = false;
-            vnode.state.snapshot = null;
-            vnode.attrs.onClose();
             m.redraw();
         };
     },
@@ -419,19 +399,7 @@ var TagBox = {
             .filter(category => category.length > 0);
 
         const open = () => {
-            vnode.state.snapshot = {
-                includeLabels: [...vnode.attrs.includeLabels],
-                excludeLabels: [...vnode.attrs.excludeLabels]
-            };
             vnode.state.isOpen = true;
-        };
-
-        const cancel = () => {
-            if (vnode.state.snapshot) {
-                restoreLabelFilters(vnode.state.snapshot);
-            }
-            vnode.state.isOpen = false;
-            vnode.state.snapshot = null;
         };
 
         return m('div.tag-box', {
@@ -441,12 +409,12 @@ var TagBox = {
                 if (event.key === 'Escape') {
                     event.preventDefault();
                     event.stopPropagation();
-                    cancel();
+                    vnode.state.close();
                 }
                 if (event.key === 'Enter') {
                     event.preventDefault();
                     event.stopPropagation();
-                    vnode.state.closeAndApply();
+                    vnode.state.close();
                 }
             }
         }, [
@@ -459,13 +427,13 @@ var TagBox = {
                         alt: "Info"
                     }),
                     m("div", { class: "rob-tooltip-container rob-tooltip-bottom rob-tooltip-arrow" },
-                        m("div", { class: "rob-tooltip" }, "Click tags to cycle include, exclude, off. Enter or close applies; Esc cancels.")
+                        m("div", { class: "rob-tooltip" }, "Click tags to cycle include, exclude, off. Changes apply immediately.")
                     )
                 ])
             ]),
             m('button#labelFilterBox.tag-box-control', {
                 type: 'button',
-                onclick: () => vnode.state.isOpen ? vnode.state.closeAndApply() : open()
+                onclick: () => vnode.state.isOpen ? vnode.state.close() : open()
             }, selectedLabels.length === 0
                 ? m('span.tag-box-placeholder', 'Filter by labels...')
                 : selectedLabels.map(({ label, state }) =>
@@ -474,7 +442,7 @@ var TagBox = {
                         onclick: (event) => {
                             event.stopPropagation();
                             clearLabelFilter(label);
-                            vnode.state.closeAndApply();
+                            updateFilterRoute();
                         }
                     }, `${state === 'include' ? '+' : '-'} ${label}`)
                 )
@@ -488,7 +456,7 @@ var TagBox = {
                         oninput: (event) => vnode.state.searchText = event.target.value
                     }),
                     m('button.btn-close[type=button][aria-label=Close]', {
-                        onclick: vnode.state.closeAndApply
+                        onclick: vnode.state.close
                     })
                 ]),
                 labelCategories.length === 0
@@ -500,7 +468,10 @@ var TagBox = {
                                 return m('button', {
                                     type: 'button',
                                     class: `tag-box-option ${state}`,
-                                    onclick: () => cycleLabelFilter(label)
+                                    onclick: () => {
+                                        cycleLabelFilter(label);
+                                        updateFilterRoute();
+                                    }
                                 }, [
                                     state === 'include' ? '+ ' : state === 'exclude' ? '- ' : '',
                                     label
@@ -517,10 +488,7 @@ var MapRatingsFiltering = {
     view: function () {
         var minRatingText = "Minimum Rating: " + (_ratingsTableFilterTempValues.minRating < 0 ? 'None' : _ratingsTableFilterTempValues.minRating);
         if(_storage.onlyShowUnrated) minRatingText = "Only showing unrated";
-        return m("div", {
-            class: "row g-3 mb-3",
-            onkeypress: function (e) { if (e.key === "Enter") applyFilter() }
-        },
+        return m("div", { class: "row g-3 mb-3" },
             [
                 m("div", { class: "col-12 col-md-6 col-xl-3" },
                     m("label", { class: "form-label", id: "ratingSliderText" }, minRatingText),
@@ -533,7 +501,10 @@ var MapRatingsFiltering = {
                         disabled: _storage.onlyShowUnrated,
                         value: _ratingsTableFilterTempValues.minRating,
                         id: "ratingSlider",
-                        oninput: (event) => { _ratingsTableFilterTempValues.minRating = event.target.value }
+                        oninput: (event) => {
+                            _ratingsTableFilterTempValues.minRating = event.target.value;
+                            updateFilterRoute();
+                        }
                     })
                 ),
                 m("div", { class: "col-12 col-md-6 col-xl-3" },
@@ -555,7 +526,10 @@ var MapRatingsFiltering = {
                         type: "text",
                         value: _ratingsTableFilterTempValues.nameFilter,
                         id: "nameFilter",
-                        oninput: (event) => { _ratingsTableFilterTempValues.nameFilter = event.target.value }
+                        oninput: (event) => {
+                            _ratingsTableFilterTempValues.nameFilter = event.target.value;
+                            updateFilterRoute();
+                        }
                     }
                     )
                 ),
@@ -566,7 +540,10 @@ var MapRatingsFiltering = {
                         type: "text",
                         value: _ratingsTableFilterTempValues.submitterFilter,
                         id: "submitterFilter",
-                        oninput: (event) => { _ratingsTableFilterTempValues.submitterFilter = event.target.value }
+                        oninput: (event) => {
+                            _ratingsTableFilterTempValues.submitterFilter = event.target.value;
+                            updateFilterRoute();
+                        }
                     }
                     )
                 ),
@@ -574,8 +551,7 @@ var MapRatingsFiltering = {
                     m(TagBox, {
                         labelCategories: LABEL_CATEGORIES,
                         includeLabels: _ratingsTableFilterTempValues.includeLabels,
-                        excludeLabels: _ratingsTableFilterTempValues.excludeLabels,
-                        onClose: applyFilter
+                        excludeLabels: _ratingsTableFilterTempValues.excludeLabels
                     })
                 )
             ]
@@ -599,7 +575,7 @@ var Buttons = {
                 onChanged: (value) => {
                     _storage.onlyShowUnrated = value;
                     _storage.save();
-                    applyFilter();
+                    updateFilterRoute();
                 }
             }),
             m("div", { style: { "display": "inline-block" } },
@@ -620,9 +596,6 @@ var Buttons = {
             ),
             _storage.ratingsTableVisible && m("div", { style: { "display": "inline-block" } },
                 m("button", { class: "btn btn-primary", type: "submit", id: "getRandomMapButton", onclick: getRandomMap }, "Get Random")
-            ),
-            m("div", { style: { "display": "inline-block" } },
-                m("button", { class: "btn btn-success", onclick: applyFilter }, "Apply Filter")
             ),
         );
     }
@@ -1131,7 +1104,6 @@ var _shortcutsList = [
     { key: 'R', description: 'Random map' },
     { key: 'C', description: 'Copy bsp name to clipboard (in modal)' },
     { key: 'E', description: 'Edit map details (in modal)' },
-    { key: 'F', description: 'Apply current filter' },
     { key: '←', description: 'Previous page / previous map in modal' },
     { key: '→', description: 'Next page / next map in modal' },
     { key: '?', description: 'Toggle this help' }
@@ -1289,8 +1261,6 @@ function handleSubmitterRouteParameters(attrs) {
 
 var RoutingConfiguration = {
     "/": {
-        // I use onmatch here because I want to clone the current filter parameters into _ratingsTableFilterTempValues, 
-        // because we now have a 2 step filter edit/application process. There needs to be a current value and temp value.
         onmatch: function (attrs) {
             handleCommonRouteParameters(attrs);
 
@@ -1431,11 +1401,6 @@ async function initialise() {
         // The rest only apply when no modal is open
         if (_modalMapInfo) return;
 
-        // f — Apply current filter
-        if (event.key === 'f' && _storage.ratingsTableVisible) {
-            applyFilter();
-            return;
-        }
     });
 
     const scrapeResponse = await fetch('scrape_data.json');
