@@ -9143,7 +9143,10 @@
       ],
       "Authors": [
         "AIR"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1790369259
     },
     {
       "Name": "dm_boogys_arena",
@@ -18365,7 +18368,10 @@
       ],
       "Authors": [
         "MantasX12"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1790367440
     },
     {
       "Name": "dm_holm",
@@ -26538,7 +26544,12 @@
       ],
       "Authors": [
         "[DrunkenDragon] Blackwolf"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "InitialRatingTimestamp": 1790367814
     },
     {
       "Name": "dm_diorama_v2_t",
@@ -32878,7 +32889,10 @@
       ],
       "Authors": [
         "HERETIC"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1790370663
     },
     {
       "Name": "dm_train",
@@ -42571,7 +42585,11 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "RobComment": "This map is fucking hideous. Pretty fun though.",
+      "InitialRatingTimestamp": 1790369878
     },
     {
       "Name": "Gasometer",
@@ -53295,7 +53313,12 @@
       ],
       "Authors": [
         "Shrapnel Cruz"
-      ]
+      ],
+      "RobRating": -0.5,
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1790368412
     },
     {
       "Name": "dm_trapbox",
@@ -64121,7 +64144,10 @@
       ],
       "Authors": [
         "killroy"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1790368398
     },
     {
       "Name": "dm_contrast",
@@ -74879,7 +74905,11 @@
       ],
       "Authors": [
         "clarky003"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [],
+      "RobComment": "Total ass. It's got a stupid mechanic where some objects are invisible in certain areas, so they block you randomly",
+      "InitialRatingTimestamp": 1790370167
     },
     {
       "Name": "dm_watercove",
@@ -82730,7 +82760,10 @@
       ],
       "Authors": [
         "DocRock"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1790371215
     },
     {
       "Name": "dm_mesabase",
@@ -90241,7 +90274,10 @@
       ],
       "Authors": [
         "Kyorisu"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1790366716
     },
     {
       "Name": "dm_babylon_sanctuary",
