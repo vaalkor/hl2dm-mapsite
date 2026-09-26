@@ -62,6 +62,84 @@ var _filteredMaps = [];
 var _canSubmitEdits = false;
 var _isEditingMap = false;
 var _showShortcutsHelp = false;
+var _screenshotUploads = new Map();
+var _screenshotDeletes = new Set();
+
+async function deleteScreenshot(mapId, screenshotId) {
+    if (!_canSubmitEdits || !_isEditingMap || _screenshotDeletes.has(screenshotId)) return;
+    _screenshotDeletes.add(screenshotId);
+    m.redraw();
+    try {
+        const response = await fetch(`/maps/${mapId}/screenshots/${encodeURIComponent(screenshotId)}`, { method: 'DELETE' });
+        if (!response.ok) {
+            const result = await response.json();
+            throw new Error(result.error || 'Could not delete screenshot.');
+        }
+        const map = _scrapeData.MapInfo.find(x => x.Id === mapId);
+        if (map) map.RobScreenshots = (map.RobScreenshots || []).filter(x => x.id !== screenshotId);
+        _toastMessages.addMessage('Screenshot deleted', 2500);
+    } catch (error) {
+        _toastMessages.addMessage(`Screenshot deletion failed: ${error.message}`, 6000);
+    } finally {
+        _screenshotDeletes.delete(screenshotId);
+        m.redraw();
+    }
+}
+
+async function pasteScreenshots(event) {
+    if (!_canSubmitEdits || !_isEditingMap || !_modalMapInfo) return;
+    const files = Array.from(event.clipboardData?.items || [])
+        .filter(item => item.kind === 'file' && item.type.startsWith('image/'))
+        .map(item => item.getAsFile()).filter(Boolean);
+    if (!files.length) return;
+    event.preventDefault();
+    // Capture the map before awaiting: navigating elsewhere must not reassign an upload.
+    const mapId = _modalMapInfo.Id;
+    _screenshotUploads.set(mapId, (_screenshotUploads.get(mapId) || 0) + files.length);
+    m.redraw();
+    for (const file of files) {
+        try {
+            if (file.size > 20 * 1024 * 1024) throw new Error('Images must be 20 MB or smaller.');
+            const response = await fetch(`/maps/${mapId}/screenshots`, {
+                method: 'POST', headers: { 'Content-Type': file.type }, body: file
+            });
+            const result = await response.json();
+            if (!response.ok) throw new Error(result.error || 'Could not save screenshot.');
+            const map = _scrapeData.MapInfo.find(x => x.Id === mapId);
+            if (map) {
+                const screenshots = map.RobScreenshots ??= [];
+                if (!screenshots.some(x => x.id === result.id)) screenshots.push(result);
+            }
+            _toastMessages.addMessage('Screenshot saved', 2500);
+        } catch (error) {
+            _toastMessages.addMessage(`Screenshot upload failed: ${error.message}`, 6000);
+        } finally {
+            const remaining = _screenshotUploads.get(mapId) - 1;
+            if (remaining) _screenshotUploads.set(mapId, remaining);
+            else _screenshotUploads.delete(mapId);
+            m.redraw();
+        }
+    }
+}
+
+var ScreenshotList = {
+    view: ({ attrs: { map } }) => !map.RobScreenshots?.length ? null : m('section.screenshots', [
+        m('h5', 'Screenshots'),
+        m('ul.screenshot-list', map.RobScreenshots.map((screenshot, index) =>
+            m('li', { key: screenshot.id }, m('a', {
+                href: screenshot.path, target: '_blank', rel: 'noopener noreferrer',
+                title: 'Open screenshot in a new tab'
+            }, m('img', {
+                src: screenshot.path, alt: `${map.Name} screenshot ${index + 1}`, loading: 'lazy'
+            })),
+            _canSubmitEdits && _isEditingMap && m('button.screenshot-delete', {
+                type: 'button', title: 'Delete screenshot', 'aria-label': `Delete screenshot ${index + 1}`,
+                disabled: _screenshotDeletes.has(screenshot.id),
+                onclick: () => deleteScreenshot(map.Id, screenshot.id)
+            }, '🗑'))
+        ))
+    ])
+};
 
 var _storage = {
     // Ratings table filter values
@@ -637,6 +715,7 @@ function makeRatingsTableRow(map) {
     const extraChildren = [];
     if (map.RobComment) extraChildren.push(' 📝');
     if (map.RobVideo) extraChildren.push(' 📽');
+    if (map.RobScreenshots?.length) extraChildren.push(m('span', { title: 'Has screenshots', 'aria-label': 'Has screenshots' }, ' 📷'));
     const nameElement = m("th", { scope: "row" }, m('span', m("a", { class: "link-secondary", href: link }, map.Name), extraChildren));
 
     return m('tr', {
@@ -810,7 +889,7 @@ var EditMapInfo = {
     view: function ({ attrs }) {
         const getColourClass = (label) => _currentEditInfo.labels.includes(label) ? getLabelColour(label) : '';
 
-        return m('div.edit-info',
+        return m('div.edit-info.card-body',
             m('h3', `Edit: ${_modalMapInfo.Name}`),
             m('label', { for: 'edit-rating' }, `Rating: ${_currentEditInfo.rating >= 0 ? _currentEditInfo.rating : "No rating"}`),
             m("input#edit-rating", {
@@ -846,7 +925,11 @@ var EditMapInfo = {
                 oninput: (event) => _currentEditInfo.comment = event.target.value
             }),
             m('hr'),
+            m('p.text-muted', 'Paste an image with Ctrl+V to save a screenshot immediately (up to 20 MB).'),
+            _screenshotUploads.has(_modalMapInfo.Id) && m('p', { role: 'status' }, 'Saving screenshots…'),
+            m(ScreenshotList, { map: _modalMapInfo }),
             m('button.btn.btn-success', {
+                disabled: _screenshotUploads.has(_modalMapInfo.Id) || _screenshotDeletes.size > 0,
                 onclick: async () => {
                     // TODO: submit!
                     await fetch('/update', {
@@ -890,6 +973,8 @@ var ViewMapInfo = {
             _modalMapInfo.RobVideo ?
                 m('p', 'Video link: ', m('a', { href: _modalMapInfo.RobVideo, target: "_blank" }, _modalMapInfo.RobVideo))
                 : null,
+
+            m(ScreenshotList, { map: _modalMapInfo }),
 
             _modalMapInfo['BspFiles'] && _modalMapInfo['BspFiles'].length
                 ? [
@@ -1301,6 +1386,7 @@ var RoutingConfiguration = {
 
 async function initialise() {
     _storage.loadFromLocalStorage();
+    document.addEventListener('paste', pasteScreenshots);
 
     document.addEventListener('keydown', function (event) {
         const tag = document.activeElement?.tagName?.toLowerCase();

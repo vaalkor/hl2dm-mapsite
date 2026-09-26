@@ -5069,7 +5069,11 @@
         "Yu.Tyahno",
         "I.Maslenkov",
         "SALO POWER"
-      ]
+      ],
+      "RobScreenshots": [],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1790451305
     },
     {
       "Name": "dm_penis",
@@ -7414,7 +7418,10 @@
       ],
       "Authors": [
         "Unknown"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1790452482
     },
     {
       "Name": "dm_school_of_combat_rc4_g",
@@ -8282,7 +8289,13 @@
       ],
       "Authors": [
         "mrmof"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Remake",
+        "HL1"
+      ],
+      "InitialRatingTimestamp": 1790455727
     },
     {
       "Name": "dm_stalk",
@@ -66661,7 +66674,13 @@
       ],
       "Authors": [
         "andy scott"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Rats"
+      ],
+      "RobComment": "Solid rats map",
+      "InitialRatingTimestamp": 1790457723
     },
     {
       "Name": "dm_carandiru",
@@ -69268,7 +69287,10 @@
       ],
       "Authors": [
         "satchmo"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1790456723
     },
     {
       "Name": "dm_industrial",
@@ -71669,7 +71691,10 @@
       ],
       "Authors": [
         "[ff]elite.lordnitro"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1790454463
     },
     {
       "Name": "dm_whitehaven",
@@ -79813,7 +79838,11 @@
       ],
       "Authors": [
         "Neale &quot;Pi Mu Rho&quot; Roberts"
-      ]
+      ],
+      "RobRating": 1.5,
+      "RobLabels": [],
+      "RobComment": "BLEH!",
+      "InitialRatingTimestamp": 1790454677
     },
     {
       "Name": "dm_docks",
@@ -86447,7 +86476,13 @@
       ],
       "Authors": [
         "n/a"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Beautiful"
+      ],
+      "RobComment": "Awesome style",
+      "InitialRatingTimestamp": 1790453586
     },
     {
       "Name": "dm_city251",

@@ -9,3 +9,7 @@ A note on the ratings: Most of these ratings are given playing these maps with o
 
 ![image](screenshot.png)
 
+To add screenshots, run `node server.js`, open a map at `http://localhost:3000`, and enter edit mode. Paste an image with Ctrl+V. Screenshots save immediately, independently of the **Update info** button, and appear as thumbnails that open the full image in a new tab. PNG, JPEG, GIF and WebP images up to 20 MB are supported.
+
+Screenshot files live in `docs/images/screenshots` with UUID filenames; each map's `RobScreenshots` entries in `docs/scrape_data.json` store their IDs and relative paths. Commit both the images and map data when publishing (`push-update.ps1` includes both).
+
