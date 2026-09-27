@@ -15598,7 +15598,11 @@
       ],
       "Authors": [
         "Arvismaps"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "RobComment": "Kinda fun, but only cause HL2 is fun. It's just a plain probable first map outdoors.",
+      "InitialRatingTimestamp": 1790532974
     },
     {
       "Name": "dm_eject",
@@ -23762,7 +23766,10 @@
       ],
       "Authors": [
         "AlcyToronto"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1790532105
     },
     {
       "Name": "dm_lego_city",
@@ -31024,7 +31031,20 @@
       ],
       "Authors": [
         "Aurora [Russia]"
-      ]
+      ],
+      "RobScreenshots": [
+        {
+          "id": "32b49278-ff6f-4093-b56f-a1390b7a960b",
+          "path": "images/screenshots/32b49278-ff6f-4093-b56f-a1390b7a960b.png"
+        }
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "Killbox",
+        "CoolTextures"
+      ],
+      "RobComment": "Cool textures",
+      "InitialRatingTimestamp": 1790529441
     },
     {
       "Name": "dm_killbox_nano_cosmos_b01",
@@ -36736,7 +36756,13 @@
       ],
       "Authors": [
         "Algorythm"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "VanillaStyle"
+      ],
+      "RobComment": "Cool map, nice vanilla style. Too big for 2 players though.",
+      "InitialRatingTimestamp": 1790532566
     },
     {
       "Name": "dm_rapidcore",
@@ -39931,7 +39957,11 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "RobComment": "Very interesting mini game type map. It's pretty janky, but has quite a vibe to it. Hard to rate.",
+      "InitialRatingTimestamp": 1790531922
     },
     {
       "Name": "dm_borealis_v2",
@@ -40143,7 +40173,11 @@
       ],
       "Authors": [
         "Pstriple"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "RobComment": "BLEH!",
+      "InitialRatingTimestamp": 1790533078
     },
     {
       "Name": "dm_rats v2 updated version",
@@ -40481,7 +40515,17 @@
       ],
       "Authors": [
         "Heretic"
-      ]
+      ],
+      "RobScreenshots": [
+        {
+          "id": "d80984a4-40d7-47d6-bb34-7feed6f796a5",
+          "path": "images/screenshots/d80984a4-40d7-47d6-bb34-7feed6f796a5.png"
+        }
+      ],
+      "RobRating": 2,
+      "RobLabels": [],
+      "RobComment": "Small, bit janky. It has a deep pit full of rocket launchers that you can't get out of.",
+      "InitialRatingTimestamp": 1790528981
     },
     {
       "Name": "missile silo",
@@ -42910,7 +42954,13 @@
       ],
       "Authors": [
         "covain3"
-      ]
+      ],
+      "RobRating": 0.5,
+      "RobLabels": [
+        "Dogshit"
+      ],
+      "RobComment": "TRASH",
+      "InitialRatingTimestamp": 1790533102
     },
     {
       "Name": "dm_killbox_alex_remake",
@@ -46822,7 +46872,12 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": -0.5,
+      "RobLabels": [
+        "CausesCrash"
+      ],
+      "InitialRatingTimestamp": 1790530259
     },
     {
       "Name": "dm_prison_fight",
@@ -52646,7 +52701,13 @@
       ],
       "Authors": [
         "mgattack"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Duel"
+      ],
+      "RobComment": "Straight up duel map. Cool.",
+      "InitialRatingTimestamp": 1790533352
     },
     {
       "Name": "mgattack_test_elevator",
@@ -55746,7 +55807,13 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 0,
+      "RobLabels": [
+        "MissingTextures"
+      ],
+      "RobComment": "Missing textures on this map. It's put us off playing it. it might even be a good map. Looks like it would be cool, but we can't be arsed",
+      "InitialRatingTimestamp": 1790532730
     },
     {
       "Name": "dm_cityblock",
@@ -62862,7 +62929,17 @@
       ],
       "Authors": [
         "reaper47"
-      ]
+      ],
+      "RobScreenshots": [
+        {
+          "id": "d2900e26-7aba-443e-bf95-2474da1a8559",
+          "path": "images/screenshots/d2900e26-7aba-443e-bf95-2474da1a8559.png"
+        }
+      ],
+      "RobRating": 4,
+      "RobLabels": [],
+      "RobComment": "Solid map. Very nice.",
+      "InitialRatingTimestamp": 1790531394
     },
     {
       "Name": "dm_phallan",
@@ -94484,7 +94561,19 @@
       ],
       "Authors": [
         "Brad"
-      ]
+      ],
+      "RobScreenshots": [
+        {
+          "id": "b9eb5b47-0498-4eb6-a715-27c6c7892489",
+          "path": "images/screenshots/b9eb5b47-0498-4eb6-a715-27c6c7892489.png"
+        }
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "UniqueMechanic"
+      ],
+      "RobComment": "Very cool little map. Doesn't play particularly interestingly, but it has a good vibe and a unique mechanic.",
+      "InitialRatingTimestamp": 1790530242
     },
     {
       "Name": "dm_agora",

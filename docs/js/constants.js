@@ -41,8 +41,8 @@ export var LABEL_COLOUR_MAP = {
 
 export const LABEL_CATEGORIES = [
     ['Small', 'Medium', 'Large', 'TooBig'],
-    ['KingOfTheHill', 'LowGrav', 'UniqueMechanic', 'Rats', 'Duel', 'Meme'],
-    ['VanillaStyle', 'Indoors','Outdoors', 'Beautiful'],
+    ['KingOfTheHill', 'LowGrav', 'UniqueMechanic', 'Rats', 'Duel', 'Meme', 'Killbox'],
+    ['VanillaStyle', 'Indoors','Outdoors', 'Beautiful', 'CoolTextures'],
     ['Remake', 'CS', 'HL1', 'HL2', 'UT', 'Quake'],
     ['Incomplete','MissingTextures', 'CausesCrash', 'NeverLoads', 'Dogshit'],
 ]
