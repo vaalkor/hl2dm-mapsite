@@ -46,7 +46,13 @@
       ],
       "Authors": [
         "maxalotl9"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Remake"
+      ],
+      "RobComment": "Team fortress 2 remake",
+      "InitialRatingTimestamp": 1790887352
     },
     {
       "Name": "dm_forgottenfortress",
@@ -4129,7 +4135,20 @@
       ],
       "Authors": [
         "mrspectate"
-      ]
+      ],
+      "RobScreenshots": [
+        {
+          "id": "761746b6-a3af-4171-9f8e-d3d5bf03ee10",
+          "path": "images/screenshots/761746b6-a3af-4171-9f8e-d3d5bf03ee10.png"
+        }
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "Medium",
+        "Duel"
+      ],
+      "InitialRatingTimestamp": 1790886245,
+      "RobComment": "Decent duel map."
     },
     {
       "Name": "dm_chool (A map of my school)",
@@ -4941,7 +4960,12 @@
       ],
       "Authors": [
         "AngelFallen"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "Remake"
+      ],
+      "InitialRatingTimestamp": 1790887787
     },
     {
       "Name": "dm_depot",
@@ -35244,7 +35268,19 @@
             }
           ]
         }
-      ]
+      ],
+      "RobScreenshots": [
+        {
+          "id": "c9886fad-1749-42f9-9b5d-c0a4ea7701e2",
+          "path": "images/screenshots/c9886fad-1749-42f9-9b5d-c0a4ea7701e2.png"
+        }
+      ],
+      "RobRating": 0,
+      "RobLabels": [
+        "Remake"
+      ],
+      "RobComment": "A broken TF2 import...",
+      "InitialRatingTimestamp": 1790887399
     },
     {
       "Name": "dm_np_the_abyss",
@@ -42177,6 +42213,15 @@
       ],
       "Authors": [
         "valva"
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1790888364,
+      "RobScreenshots": [
+        {
+          "id": "7a3d3168-5938-49f0-a5d4-af48d679f73d",
+          "path": "images/screenshots/7a3d3168-5938-49f0-a5d4-af48d679f73d.png"
+        }
       ]
     },
     {
@@ -42708,7 +42753,19 @@
             }
           ]
         }
-      ]
+      ],
+      "RobScreenshots": [
+        {
+          "id": "d001c2cd-bfc7-4401-a742-7cc1908587b9",
+          "path": "images/screenshots/d001c2cd-bfc7-4401-a742-7cc1908587b9.png"
+        }
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "Indoors"
+      ],
+      "RobComment": "Quite a fun map, if you can get past the horrific anxiety inducing fullbright lighting.",
+      "InitialRatingTimestamp": 1790886938
     },
     {
       "Name": "dm_combine_arena_cbw",
