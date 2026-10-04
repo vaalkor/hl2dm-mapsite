@@ -4855,7 +4855,11 @@
       ],
       "Authors": [
         "AngelFallen"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "RobComment": "Kind of funny. We played it with infinite sprint on.",
+      "InitialRatingTimestamp": 1791141594
     },
     {
       "Name": "dm_Squad17",
@@ -11212,7 +11216,12 @@
       ],
       "Authors": [
         "[EYE] Valar"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "Killbox"
+      ],
+      "InitialRatingTimestamp": 1791138788
     },
     {
       "Name": "dm_assult",
@@ -32254,7 +32263,14 @@
       ],
       "Authors": [
         "Unknown"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [
+        "Incomplete",
+        "Large"
+      ],
+      "RobComment": "There's no buggy... Wtf...",
+      "InitialRatingTimestamp": 1791139245
     },
     {
       "Name": "vlg_underground",
@@ -61203,6 +61219,16 @@
       ],
       "Authors": [
         "aciD"
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "RobComment": "Looks kinda cool, not hugely interesting gameplay though",
+      "InitialRatingTimestamp": 1791140895,
+      "RobScreenshots": [
+        {
+          "id": "c225b34f-f373-41c8-a7f5-5daf3568d9c5",
+          "path": "images/screenshots/c225b34f-f373-41c8-a7f5-5daf3568d9c5.png"
+        }
       ]
     },
     {
@@ -82128,7 +82154,19 @@
       ],
       "Authors": [
         "Unknown"
-      ]
+      ],
+      "RobScreenshots": [
+        {
+          "id": "5e59b6c0-9dfa-4e82-b425-ee5929f8368f",
+          "path": "images/screenshots/5e59b6c0-9dfa-4e82-b425-ee5929f8368f.png"
+        }
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [
+        "UniqueMechanic"
+      ],
+      "RobComment": "It's got 2 big cranes you can have a crane duel with... But you're invulnerable when you're in the damned crane...",
+      "InitialRatingTimestamp": 1791139803
     },
     {
       "Name": "dm_icepick",
@@ -95383,7 +95421,13 @@
       ],
       "Authors": [
         "SuperHebbe"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "RobComment": "Cool looking map but it's just too big for 2 players.",
+      "InitialRatingTimestamp": 1791140394
     },
     {
       "Name": "dm_pooltime",
