@@ -2399,7 +2399,13 @@
       ],
       "Authors": [
         "haymaker"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [
+        "Beautiful"
+      ],
+      "RobComment": "Insane looking map. Visually one of the best we've ever seen",
+      "InitialRatingTimestamp": 1791226997
     },
     {
       "Name": "DM_Vat (DeathMatch Map)",
@@ -20565,7 +20571,16 @@
             }
           ]
         }
-      ]
+      ],
+      "RobScreenshots": [
+        {
+          "id": "65953e33-c74f-4e47-a86a-8ea6945ad7b7",
+          "path": "images/screenshots/65953e33-c74f-4e47-a86a-8ea6945ad7b7.png"
+        }
+      ],
+      "RobRating": 4,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1791225809
     },
     {
       "Name": "dm_basebunker",
@@ -26357,7 +26372,10 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1791224990
     },
     {
       "Name": "RoPlayers_Killbox_mini",
@@ -26936,7 +26954,11 @@
       ],
       "Authors": [
         "_MDL"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "RobComment": "Decent",
+      "InitialRatingTimestamp": 1791224711
     },
     {
       "Name": "dm_pet_vet_map_day",
@@ -42503,7 +42525,13 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 0.5,
+      "RobLabels": [
+        "Incomplete"
+      ],
+      "RobComment": "Half finished experiment",
+      "InitialRatingTimestamp": 1791225963
     },
     {
       "Name": "advisor_arenaV1",
@@ -61276,7 +61304,13 @@
       ],
       "Authors": [
         "halfer"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "TooBig"
+      ],
+      "RobComment": "Looks cool, too big though",
+      "InitialRatingTimestamp": 1791226199
     },
     {
       "Name": "dm_phazon_b1",
@@ -70028,7 +70062,13 @@
       ],
       "Authors": [
         "archanor"
-      ]
+      ],
+      "RobRating": 5,
+      "RobLabels": [
+        "UniqueMechanic"
+      ],
+      "RobComment": "This map is full of awesome gimmicks.",
+      "InitialRatingTimestamp": 1791223926
     },
     {
       "Name": "dm_quinca",
