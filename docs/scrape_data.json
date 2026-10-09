@@ -10092,7 +10092,11 @@
       ],
       "Authors": [
         "SALO POWER"
-      ]
+      ],
+      "RobRating": -0.5,
+      "RobLabels": [],
+      "RobComment": "Missing Map file",
+      "InitialRatingTimestamp": 1791578218
     },
     {
       "Name": "dm_gonarchlair",
@@ -24182,7 +24186,11 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [],
+      "RobComment": "A full conversion map styled like antichamber. Basically unplayable. Looks very cool though",
+      "InitialRatingTimestamp": 1791580079
     },
     {
       "Name": "RoPlayers_Race_v10",
@@ -49052,7 +49060,11 @@
       ],
       "Authors": [
         "SmackerVino"
-      ]
+      ],
+      "RobRating": 0.5,
+      "RobLabels": [],
+      "RobComment": "\"You have to master speedcrawl\" yeah no thanks",
+      "InitialRatingTimestamp": 1791578572
     },
     {
       "Name": "dm_OutsideV2",
@@ -52334,7 +52346,10 @@
             }
           ]
         }
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1791579744
     },
     {
       "Name": "dm_killarena_emc2_bk_b3",
@@ -69329,7 +69344,13 @@
       ],
       "Authors": [
         "amen"
-      ]
+      ],
+      "RobRating": 2,
+      "RobLabels": [
+        "UniqueMechanic"
+      ],
+      "RobComment": "Not super playable. Looks cool though. Quite unique.",
+      "InitialRatingTimestamp": 1791579430
     },
     {
       "Name": "dm_crossfire",
@@ -75539,7 +75560,11 @@
       ],
       "Authors": [
         "MrData212"
-      ]
+      ],
+      "RobRating": 2.5,
+      "RobLabels": [],
+      "RobComment": "eghhh",
+      "InitialRatingTimestamp": 1791578895
     },
     {
       "Name": "dm_waterleak_final",
@@ -92789,7 +92814,10 @@
       ],
       "Authors": [
         "DannyBoy."
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "InitialRatingTimestamp": 1791578149
     },
     {
       "Name": "dm_rumpa (v1)",
