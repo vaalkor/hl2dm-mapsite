@@ -48521,7 +48521,13 @@
       ],
       "Authors": [
         "Mr. Nobody"
-      ]
+      ],
+      "RobRating": 1,
+      "RobLabels": [
+        "MissingTextures"
+      ],
+      "RobComment": "Missing textures... probs would be a decent little map though but it's making us want to throw up",
+      "InitialRatingTimestamp": 1791634552
     },
     {
       "Name": "dm_warlord",
@@ -67580,7 +67586,11 @@
       ],
       "Authors": [
         "bladesinger"
-      ]
+      ],
+      "RobRating": 4,
+      "RobLabels": [],
+      "RobComment": "Decent. Small map plus physics objects is a winning formula.",
+      "InitialRatingTimestamp": 1791634357
     },
     {
       "Name": "dm_administration",
@@ -85978,7 +85988,15 @@
       ],
       "Authors": [
         "omegaslayer"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "HL2",
+        "Remake",
+        "VanillaStyle"
+      ],
+      "RobComment": "Awesome map of the first bit of HL2. Could do with some tripmines though",
+      "InitialRatingTimestamp": 1791635223
     },
     {
       "Name": "dm-malice",
@@ -93312,7 +93330,13 @@
       ],
       "Authors": [
         "NykO18"
-      ]
+      ],
+      "RobRating": 3.5,
+      "RobLabels": [
+        "UniqueMechanic"
+      ],
+      "RobComment": "Pretty cool idea.",
+      "InitialRatingTimestamp": 1791636069
     },
     {
       "Name": "dm_tropic",
@@ -93410,7 +93434,11 @@
       ],
       "Authors": [
         "Sir Charles Babbage"
-      ]
+      ],
+      "RobRating": 3,
+      "RobLabels": [],
+      "RobComment": "Big too big for 2 probs fine with 3 though",
+      "InitialRatingTimestamp": 1791635439
     },
     {
       "Name": "DM_Barrel_Factory_v1",
